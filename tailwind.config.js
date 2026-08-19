@@ -8,14 +8,19 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        apple: {
-          bg: "#F5F5F7",
-          card: "rgba(255, 255, 255, 0.8)",
-          subtle: "#86868B",
-          dark: "#1D1D1F",
-          blue: "#0071E3",
-          border: "rgba(0, 0, 0, 0.08)",
-        }
+        refero: {
+          canvas: "#F4F4F0",
+          card: "#EAEAE5",
+          "card-hover": "#E3E3DC",
+          "card-light": "#F7F7F4",
+          "card-white": "#FFFFFF",
+          border: "rgba(0, 0, 0, 0.06)",
+          "border-strong": "rgba(0, 0, 0, 0.10)",
+          dark: "#18181B",
+          muted: "#71717A",
+          subtle: "#8E8E93",
+          active: "#E0E0D8",
+        },
       },
       fontFamily: {
         sans: [
@@ -35,9 +40,9 @@ module.exports = {
         tight: "-0.015em",
       },
       boxShadow: {
-        'apple-sm': '0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02)',
-        'apple': '0 4px 20px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.02)',
-        'apple-lg': '0 12px 32px rgba(0, 0, 0, 0.1), 0 2px 6px rgba(0, 0, 0, 0.04)',
+        'refero-sm': '0 1px 2px rgba(0, 0, 0, 0.03)',
+        'refero': '0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02)',
+        'refero-lg': '0 8px 24px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04)',
       },
       keyframes: {
         'slide-in-right': {
@@ -57,3 +62,4 @@ module.exports = {
   },
   plugins: [],
 }
+

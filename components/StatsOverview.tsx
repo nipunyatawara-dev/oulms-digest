@@ -1,74 +1,121 @@
+'use client';
+
 import React from 'react';
-import { BookOpen, Bell, MessageSquare, Zap } from 'lucide-react';
+import { CategoryFilter } from '@/components/CategoryTabs';
 
 interface StatsOverviewProps {
   totalCourses: number;
   totalNotifications: number;
   totalUpdates: number;
-  durationSeconds?: number;
+  gradesCount?: number;
+  vivaCount?: number;
+  deadlinesCount?: number;
+  activeTab?: CategoryFilter;
+  onSelectTab?: (tab: CategoryFilter) => void;
 }
 
 export function StatsOverview({
   totalCourses,
   totalNotifications,
   totalUpdates,
-  durationSeconds,
+  gradesCount = 0,
+  vivaCount = 0,
+  deadlinesCount = 0,
+  activeTab = 'All',
+  onSelectTab,
 }: StatsOverviewProps) {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-      <div className="p-3.5 sm:p-4 bg-white/80 backdrop-blur-md rounded-2xl border border-black/[0.06] shadow-apple-sm overflow-hidden flex flex-col justify-between">
-        <div className="flex items-center justify-between gap-1">
-          <span className="text-[11.5px] sm:text-[12px] font-medium text-[#86868B] truncate">Enrolled Courses</span>
-          <div className="w-6 h-6 rounded-lg bg-blue-500/10 text-blue-600 flex items-center justify-center shrink-0">
-            <BookOpen className="w-3.5 h-3.5" />
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5 sm:gap-4 select-none">
+      {/* Card 1: Grades & Marks (Styled like the Pro plan card) */}
+      <div className="bg-[#EAEAE5] rounded-2xl p-5 sm:p-6 flex flex-col justify-between transition-all hover:bg-[#E6E6E1]">
+        <div>
+          <div className="flex items-baseline gap-2 mb-2">
+            <h3 className="text-[14.5px] sm:text-[15px] font-semibold text-[#18181B] tracking-tight">
+              Grades & Marks
+            </h3>
+            <span className="text-[13px] text-[#71717A]">
+              {gradesCount > 0 ? `${gradesCount} new` : 'Up to date'}
+            </span>
           </div>
+          <p className="text-[12.5px] sm:text-[13px] text-[#71717A] leading-relaxed mb-6">
+            Continuous assessment tests (CAT), assignment evaluations, and official faculty gradebook releases.
+          </p>
         </div>
-        <div className="mt-2 flex items-baseline gap-1.5 flex-wrap">
-          <span className="text-[20px] sm:text-[24px] font-bold text-[#1D1D1F] tracking-tight leading-none">{totalCourses}</span>
-          <span className="text-[11px] text-[#86868B]">active modules</span>
+
+        <div>
+          <button
+            onClick={() => onSelectTab?.(activeTab === 'Grades & Marks' ? 'All' : 'Grades & Marks')}
+            className={`w-full sm:w-auto px-4 py-2 rounded-lg text-[13px] font-medium transition-all ${
+              activeTab === 'Grades & Marks'
+                ? 'bg-[#18181B] text-white'
+                : 'bg-white hover:bg-[#F9F9F7] text-[#18181B] border border-black/[0.08]'
+            }`}
+          >
+            {activeTab === 'Grades & Marks' ? 'Viewing Grades' : 'View Grades'}
+          </button>
         </div>
       </div>
 
-      <div className="p-3.5 sm:p-4 bg-white/80 backdrop-blur-md rounded-2xl border border-black/[0.06] shadow-apple-sm overflow-hidden flex flex-col justify-between">
-        <div className="flex items-center justify-between gap-1">
-          <span className="text-[11.5px] sm:text-[12px] font-medium text-[#86868B] truncate">Portal Alerts</span>
-          <div className="w-6 h-6 rounded-lg bg-amber-500/10 text-amber-600 flex items-center justify-center shrink-0">
-            <Bell className="w-3.5 h-3.5" />
+      {/* Card 2: Viva & Exam (Styled like the Pro+ plan card) */}
+      <div className="bg-[#EAEAE5] rounded-2xl p-5 sm:p-6 flex flex-col justify-between transition-all hover:bg-[#E6E6E1]">
+        <div>
+          <div className="flex items-baseline gap-2 mb-2">
+            <h3 className="text-[14.5px] sm:text-[15px] font-semibold text-[#18181B] tracking-tight">
+              Viva & Exams
+            </h3>
+            <span className="text-[13px] text-[#71717A]">
+              {vivaCount > 0 ? `${vivaCount} updates` : 'None pending'}
+            </span>
           </div>
+          <p className="text-[12.5px] sm:text-[13px] text-[#71717A] leading-relaxed mb-6">
+            Final examination timetables, oral viva sessions, presentation dates, and physical venue notices.
+          </p>
         </div>
-        <div className="mt-2 flex items-baseline gap-1.5 flex-wrap">
-          <span className="text-[20px] sm:text-[24px] font-bold text-[#1D1D1F] tracking-tight leading-none">{totalNotifications}</span>
-          <span className="text-[11px] text-[#86868B]">notifications</span>
+
+        <div>
+          <button
+            onClick={() => onSelectTab?.(activeTab === 'Viva & Exam' ? 'All' : 'Viva & Exam')}
+            className={`w-full sm:w-auto px-4 py-2 rounded-lg text-[13px] font-medium transition-all ${
+              activeTab === 'Viva & Exam'
+                ? 'bg-[#18181B] text-white'
+                : 'bg-white hover:bg-[#F9F9F7] text-[#18181B] border border-black/[0.08]'
+            }`}
+          >
+            {activeTab === 'Viva & Exam' ? 'Viewing Exams' : 'View Exams'}
+          </button>
         </div>
       </div>
 
-      <div className="p-3.5 sm:p-4 bg-white/80 backdrop-blur-md rounded-2xl border border-black/[0.06] shadow-apple-sm overflow-hidden flex flex-col justify-between">
-        <div className="flex items-center justify-between gap-1">
-          <span className="text-[11.5px] sm:text-[12px] font-medium text-[#86868B] truncate">Announcements</span>
-          <div className="w-6 h-6 rounded-lg bg-purple-500/10 text-purple-600 flex items-center justify-center shrink-0">
-            <MessageSquare className="w-3.5 h-3.5" />
+      {/* Card 3: Deadlines & Quizzes (Styled like the Ultra plan card) */}
+      <div className="bg-[#EAEAE5] rounded-2xl p-5 sm:p-6 flex flex-col justify-between transition-all hover:bg-[#E6E6E1]">
+        <div>
+          <div className="flex items-baseline gap-2 mb-2">
+            <h3 className="text-[14.5px] sm:text-[15px] font-semibold text-[#18181B] tracking-tight">
+              Deadlines & Quizzes
+            </h3>
+            <span className="text-[13px] text-[#71717A]">
+              {deadlinesCount > 0 ? `${deadlinesCount} alerts` : 'All cleared'}
+            </span>
           </div>
+          <p className="text-[12.5px] sm:text-[13px] text-[#71717A] leading-relaxed mb-6">
+            Moodle online quizzes, TMA submission portal deadlines, and assignment cutoff reminders.
+          </p>
         </div>
-        <div className="mt-2 flex items-baseline gap-1.5 flex-wrap">
-          <span className="text-[20px] sm:text-[24px] font-bold text-[#1D1D1F] tracking-tight leading-none">{totalUpdates}</span>
-          <span className="text-[11px] text-[#86868B]">forum topics</span>
-        </div>
-      </div>
 
-      <div className="p-3.5 sm:p-4 bg-white/80 backdrop-blur-md rounded-2xl border border-black/[0.06] shadow-apple-sm overflow-hidden flex flex-col justify-between">
-        <div className="flex items-center justify-between gap-1">
-          <span className="text-[11.5px] sm:text-[12px] font-medium text-[#86868B] truncate">Crawler Speed</span>
-          <div className="w-6 h-6 rounded-lg bg-emerald-500/10 text-emerald-600 flex items-center justify-center shrink-0">
-            <Zap className="w-3.5 h-3.5" />
-          </div>
-        </div>
-        <div className="mt-2 flex items-baseline gap-1.5 flex-wrap">
-          <span className="text-[20px] sm:text-[24px] font-bold text-[#1D1D1F] tracking-tight leading-none">
-            {durationSeconds ? `${durationSeconds}s` : 'Fast'}
-          </span>
-          <span className="text-[11px] text-emerald-600 font-medium">Headless</span>
+        <div>
+          <button
+            onClick={() => onSelectTab?.(activeTab === 'Deadlines & Quizzes' ? 'All' : 'Deadlines & Quizzes')}
+            className={`w-full sm:w-auto px-4 py-2 rounded-lg text-[13px] font-medium transition-all ${
+              activeTab === 'Deadlines & Quizzes'
+                ? 'bg-[#18181B] text-white'
+                : 'bg-white hover:bg-[#F9F9F7] text-[#18181B] border border-black/[0.08]'
+            }`}
+          >
+            {activeTab === 'Deadlines & Quizzes' ? 'Viewing Deadlines' : 'View Deadlines'}
+          </button>
         </div>
       </div>
     </div>
   );
 }
+

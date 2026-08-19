@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { ChevronDown, ExternalLink, User, Clock } from 'lucide-react';
+import { ChevronDown, ExternalLink, User, Clock, MessageSquare } from 'lucide-react';
 import { CourseItem } from '@/lib/types';
 
 interface CourseCardProps {
@@ -13,133 +13,132 @@ export function CourseCard({ course, defaultExpanded = false }: CourseCardProps)
   const [expanded, setExpanded] = useState(defaultExpanded);
   const [showAllUpdates, setShowAllUpdates] = useState(false);
 
-  const getCategoryBadge = (category: string) => {
-    switch (category) {
-      case 'Grades & Marks':
-        return 'bg-blue-50 text-blue-700 border-blue-200/60';
-      case 'Viva & Exam':
-        return 'bg-rose-50 text-rose-700 border-rose-200/60';
-      case 'Deadlines & Quizzes':
-        return 'bg-amber-50 text-amber-700 border-amber-200/60';
-      default:
-        return 'bg-zinc-100 text-zinc-700 border-zinc-200';
-    }
-  };
-
   const updates = course.updates || [];
   const displayedUpdates = showAllUpdates ? updates : updates.slice(0, 5);
 
   return (
-    <div className="bg-white/90 backdrop-blur-md rounded-2xl border border-black/[0.06] shadow-apple-sm overflow-hidden transition-all">
-      {/* Course Header */}
-      <div
-        onClick={() => setExpanded(!expanded)}
-        className="p-4 cursor-pointer flex items-center justify-between gap-3 hover:bg-black/[0.01] transition-colors select-none"
-      >
-        <div className="flex items-center gap-3 min-w-0">
-          <div className="px-2.5 py-1 rounded-lg bg-zinc-900 text-white font-mono font-bold text-[12px] tracking-wide shrink-0 shadow-sm">
+    <div className="hover:bg-black/[0.015] transition-colors">
+      {/* Course Main Row */}
+      <div className="p-4 sm:p-5 flex items-start sm:items-center justify-between gap-3 sm:gap-4 select-none">
+        <div className="flex items-start sm:items-center gap-3.5 min-w-0 flex-1">
+          {/* Left Course Code Badge */}
+          <div className="px-2.5 py-1 rounded-lg bg-[#18181B] text-white font-mono font-semibold text-[11.5px] tracking-wide shrink-0 shadow-refero-sm mt-0.5 sm:mt-0">
             {course.code}
           </div>
-          <div className="min-w-0">
-            <h3 className="text-[14.5px] font-semibold text-[#1D1D1F] truncate">
+
+          {/* Center Info */}
+          <div className="min-w-0 flex-1">
+            <h3 className="text-[14px] font-semibold text-[#18181B] truncate">
               {course.title.replace(course.code, '').trim() || course.title}
             </h3>
-            <p className="text-[12px] text-[#86868B] flex items-center gap-2 mt-0.5">
+            <p className="text-[12px] text-[#71717A] flex items-center gap-2 mt-0.5 flex-wrap">
               <span>{course.updates_count} discussions</span>
-              <span>&bull;</span>
-              <a
-                href={course.url}
-                target="_blank"
-                rel="noreferrer"
-                onClick={(e) => e.stopPropagation()}
-                className="text-[#0071E3] hover:underline inline-flex items-center gap-1 font-medium"
-              >
-                Open in Moodle <ExternalLink className="w-3 h-3" />
-              </a>
+              {updates.length > 0 && updates[0].topic && (
+                <>
+                  <span>&bull;</span>
+                  <span className="truncate max-w-[240px] sm:max-w-md text-[#8E8E93]">
+                    Latest: {updates[0].topic}
+                  </span>
+                </>
+              )}
             </p>
           </div>
         </div>
 
-        <div className="flex items-center gap-2.5 shrink-0">
-          {course.updates_count > 0 && (
-            <span className="text-[11.5px] font-semibold px-2.5 py-0.5 rounded-full bg-[#0071E3]/10 text-[#0071E3] border border-[#0071E3]/20">
-              {course.updates_count}
-            </span>
+        {/* Right Action Buttons */}
+        <div className="flex items-center gap-2 shrink-0">
+          <a
+            href={course.url}
+            target="_blank"
+            rel="noreferrer"
+            className="hidden sm:inline-flex items-center gap-1 px-3 py-1.5 text-[12.5px] font-medium text-[#18181B] bg-white hover:bg-[#F9F9F7] border border-black/[0.08] rounded-lg shadow-refero-sm transition-all"
+            title="Open in Moodle"
+          >
+            <span>Moodle</span>
+            <ExternalLink className="w-3 h-3 text-[#71717A]" />
+          </a>
+
+          {updates.length > 0 && (
+            <button
+              onClick={() => setExpanded(!expanded)}
+              className="inline-flex items-center gap-1 px-3 py-1.5 text-[12.5px] font-medium text-[#18181B] bg-white hover:bg-[#F9F9F7] border border-black/[0.08] rounded-lg shadow-refero-sm transition-all"
+            >
+              <span>{expanded ? 'Hide' : `Topics (${updates.length})`}</span>
+              <ChevronDown
+                className={`w-3.5 h-3.5 text-[#71717A] transition-transform duration-200 ${
+                  expanded ? 'rotate-180' : ''
+                }`}
+              />
+            </button>
           )}
-          <div className={`p-1 text-[#86868B] transition-transform duration-200 ${expanded ? 'rotate-180' : ''}`}>
-            <ChevronDown className="w-4 h-4" />
-          </div>
         </div>
       </div>
 
-      {/* Expanded Discussions List */}
-      {expanded && (
-        <div className="border-t border-black/[0.06] bg-[#FBFBFC] px-4 py-1 divide-y divide-black/[0.04]">
-          {updates.length > 0 ? (
-            <>
-              {displayedUpdates.map((update) => (
-                <div key={update.id} className="py-3 flex items-start justify-between gap-3 group">
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-2 flex-wrap mb-1">
-                      <span className={`text-[10.5px] font-semibold px-2 py-0.2 rounded-md border ${getCategoryBadge(update.category)}`}>
-                        {update.category}
-                      </span>
-                      {update.forum_name && (
-                        <span className="text-[11px] text-[#86868B] truncate max-w-[240px]">
-                          {update.forum_name}
-                        </span>
-                      )}
-                    </div>
-                    <a
-                      href={update.link}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="text-[13.5px] font-semibold text-[#1D1D1F] hover:text-[#0071E3] transition-colors leading-snug block break-words"
-                    >
-                      {update.topic}
-                    </a>
-                    <div className="flex items-center gap-3 text-[11px] text-[#86868B] mt-1 flex-wrap">
-                      {update.author && (
-                        <span className="inline-flex items-center gap-1">
-                          <User className="w-3 h-3" />
-                          {update.author}
-                        </span>
-                      )}
-                      {update.time && (
-                        <span className="inline-flex items-center gap-1">
-                          <Clock className="w-3 h-3" />
-                          {update.time}
-                        </span>
-                      )}
-                    </div>
-                  </div>
-
-                  <a
-                    href={update.link}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="p-1.5 rounded-lg text-[#86868B] group-hover:text-[#0071E3] group-hover:bg-black/[0.04] transition-colors shrink-0"
-                    title="Open topic in Moodle"
-                  >
-                    <ExternalLink className="w-4 h-4" />
-                  </a>
+      {/* Expanded Discussions Accordion */}
+      {expanded && updates.length > 0 && (
+        <div className="border-t border-black/[0.04] bg-[#F7F7F4] px-4 sm:px-6 py-2 divide-y divide-black/[0.04]">
+          {displayedUpdates.map((update) => (
+            <div
+              key={update.id}
+              className="py-3 flex items-start justify-between gap-3 group"
+            >
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-2 flex-wrap mb-1">
+                  <span className="text-[11px] font-medium px-2 py-0.5 rounded bg-black/[0.05] text-[#18181B]">
+                    {update.category}
+                  </span>
+                  {update.forum_name && (
+                    <span className="text-[11.5px] text-[#71717A] truncate max-w-[220px]">
+                      {update.forum_name}
+                    </span>
+                  )}
                 </div>
-              ))}
 
-              {updates.length > 5 && (
-                <div className="py-2.5 text-center">
-                  <button
-                    onClick={() => setShowAllUpdates(!showAllUpdates)}
-                    className="text-[12px] font-semibold text-[#0071E3] hover:underline inline-flex items-center gap-1 py-0.5"
-                  >
-                    {showAllUpdates ? 'Show fewer discussions' : `Show all ${updates.length} discussions`}
-                  </button>
+                <a
+                  href={update.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-[13px] font-medium text-[#18181B] hover:underline leading-snug block break-words"
+                >
+                  {update.topic}
+                </a>
+
+                <div className="flex items-center gap-3 text-[11.5px] text-[#71717A] mt-1 flex-wrap">
+                  {update.author && (
+                    <span className="inline-flex items-center gap-1">
+                      <User className="w-3 h-3 text-[#8E8E93]" />
+                      {update.author}
+                    </span>
+                  )}
+                  {update.time && (
+                    <span className="inline-flex items-center gap-1">
+                      <Clock className="w-3 h-3 text-[#8E8E93]" />
+                      {update.time}
+                    </span>
+                  )}
                 </div>
-              )}
-            </>
-          ) : (
-            <div className="py-4 text-center text-[12px] text-[#86868B]">
-              No announcements found in this course.
+              </div>
+
+              <a
+                href={update.link}
+                target="_blank"
+                rel="noreferrer"
+                className="p-1.5 rounded text-[#71717A] hover:text-[#18181B] hover:bg-black/[0.04] transition-colors shrink-0"
+                title="Open topic in Moodle"
+              >
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
+            </div>
+          ))}
+
+          {updates.length > 5 && (
+            <div className="py-2.5 text-center">
+              <button
+                onClick={() => setShowAllUpdates(!showAllUpdates)}
+                className="text-[12px] font-medium text-[#18181B] hover:underline inline-flex items-center gap-1 py-0.5"
+              >
+                {showAllUpdates ? 'Show fewer discussions' : `Show all ${updates.length} discussions`}
+              </button>
             </div>
           )}
         </div>
@@ -147,3 +146,4 @@ export function CourseCard({ course, defaultExpanded = false }: CourseCardProps)
     </div>
   );
 }
+
