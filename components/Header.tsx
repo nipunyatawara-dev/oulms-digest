@@ -35,8 +35,11 @@ export function Header({
     return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
   };
 
-  // Official Moodle login portal entrypoint (no sesskey errors)
   const portalLoginUrl = 'https://oulms.ou.ac.lk/login/index.php';
+
+  const t1 = settings?.time_1 || settings?.morning_time || '07:00';
+  const t2 = settings?.time_2 || '16:00';
+  const t3 = settings?.time_3 || settings?.evening_time || '22:00';
 
   return (
     <header className="sticky top-0 z-40 w-full backdrop-blur-xl bg-[#F5F5F7]/85 border-b border-black/[0.06] transition-all">
@@ -58,7 +61,7 @@ export function Header({
             <p className="text-[11px] text-[#86868B] truncate hidden sm:block">
               Last synced: {formatTimeAgo(lastSyncedAt)}
               {settings?.auto_sync_enabled && (
-                <> &bull; Auto-sync: {settings.morning_time} & {settings.evening_time}</>
+                <> &bull; Auto-sync: {t1}, {t2} & {t3}</>
               )}
             </p>
           </div>

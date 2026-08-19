@@ -1,6 +1,7 @@
 {
-  "morning_time": "07:30",
-  "evening_time": "19:30",
+  "time_1": "07:00",
+  "time_2": "16:00",
+  "time_3": "22:00",
   "auto_sync_enabled": true,
   "last_sync_timestamp": "2026-08-19T16:37:36.657214"
 }
