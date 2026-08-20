@@ -19,15 +19,22 @@ export function parseTimeToDate(timeStr?: string, baseDate: Date = new Date()): 
     if (hoursMatch) offsetMs += parseInt(hoursMatch[1], 10) * 60 * 60 * 1000;
     if (minsMatch) offsetMs += parseInt(minsMatch[1], 10) * 60 * 1000;
     if (secsMatch) offsetMs += parseInt(secsMatch[1], 10) * 1000;
-    if (str.includes('yesterday')) offsetMs += 24 * 60 * 60 * 1000;
+    if (str.includes('yesterday') && !daysMatch) offsetMs += 24 * 60 * 60 * 1000;
 
     return new Date(baseDate.getTime() - offsetMs);
   }
 
-  // Handle absolute strings: "19 Aug 2026", "2026-08-19T...", etc.
-  const parsed = Date.parse(timeStr);
+  // Handle absolute strings: "19 Aug 2026", "21 May 2026", etc.
+  const dateMatch = timeStr.match(/(\d{1,2}\s+[A-Za-z]{3,9}(?:\s+\d{4})?)/);
+  const toParse = dateMatch ? dateMatch[1] : timeStr;
+
+  const parsed = Date.parse(toParse);
   if (!isNaN(parsed)) {
-    return new Date(parsed);
+    const d = new Date(parsed);
+    if (!/\d{4}/.test(toParse)) {
+      d.setFullYear(baseDate.getFullYear());
+    }
+    return d;
   }
 
   return null;
@@ -42,8 +49,12 @@ export function isWithinTimeframe(
   const date = parseTimeToDate(timeStr, baseDate);
   if (!date) return false;
 
-  const diffMs = Math.max(0, baseDate.getTime() - date.getTime());
+  const diffMs = baseDate.getTime() - date.getTime();
+
+  // Allow up to 2 hours of clock skew for future timestamps, but reject anything further in future
+  if (diffMs < -2 * 60 * 60 * 1000) return false;
+
   const maxMs = timeframe === '24h' ? 24 * 60 * 60 * 1000 : 7 * 24 * 60 * 60 * 1000;
 
-  return diffMs <= maxMs;
+  return diffMs >= -2 * 60 * 60 * 1000 && diffMs <= maxMs;
 }

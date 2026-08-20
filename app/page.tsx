@@ -195,7 +195,8 @@ export default function DashboardPage() {
   // Base date for calculating relative time
   const syncedBaseDate = useMemo(() => {
     if (data?.synced_at) {
-      const parsed = new Date(data.synced_at);
+      const dateStr = data.synced_at.endsWith('Z') ? data.synced_at : `${data.synced_at}Z`;
+      const parsed = new Date(dateStr);
       if (!isNaN(parsed.getTime())) return parsed;
     }
     return new Date();
