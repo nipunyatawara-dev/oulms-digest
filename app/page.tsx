@@ -8,7 +8,7 @@ import { NotificationCard } from '@/components/NotificationCard';
 import { CourseCard } from '@/components/CourseCard';
 import { ScheduleModal } from '@/components/ScheduleModal';
 import { SyncProgressDrawer, SyncLogItem } from '@/components/SyncProgressDrawer';
-import { LMSDataPayload, UserSettings, NotificationItem, CourseUpdate } from '@/lib/types';
+import { LMSDataPayload, UserSettings, CourseUpdate } from '@/lib/types';
 import { isWithinTimeframe } from '@/lib/dateUtils';
 import {
   Search,
@@ -18,17 +18,18 @@ import {
   Clock,
   ExternalLink,
   User,
-  Sparkles,
+  Award,
   Calendar,
+  AlertCircle,
   Layers,
 } from 'lucide-react';
 
-interface UnifiedAnnouncement {
+interface UnifiedAcademicItem {
   id: string;
   title: string;
   courseCode: string;
   courseName: string;
-  category: string;
+  category: 'Grades & Marks' | 'Viva & Exam' | 'Deadlines & Quizzes' | 'Announcements';
   time: string;
   link: string;
   isNew: boolean;
@@ -37,14 +38,39 @@ interface UnifiedAnnouncement {
   sourceType: 'portal_notification' | 'course_forum';
 }
 
+const CATEGORY_META: Record<
+  'Grades & Marks' | 'Viva & Exam' | 'Deadlines & Quizzes' | 'Announcements',
+  { title: string; desc: string; icon: React.ComponentType<{ className?: string }> }
+> = {
+  'Grades & Marks': {
+    title: 'Grades & Marks',
+    desc: 'Assignment grades, CAT marks, TMA scores, and evaluation results.',
+    icon: Award,
+  },
+  'Viva & Exam': {
+    title: 'Viva & Exams',
+    desc: 'Upcoming vivas, schedules, exam announcements, and repeat opportunities.',
+    icon: Calendar,
+  },
+  'Deadlines & Quizzes': {
+    title: 'Deadlines & Quizzes',
+    desc: 'Assignment submissions, quiz deadlines, and cutoff dates.',
+    icon: AlertCircle,
+  },
+  Announcements: {
+    title: 'Announcements & Broadcasts',
+    desc: 'Recent notices and updates from course forums and your OUSL portal.',
+    icon: Bell,
+  },
+};
+
 export default function DashboardPage() {
   const [data, setData] = useState<LMSDataPayload | null>(null);
   const [settings, setSettings] = useState<UserSettings | null>(null);
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState<CategoryFilter>('All');
   const [searchQuery, setSearchQuery] = useState('');
-  const [announcementSearchQuery, setAnnouncementSearchQuery] = useState('');
-  const [timeframe, setTimeframe] = useState<'24h' | '7d'>('24h');
+  const [timeframe, setTimeframe] = useState<'24h' | '16d'>('24h');
   const [isScheduleOpen, setIsScheduleOpen] = useState(false);
   const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
   const [activeView, setActiveView] = useState<'Dashboard' | 'Announcements'>('Dashboard');
@@ -192,7 +218,7 @@ export default function DashboardPage() {
     }
   };
 
-  // Base date for calculating relative time
+  // Base date for calculating relative time accurately
   const syncedBaseDate = useMemo(() => {
     if (data?.synced_at) {
       const dateStr = data.synced_at.endsWith('Z') ? data.synced_at : `${data.synced_at}Z`;
@@ -202,9 +228,9 @@ export default function DashboardPage() {
     return new Date();
   }, [data?.synced_at]);
 
-  // Extract all unified announcements from notifications and course forums
-  const allAnnouncements = useMemo<UnifiedAnnouncement[]>(() => {
-    const list: UnifiedAnnouncement[] = [];
+  // Extract all unified items from notifications and course forums
+  const allAcademicItems = useMemo<UnifiedAcademicItem[]>(() => {
+    const list: UnifiedAcademicItem[] = [];
 
     // 1. From portal notifications
     (data?.notifications || []).forEach((n) => {
@@ -227,7 +253,7 @@ export default function DashboardPage() {
     (data?.courses || []).forEach((course) => {
       (course.updates || []).forEach((update) => {
         list.push({
-          id: `update-${update.id}`,
+          id: `upd-${course.code}-${update.id}`,
           title: update.topic,
           courseCode: course.code,
           courseName: course.title.replace(course.code, '').trim() || course.title,
@@ -236,7 +262,7 @@ export default function DashboardPage() {
           link: update.link,
           isNew: !!update.is_new,
           author: update.author || 'Course Lecturer',
-          forumName: update.forum_name || 'Course Announcements',
+          forumName: update.forum_name || 'Course Forum',
           sourceType: 'course_forum',
         });
       });
@@ -245,81 +271,77 @@ export default function DashboardPage() {
     return list;
   }, [data]);
 
-  // Counts for 24 hours and 7 days
-  const announcements24hCount = useMemo(() => {
-    return allAnnouncements.filter((a) => isWithinTimeframe(a.time, '24h', syncedBaseDate)).length;
-  }, [allAnnouncements, syncedBaseDate]);
+  // Counts helper for any category and timeframe
+  const getCategoryCounts = (category: 'Grades & Marks' | 'Viva & Exam' | 'Deadlines & Quizzes' | 'Announcements') => {
+    const items = allAcademicItems.filter((i) => i.category === category);
+    const count24h = items.filter((i) => isWithinTimeframe(i.time, '24h', syncedBaseDate)).length;
+    const count16d = items.filter((i) => isWithinTimeframe(i.time, '16d', syncedBaseDate)).length;
+    return { count24h, count16d, total: items.length };
+  };
 
-  const announcements7dCount = useMemo(() => {
-    return allAnnouncements.filter((a) => isWithinTimeframe(a.time, '7d', syncedBaseDate)).length;
-  }, [allAnnouncements, syncedBaseDate]);
-
-  // Filtered Announcements for the Announcements View
-  const filteredAnnouncements = useMemo(() => {
-    return allAnnouncements.filter((item) => {
-      // Timeframe check
-      const matchesTime = isWithinTimeframe(item.time, timeframe, syncedBaseDate);
-      if (!matchesTime) return false;
-
-      // Search check
-      if (!announcementSearchQuery.trim()) return true;
-      const query = announcementSearchQuery.toLowerCase();
-      return (
-        item.title.toLowerCase().includes(query) ||
-        item.courseCode.toLowerCase().includes(query) ||
-        item.courseName.toLowerCase().includes(query) ||
-        item.author.toLowerCase().includes(query) ||
-        item.forumName.toLowerCase().includes(query) ||
-        item.category.toLowerCase().includes(query)
-      );
-    });
-  }, [allAnnouncements, timeframe, syncedBaseDate, announcementSearchQuery]);
+  const announcementsCounts = useMemo(() => getCategoryCounts('Announcements'), [allAcademicItems, syncedBaseDate]);
+  const gradesCounts = useMemo(() => getCategoryCounts('Grades & Marks'), [allAcademicItems, syncedBaseDate]);
+  const vivaCounts = useMemo(() => getCategoryCounts('Viva & Exam'), [allAcademicItems, syncedBaseDate]);
+  const deadlinesCounts = useMemo(() => getCategoryCounts('Deadlines & Quizzes'), [allAcademicItems, syncedBaseDate]);
 
   // Standard Dashboard Filter calculations
   const allNotifications = data?.notifications || [];
   const allCourses = data?.courses || [];
-  
+
   const allUpdates: CourseUpdate[] = [];
-  allCourses.forEach(c => {
+  allCourses.forEach((c) => {
     if (c.updates) allUpdates.push(...c.updates);
   });
 
-  const counts = {
+  const sidebarCounts = {
     all: allNotifications.length + allUpdates.length,
-    grades: allNotifications.filter(n => n.category === 'Grades & Marks').length + 
-            allUpdates.filter(u => u.category === 'Grades & Marks').length,
-    viva: allNotifications.filter(n => n.category === 'Viva & Exam').length + 
-          allUpdates.filter(u => u.category === 'Viva & Exam').length,
-    deadlines: allNotifications.filter(n => n.category === 'Deadlines & Quizzes').length + 
-               allUpdates.filter(u => u.category === 'Deadlines & Quizzes').length,
+    grades: gradesCounts.total,
+    viva: vivaCounts.total,
+    deadlines: deadlinesCounts.total,
     courses: allCourses.length,
   };
 
-  // Filtered Notifications for Dashboard View
-  const filteredNotifications = allNotifications.filter((n) => {
-    const matchesSearch = 
-      n.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      (n.course_code && n.course_code.toLowerCase().includes(searchQuery.toLowerCase())) ||
-      (n.course_name && n.course_name.toLowerCase().includes(searchQuery.toLowerCase()));
-    
-    if (!matchesSearch) return false;
-    if (activeTab === 'All') return true;
-    if (activeTab === 'Courses') return false;
-    return n.category === activeTab;
+  // Filtered items for Dedicated Category Views (Grades, Viva, Deadlines, Announcements)
+  const getFilteredCategoryItems = (category: 'Grades & Marks' | 'Viva & Exam' | 'Deadlines & Quizzes' | 'Announcements') => {
+    return allAcademicItems.filter((item) => {
+      if (item.category !== category) return false;
+      const matchesTime = isWithinTimeframe(item.time, timeframe, syncedBaseDate);
+      if (!matchesTime) return false;
+
+      if (!searchQuery.trim()) return true;
+      const q = searchQuery.toLowerCase();
+      return (
+        item.title.toLowerCase().includes(q) ||
+        item.courseCode.toLowerCase().includes(q) ||
+        item.courseName.toLowerCase().includes(q) ||
+        item.author.toLowerCase().includes(q) ||
+        item.forumName.toLowerCase().includes(q)
+      );
+    });
+  };
+
+  // Filtered Notifications for Overview View
+  const filteredOverviewNotifications = allNotifications.filter((n) => {
+    const q = searchQuery.toLowerCase();
+    return (
+      !searchQuery.trim() ||
+      n.title.toLowerCase().includes(q) ||
+      (n.course_code && n.course_code.toLowerCase().includes(q)) ||
+      (n.course_name && n.course_name.toLowerCase().includes(q))
+    );
   });
 
-  // Filtered Courses & Updates for Dashboard View
+  // Filtered Courses for Enrolled Courses View & Overview View
   const filteredCourses = allCourses.map((c) => {
+    const q = searchQuery.toLowerCase();
     const filteredUpdates = (c.updates || []).filter((u) => {
-      const matchesSearch = 
-        u.topic.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        c.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        c.code.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        u.author.toLowerCase().includes(searchQuery.toLowerCase());
-      
-      if (!matchesSearch) return false;
-      if (activeTab === 'All' || activeTab === 'Courses') return true;
-      return u.category === activeTab;
+      if (!searchQuery.trim()) return true;
+      return (
+        u.topic.toLowerCase().includes(q) ||
+        c.title.toLowerCase().includes(q) ||
+        c.code.toLowerCase().includes(q) ||
+        u.author.toLowerCase().includes(q)
+      );
     });
 
     return {
@@ -329,13 +351,35 @@ export default function DashboardPage() {
     };
   }).filter((c) => {
     if (activeTab === 'Courses') {
-      return (
-        c.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        c.code.toLowerCase().includes(searchQuery.toLowerCase())
-      );
+      if (!searchQuery.trim()) return true;
+      const q = searchQuery.toLowerCase();
+      return c.title.toLowerCase().includes(q) || c.code.toLowerCase().includes(q);
     }
     return c.updates && c.updates.length > 0;
   });
+
+  // Determine current active category mode
+  const isDedicatedCategoryView =
+    activeView === 'Announcements' ||
+    activeTab === 'Grades & Marks' ||
+    activeTab === 'Viva & Exam' ||
+    activeTab === 'Deadlines & Quizzes';
+
+  const currentCategoryKey: 'Grades & Marks' | 'Viva & Exam' | 'Deadlines & Quizzes' | 'Announcements' =
+    activeView === 'Announcements'
+      ? 'Announcements'
+      : (activeTab as 'Grades & Marks' | 'Viva & Exam' | 'Deadlines & Quizzes');
+
+  const currentCategoryCounts =
+    currentCategoryKey === 'Grades & Marks'
+      ? gradesCounts
+      : currentCategoryKey === 'Viva & Exam'
+      ? vivaCounts
+      : currentCategoryKey === 'Deadlines & Quizzes'
+      ? deadlinesCounts
+      : announcementsCounts;
+
+  const currentCategoryItems = isDedicatedCategoryView ? getFilteredCategoryItems(currentCategoryKey) : [];
 
   return (
     <div className="min-h-screen bg-[#F4F4F0] text-[#18181B]">
@@ -353,8 +397,11 @@ export default function DashboardPage() {
         settings={settings}
         lastSyncedAt={data?.synced_at}
         activeView={activeView}
-        onSelectView={(v) => setActiveView(v)}
-        announcementsCount={announcements24hCount > 0 ? announcements24hCount : announcements7dCount}
+        onSelectView={(v) => {
+          setActiveView(v);
+          setSearchQuery('');
+        }}
+        announcementsCount={announcementsCounts.count24h > 0 ? announcementsCounts.count24h : announcementsCounts.count16d}
       />
 
       {/* Main Content Layout */}
@@ -363,8 +410,11 @@ export default function DashboardPage() {
           {/* Left Column: Persistent Sidebar Navigation */}
           <Sidebar
             activeTab={activeTab}
-            onSelectTab={setActiveTab}
-            counts={counts}
+            onSelectTab={(tab) => {
+              setActiveTab(tab);
+              setSearchQuery('');
+            }}
+            counts={sidebarCounts}
             onOpenSchedule={() => setIsScheduleOpen(true)}
             onToggleDrawer={() => {
               setIsDrawerOpen(true);
@@ -374,103 +424,112 @@ export default function DashboardPage() {
             onCloseMobile={() => setIsMobileSidebarOpen(false)}
             activeView={activeView}
             onSelectView={setActiveView}
-            announcementsCount={announcements24hCount > 0 ? announcements24hCount : announcements7dCount}
+            announcementsCount={announcementsCounts.count24h > 0 ? announcementsCounts.count24h : announcementsCounts.count16d}
           />
 
           {/* Right Column: Main Content Canvas */}
           <main className="flex-1 min-w-0 space-y-5">
-            {activeView === 'Announcements' ? (
+            {isDedicatedCategoryView ? (
               /* ========================================================================= */
-              /* ANNOUNCEMENTS VIEW (Last 7 Days / Last 24 Hours with interactive toggle)  */
+              /* DEDICATED SEPARATE PAGES: Grades, Viva, Deadlines, Announcements          */
+              /* (Shows only the category's items with Last 24 Hours / Last 16 Days toggle)*/
               /* ========================================================================= */
               <div className="space-y-5">
-                {/* Announcements Header & Controls */}
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-[#EAEAE5] p-5 sm:p-6 rounded-2xl shadow-refero-sm">
-                  <div>
-                    <div className="flex items-center gap-2">
-                      <Bell className="w-5 h-5 text-[#18181B]" />
-                      <h1 className="text-[17px] sm:text-[18px] font-semibold text-[#18181B] tracking-tight">
-                        Announcements & Broadcasts
-                      </h1>
+                {/* Dedicated Category Header Card */}
+                {(() => {
+                  const meta = CATEGORY_META[currentCategoryKey];
+                  const Icon = meta.icon;
+                  return (
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-[#EAEAE5] p-5 sm:p-6 rounded-2xl shadow-refero-sm">
+                      <div>
+                        <div className="flex items-center gap-2">
+                          <Icon className="w-5 h-5 text-[#18181B]" />
+                          <h1 className="text-[17px] sm:text-[18px] font-semibold text-[#18181B] tracking-tight">
+                            {meta.title}
+                          </h1>
+                        </div>
+                        <p className="text-[12.5px] sm:text-[13px] text-[#71717A] mt-1">
+                          {meta.desc}
+                        </p>
+                      </div>
+
+                      {/* 24h / 16d Timeframe Toggle */}
+                      <div className="flex items-center p-1 bg-black/[0.05] rounded-xl self-start sm:self-auto select-none">
+                        <button
+                          onClick={() => setTimeframe('24h')}
+                          className={`px-3.5 py-1.5 rounded-lg text-[13px] font-medium transition-all flex items-center gap-2 ${
+                            timeframe === '24h'
+                              ? 'bg-white text-[#18181B] shadow-refero-sm'
+                              : 'text-[#71717A] hover:text-[#18181B]'
+                          }`}
+                        >
+                          <span>Last 24 Hours</span>
+                          <span
+                            className={`text-[11px] px-1.5 py-0.2 rounded-full font-semibold ${
+                              timeframe === '24h'
+                                ? 'bg-[#18181B] text-white'
+                                : 'bg-black/[0.08] text-[#71717A]'
+                            }`}
+                          >
+                            {currentCategoryCounts.count24h}
+                          </span>
+                        </button>
+
+                        <button
+                          onClick={() => setTimeframe('16d')}
+                          className={`px-3.5 py-1.5 rounded-lg text-[13px] font-medium transition-all flex items-center gap-2 ${
+                            timeframe === '16d'
+                              ? 'bg-white text-[#18181B] shadow-refero-sm'
+                              : 'text-[#71717A] hover:text-[#18181B]'
+                          }`}
+                        >
+                          <span>Last 16 Days</span>
+                          <span
+                            className={`text-[11px] px-1.5 py-0.2 rounded-full font-semibold ${
+                              timeframe === '16d'
+                                ? 'bg-[#18181B] text-white'
+                                : 'bg-black/[0.08] text-[#71717A]'
+                            }`}
+                          >
+                            {currentCategoryCounts.count16d}
+                          </span>
+                        </button>
+                      </div>
                     </div>
-                    <p className="text-[12.5px] sm:text-[13px] text-[#71717A] mt-1">
-                      Recent notices and updates from course forums and your OUSL portal.
-                    </p>
-                  </div>
+                  );
+                })()}
 
-                  {/* 24h / 7d Timeframe Toggle */}
-                  <div className="flex items-center p-1 bg-black/[0.05] rounded-xl self-start sm:self-auto select-none">
-                    <button
-                      onClick={() => setTimeframe('24h')}
-                      className={`px-3.5 py-1.5 rounded-lg text-[13px] font-medium transition-all flex items-center gap-2 ${
-                        timeframe === '24h'
-                          ? 'bg-white text-[#18181B] shadow-refero-sm'
-                          : 'text-[#71717A] hover:text-[#18181B]'
-                      }`}
-                    >
-                      <span>Last 24 Hours</span>
-                      <span
-                        className={`text-[11px] px-1.5 py-0.2 rounded-full font-semibold ${
-                          timeframe === '24h'
-                            ? 'bg-[#18181B] text-white'
-                            : 'bg-black/[0.08] text-[#71717A]'
-                        }`}
-                      >
-                        {announcements24hCount}
-                      </span>
-                    </button>
-
-                    <button
-                      onClick={() => setTimeframe('7d')}
-                      className={`px-3.5 py-1.5 rounded-lg text-[13px] font-medium transition-all flex items-center gap-2 ${
-                        timeframe === '7d'
-                          ? 'bg-white text-[#18181B] shadow-refero-sm'
-                          : 'text-[#71717A] hover:text-[#18181B]'
-                      }`}
-                    >
-                      <span>Last 7 Days</span>
-                      <span
-                        className={`text-[11px] px-1.5 py-0.2 rounded-full font-semibold ${
-                          timeframe === '7d'
-                            ? 'bg-[#18181B] text-white'
-                            : 'bg-black/[0.08] text-[#71717A]'
-                        }`}
-                      >
-                        {announcements7dCount}
-                      </span>
-                    </button>
-                  </div>
-                </div>
-
-                {/* Search Bar for Announcements */}
+                {/* Search Bar & Result Summary */}
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 pt-1">
                   <div className="text-[13px] font-semibold text-[#18181B]">
-                    Showing {filteredAnnouncements.length} {filteredAnnouncements.length === 1 ? 'announcement' : 'announcements'} from the {timeframe === '24h' ? 'last 24 hours' : 'last 7 days'}
+                    Showing {currentCategoryItems.length}{' '}
+                    {currentCategoryItems.length === 1 ? 'item' : 'items'} from the{' '}
+                    {timeframe === '24h' ? 'last 24 hours' : 'last 16 days'}
                   </div>
 
                   <div className="relative min-w-[240px] sm:w-72">
                     <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-[#71717A]" />
                     <input
                       type="text"
-                      placeholder="Filter announcements..."
-                      value={announcementSearchQuery}
-                      onChange={(e) => setAnnouncementSearchQuery(e.target.value)}
+                      placeholder={`Search in ${CATEGORY_META[currentCategoryKey].title}...`}
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
                       className="w-full pl-9 pr-3.5 py-1.5 text-[13px] bg-white rounded-lg border border-black/[0.08] shadow-refero-sm focus:outline-none focus:ring-1 focus:ring-black/20 transition-all placeholder:text-[#71717A]"
                     />
                   </div>
                 </div>
 
-                {/* Announcements Content List */}
+                {/* Category Items List (No course containers) */}
                 {loading ? (
                   <div className="p-16 text-center text-[#71717A] flex flex-col items-center justify-center gap-2 bg-[#EAEAE5] rounded-2xl">
                     <RefreshCw className="w-5 h-5 animate-spin text-[#18181B]" />
                     <p className="text-[13.5px] font-medium text-[#18181B]">
-                      Loading announcements...
+                      Loading updates...
                     </p>
                   </div>
-                ) : filteredAnnouncements.length > 0 ? (
+                ) : currentCategoryItems.length > 0 ? (
                   <div className="bg-[#EAEAE5] rounded-2xl divide-y divide-black/[0.04] overflow-hidden shadow-refero-sm">
-                    {filteredAnnouncements.map((item) => (
+                    {currentCategoryItems.map((item) => (
                       <div
                         key={item.id}
                         className="p-4 sm:p-5 flex items-start sm:items-center justify-between gap-3 sm:gap-4 hover:bg-black/[0.015] transition-colors group"
@@ -549,51 +608,108 @@ export default function DashboardPage() {
                 ) : (
                   /* Empty State */
                   <div className="p-16 text-center bg-[#EAEAE5] rounded-2xl text-[#71717A] space-y-2">
-                    <Bell className="w-8 h-8 mx-auto text-[#71717A]" />
+                    {React.createElement(CATEGORY_META[currentCategoryKey].icon, {
+                      className: 'w-8 h-8 mx-auto text-[#71717A]',
+                    })}
                     <h3 className="text-[15px] font-semibold text-[#18181B]">
-                      No announcements in the {timeframe === '24h' ? 'last 24 hours' : 'last 7 days'}
+                      No {CATEGORY_META[currentCategoryKey].title.toLowerCase()} in the{' '}
+                      {timeframe === '24h' ? 'last 24 hours' : 'last 16 days'}
                     </h3>
                     <p className="text-[12.5px] max-w-sm mx-auto leading-relaxed">
                       {timeframe === '24h'
-                        ? 'No announcements were posted in the last 24 hours. Switch to "Last 7 Days" to review earlier updates.'
-                        : 'No announcements were found for the last 7 days.'}
+                        ? `No items were posted in the last 24 hours. Switch to "Last 16 Days" to review earlier updates.`
+                        : `No items were found for the last 16 days.`}
                     </p>
-                    {timeframe === '24h' && announcements7dCount > 0 && (
+                    {timeframe === '24h' && currentCategoryCounts.count16d > 0 && (
                       <div className="pt-2">
                         <button
-                          onClick={() => setTimeframe('7d')}
+                          onClick={() => setTimeframe('16d')}
                           className="px-4 py-1.5 bg-white text-[#18181B] border border-black/[0.08] rounded-lg text-[12.5px] font-medium hover:bg-[#F9F9F7] shadow-refero-sm transition-all"
                         >
-                          View Last 7 Days ({announcements7dCount})
+                          View Last 16 Days ({currentCategoryCounts.count16d})
                         </button>
                       </div>
                     )}
                   </div>
                 )}
               </div>
+            ) : activeTab === 'Courses' ? (
+              /* ========================================================================= */
+              /* ENROLLED COURSES VIEW (Dedicated Enrolled Courses List)                   */
+              /* ========================================================================= */
+              <div className="space-y-5">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-[#EAEAE5] p-5 sm:p-6 rounded-2xl shadow-refero-sm">
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <Layers className="w-5 h-5 text-[#18181B]" />
+                      <h1 className="text-[17px] sm:text-[18px] font-semibold text-[#18181B] tracking-tight">
+                        Enrolled Courses
+                      </h1>
+                    </div>
+                    <p className="text-[12.5px] sm:text-[13px] text-[#71717A] mt-1">
+                      Your 7 registered active semester courses on OUSL Moodle.
+                    </p>
+                  </div>
+                  <div className="text-[12.5px] font-medium px-3 py-1 bg-white rounded-lg border border-black/[0.08] shadow-refero-sm text-[#18181B] self-start sm:self-auto">
+                    {allCourses.length} Registered Courses
+                  </div>
+                </div>
+
+                {/* Search Bar */}
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 pt-1">
+                  <span className="text-[13px] font-semibold text-[#18181B]">
+                    Showing {filteredCourses.length} {filteredCourses.length === 1 ? 'course' : 'courses'}
+                  </span>
+
+                  <div className="relative min-w-[240px] sm:w-72">
+                    <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-[#71717A]" />
+                    <input
+                      type="text"
+                      placeholder="Search courses..."
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      className="w-full pl-9 pr-3.5 py-1.5 text-[13px] bg-white rounded-lg border border-black/[0.08] shadow-refero-sm focus:outline-none focus:ring-1 focus:ring-black/20 transition-all placeholder:text-[#71717A]"
+                    />
+                  </div>
+                </div>
+
+                {/* Enrolled Courses List */}
+                {loading ? (
+                  <div className="p-16 text-center text-[#71717A] flex flex-col items-center justify-center gap-2 bg-[#EAEAE5] rounded-2xl">
+                    <RefreshCw className="w-5 h-5 animate-spin text-[#18181B]" />
+                    <p className="text-[13.5px] font-medium text-[#18181B]">
+                      Loading courses...
+                    </p>
+                  </div>
+                ) : filteredCourses.length > 0 ? (
+                  <div className="bg-[#EAEAE5] rounded-2xl divide-y divide-black/[0.04] overflow-hidden shadow-refero-sm">
+                    {filteredCourses.map((course) => (
+                      <CourseCard key={course.id} course={course} defaultExpanded={false} />
+                    ))}
+                  </div>
+                ) : (
+                  <div className="p-12 text-center bg-[#EAEAE5] rounded-2xl text-[#71717A]">
+                    <BookOpen className="w-7 h-7 mx-auto mb-2 text-[#71717A]" />
+                    <p className="text-[14px] font-semibold text-[#18181B]">
+                      No courses found
+                    </p>
+                    <p className="text-[12px] mt-0.5">
+                      Try searching with a different course code or title.
+                    </p>
+                  </div>
+                )}
+              </div>
             ) : (
               /* ========================================================================= */
-              /* DASHBOARD / OVERVIEW VIEW (Filtered Feeds)                                */
+              /* OVERVIEW VIEW (All Academic Feeds & Recent Activity)                      */
               /* ========================================================================= */
               <div className="space-y-4 sm:space-y-5">
                 {/* Search Bar & Active Filter Label */}
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 pt-1">
                   <div className="flex items-center gap-2">
                     <span className="text-[13px] font-semibold text-[#18181B]">
-                      {activeTab === 'All'
-                        ? 'All Academic Feeds'
-                        : activeTab === 'Courses'
-                        ? 'Enrolled Courses'
-                        : activeTab}
+                      All Academic Feeds
                     </span>
-                    {activeTab !== 'All' && (
-                      <button
-                        onClick={() => setActiveTab('All')}
-                        className="text-[11.5px] text-[#71717A] hover:text-[#18181B] hover:underline"
-                      >
-                        (Clear filter)
-                      </button>
-                    )}
                   </div>
 
                   <div className="relative min-w-[240px] sm:w-72">
@@ -619,9 +735,9 @@ export default function DashboardPage() {
                 ) : (
                   <div className="space-y-4">
                     {/* 1. Portal Notifications & System Alerts Group */}
-                    {activeTab !== 'Courses' && filteredNotifications.length > 0 && (
+                    {filteredOverviewNotifications.length > 0 && (
                       <div className="bg-[#EAEAE5] rounded-2xl divide-y divide-black/[0.04] overflow-hidden shadow-refero-sm">
-                        {filteredNotifications.map((notif) => (
+                        {filteredOverviewNotifications.map((notif) => (
                           <NotificationCard key={notif.id} notification={notif} />
                         ))}
                       </div>
@@ -634,18 +750,18 @@ export default function DashboardPage() {
                           <CourseCard
                             key={course.id}
                             course={course}
-                            defaultExpanded={activeTab !== 'Courses' && filteredCourses.length <= 3}
+                            defaultExpanded={filteredCourses.length <= 3}
                           />
                         ))}
                       </div>
-                    ) : filteredNotifications.length === 0 ? (
+                    ) : filteredOverviewNotifications.length === 0 ? (
                       <div className="p-12 text-center bg-[#EAEAE5] rounded-2xl text-[#71717A]">
                         <BookOpen className="w-7 h-7 mx-auto mb-2 text-[#71717A]" />
                         <p className="text-[14px] font-semibold text-[#18181B]">
-                          No updates matching your filter
+                          No updates matching your search
                         </p>
                         <p className="text-[12px] mt-0.5">
-                          Try searching with a different term or select another category from the sidebar.
+                          Try searching with a different term or select a category from the sidebar.
                         </p>
                       </div>
                     ) : null}

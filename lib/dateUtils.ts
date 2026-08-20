@@ -42,7 +42,7 @@ export function parseTimeToDate(timeStr?: string, baseDate: Date = new Date()): 
 
 export function isWithinTimeframe(
   timeStr: string | undefined,
-  timeframe: '24h' | '7d',
+  timeframe: '24h' | '16d' | '7d',
   baseDate: Date = new Date()
 ): boolean {
   if (!timeStr) return false;
@@ -54,7 +54,12 @@ export function isWithinTimeframe(
   // Allow up to 2 hours of clock skew for future timestamps, but reject anything further in future
   if (diffMs < -2 * 60 * 60 * 1000) return false;
 
-  const maxMs = timeframe === '24h' ? 24 * 60 * 60 * 1000 : 7 * 24 * 60 * 60 * 1000;
+  const maxMs =
+    timeframe === '24h'
+      ? 24 * 60 * 60 * 1000
+      : timeframe === '16d'
+      ? 16 * 24 * 60 * 60 * 1000
+      : 7 * 24 * 60 * 60 * 1000;
 
   return diffMs >= -2 * 60 * 60 * 1000 && diffMs <= maxMs;
 }
