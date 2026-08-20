@@ -8,8 +8,6 @@ import {
   GraduationCap,
   Calendar,
   AlertCircle,
-  BarChart3,
-  Clock,
   FileDown,
   BookOpen,
   ExternalLink,
@@ -211,30 +209,8 @@ export function Sidebar({
         {/* Divider */}
         <div className="border-t border-black/[0.06]" />
 
-        {/* Section 3: Tools & Automations */}
+        {/* Section 3: Tools & Export */}
         <div className="space-y-0.5">
-          <button
-            onClick={() => {
-              onToggleDrawer();
-              onCloseMobile?.();
-            }}
-            className="w-full flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-left text-[#71717A] hover:text-[#18181B] hover:bg-black/[0.03] transition-all"
-          >
-            <BarChart3 className="w-4 h-4 text-[#71717A]" />
-            <span>Crawler Activity</span>
-          </button>
-
-          <button
-            onClick={() => {
-              onOpenSchedule();
-              onCloseMobile?.();
-            }}
-            className="w-full flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-left text-[#71717A] hover:text-[#18181B] hover:bg-black/[0.03] transition-all"
-          >
-            <Clock className="w-4 h-4 text-[#71717A]" />
-            <span>Sync Schedule</span>
-          </button>
-
           <a
             href="/api/export-pdf"
             target="_blank"
