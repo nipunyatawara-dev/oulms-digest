@@ -62,16 +62,16 @@ export function ScheduleModal({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/30 backdrop-blur-xs select-none">
-      <div className="relative w-full max-w-md bg-[#F4F4F0] rounded-2xl border border-black/[0.08] shadow-refero-lg overflow-hidden p-6 sm:p-7">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-xs select-none">
+      <div className="relative w-full max-w-md bg-[#fbf8f5] rounded-2xl border border-[#4e080c]/[0.12] shadow-refero-lg overflow-hidden p-6 sm:p-7">
         {/* Header */}
-        <div className="flex items-center justify-between pb-4 border-b border-black/[0.06]">
+        <div className="flex items-center justify-between pb-4 border-b border-[#4e080c]/[0.08]">
           <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-lg bg-[#EAEAE5] text-[#18181B] flex items-center justify-center">
+            <div className="w-8 h-8 rounded-lg bg-[#f2ebe5] text-[#4e080c] flex items-center justify-center">
               <Clock className="w-4 h-4" />
             </div>
             <div>
-              <h2 className="text-[16px] font-semibold text-[#18181B] tracking-tight">
+              <h2 className="text-[16px] font-semibold text-[#4e080c] tracking-tight">
                 Daily Crawl Schedule
               </h2>
               <p className="text-[12px] text-[#71717A]">
@@ -81,7 +81,7 @@ export function ScheduleModal({
           </div>
           <button
             onClick={onClose}
-            className="w-7 h-7 rounded-lg bg-black/[0.04] hover:bg-black/[0.08] flex items-center justify-center text-[#71717A] transition-colors"
+            className="w-7 h-7 rounded-lg bg-[#4e080c]/[0.05] hover:bg-[#4e080c]/[0.1] flex items-center justify-center text-[#71717A] transition-colors"
           >
             <X className="w-4 h-4" />
           </button>
@@ -90,11 +90,11 @@ export function ScheduleModal({
         {/* Form */}
         <form onSubmit={handleFormSubmit} className="mt-5 space-y-3.5">
           {/* Toggle Auto Sync */}
-          <div className="flex items-center justify-between p-3.5 rounded-xl bg-[#EAEAE5] border border-black/[0.04]">
+          <div className="flex items-center justify-between p-3.5 rounded-xl bg-[#f2ebe5] border border-[#4e080c]/[0.05]">
             <div className="flex items-center gap-2.5">
-              <Bell className="w-4 h-4 text-[#18181B]" />
+              <Bell className="w-4 h-4 text-[#4e080c]" />
               <div>
-                <span className="text-[13px] font-semibold text-[#18181B] block">
+                <span className="text-[13px] font-semibold text-[#4e080c] block">
                   Automatic Background Sync
                 </span>
                 <span className="text-[11.5px] text-[#71717A] block">
@@ -109,14 +109,14 @@ export function ScheduleModal({
                 onChange={(e) => setAutoSync(e.target.checked)}
                 className="sr-only peer"
               />
-              <div className="w-10 h-5 bg-black/[0.15] peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-[#18181B]" />
+              <div className="w-10 h-5 bg-[#4e080c]/[0.15] peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-[#4e080c]" />
             </label>
           </div>
 
           {/* Time Picker 1: Morning */}
-          <div className="p-3.5 rounded-xl bg-[#EAEAE5] border border-black/[0.04]">
+          <div className="p-3.5 rounded-xl bg-[#f2ebe5] border border-[#4e080c]/[0.05]">
             <div className="flex items-center justify-between mb-1.5">
-              <label className="text-[12.5px] font-semibold text-[#18181B] flex items-center gap-1.5">
+              <label className="text-[12.5px] font-semibold text-[#4e080c] flex items-center gap-1.5">
                 <span>1. Morning Crawl</span>
               </label>
               <span className="text-[11px] text-[#71717A]">Sri Lanka Time</span>
@@ -126,14 +126,14 @@ export function ScheduleModal({
               value={time1}
               onChange={(e) => setTime1(e.target.value)}
               disabled={!autoSync}
-              className="w-full px-3 py-1.5 rounded-lg bg-white border border-black/[0.08] text-[13.5px] font-medium text-[#18181B] focus:outline-none focus:ring-1 focus:ring-black/20 disabled:opacity-40"
+              className="w-full px-3 py-1.5 rounded-lg bg-white border border-[#4e080c]/[0.12] text-[13.5px] font-medium text-[#4e080c] focus:outline-none focus:ring-1 focus:ring-[#4e080c]/20 disabled:opacity-40"
             />
           </div>
 
           {/* Time Picker 2: Afternoon */}
-          <div className="p-3.5 rounded-xl bg-[#EAEAE5] border border-black/[0.04]">
+          <div className="p-3.5 rounded-xl bg-[#f2ebe5] border border-[#4e080c]/[0.05]">
             <div className="flex items-center justify-between mb-1.5">
-              <label className="text-[12.5px] font-semibold text-[#18181B] flex items-center gap-1.5">
+              <label className="text-[12.5px] font-semibold text-[#4e080c] flex items-center gap-1.5">
                 <span>2. Afternoon Crawl</span>
               </label>
               <span className="text-[11px] text-[#71717A]">Sri Lanka Time</span>
@@ -143,14 +143,14 @@ export function ScheduleModal({
               value={time2}
               onChange={(e) => setTime2(e.target.value)}
               disabled={!autoSync}
-              className="w-full px-3 py-1.5 rounded-lg bg-white border border-black/[0.08] text-[13.5px] font-medium text-[#18181B] focus:outline-none focus:ring-1 focus:ring-black/20 disabled:opacity-40"
+              className="w-full px-3 py-1.5 rounded-lg bg-white border border-[#4e080c]/[0.12] text-[13.5px] font-medium text-[#4e080c] focus:outline-none focus:ring-1 focus:ring-[#4e080c]/20 disabled:opacity-40"
             />
           </div>
 
           {/* Time Picker 3: Night */}
-          <div className="p-3.5 rounded-xl bg-[#EAEAE5] border border-black/[0.04]">
+          <div className="p-3.5 rounded-xl bg-[#f2ebe5] border border-[#4e080c]/[0.05]">
             <div className="flex items-center justify-between mb-1.5">
-              <label className="text-[12.5px] font-semibold text-[#18181B] flex items-center gap-1.5">
+              <label className="text-[12.5px] font-semibold text-[#4e080c] flex items-center gap-1.5">
                 <span>3. Night Crawl</span>
               </label>
               <span className="text-[11px] text-[#71717A]">Sri Lanka Time</span>
@@ -160,7 +160,7 @@ export function ScheduleModal({
               value={time3}
               onChange={(e) => setTime3(e.target.value)}
               disabled={!autoSync}
-              className="w-full px-3 py-1.5 rounded-lg bg-white border border-black/[0.08] text-[13.5px] font-medium text-[#18181B] focus:outline-none focus:ring-1 focus:ring-black/20 disabled:opacity-40"
+              className="w-full px-3 py-1.5 rounded-lg bg-white border border-[#4e080c]/[0.12] text-[13.5px] font-medium text-[#4e080c] focus:outline-none focus:ring-1 focus:ring-[#4e080c]/20 disabled:opacity-40"
             />
           </div>
 
@@ -169,14 +169,14 @@ export function ScheduleModal({
             <button
               type="button"
               onClick={onClose}
-              className="px-3.5 py-1.5 rounded-lg text-[13px] font-medium text-[#71717A] hover:text-[#18181B] hover:bg-black/[0.04] transition-colors"
+              className="px-3.5 py-1.5 rounded-lg text-[13px] font-medium text-[#71717A] hover:text-[#4e080c] hover:bg-[#4e080c]/[0.05] transition-colors"
             >
               Cancel
             </button>
             <button
               type="submit"
               disabled={isSaving}
-              className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-lg text-[13px] font-medium text-white bg-[#18181B] hover:bg-[#27272A] shadow-refero-sm disabled:opacity-60 transition-all"
+              className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-lg text-[13px] font-medium text-white bg-[#4e080c] hover:bg-[#620a0f] shadow-refero-sm disabled:opacity-60 transition-all"
             >
               {savedSuccess ? (
                 <>

@@ -50,7 +50,7 @@ export function SyncProgressDrawer({
       <div className="fixed bottom-6 right-6 z-50 select-none">
         <button
           onClick={() => onMinimize(false)}
-          className="flex items-center gap-3 px-4 py-2.5 bg-[#F4F4F0] rounded-xl shadow-refero-lg border border-black/[0.12] hover:bg-[#EAEAE5] text-[#18181B] transition-all"
+          className="flex items-center gap-3 px-4 py-2.5 bg-[#fbf8f5] rounded-xl shadow-refero-lg border border-[#4e080c]/[0.12] hover:bg-[#f2ebe5] text-[#4e080c] transition-all"
         >
           <div className="relative flex items-center justify-center">
             {isComplete ? (
@@ -58,12 +58,12 @@ export function SyncProgressDrawer({
             ) : isError ? (
               <AlertTriangle className="w-4 h-4 text-rose-600" />
             ) : (
-              <RefreshCw className="w-3.5 h-3.5 animate-spin text-[#18181B]" />
+               <RefreshCw className="w-3.5 h-3.5 animate-spin text-[#4e080c]" />
             )}
           </div>
           <div className="text-left">
             <div className="flex items-center gap-1.5">
-              <span className="text-[12.5px] font-semibold text-[#18181B]">
+              <span className="text-[12.5px] font-semibold text-[#4e080c]">
                 {isComplete ? 'Sync Complete' : isError ? 'Sync Error' : `Syncing (${progress}%)`}
               </span>
             </div>
@@ -87,11 +87,11 @@ export function SyncProgressDrawer({
       />
 
       {/* Drawer panel */}
-      <aside className="relative w-full max-w-md bg-[#F4F4F0] h-full shadow-refero-lg border-l border-black/[0.08] flex flex-col pointer-events-auto z-10 animate-slide-in-right">
+      <aside className="relative w-full max-w-md bg-[#fbf8f5] h-full shadow-refero-lg border-l border-[#4e080c]/[0.12] flex flex-col pointer-events-auto z-10 animate-slide-in-right">
         {/* Drawer Header */}
-        <div className="p-4 sm:p-5 border-b border-black/[0.06] flex items-center justify-between">
+        <div className="p-4 sm:p-5 border-b border-[#4e080c]/[0.08] flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-[#EAEAE5] text-[#18181B] flex items-center justify-center">
+            <div className="w-8 h-8 rounded-lg bg-[#f2ebe5] text-[#4e080c] flex items-center justify-center">
               {isComplete ? (
                 <CheckCircle2 className="w-4 h-4 text-emerald-600" />
               ) : (
@@ -99,7 +99,7 @@ export function SyncProgressDrawer({
               )}
             </div>
             <div>
-              <h2 className="text-[15px] font-semibold text-[#18181B] tracking-tight">
+              <h2 className="text-[15px] font-semibold text-[#4e080c] tracking-tight">
                 Live Sync Activity
               </h2>
               <p className="text-[11.5px] text-[#71717A]">
@@ -112,14 +112,14 @@ export function SyncProgressDrawer({
             <button
               onClick={() => onMinimize(true)}
               title="Minimize to floating pill"
-              className="p-1.5 rounded-lg text-[#71717A] hover:bg-black/[0.04] hover:text-[#18181B] transition-colors"
+              className="p-1.5 rounded-lg text-[#71717A] hover:bg-[#4e080c]/[0.05] hover:text-[#4e080c] transition-colors"
             >
               <Minimize2 className="w-4 h-4" />
             </button>
             <button
               onClick={onClose}
               title="Close drawer"
-              className="p-1.5 rounded-lg text-[#71717A] hover:bg-black/[0.04] hover:text-[#18181B] transition-colors"
+              className="p-1.5 rounded-lg text-[#71717A] hover:bg-[#4e080c]/[0.05] hover:text-[#4e080c] transition-colors"
             >
               <X className="w-4 h-4" />
             </button>
@@ -127,23 +127,23 @@ export function SyncProgressDrawer({
         </div>
 
         {/* Progress Bar & Status */}
-        <div className="px-5 py-3.5 bg-[#EAEAE5] border-b border-black/[0.04]">
+        <div className="px-5 py-3.5 bg-[#f2ebe5] border-b border-[#4e080c]/[0.08]">
           <div className="flex items-center justify-between text-[12px] font-medium mb-1.5">
-            <span className="text-[#18181B] truncate pr-2">
+            <span className="text-[#4e080c] truncate pr-2">
               {isComplete ? 'Finished indexing all 7 courses' : currentMessage || 'Connecting to server...'}
             </span>
-            <span className="text-[#18181B] font-semibold">{progress}%</span>
+            <span className="text-[#4e080c] font-semibold">{progress}%</span>
           </div>
 
           {/* Progress track */}
-          <div className="w-full h-1.5 bg-black/[0.08] rounded-full overflow-hidden">
+          <div className="w-full h-1.5 bg-[#4e080c]/[0.12] rounded-full overflow-hidden">
             <div
               className={`h-full transition-all duration-300 rounded-full ${
                 isComplete
                   ? 'bg-emerald-600'
                   : isError
                   ? 'bg-rose-600'
-                  : 'bg-[#18181B]'
+                  : 'bg-[#4e080c]'
               }`}
               style={{ width: `${progress}%` }}
             />
@@ -159,7 +159,7 @@ export function SyncProgressDrawer({
           {logs.map((item, idx) => (
             <div
               key={item.id || idx}
-              className="p-2.5 rounded-lg bg-[#EAEAE5] border border-black/[0.03] flex items-start gap-2 text-[#18181B]"
+              className="p-2.5 rounded-lg bg-[#f2ebe5] border border-[#4e080c]/[0.05] flex items-start gap-2 text-[#4e080c]"
             >
               <span className="text-[10px] text-[#71717A] shrink-0 font-sans mt-0.5">{item.time}</span>
               <div className="flex-1 break-words">
@@ -180,8 +180,8 @@ export function SyncProgressDrawer({
           ))}
 
           {!isComplete && !isError && (
-            <div className="p-2.5 rounded-lg bg-black/[0.04] border border-black/[0.06] flex items-center gap-2 text-[#18181B] font-sans">
-              <span className="w-2 h-2 rounded-full bg-[#18181B] animate-ping" />
+            <div className="p-2.5 rounded-lg bg-[#4e080c]/[0.05] border border-[#4e080c]/[0.08] flex items-center gap-2 text-[#4e080c] font-sans">
+              <span className="w-2 h-2 rounded-full bg-[#4e080c] animate-ping" />
               <span className="text-[11.5px] font-medium animate-pulse truncate">
                 {currentMessage || 'Working...'}
               </span>
@@ -189,7 +189,7 @@ export function SyncProgressDrawer({
           )}
 
           {isError && (
-            <div className="p-3.5 rounded-xl bg-rose-50 border border-rose-200/60 text-[#18181B] font-sans space-y-2.5">
+            <div className="p-3.5 rounded-xl bg-rose-50 border border-rose-200/60 text-[#4e080c] font-sans space-y-2.5">
               <div className="text-[12.5px] font-semibold text-rose-900">
                 How to run the crawler:
               </div>
@@ -201,7 +201,7 @@ export function SyncProgressDrawer({
                   href="https://github.com/nipunyatawara-dev/oulms-digest/actions/workflows/lms_check.yml"
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#18181B] text-white text-[12px] font-medium rounded-lg shadow-refero-sm hover:bg-[#27272A] transition-all"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#4e080c] text-white text-[12px] font-medium rounded-lg shadow-refero-sm hover:bg-[#620a0f] transition-all"
                 >
                   <span>Run on GitHub Actions</span>
                   <span className="text-[10px]">↗</span>
@@ -214,21 +214,21 @@ export function SyncProgressDrawer({
         </div>
 
         {/* Drawer Footer */}
-        <div className="p-4 border-t border-black/[0.06] bg-[#F4F4F0] flex items-center justify-between">
+        <div className="p-4 border-t border-[#4e080c]/[0.08] bg-[#fbf8f5] flex items-center justify-between">
           <span className="text-[11px] text-[#71717A]">
             {isComplete ? 'Data saved locally' : 'Syncing in background...'}
           </span>
           {isComplete ? (
             <button
               onClick={onClose}
-              className="px-4 py-1.5 text-[12.5px] font-medium text-white bg-[#18181B] rounded-lg shadow-refero-sm hover:bg-[#27272A] transition-all"
+              className="px-4 py-1.5 text-[12.5px] font-medium text-white bg-[#4e080c] rounded-lg shadow-refero-sm hover:bg-[#620a0f] transition-all"
             >
               Done
             </button>
           ) : (
             <button
               onClick={() => onMinimize(true)}
-              className="px-3 py-1.5 text-[12px] font-medium text-[#18181B] bg-white border border-black/[0.08] hover:bg-[#F9F9F7] rounded-lg shadow-refero-sm transition-all"
+              className="px-3 py-1.5 text-[12px] font-medium text-[#4e080c] bg-white border border-[#4e080c]/[0.12] hover:bg-[#f5efe9] rounded-lg shadow-refero-sm transition-all"
             >
               Minimize
             </button>

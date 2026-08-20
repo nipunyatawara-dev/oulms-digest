@@ -13,8 +13,8 @@
   }
 
   body {
-    background-color: #F4F4F0;
-    color: #18181B;
+    background-color: #fbf8f5;
+    color: #4e080c;
     font-family: var(--font-sans);
     letter-spacing: -0.015em;
     -webkit-font-smoothing: antialiased;
@@ -24,19 +24,19 @@
 
 /* Refero-style subtle button interactions */
 .refero-btn-primary {
-  @apply bg-[#18181B] text-white text-[13px] font-medium px-3.5 py-1.5 rounded-lg hover:bg-[#27272A] active:scale-[0.98] transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-refero-sm flex items-center justify-center gap-1.5;
+  @apply bg-[#4e080c] text-white text-[13px] font-medium px-3.5 py-1.5 rounded-lg hover:bg-[#620a0f] active:scale-[0.98] transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-refero-sm flex items-center justify-center gap-1.5;
 }
 
 .refero-btn-secondary {
-  @apply bg-white hover:bg-[#F9F9F7] text-[#18181B] text-[13px] font-medium px-3.5 py-1.5 rounded-lg border border-black/[0.08] active:scale-[0.98] transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-refero-sm flex items-center justify-center gap-1.5;
+  @apply bg-white hover:bg-[#f5efe9] text-[#4e080c] text-[13px] font-medium px-3.5 py-1.5 rounded-lg border border-[#4e080c]/[0.12] active:scale-[0.98] transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-refero-sm flex items-center justify-center gap-1.5;
 }
 
 .refero-btn-ghost {
-  @apply text-[#71717A] hover:text-[#18181B] hover:bg-black/[0.04] text-[13px] font-medium px-3 py-1.5 rounded-lg active:scale-[0.98] transition-all flex items-center gap-1.5;
+  @apply text-[#71717A] hover:text-[#4e080c] hover:bg-[#4e080c]/[0.06] text-[13px] font-medium px-3 py-1.5 rounded-lg active:scale-[0.98] transition-all flex items-center gap-1.5;
 }
 
 .refero-card {
-  @apply bg-[#EAEAE5] rounded-2xl border border-black/[0.03] shadow-refero-sm;
+  @apply bg-[#f2ebe5] rounded-2xl border border-[#4e080c]/[0.05] shadow-refero-sm;
 }
 
 /* Custom subtle scrollbar */
@@ -48,10 +48,10 @@
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.12);
+  background: rgba(78, 8, 12, 0.16);
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 0, 0, 0.22);
+  background: rgba(78, 8, 12, 0.26);
 }
 

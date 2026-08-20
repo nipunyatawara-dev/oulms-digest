@@ -29,11 +29,11 @@ export function NotificationCard({ notification }: NotificationCardProps) {
     : 'https://oulms.ou.ac.lk/message/output/popup/notifications.php';
 
   return (
-    <div className="p-4 sm:p-5 flex items-start sm:items-center justify-between gap-3 sm:gap-4 hover:bg-black/[0.015] transition-colors group">
+    <div className="p-4 sm:p-5 flex items-start sm:items-center justify-between gap-3 sm:gap-4 hover:bg-[#4e080c]/[0.015] transition-colors group">
       <div className="flex items-start sm:items-center gap-3.5 min-w-0 flex-1">
         {/* Left Monochrome Icon */}
-        <div className="w-8 h-8 rounded-lg bg-black/[0.04] text-[#18181B] flex items-center justify-center shrink-0 mt-0.5 sm:mt-0">
-          <IconComponent className="w-4 h-4 text-[#18181B]" />
+        <div className="w-8 h-8 rounded-lg bg-[#4e080c]/[0.05] text-[#4e080c] flex items-center justify-center shrink-0 mt-0.5 sm:mt-0">
+          <IconComponent className="w-4 h-4 text-[#4e080c]" />
         </div>
 
         {/* Center Content */}
@@ -43,14 +43,14 @@ export function NotificationCard({ notification }: NotificationCardProps) {
               href={targetLink}
               target="_blank"
               rel="noreferrer"
-              className="text-[13.5px] sm:text-[14px] font-semibold text-[#18181B] hover:text-black transition-colors leading-snug break-words"
+              className="text-[13.5px] sm:text-[14px] font-semibold text-[#4e080c] hover:text-[#620a0f] transition-colors leading-snug break-words"
             >
               {notification.title}
             </a>
           </div>
 
           <div className="text-[12px] text-[#71717A] flex items-center gap-2 mt-0.5 flex-wrap">
-            <span className="font-medium text-[#18181B]">
+            <span className="font-medium text-[#4e080c]">
               {notification.category}
             </span>
             {(notification.course_code || notification.course_name) && (
@@ -77,7 +77,7 @@ export function NotificationCard({ notification }: NotificationCardProps) {
           href={targetLink}
           target="_blank"
           rel="noreferrer"
-          className="inline-flex items-center gap-1 px-3 py-1.5 text-[12.5px] font-medium text-[#18181B] bg-white hover:bg-[#F9F9F7] border border-black/[0.08] rounded-lg shadow-refero-sm transition-all"
+          className="inline-flex items-center gap-1 px-3 py-1.5 text-[12.5px] font-medium text-[#4e080c] bg-white hover:bg-[#f5efe9] border border-[#4e080c]/[0.12] rounded-lg shadow-refero-sm transition-all"
         >
           <span>Open</span>
           <ExternalLink className="w-3 h-3 text-[#71717A]" />

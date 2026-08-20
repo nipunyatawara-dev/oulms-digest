@@ -27,10 +27,10 @@ export function StatsOverview({
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5 sm:gap-4 select-none">
       {/* Card 1: Grades & Marks (Styled like the Pro plan card) */}
-      <div className="bg-[#EAEAE5] rounded-2xl p-5 sm:p-6 flex flex-col justify-between transition-all hover:bg-[#E6E6E1]">
+      <div className="bg-[#f2ebe5] rounded-2xl p-5 sm:p-6 flex flex-col justify-between transition-all hover:bg-[#e8ddd5]">
         <div>
           <div className="flex items-baseline gap-2 mb-2">
-            <h3 className="text-[14.5px] sm:text-[15px] font-semibold text-[#18181B] tracking-tight">
+            <h3 className="text-[14.5px] sm:text-[15px] font-semibold text-[#4e080c] tracking-tight">
               Grades & Marks
             </h3>
             <span className="text-[13px] text-[#71717A]">
@@ -47,8 +47,8 @@ export function StatsOverview({
             onClick={() => onSelectTab?.(activeTab === 'Grades & Marks' ? 'All' : 'Grades & Marks')}
             className={`w-full sm:w-auto px-4 py-2 rounded-lg text-[13px] font-medium transition-all ${
               activeTab === 'Grades & Marks'
-                ? 'bg-[#18181B] text-white'
-                : 'bg-white hover:bg-[#F9F9F7] text-[#18181B] border border-black/[0.08]'
+                ? 'bg-[#4e080c] text-white'
+                : 'bg-white hover:bg-[#f5efe9] text-[#4e080c] border border-[#4e080c]/[0.12]'
             }`}
           >
             {activeTab === 'Grades & Marks' ? 'Viewing Grades' : 'View Grades'}
@@ -57,10 +57,10 @@ export function StatsOverview({
       </div>
 
       {/* Card 2: Viva & Exam (Styled like the Pro+ plan card) */}
-      <div className="bg-[#EAEAE5] rounded-2xl p-5 sm:p-6 flex flex-col justify-between transition-all hover:bg-[#E6E6E1]">
+      <div className="bg-[#f2ebe5] rounded-2xl p-5 sm:p-6 flex flex-col justify-between transition-all hover:bg-[#e8ddd5]">
         <div>
           <div className="flex items-baseline gap-2 mb-2">
-            <h3 className="text-[14.5px] sm:text-[15px] font-semibold text-[#18181B] tracking-tight">
+            <h3 className="text-[14.5px] sm:text-[15px] font-semibold text-[#4e080c] tracking-tight">
               Viva & Exams
             </h3>
             <span className="text-[13px] text-[#71717A]">
@@ -77,8 +77,8 @@ export function StatsOverview({
             onClick={() => onSelectTab?.(activeTab === 'Viva & Exam' ? 'All' : 'Viva & Exam')}
             className={`w-full sm:w-auto px-4 py-2 rounded-lg text-[13px] font-medium transition-all ${
               activeTab === 'Viva & Exam'
-                ? 'bg-[#18181B] text-white'
-                : 'bg-white hover:bg-[#F9F9F7] text-[#18181B] border border-black/[0.08]'
+                ? 'bg-[#4e080c] text-white'
+                : 'bg-white hover:bg-[#f5efe9] text-[#4e080c] border border-[#4e080c]/[0.12]'
             }`}
           >
             {activeTab === 'Viva & Exam' ? 'Viewing Exams' : 'View Exams'}
@@ -87,10 +87,10 @@ export function StatsOverview({
       </div>
 
       {/* Card 3: Deadlines & Quizzes (Styled like the Ultra plan card) */}
-      <div className="bg-[#EAEAE5] rounded-2xl p-5 sm:p-6 flex flex-col justify-between transition-all hover:bg-[#E6E6E1]">
+      <div className="bg-[#f2ebe5] rounded-2xl p-5 sm:p-6 flex flex-col justify-between transition-all hover:bg-[#e8ddd5]">
         <div>
           <div className="flex items-baseline gap-2 mb-2">
-            <h3 className="text-[14.5px] sm:text-[15px] font-semibold text-[#18181B] tracking-tight">
+            <h3 className="text-[14.5px] sm:text-[15px] font-semibold text-[#4e080c] tracking-tight">
               Deadlines & Quizzes
             </h3>
             <span className="text-[13px] text-[#71717A]">
@@ -107,8 +107,8 @@ export function StatsOverview({
             onClick={() => onSelectTab?.(activeTab === 'Deadlines & Quizzes' ? 'All' : 'Deadlines & Quizzes')}
             className={`w-full sm:w-auto px-4 py-2 rounded-lg text-[13px] font-medium transition-all ${
               activeTab === 'Deadlines & Quizzes'
-                ? 'bg-[#18181B] text-white'
-                : 'bg-white hover:bg-[#F9F9F7] text-[#18181B] border border-black/[0.08]'
+                ? 'bg-[#4e080c] text-white'
+                : 'bg-white hover:bg-[#f5efe9] text-[#4e080c] border border-[#4e080c]/[0.12]'
             }`}
           >
             {activeTab === 'Deadlines & Quizzes' ? 'Viewing Deadlines' : 'View Deadlines'}
