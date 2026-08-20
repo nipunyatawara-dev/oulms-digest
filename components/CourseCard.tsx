@@ -17,18 +17,18 @@ export function CourseCard({ course, defaultExpanded = false }: CourseCardProps)
   const displayedUpdates = showAllUpdates ? updates : updates.slice(0, 5);
 
   return (
-    <div className="hover:bg-black/[0.015] transition-colors">
+    <div className="hover:bg-[#4e080c]/[0.02] transition-colors">
       {/* Course Main Row */}
       <div className="p-4 sm:p-5 flex items-start sm:items-center justify-between gap-3 sm:gap-4 select-none">
         <div className="flex items-start sm:items-center gap-3.5 min-w-0 flex-1">
           {/* Left Course Code Badge */}
-          <div className="px-2.5 py-1 rounded-lg bg-[#18181B] text-white font-mono font-semibold text-[11.5px] tracking-wide shrink-0 shadow-refero-sm mt-0.5 sm:mt-0">
+          <div className="px-2.5 py-1 rounded-lg bg-[#4e080c] text-white font-mono font-semibold text-[11.5px] tracking-wide shrink-0 shadow-refero-sm mt-0.5 sm:mt-0">
             {course.code}
           </div>
 
           {/* Center Info */}
           <div className="min-w-0 flex-1">
-            <h3 className="text-[14px] font-semibold text-[#18181B] truncate">
+            <h3 className="text-[14px] font-semibold text-[#4e080c] truncate">
               {course.title.replace(course.code, '').trim() || course.title}
             </h3>
             <p className="text-[12px] text-[#71717A] flex items-center gap-2 mt-0.5 flex-wrap">
@@ -51,7 +51,7 @@ export function CourseCard({ course, defaultExpanded = false }: CourseCardProps)
             href={course.url}
             target="_blank"
             rel="noreferrer"
-            className="hidden sm:inline-flex items-center gap-1 px-3 py-1.5 text-[12.5px] font-medium text-[#18181B] bg-white hover:bg-[#F9F9F7] border border-black/[0.08] rounded-lg shadow-refero-sm transition-all"
+            className="hidden sm:inline-flex items-center gap-1 px-3 py-1.5 text-[12.5px] font-medium text-[#4e080c] bg-white hover:bg-[#f5efe9] border border-[#4e080c]/[0.12] rounded-lg shadow-refero-sm transition-all"
             title="Open in Moodle"
           >
             <span>Moodle</span>
@@ -61,7 +61,7 @@ export function CourseCard({ course, defaultExpanded = false }: CourseCardProps)
           {updates.length > 0 && (
             <button
               onClick={() => setExpanded(!expanded)}
-              className="inline-flex items-center gap-1 px-3 py-1.5 text-[12.5px] font-medium text-[#18181B] bg-white hover:bg-[#F9F9F7] border border-black/[0.08] rounded-lg shadow-refero-sm transition-all"
+              className="inline-flex items-center gap-1 px-3 py-1.5 text-[12.5px] font-medium text-[#4e080c] bg-white hover:bg-[#f5efe9] border border-[#4e080c]/[0.12] rounded-lg shadow-refero-sm transition-all"
             >
               <span>{expanded ? 'Hide' : `Topics (${updates.length})`}</span>
               <ChevronDown
@@ -76,7 +76,7 @@ export function CourseCard({ course, defaultExpanded = false }: CourseCardProps)
 
       {/* Expanded Discussions Accordion */}
       {expanded && updates.length > 0 && (
-        <div className="border-t border-black/[0.04] bg-[#F7F7F4] px-4 sm:px-6 py-2 divide-y divide-black/[0.04]">
+        <div className="border-t border-[#4e080c]/[0.05] bg-[#fdfaf8] px-4 sm:px-6 py-2 divide-y divide-[#4e080c]/[0.05]">
           {displayedUpdates.map((update) => (
             <div
               key={update.id}
@@ -84,7 +84,7 @@ export function CourseCard({ course, defaultExpanded = false }: CourseCardProps)
             >
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 flex-wrap mb-1">
-                  <span className="text-[11px] font-medium px-2 py-0.5 rounded bg-black/[0.05] text-[#18181B]">
+                  <span className="text-[11px] font-medium px-2 py-0.5 rounded bg-[#4e080c]/[0.06] text-[#4e080c]">
                     {update.category}
                   </span>
                   {update.forum_name && (
@@ -98,7 +98,7 @@ export function CourseCard({ course, defaultExpanded = false }: CourseCardProps)
                   href={update.link}
                   target="_blank"
                   rel="noreferrer"
-                  className="text-[13px] font-medium text-[#18181B] hover:underline leading-snug block break-words"
+                  className="text-[13px] font-medium text-[#4e080c] hover:underline leading-snug block break-words"
                 >
                   {update.topic}
                 </a>
@@ -123,7 +123,7 @@ export function CourseCard({ course, defaultExpanded = false }: CourseCardProps)
                 href={update.link}
                 target="_blank"
                 rel="noreferrer"
-                className="p-1.5 rounded text-[#71717A] hover:text-[#18181B] hover:bg-black/[0.04] transition-colors shrink-0"
+                className="p-1.5 rounded text-[#71717A] hover:text-[#4e080c] hover:bg-[#4e080c]/[0.05] transition-colors shrink-0"
                 title="Open topic in Moodle"
               >
                 <ExternalLink className="w-3.5 h-3.5" />
@@ -135,7 +135,7 @@ export function CourseCard({ course, defaultExpanded = false }: CourseCardProps)
             <div className="py-2.5 text-center">
               <button
                 onClick={() => setShowAllUpdates(!showAllUpdates)}
-                className="text-[12px] font-medium text-[#18181B] hover:underline inline-flex items-center gap-1 py-0.5"
+                className="text-[12px] font-medium text-[#4e080c] hover:underline inline-flex items-center gap-1 py-0.5"
               >
                 {showAllUpdates ? 'Show fewer discussions' : `Show all ${updates.length} discussions`}
               </button>

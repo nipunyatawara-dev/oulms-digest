@@ -55,13 +55,13 @@ export function Sidebar({
         {/* User / Profile Header */}
         <div className="px-2 pt-1 pb-2">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-1.5 font-semibold text-[#18181B] text-[14px]">
+            <div className="flex items-center gap-1.5 font-semibold text-[#4e080c] text-[14px]">
               <span>OUSL Student</span>
               <a
                 href={portalLoginUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="text-[#71717A] hover:text-[#18181B] transition-colors"
+                className="text-[#71717A] hover:text-[#4e080c] transition-colors"
                 title="Open OUSL Moodle Profile"
               >
                 <ExternalLink className="w-3.5 h-3.5" />
@@ -70,7 +70,7 @@ export function Sidebar({
             {isMobileOpen && (
               <button
                 onClick={onCloseMobile}
-                className="md:hidden p-1 text-[#71717A] hover:text-[#18181B] rounded-lg"
+                className="md:hidden p-1 text-[#71717A] hover:text-[#4e080c] rounded-lg"
               >
                 <X className="w-4 h-4" />
               </button>
@@ -91,8 +91,8 @@ export function Sidebar({
             }}
             className={`w-full flex items-center justify-between px-2.5 py-1.5 rounded-lg text-left transition-all ${
               activeView === 'Dashboard' && activeTab === 'All'
-                ? 'bg-[#E3E3DC] text-[#18181B] font-medium'
-                : 'text-[#71717A] hover:text-[#18181B] hover:bg-black/[0.03]'
+                ? 'bg-[#e8ddd5] text-[#4e080c] font-medium'
+                : 'text-[#71717A] hover:text-[#4e080c] hover:bg-[#4e080c]/[0.05]'
             }`}
           >
             <div className="flex items-center gap-2.5">
@@ -111,7 +111,7 @@ export function Sidebar({
               onOpenSchedule();
               onCloseMobile?.();
             }}
-            className="w-full flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-left text-[#71717A] hover:text-[#18181B] hover:bg-black/[0.03] transition-all"
+            className="w-full flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-left text-[#71717A] hover:text-[#4e080c] hover:bg-[#4e080c]/[0.05] transition-all"
           >
             <Settings className="w-4 h-4 text-[#71717A]" />
             <span>Settings</span>
@@ -119,7 +119,7 @@ export function Sidebar({
         </div>
 
         {/* Divider */}
-        <div className="border-t border-black/[0.06]" />
+        <div className="border-t border-[#4e080c]/[0.08]" />
 
         {/* Section 2: Categories */}
         <div className="space-y-0.5">
@@ -131,8 +131,8 @@ export function Sidebar({
             }}
             className={`w-full flex items-center justify-between px-2.5 py-1.5 rounded-lg text-left transition-all ${
               activeView === 'Dashboard' && activeTab === 'Courses'
-                ? 'bg-[#E3E3DC] text-[#18181B] font-medium'
-                : 'text-[#71717A] hover:text-[#18181B] hover:bg-black/[0.03]'
+                ? 'bg-[#e8ddd5] text-[#4e080c] font-medium'
+                : 'text-[#71717A] hover:text-[#4e080c] hover:bg-[#4e080c]/[0.05]'
             }`}
           >
             <div className="flex items-center gap-2.5">
@@ -150,8 +150,8 @@ export function Sidebar({
             }}
             className={`w-full flex items-center justify-between px-2.5 py-1.5 rounded-lg text-left transition-all ${
               activeView === 'Dashboard' && activeTab === 'Grades & Marks'
-                ? 'bg-[#E3E3DC] text-[#18181B] font-medium'
-                : 'text-[#71717A] hover:text-[#18181B] hover:bg-black/[0.03]'
+                ? 'bg-[#e8ddd5] text-[#4e080c] font-medium'
+                : 'text-[#71717A] hover:text-[#4e080c] hover:bg-[#4e080c]/[0.05]'
             }`}
           >
             <div className="flex items-center gap-2.5">
@@ -171,8 +171,8 @@ export function Sidebar({
             }}
             className={`w-full flex items-center justify-between px-2.5 py-1.5 rounded-lg text-left transition-all ${
               activeView === 'Dashboard' && activeTab === 'Viva & Exam'
-                ? 'bg-[#E3E3DC] text-[#18181B] font-medium'
-                : 'text-[#71717A] hover:text-[#18181B] hover:bg-black/[0.03]'
+                ? 'bg-[#e8ddd5] text-[#4e080c] font-medium'
+                : 'text-[#71717A] hover:text-[#4e080c] hover:bg-[#4e080c]/[0.05]'
             }`}
           >
             <div className="flex items-center gap-2.5">
@@ -192,8 +192,8 @@ export function Sidebar({
             }}
             className={`w-full flex items-center justify-between px-2.5 py-1.5 rounded-lg text-left transition-all ${
               activeView === 'Dashboard' && activeTab === 'Deadlines & Quizzes'
-                ? 'bg-[#E3E3DC] text-[#18181B] font-medium'
-                : 'text-[#71717A] hover:text-[#18181B] hover:bg-black/[0.03]'
+                ? 'bg-[#e8ddd5] text-[#4e080c] font-medium'
+                : 'text-[#71717A] hover:text-[#4e080c] hover:bg-[#4e080c]/[0.05]'
             }`}
           >
             <div className="flex items-center gap-2.5">
@@ -207,7 +207,7 @@ export function Sidebar({
         </div>
 
         {/* Divider */}
-        <div className="border-t border-black/[0.06]" />
+        <div className="border-t border-[#4e080c]/[0.08]" />
 
         {/* Section 3: Tools & Export */}
         <div className="space-y-0.5">
@@ -215,7 +215,7 @@ export function Sidebar({
             href="/api/export-pdf"
             target="_blank"
             rel="noreferrer"
-            className="w-full flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-left text-[#71717A] hover:text-[#18181B] hover:bg-black/[0.03] transition-all"
+            className="w-full flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-left text-[#71717A] hover:text-[#4e080c] hover:bg-[#4e080c]/[0.05] transition-all"
           >
             <FileDown className="w-4 h-4 text-[#71717A]" />
             <span>Export Batch PDF</span>
@@ -223,7 +223,7 @@ export function Sidebar({
         </div>
 
         {/* Divider */}
-        <div className="border-t border-black/[0.06]" />
+        <div className="border-t border-[#4e080c]/[0.08]" />
 
         {/* Section 4: Direct Links */}
         <div className="space-y-0.5">
@@ -231,7 +231,7 @@ export function Sidebar({
             href={portalLoginUrl}
             target="_blank"
             rel="noreferrer"
-            className="w-full flex items-center justify-between px-2.5 py-1.5 rounded-lg text-left text-[#71717A] hover:text-[#18181B] hover:bg-black/[0.03] transition-all"
+            className="w-full flex items-center justify-between px-2.5 py-1.5 rounded-lg text-left text-[#71717A] hover:text-[#4e080c] hover:bg-[#4e080c]/[0.05] transition-all"
           >
             <div className="flex items-center gap-2.5">
               <LogIn className="w-4 h-4 text-[#71717A]" />
@@ -244,7 +244,7 @@ export function Sidebar({
             href="https://oulms.ou.ac.lk"
             target="_blank"
             rel="noreferrer"
-            className="w-full flex items-center justify-between px-2.5 py-1.5 rounded-lg text-left text-[#71717A] hover:text-[#18181B] hover:bg-black/[0.03] transition-all"
+            className="w-full flex items-center justify-between px-2.5 py-1.5 rounded-lg text-left text-[#71717A] hover:text-[#4e080c] hover:bg-[#4e080c]/[0.05] transition-all"
           >
             <div className="flex items-center gap-2.5">
               <BookOpen className="w-4 h-4 text-[#71717A]" />
@@ -271,7 +271,7 @@ export function Sidebar({
             onClick={onCloseMobile}
             className="fixed inset-0 bg-black/30 backdrop-blur-xs transition-opacity"
           />
-          <div className="relative w-64 max-w-[80vw] bg-[#F4F4F0] h-full p-5 shadow-refero-lg border-r border-black/[0.08] z-10">
+          <div className="relative w-64 max-w-[80vw] bg-[#fbf8f5] h-full p-5 shadow-refero-lg border-r border-[#4e080c]/[0.12] z-10">
             {sidebarContent}
           </div>
         </div>

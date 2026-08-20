@@ -382,7 +382,7 @@ export default function DashboardPage() {
   const currentCategoryItems = isDedicatedCategoryView ? getFilteredCategoryItems(currentCategoryKey) : [];
 
   return (
-    <div className="min-h-screen bg-[#F4F4F0] text-[#18181B]">
+    <div className="min-h-screen bg-[#fbf8f5] text-[#4e080c]">
       {/* Top Navigation Header */}
       <Header
         isSyncing={isSyncing}
@@ -440,11 +440,11 @@ export default function DashboardPage() {
                   const meta = CATEGORY_META[currentCategoryKey];
                   const Icon = meta.icon;
                   return (
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-[#EAEAE5] p-5 sm:p-6 rounded-2xl shadow-refero-sm">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-[#f2ebe5] p-5 sm:p-6 rounded-2xl shadow-refero-sm">
                       <div>
                         <div className="flex items-center gap-2">
-                          <Icon className="w-5 h-5 text-[#18181B]" />
-                          <h1 className="text-[17px] sm:text-[18px] font-semibold text-[#18181B] tracking-tight">
+                          <Icon className="w-5 h-5 text-[#4e080c]" />
+                          <h1 className="text-[17px] sm:text-[18px] font-semibold text-[#4e080c] tracking-tight">
                             {meta.title}
                           </h1>
                         </div>
@@ -454,21 +454,21 @@ export default function DashboardPage() {
                       </div>
 
                       {/* 24h / 16d Timeframe Toggle */}
-                      <div className="flex items-center p-1 bg-black/[0.05] rounded-xl self-start sm:self-auto select-none">
+                      <div className="flex items-center p-1 bg-[#4e080c]/[0.05] rounded-xl self-start sm:self-auto select-none">
                         <button
                           onClick={() => setTimeframe('24h')}
                           className={`px-3.5 py-1.5 rounded-lg text-[13px] font-medium transition-all flex items-center gap-2 ${
                             timeframe === '24h'
-                              ? 'bg-white text-[#18181B] shadow-refero-sm'
-                              : 'text-[#71717A] hover:text-[#18181B]'
+                              ? 'bg-white text-[#4e080c] shadow-refero-sm'
+                              : 'text-[#71717A] hover:text-[#4e080c]'
                           }`}
                         >
                           <span>Last 24 Hours</span>
                           <span
                             className={`text-[11px] px-1.5 py-0.2 rounded-full font-semibold ${
                               timeframe === '24h'
-                                ? 'bg-[#18181B] text-white'
-                                : 'bg-black/[0.08] text-[#71717A]'
+                                ? 'bg-[#4e080c] text-white'
+                                : 'bg-[#4e080c]/[0.12] text-[#71717A]'
                             }`}
                           >
                             {currentCategoryCounts.count24h}
@@ -479,16 +479,16 @@ export default function DashboardPage() {
                           onClick={() => setTimeframe('16d')}
                           className={`px-3.5 py-1.5 rounded-lg text-[13px] font-medium transition-all flex items-center gap-2 ${
                             timeframe === '16d'
-                              ? 'bg-white text-[#18181B] shadow-refero-sm'
-                              : 'text-[#71717A] hover:text-[#18181B]'
+                              ? 'bg-white text-[#4e080c] shadow-refero-sm'
+                              : 'text-[#71717A] hover:text-[#4e080c]'
                           }`}
                         >
                           <span>Last 16 Days</span>
                           <span
                             className={`text-[11px] px-1.5 py-0.2 rounded-full font-semibold ${
                               timeframe === '16d'
-                                ? 'bg-[#18181B] text-white'
-                                : 'bg-black/[0.08] text-[#71717A]'
+                                ? 'bg-[#4e080c] text-white'
+                                : 'bg-[#4e080c]/[0.12] text-[#71717A]'
                             }`}
                           >
                             {currentCategoryCounts.count16d}
@@ -501,7 +501,7 @@ export default function DashboardPage() {
 
                 {/* Search Bar & Result Summary */}
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 pt-1">
-                  <div className="text-[13px] font-semibold text-[#18181B]">
+                  <div className="text-[13px] font-semibold text-[#4e080c]">
                     Showing {currentCategoryItems.length}{' '}
                     {currentCategoryItems.length === 1 ? 'item' : 'items'} from the{' '}
                     {timeframe === '24h' ? 'last 24 hours' : 'last 16 days'}
@@ -514,29 +514,29 @@ export default function DashboardPage() {
                       placeholder={`Search in ${CATEGORY_META[currentCategoryKey].title}...`}
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
-                      className="w-full pl-9 pr-3.5 py-1.5 text-[13px] bg-white rounded-lg border border-black/[0.08] shadow-refero-sm focus:outline-none focus:ring-1 focus:ring-black/20 transition-all placeholder:text-[#71717A]"
+                      className="w-full pl-9 pr-3.5 py-1.5 text-[13px] bg-white rounded-lg border border-[#4e080c]/[0.12] shadow-refero-sm focus:outline-none focus:ring-1 focus:ring-[#4e080c]/20 transition-all placeholder:text-[#71717A]"
                     />
                   </div>
                 </div>
 
                 {/* Category Items List (No course containers) */}
                 {loading ? (
-                  <div className="p-16 text-center text-[#71717A] flex flex-col items-center justify-center gap-2 bg-[#EAEAE5] rounded-2xl">
-                    <RefreshCw className="w-5 h-5 animate-spin text-[#18181B]" />
-                    <p className="text-[13.5px] font-medium text-[#18181B]">
+                  <div className="p-16 text-center text-[#71717A] flex flex-col items-center justify-center gap-2 bg-[#f2ebe5] rounded-2xl">
+                    <RefreshCw className="w-5 h-5 animate-spin text-[#4e080c]" />
+                    <p className="text-[13.5px] font-medium text-[#4e080c]">
                       Loading updates...
                     </p>
                   </div>
                 ) : currentCategoryItems.length > 0 ? (
-                  <div className="bg-[#EAEAE5] rounded-2xl divide-y divide-black/[0.04] overflow-hidden shadow-refero-sm">
+                  <div className="bg-[#f2ebe5] rounded-2xl divide-y divide-[#4e080c]/[0.05] overflow-hidden shadow-refero-sm">
                     {currentCategoryItems.map((item) => (
                       <div
                         key={item.id}
-                        className="p-4 sm:p-5 flex items-start sm:items-center justify-between gap-3 sm:gap-4 hover:bg-black/[0.015] transition-colors group"
+                        className="p-4 sm:p-5 flex items-start sm:items-center justify-between gap-3 sm:gap-4 hover:bg-[#4e080c]/[0.015] transition-colors group"
                       >
                         <div className="flex items-start sm:items-center gap-3.5 min-w-0 flex-1">
                           {/* Course Code Badge */}
-                          <div className="px-2.5 py-1 rounded-lg bg-[#18181B] text-white font-mono font-semibold text-[11.5px] tracking-wide shrink-0 shadow-refero-sm mt-0.5 sm:mt-0">
+                          <div className="px-2.5 py-1 rounded-lg bg-[#4e080c] text-white font-mono font-semibold text-[11.5px] tracking-wide shrink-0 shadow-refero-sm mt-0.5 sm:mt-0">
                             {item.courseCode}
                           </div>
 
@@ -547,7 +547,7 @@ export default function DashboardPage() {
                                 href={item.link}
                                 target="_blank"
                                 rel="noreferrer"
-                                className="text-[13.5px] sm:text-[14px] font-semibold text-[#18181B] hover:text-black hover:underline transition-colors leading-snug break-words"
+                                className="text-[13.5px] sm:text-[14px] font-semibold text-[#4e080c] hover:text-[#620a0f] hover:underline transition-colors leading-snug break-words"
                               >
                                 {item.title}
                               </a>
@@ -559,7 +559,7 @@ export default function DashboardPage() {
                             </div>
 
                             <div className="text-[12px] text-[#71717A] flex items-center gap-2 mt-1 flex-wrap">
-                              <span className="font-medium text-[#18181B] truncate max-w-[200px] sm:max-w-sm">
+                              <span className="font-medium text-[#4e080c] truncate max-w-[200px] sm:max-w-sm">
                                 {item.courseName}
                               </span>
                               {item.forumName && (
@@ -596,7 +596,7 @@ export default function DashboardPage() {
                             href={item.link}
                             target="_blank"
                             rel="noreferrer"
-                            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-[12.5px] font-medium text-[#18181B] bg-white hover:bg-[#F9F9F7] border border-black/[0.08] rounded-lg shadow-refero-sm transition-all"
+                            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-[12.5px] font-medium text-[#4e080c] bg-white hover:bg-[#f5efe9] border border-[#4e080c]/[0.12] rounded-lg shadow-refero-sm transition-all"
                           >
                             <span>Open</span>
                             <ExternalLink className="w-3 h-3 text-[#71717A]" />
@@ -607,11 +607,11 @@ export default function DashboardPage() {
                   </div>
                 ) : (
                   /* Empty State */
-                  <div className="p-16 text-center bg-[#EAEAE5] rounded-2xl text-[#71717A] space-y-2">
+                  <div className="p-16 text-center bg-[#f2ebe5] rounded-2xl text-[#71717A] space-y-2">
                     {React.createElement(CATEGORY_META[currentCategoryKey].icon, {
                       className: 'w-8 h-8 mx-auto text-[#71717A]',
                     })}
-                    <h3 className="text-[15px] font-semibold text-[#18181B]">
+                    <h3 className="text-[15px] font-semibold text-[#4e080c]">
                       No {CATEGORY_META[currentCategoryKey].title.toLowerCase()} in the{' '}
                       {timeframe === '24h' ? 'last 24 hours' : 'last 16 days'}
                     </h3>
@@ -624,7 +624,7 @@ export default function DashboardPage() {
                       <div className="pt-2">
                         <button
                           onClick={() => setTimeframe('16d')}
-                          className="px-4 py-1.5 bg-white text-[#18181B] border border-black/[0.08] rounded-lg text-[12.5px] font-medium hover:bg-[#F9F9F7] shadow-refero-sm transition-all"
+                          className="px-4 py-1.5 bg-white text-[#4e080c] border border-[#4e080c]/[0.12] rounded-lg text-[12.5px] font-medium hover:bg-[#f5efe9] shadow-refero-sm transition-all"
                         >
                           View Last 16 Days ({currentCategoryCounts.count16d})
                         </button>
@@ -638,11 +638,11 @@ export default function DashboardPage() {
               /* ENROLLED COURSES VIEW (Dedicated Enrolled Courses List)                   */
               /* ========================================================================= */
               <div className="space-y-5">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-[#EAEAE5] p-5 sm:p-6 rounded-2xl shadow-refero-sm">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-[#f2ebe5] p-5 sm:p-6 rounded-2xl shadow-refero-sm">
                   <div>
                     <div className="flex items-center gap-2">
-                      <Layers className="w-5 h-5 text-[#18181B]" />
-                      <h1 className="text-[17px] sm:text-[18px] font-semibold text-[#18181B] tracking-tight">
+                      <Layers className="w-5 h-5 text-[#4e080c]" />
+                      <h1 className="text-[17px] sm:text-[18px] font-semibold text-[#4e080c] tracking-tight">
                         Enrolled Courses
                       </h1>
                     </div>
@@ -650,14 +650,14 @@ export default function DashboardPage() {
                       Your 7 registered active semester courses on OUSL Moodle.
                     </p>
                   </div>
-                  <div className="text-[12.5px] font-medium px-3 py-1 bg-white rounded-lg border border-black/[0.08] shadow-refero-sm text-[#18181B] self-start sm:self-auto">
+                  <div className="text-[12.5px] font-medium px-3 py-1 bg-white rounded-lg border border-[#4e080c]/[0.12] shadow-refero-sm text-[#4e080c] self-start sm:self-auto">
                     {allCourses.length} Registered Courses
                   </div>
                 </div>
 
                 {/* Search Bar */}
-                <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 pt-1">
-                  <span className="text-[13px] font-semibold text-[#18181B]">
+                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 pt-1">
+                  <span className="text-[13px] font-semibold text-[#4e080c]">
                     Showing {filteredCourses.length} {filteredCourses.length === 1 ? 'course' : 'courses'}
                   </span>
 
@@ -668,29 +668,29 @@ export default function DashboardPage() {
                       placeholder="Search courses..."
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
-                      className="w-full pl-9 pr-3.5 py-1.5 text-[13px] bg-white rounded-lg border border-black/[0.08] shadow-refero-sm focus:outline-none focus:ring-1 focus:ring-black/20 transition-all placeholder:text-[#71717A]"
+                      className="w-full pl-9 pr-3.5 py-1.5 text-[13px] bg-white rounded-lg border border-[#4e080c]/[0.12] shadow-refero-sm focus:outline-none focus:ring-1 focus:ring-[#4e080c]/20 transition-all placeholder:text-[#71717A]"
                     />
                   </div>
                 </div>
 
                 {/* Enrolled Courses List */}
                 {loading ? (
-                  <div className="p-16 text-center text-[#71717A] flex flex-col items-center justify-center gap-2 bg-[#EAEAE5] rounded-2xl">
-                    <RefreshCw className="w-5 h-5 animate-spin text-[#18181B]" />
-                    <p className="text-[13.5px] font-medium text-[#18181B]">
+                  <div className="p-16 text-center text-[#71717A] flex flex-col items-center justify-center gap-2 bg-[#f2ebe5] rounded-2xl">
+                    <RefreshCw className="w-5 h-5 animate-spin text-[#4e080c]" />
+                    <p className="text-[13.5px] font-medium text-[#4e080c]">
                       Loading courses...
                     </p>
                   </div>
                 ) : filteredCourses.length > 0 ? (
-                  <div className="bg-[#EAEAE5] rounded-2xl divide-y divide-black/[0.04] overflow-hidden shadow-refero-sm">
+                  <div className="bg-[#f2ebe5] rounded-2xl divide-y divide-[#4e080c]/[0.05] overflow-hidden shadow-refero-sm">
                     {filteredCourses.map((course) => (
                       <CourseCard key={course.id} course={course} defaultExpanded={false} />
                     ))}
                   </div>
                 ) : (
-                  <div className="p-12 text-center bg-[#EAEAE5] rounded-2xl text-[#71717A]">
+                  <div className="p-12 text-center bg-[#f2ebe5] rounded-2xl text-[#71717A]">
                     <BookOpen className="w-7 h-7 mx-auto mb-2 text-[#71717A]" />
-                    <p className="text-[14px] font-semibold text-[#18181B]">
+                    <p className="text-[14px] font-semibold text-[#4e080c]">
                       No courses found
                     </p>
                     <p className="text-[12px] mt-0.5">
@@ -707,7 +707,7 @@ export default function DashboardPage() {
                 {/* Search Bar & Active Filter Label */}
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 pt-1">
                   <div className="flex items-center gap-2">
-                    <span className="text-[13px] font-semibold text-[#18181B]">
+                    <span className="text-[13px] font-semibold text-[#4e080c]">
                       All Academic Feeds
                     </span>
                   </div>
@@ -719,16 +719,16 @@ export default function DashboardPage() {
                       placeholder="Search announcements, CATs, vivas..."
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
-                      className="w-full pl-9 pr-3.5 py-1.5 text-[13px] bg-white rounded-lg border border-black/[0.08] shadow-refero-sm focus:outline-none focus:ring-1 focus:ring-black/20 transition-all placeholder:text-[#71717A]"
+                      className="w-full pl-9 pr-3.5 py-1.5 text-[13px] bg-white rounded-lg border border-[#4e080c]/[0.12] shadow-refero-sm focus:outline-none focus:ring-1 focus:ring-[#4e080c]/20 transition-all placeholder:text-[#71717A]"
                     />
                   </div>
                 </div>
 
                 {/* Content Feed Section */}
                 {loading ? (
-                  <div className="p-16 text-center text-[#71717A] flex flex-col items-center justify-center gap-2 bg-[#EAEAE5] rounded-2xl">
-                    <RefreshCw className="w-5 h-5 animate-spin text-[#18181B]" />
-                    <p className="text-[13.5px] font-medium text-[#18181B]">
+                  <div className="p-16 text-center text-[#71717A] flex flex-col items-center justify-center gap-2 bg-[#f2ebe5] rounded-2xl">
+                    <RefreshCw className="w-5 h-5 animate-spin text-[#4e080c]" />
+                    <p className="text-[13.5px] font-medium text-[#4e080c]">
                       Loading academic updates...
                     </p>
                   </div>
@@ -736,7 +736,7 @@ export default function DashboardPage() {
                   <div className="space-y-4">
                     {/* 1. Portal Notifications & System Alerts Group */}
                     {filteredOverviewNotifications.length > 0 && (
-                      <div className="bg-[#EAEAE5] rounded-2xl divide-y divide-black/[0.04] overflow-hidden shadow-refero-sm">
+                      <div className="bg-[#f2ebe5] rounded-2xl divide-y divide-[#4e080c]/[0.05] overflow-hidden shadow-refero-sm">
                         {filteredOverviewNotifications.map((notif) => (
                           <NotificationCard key={notif.id} notification={notif} />
                         ))}
@@ -745,7 +745,7 @@ export default function DashboardPage() {
 
                     {/* 2. Course Announcements & Discussions Group */}
                     {filteredCourses.length > 0 ? (
-                      <div className="bg-[#EAEAE5] rounded-2xl divide-y divide-black/[0.04] overflow-hidden shadow-refero-sm">
+                      <div className="bg-[#f2ebe5] rounded-2xl divide-y divide-[#4e080c]/[0.05] overflow-hidden shadow-refero-sm">
                         {filteredCourses.map((course) => (
                           <CourseCard
                             key={course.id}
@@ -755,9 +755,9 @@ export default function DashboardPage() {
                         ))}
                       </div>
                     ) : filteredOverviewNotifications.length === 0 ? (
-                      <div className="p-12 text-center bg-[#EAEAE5] rounded-2xl text-[#71717A]">
+                      <div className="p-12 text-center bg-[#f2ebe5] rounded-2xl text-[#71717A]">
                         <BookOpen className="w-7 h-7 mx-auto mb-2 text-[#71717A]" />
-                        <p className="text-[14px] font-semibold text-[#18181B]">
+                        <p className="text-[14px] font-semibold text-[#4e080c]">
                           No updates matching your search
                         </p>
                         <p className="text-[12px] mt-0.5">

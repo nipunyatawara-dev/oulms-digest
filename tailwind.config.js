@@ -9,17 +9,17 @@ module.exports = {
     extend: {
       colors: {
         refero: {
-          canvas: "#F4F4F0",
-          card: "#EAEAE5",
-          "card-hover": "#E3E3DC",
-          "card-light": "#F7F7F4",
+          canvas: "#fbf8f5",
+          card: "#f2ebe5",
+          "card-hover": "#e8ddd5",
+          "card-light": "#fdfaf8",
           "card-white": "#FFFFFF",
-          border: "rgba(0, 0, 0, 0.06)",
-          "border-strong": "rgba(0, 0, 0, 0.10)",
-          dark: "#18181B",
+          border: "rgba(78, 8, 12, 0.08)",
+          "border-strong": "rgba(78, 8, 12, 0.12)",
+          dark: "#4e080c",
           muted: "#71717A",
           subtle: "#8E8E93",
-          active: "#E0E0D8",
+          active: "#e8ddd5",
         },
       },
       fontFamily: {
@@ -40,9 +40,9 @@ module.exports = {
         tight: "-0.015em",
       },
       boxShadow: {
-        'refero-sm': '0 1px 2px rgba(0, 0, 0, 0.03)',
-        'refero': '0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02)',
-        'refero-lg': '0 8px 24px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04)',
+        'refero-sm': '0 1px 2px rgba(78, 8, 12, 0.04)',
+        'refero': '0 2px 8px rgba(78, 8, 12, 0.05), 0 1px 2px rgba(78, 8, 12, 0.03)',
+        'refero-lg': '0 8px 24px rgba(78, 8, 12, 0.1), 0 2px 6px rgba(78, 8, 12, 0.05)',
       },
       keyframes: {
         'slide-in-right': {
