@@ -110,28 +110,6 @@ export function Sidebar({
 
           <button
             onClick={() => {
-              onSelectView?.('Announcements');
-              onCloseMobile?.();
-            }}
-            className={`w-full flex items-center justify-between px-2.5 py-1.5 rounded-lg text-left transition-all ${
-              activeView === 'Announcements'
-                ? 'bg-[#E3E3DC] text-[#18181B] font-medium'
-                : 'text-[#71717A] hover:text-[#18181B] hover:bg-black/[0.03]'
-            }`}
-          >
-            <div className="flex items-center gap-2.5">
-              <AlertCircle className="w-4 h-4 text-[#71717A]" />
-              <span>Announcements</span>
-            </div>
-            {announcementsCount > 0 && (
-              <span className="text-[11px] text-[#71717A] font-normal">
-                {announcementsCount}
-              </span>
-            )}
-          </button>
-
-          <button
-            onClick={() => {
               onOpenSchedule();
               onCloseMobile?.();
             }}
