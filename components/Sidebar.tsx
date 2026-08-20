@@ -32,6 +32,9 @@ interface SidebarProps {
   onToggleDrawer: () => void;
   isMobileOpen?: boolean;
   onCloseMobile?: () => void;
+  activeView?: 'Dashboard' | 'Announcements';
+  onSelectView?: (view: 'Dashboard' | 'Announcements') => void;
+  announcementsCount?: number;
 }
 
 export function Sidebar({
@@ -42,6 +45,9 @@ export function Sidebar({
   onToggleDrawer,
   isMobileOpen,
   onCloseMobile,
+  activeView = 'Dashboard',
+  onSelectView,
+  announcementsCount = 0,
 }: SidebarProps) {
   const portalLoginUrl = 'https://oulms.ou.ac.lk/login/index.php';
 
@@ -81,11 +87,12 @@ export function Sidebar({
         <div className="space-y-0.5">
           <button
             onClick={() => {
+              onSelectView?.('Dashboard');
               onSelectTab('All');
               onCloseMobile?.();
             }}
             className={`w-full flex items-center justify-between px-2.5 py-1.5 rounded-lg text-left transition-all ${
-              activeTab === 'All'
+              activeView === 'Dashboard' && activeTab === 'All'
                 ? 'bg-[#E3E3DC] text-[#18181B] font-medium'
                 : 'text-[#71717A] hover:text-[#18181B] hover:bg-black/[0.03]'
             }`}
@@ -97,6 +104,28 @@ export function Sidebar({
             {counts.all > 0 && (
               <span className="text-[11px] text-[#71717A] font-normal">
                 {counts.all}
+              </span>
+            )}
+          </button>
+
+          <button
+            onClick={() => {
+              onSelectView?.('Announcements');
+              onCloseMobile?.();
+            }}
+            className={`w-full flex items-center justify-between px-2.5 py-1.5 rounded-lg text-left transition-all ${
+              activeView === 'Announcements'
+                ? 'bg-[#E3E3DC] text-[#18181B] font-medium'
+                : 'text-[#71717A] hover:text-[#18181B] hover:bg-black/[0.03]'
+            }`}
+          >
+            <div className="flex items-center gap-2.5">
+              <AlertCircle className="w-4 h-4 text-[#71717A]" />
+              <span>Announcements</span>
+            </div>
+            {announcementsCount > 0 && (
+              <span className="text-[11px] text-[#71717A] font-normal">
+                {announcementsCount}
               </span>
             )}
           </button>
@@ -120,11 +149,12 @@ export function Sidebar({
         <div className="space-y-0.5">
           <button
             onClick={() => {
+              onSelectView?.('Dashboard');
               onSelectTab('Courses');
               onCloseMobile?.();
             }}
             className={`w-full flex items-center justify-between px-2.5 py-1.5 rounded-lg text-left transition-all ${
-              activeTab === 'Courses'
+              activeView === 'Dashboard' && activeTab === 'Courses'
                 ? 'bg-[#E3E3DC] text-[#18181B] font-medium'
                 : 'text-[#71717A] hover:text-[#18181B] hover:bg-black/[0.03]'
             }`}
@@ -138,11 +168,12 @@ export function Sidebar({
 
           <button
             onClick={() => {
+              onSelectView?.('Dashboard');
               onSelectTab('Grades & Marks');
               onCloseMobile?.();
             }}
             className={`w-full flex items-center justify-between px-2.5 py-1.5 rounded-lg text-left transition-all ${
-              activeTab === 'Grades & Marks'
+              activeView === 'Dashboard' && activeTab === 'Grades & Marks'
                 ? 'bg-[#E3E3DC] text-[#18181B] font-medium'
                 : 'text-[#71717A] hover:text-[#18181B] hover:bg-black/[0.03]'
             }`}
@@ -158,11 +189,12 @@ export function Sidebar({
 
           <button
             onClick={() => {
+              onSelectView?.('Dashboard');
               onSelectTab('Viva & Exam');
               onCloseMobile?.();
             }}
             className={`w-full flex items-center justify-between px-2.5 py-1.5 rounded-lg text-left transition-all ${
-              activeTab === 'Viva & Exam'
+              activeView === 'Dashboard' && activeTab === 'Viva & Exam'
                 ? 'bg-[#E3E3DC] text-[#18181B] font-medium'
                 : 'text-[#71717A] hover:text-[#18181B] hover:bg-black/[0.03]'
             }`}
@@ -178,11 +210,12 @@ export function Sidebar({
 
           <button
             onClick={() => {
+              onSelectView?.('Dashboard');
               onSelectTab('Deadlines & Quizzes');
               onCloseMobile?.();
             }}
             className={`w-full flex items-center justify-between px-2.5 py-1.5 rounded-lg text-left transition-all ${
-              activeTab === 'Deadlines & Quizzes'
+              activeView === 'Dashboard' && activeTab === 'Deadlines & Quizzes'
                 ? 'bg-[#E3E3DC] text-[#18181B] font-medium'
                 : 'text-[#71717A] hover:text-[#18181B] hover:bg-black/[0.03]'
             }`}

@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { RefreshCw, Activity, Menu } from 'lucide-react';
+import { RefreshCw, Clock, Activity, Menu, Bell, LayoutDashboard } from 'lucide-react';
 import { UserSettings } from '@/lib/types';
 
 interface HeaderProps {
@@ -13,8 +13,9 @@ interface HeaderProps {
   hasLogs: boolean;
   settings: UserSettings | null;
   lastSyncedAt?: string;
-  activeView?: string;
-  onSelectView?: (view: string) => void;
+  activeView?: 'Dashboard' | 'Announcements';
+  onSelectView?: (view: 'Dashboard' | 'Announcements') => void;
+  announcementsCount?: number;
 }
 
 export function Header({
@@ -28,6 +29,7 @@ export function Header({
   lastSyncedAt,
   activeView = 'Dashboard',
   onSelectView,
+  announcementsCount = 0,
 }: HeaderProps) {
   const formatTimeAgo = (timestamp?: string) => {
     if (!timestamp) return 'Never synced';
@@ -42,18 +44,18 @@ export function Header({
   };
 
   return (
-    <header className="w-full bg-[#F4F4F0] px-6 sm:px-10 py-5 flex items-center justify-between transition-all select-none">
-      <div className="flex items-center gap-3">
-        {/* Mobile Sidebar Toggle */}
+    <header className="w-full bg-[#F4F4F0] px-4 sm:px-8 lg:px-10 py-4 sm:py-5 flex items-center justify-between transition-all select-none border-b border-black/[0.04]">
+      {/* Left: Brand & Mobile Menu */}
+      <div className="flex items-center gap-3 sm:gap-6">
         <button
           onClick={onToggleMobileSidebar}
-          className="md:hidden p-1.5 -ml-2 text-[#71717A] hover:text-[#18181B] rounded-lg hover:bg-black/[0.04] transition-colors"
+          className="md:hidden p-1.5 -ml-1.5 text-[#71717A] hover:text-[#18181B] rounded-lg hover:bg-black/[0.04] transition-colors"
           title="Toggle Navigation Menu"
         >
           <Menu className="w-5 h-5" />
         </button>
 
-        {/* Minimalist Geometric Logo (Like in the reference image) */}
+        {/* Minimalist Geometric Logo */}
         <div className="flex items-center gap-2.5">
           <svg
             className="w-6 h-6 text-[#18181B]"
@@ -66,51 +68,73 @@ export function Header({
             OUSL Digest
           </span>
         </div>
-      </div>
 
-      {/* Right Navigation & Profile Section */}
-      <div className="flex items-center gap-6 text-[13.5px]">
-        <nav className="flex items-center gap-5">
-          <button
-            onClick={() => onSelectView?.('Feeds')}
-            className={`transition-colors ${
-              activeView === 'Feeds'
-                ? 'font-semibold text-[#18181B]'
-                : 'text-[#71717A] hover:text-[#18181B]'
-            }`}
-          >
-            Announcements
-          </button>
+        {/* Center / Left Navigation Tabs */}
+        <nav className="flex items-center gap-1 bg-black/[0.04] p-1 rounded-xl">
           <button
             onClick={() => onSelectView?.('Dashboard')}
-            className={`transition-colors ${
+            className={`px-3 py-1 rounded-lg text-[13px] font-medium transition-all flex items-center gap-1.5 ${
               activeView === 'Dashboard'
-                ? 'font-semibold text-[#18181B]'
-                : 'text-[#71717A] hover:text-[#18181B]'
+                ? 'bg-white text-[#18181B] shadow-refero-sm'
+                : 'text-[#71717A] hover:text-[#18181B] hover:bg-black/[0.02]'
             }`}
           >
-            Dashboard
+            <LayoutDashboard className="w-3.5 h-3.5" />
+            <span>Dashboard</span>
           </button>
-          {hasLogs && (
-            <button
-              onClick={onToggleDrawer}
-              className="text-[#71717A] hover:text-[#18181B] transition-colors hidden sm:inline-flex items-center gap-1.5"
-            >
-              <Activity className="w-3.5 h-3.5" />
-              <span>Crawler Logs</span>
-            </button>
-          )}
+          <button
+            onClick={() => onSelectView?.('Announcements')}
+            className={`px-3 py-1 rounded-lg text-[13px] font-medium transition-all flex items-center gap-1.5 ${
+              activeView === 'Announcements'
+                ? 'bg-white text-[#18181B] shadow-refero-sm'
+                : 'text-[#71717A] hover:text-[#18181B] hover:bg-black/[0.02]'
+            }`}
+          >
+            <Bell className="w-3.5 h-3.5" />
+            <span>Announcements</span>
+            {announcementsCount > 0 && (
+              <span className="text-[10.5px] px-1.5 py-0.2 rounded-full bg-[#18181B] text-white font-semibold">
+                {announcementsCount}
+              </span>
+            )}
+          </button>
         </nav>
+      </div>
 
-        {/* User / Student Avatar Pill */}
-        <div
-          title={`Last synced: ${formatTimeAgo(lastSyncedAt)}`}
-          className="w-7 h-7 rounded-full bg-white border border-black/[0.12] text-[#18181B] text-[11px] font-semibold flex items-center justify-center cursor-default shadow-refero-sm"
+      {/* Right Action Buttons */}
+      <div className="flex items-center gap-2.5 text-[13px]">
+        {hasLogs && (
+          <button
+            onClick={onToggleDrawer}
+            className="text-[#71717A] hover:text-[#18181B] transition-colors hidden md:inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg hover:bg-black/[0.03]"
+            title="Open Crawler Activity Logs"
+          >
+            <Activity className="w-3.5 h-3.5" />
+            <span className="text-[12.5px]">Logs</span>
+          </button>
+        )}
+
+        {/* Schedule Button */}
+        <button
+          onClick={onOpenSchedule}
+          className="inline-flex items-center gap-1.5 px-3 py-1.5 text-[13px] font-medium text-[#18181B] bg-white hover:bg-[#F9F9F7] border border-black/[0.08] rounded-lg shadow-refero-sm active:scale-[0.98] transition-all"
         >
-          OU
-        </div>
+          <Clock className="w-3.5 h-3.5 text-[#71717A]" />
+          <span className="hidden sm:inline">Schedule</span>
+        </button>
+
+        {/* Sync Now Button */}
+        <button
+          onClick={onSync}
+          disabled={isSyncing}
+          className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-[13px] font-medium text-white bg-[#18181B] hover:bg-[#27272A] rounded-lg shadow-refero-sm active:scale-[0.98] transition-all disabled:opacity-80"
+        >
+          <RefreshCw className={`w-3.5 h-3.5 ${isSyncing ? 'animate-spin' : ''}`} />
+          <span>{isSyncing ? 'Syncing...' : 'Sync Now'}</span>
+        </button>
       </div>
     </header>
   );
 }
+
 
