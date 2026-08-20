@@ -7,6 +7,11 @@
     --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Segoe UI", Roboto, sans-serif;
   }
 
+  html {
+    scrollbar-gutter: stable;
+    overflow-y: scroll;
+  }
+
   body {
     background-color: #F4F4F0;
     color: #18181B;
