@@ -58,7 +58,7 @@ export async function GET(req: NextRequest) {
             sendEvent({
               type: 'progress',
               progress: 75,
-              message: 'GitHub Actions crawler started! Indexing all 19 courses in the cloud...',
+              message: 'GitHub Actions crawler started! Indexing your 7 enrolled courses in the cloud...',
             });
 
             // Wait a brief moment to confirm dispatch

@@ -137,7 +137,7 @@ export default function DashboardPage() {
               {
                 id: `log-${Date.now()}`,
                 time: timeStr,
-                message: 'All 19 courses crawled and saved to local store',
+                message: 'All 7 enrolled courses crawled and saved to store',
                 progress: 100,
                 type: 'done',
               },

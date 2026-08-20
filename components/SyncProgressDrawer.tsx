@@ -130,7 +130,7 @@ export function SyncProgressDrawer({
         <div className="px-5 py-3.5 bg-[#EAEAE5] border-b border-black/[0.04]">
           <div className="flex items-center justify-between text-[12px] font-medium mb-1.5">
             <span className="text-[#18181B] truncate pr-2">
-              {isComplete ? 'Finished indexing 19 courses' : currentMessage || 'Connecting to server...'}
+              {isComplete ? 'Finished indexing all 7 courses' : currentMessage || 'Connecting to server...'}
             </span>
             <span className="text-[#18181B] font-semibold">{progress}%</span>
           </div>
