@@ -13,11 +13,12 @@ export async function GET(req: NextRequest) {
   const scriptPath = path.join(process.cwd(), 'crawler.py');
   const venvPython = path.join(process.cwd(), '.venv', 'bin', 'python');
   
-  const githubToken = process.env.GITHUB_TOKEN || process.env.GH_TOKEN;
-  const githubRepo = process.env.GITHUB_REPOSITORY || DEFAULT_REPO;
+  const settings = getSettings();
+  const githubToken = req.nextUrl.searchParams.get('token') || process.env.GITHUB_TOKEN || process.env.GH_TOKEN || settings?.github_token;
+  const githubRepo = req.nextUrl.searchParams.get('repo') || process.env.GITHUB_REPOSITORY || settings?.github_repo || DEFAULT_REPO;
 
   // Determine if we should attempt local Python execution
-  const hasLocalPython = fs.existsSync(venvPython) || (!process.env.VERCEL && !process.env.AWS_LAMBDA_FUNCTION_NAME);
+  const hasLocalPython = fs.existsSync(venvPython) || (!process.env.VERCEL && !process.env.AWS_LAMBDA_FUNCTION_NAME && fs.existsSync(scriptPath));
 
   const stream = new ReadableStream({
     async start(controller) {

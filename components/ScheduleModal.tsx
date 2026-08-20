@@ -23,6 +23,7 @@ export function ScheduleModal({
   const [time1, setTime1] = useState('07:00');
   const [time2, setTime2] = useState('16:00');
   const [time3, setTime3] = useState('22:00');
+  const [githubToken, setGithubToken] = useState('');
   const [autoSync, setAutoSync] = useState(true);
   const [isSaving, setIsSaving] = useState(false);
   const [savedSuccess, setSavedSuccess] = useState(false);
@@ -32,6 +33,7 @@ export function ScheduleModal({
       setTime1(activeSettings.time_1 || activeSettings.morning_time || '07:00');
       setTime2(activeSettings.time_2 || '16:00');
       setTime3(activeSettings.time_3 || activeSettings.evening_time || '22:00');
+      setGithubToken(activeSettings.github_token || '');
       setAutoSync(activeSettings.auto_sync_enabled !== false);
     }
   }, [activeSettings, isOpen]);
@@ -46,6 +48,7 @@ export function ScheduleModal({
         time_1: time1,
         time_2: time2,
         time_3: time3,
+        github_token: githubToken,
         auto_sync_enabled: autoSync,
       });
       setSavedSuccess(true);
@@ -161,6 +164,33 @@ export function ScheduleModal({
               disabled={!autoSync}
               className="w-full px-3 py-1.5 rounded-lg bg-white border border-black/[0.08] text-[13.5px] font-medium text-[#18181B] focus:outline-none focus:ring-1 focus:ring-black/20 disabled:opacity-40"
             />
+          </div>
+
+          {/* GitHub Personal Access Token for On-Demand Sync on Vercel */}
+          <div className="p-3.5 rounded-xl bg-[#EAEAE5] border border-black/[0.04]">
+            <div className="flex items-center justify-between mb-1.5">
+              <label className="text-[12.5px] font-semibold text-[#18181B]">
+                GitHub Token (for on-demand Vercel sync)
+              </label>
+              <a
+                href="https://github.com/settings/tokens/new?scopes=repo,workflow&description=OUSL+LMS+Digest+Sync"
+                target="_blank"
+                rel="noreferrer"
+                className="text-[11px] text-[#71717A] hover:text-[#18181B] hover:underline"
+              >
+                Generate Token ↗
+              </a>
+            </div>
+            <input
+              type="password"
+              placeholder="ghp_xxxxxxxxxxxxxxxxxxxx"
+              value={githubToken}
+              onChange={(e) => setGithubToken(e.target.value)}
+              className="w-full px-3 py-1.5 rounded-lg bg-white border border-black/[0.08] text-[13px] font-mono text-[#18181B] focus:outline-none focus:ring-1 focus:ring-black/20 placeholder:text-[#A1A1AA]"
+            />
+            <p className="text-[11px] text-[#71717A] mt-1 leading-tight">
+              Allows the "Sync Now" button on Vercel to trigger the GitHub Actions crawler in the cloud.
+            </p>
           </div>
 
           {/* Action Buttons */}

@@ -56,4 +56,6 @@ export interface UserSettings {
   evening_time?: string;
   auto_sync_enabled: boolean;
   last_sync_timestamp?: string;
+  github_token?: string;
+  github_repo?: string;
 }

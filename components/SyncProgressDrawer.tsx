@@ -188,6 +188,28 @@ export function SyncProgressDrawer({
             </div>
           )}
 
+          {isError && (
+            <div className="p-3.5 rounded-xl bg-rose-50 border border-rose-200/60 text-[#18181B] font-sans space-y-2.5">
+              <div className="text-[12.5px] font-semibold text-rose-900">
+                How to run the crawler:
+              </div>
+              <p className="text-[11.5px] text-rose-800 leading-relaxed">
+                Headless Playwright browsing requires a full OS environment. You can trigger it directly in GitHub Actions with 1 click:
+              </p>
+              <div className="flex items-center gap-2 pt-1 flex-wrap">
+                <a
+                  href="https://github.com/nipunyatawara-dev/oulms-digest/actions/workflows/lms_check.yml"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#18181B] text-white text-[12px] font-medium rounded-lg shadow-refero-sm hover:bg-[#27272A] transition-all"
+                >
+                  <span>Run on GitHub Actions</span>
+                  <span className="text-[10px]">↗</span>
+                </a>
+              </div>
+            </div>
+          )}
+
           <div ref={logEndRef} />
         </div>
 
