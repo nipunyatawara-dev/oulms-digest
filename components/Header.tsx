@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { RefreshCw, Menu, Bell, LayoutDashboard } from 'lucide-react';
+import { RefreshCw, Clock, Activity, Menu, Bell, LayoutDashboard } from 'lucide-react';
 import { UserSettings } from '@/lib/types';
 
 interface HeaderProps {
@@ -103,6 +103,30 @@ export function Header({
 
       {/* Right Action Buttons */}
       <div className="flex items-center gap-2.5 text-[13px]">
+        {/* Crawler Activity / Logs Button */}
+        {hasLogs && onToggleDrawer && (
+          <button
+            onClick={onToggleDrawer}
+            className="text-[#71717A] hover:text-[#18181B] transition-colors hidden md:inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg hover:bg-black/[0.03]"
+            title="Open Crawler Activity Logs"
+          >
+            <Activity className="w-3.5 h-3.5" />
+            <span className="text-[12.5px]">Logs</span>
+          </button>
+        )}
+
+        {/* Sync Schedule Button */}
+        {onOpenSchedule && (
+          <button
+            onClick={onOpenSchedule}
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-[13px] font-medium text-[#18181B] bg-white hover:bg-[#F9F9F7] border border-black/[0.08] rounded-lg shadow-refero-sm active:scale-[0.98] transition-all"
+            title="Configure Automatic Sync Schedule"
+          >
+            <Clock className="w-3.5 h-3.5 text-[#71717A]" />
+            <span className="hidden sm:inline">Schedule</span>
+          </button>
+        )}
+
         {/* Sync Now Button */}
         <button
           onClick={onSync}
