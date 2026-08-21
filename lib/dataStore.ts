@@ -19,10 +19,32 @@ export function getLMSData(): LMSDataPayload | null {
 
 export function getSettings(): UserSettings {
   const defaults: UserSettings = {
-    morning_time: '07:30',
-    evening_time: '19:30',
+    time_1: '07:00',
+    time_2: '16:00',
+    time_3: '22:00',
+    morning_time: '07:00',
+    evening_time: '22:00',
     auto_sync_enabled: true,
+    auto_sync_on_save: true,
     last_sync_timestamp: '',
+    selected_courses: [
+      'AGM4367',
+      'EEI4267',
+      'EEI4360',
+      'EEI4361',
+      'EEI4362',
+      'EER4189',
+      'BSE',
+    ],
+    discovered_courses: [
+      { code: 'AGM4367', title: 'Economics and Marketing for Engineering', url: 'https://oulms.ou.ac.lk/course/view.php?id=AGM4367' },
+      { code: 'EEI4267', title: 'Requirement Engineering', url: 'https://oulms.ou.ac.lk/course/view.php?id=EEI4267' },
+      { code: 'EEI4360', title: 'Introduction to Artificial Intelligence', url: 'https://oulms.ou.ac.lk/course/view.php?id=EEI4360' },
+      { code: 'EEI4361', title: 'User Experience Engineering', url: 'https://oulms.ou.ac.lk/course/view.php?id=EEI4361' },
+      { code: 'EEI4362', title: 'Object Oriented Design', url: 'https://oulms.ou.ac.lk/course/view.php?id=EEI4362' },
+      { code: 'EER4189', title: 'Software Design in Group', url: 'https://oulms.ou.ac.lk/course/view.php?id=EER4189' },
+      { code: 'BSE', title: 'BSE Learner Support 2024/2025', url: 'https://oulms.ou.ac.lk/course/view.php?id=BSE' },
+    ],
   };
 
   try {

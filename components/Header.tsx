@@ -13,8 +13,8 @@ interface HeaderProps {
   hasLogs?: boolean;
   settings?: UserSettings | null;
   lastSyncedAt?: string;
-  activeView?: 'Dashboard' | 'Announcements';
-  onSelectView?: (view: 'Dashboard' | 'Announcements') => void;
+  activeView?: 'Dashboard' | 'Announcements' | 'Account';
+  onSelectView?: (view: 'Dashboard' | 'Announcements' | 'Account') => void;
   announcementsCount?: number;
 }
 

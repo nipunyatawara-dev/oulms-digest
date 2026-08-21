@@ -13,6 +13,8 @@ import {
   ExternalLink,
   LogIn,
   X,
+  Key,
+  UserCheck,
 } from 'lucide-react';
 import { CategoryFilter } from '@/components/CategoryTabs';
 
@@ -30,9 +32,11 @@ interface SidebarProps {
   onToggleDrawer: () => void;
   isMobileOpen?: boolean;
   onCloseMobile?: () => void;
-  activeView?: 'Dashboard' | 'Announcements';
-  onSelectView?: (view: 'Dashboard' | 'Announcements') => void;
+  activeView?: 'Dashboard' | 'Announcements' | 'Account';
+  onSelectView?: (view: 'Dashboard' | 'Announcements' | 'Account') => void;
   announcementsCount?: number;
+  studentUsername?: string;
+  selectedCoursesCount?: number;
 }
 
 export function Sidebar({
@@ -46,8 +50,11 @@ export function Sidebar({
   activeView = 'Dashboard',
   onSelectView,
   announcementsCount = 0,
+  studentUsername,
+  selectedCoursesCount,
 }: SidebarProps) {
   const portalLoginUrl = 'https://oulms.ou.ac.lk/login/index.php';
+  const displayStudent = studentUsername ? studentUsername.split('@')[0] : 'OUSL Student';
 
   const sidebarContent = (
     <div className="w-full flex flex-col justify-between h-full text-[13px] select-none">
@@ -56,7 +63,7 @@ export function Sidebar({
         <div className="px-2 pt-1 pb-2">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-1.5 font-semibold text-[#4e080c] text-[14px]">
-              <span>OUSL Student</span>
+              <span className="truncate max-w-[150px]">{displayStudent}</span>
               <a
                 href={portalLoginUrl}
                 target="_blank"
@@ -77,7 +84,7 @@ export function Sidebar({
             )}
           </div>
           <p className="text-[11.5px] text-[#71717A] mt-0.5 truncate">
-            Active Student &bull; oulms.ou.ac.lk
+            {studentUsername ? 'Logged in Student' : 'Active Student'} &bull; oulms.ou.ac.lk
           </p>
         </div>
 
@@ -108,13 +115,37 @@ export function Sidebar({
 
           <button
             onClick={() => {
+              onSelectView?.('Account');
+              onCloseMobile?.();
+            }}
+            className={`w-full flex items-center justify-between px-2.5 py-1.5 rounded-lg text-left transition-all ${
+              activeView === 'Account'
+                ? 'bg-[#e8ddd5] text-[#4e080c] font-medium'
+                : 'text-[#71717A] hover:text-[#4e080c] hover:bg-[#4e080c]/[0.05]'
+            }`}
+          >
+            <div className="flex items-center gap-2.5">
+              <Key className="w-4 h-4 text-[#71717A]" />
+              <span>Credentials & Courses</span>
+            </div>
+            {studentUsername ? (
+              <span className="w-2 h-2 rounded-full bg-emerald-500" title="Configured" />
+            ) : (
+              <span className="text-[10px] px-1.5 py-0.2 rounded bg-amber-100 text-amber-800 font-semibold">
+                Setup
+              </span>
+            )}
+          </button>
+
+          <button
+            onClick={() => {
               onOpenSchedule();
               onCloseMobile?.();
             }}
             className="w-full flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-left text-[#71717A] hover:text-[#4e080c] hover:bg-[#4e080c]/[0.05] transition-all"
           >
             <Settings className="w-4 h-4 text-[#71717A]" />
-            <span>Settings</span>
+            <span>Schedule</span>
           </button>
         </div>
 

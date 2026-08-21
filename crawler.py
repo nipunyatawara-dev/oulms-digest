@@ -4,7 +4,8 @@ import json
 import os
 import re
 import sys
-from typing import Dict, List, Tuple
+import argparse
+from typing import Dict, List, Tuple, Optional
 from playwright.async_api import async_playwright
 from state_manager import StateManager
 
@@ -16,8 +17,8 @@ LOGIN_URL = "https://oulms.ou.ac.lk/login/index.php"
 COURSES_URL = "https://oulms.ou.ac.lk/my/courses.php"
 NOTIFICATIONS_URL = "https://oulms.ou.ac.lk/message/output/popup/notifications.php"
 
-# TARGET COURSES WHITELIST
-TARGET_COURSE_CODES = [
+# Default fallback target course whitelist
+DEFAULT_TARGET_COURSE_CODES = [
     "AGM4367",
     "EEI4267",
     "EEI4360",
@@ -40,11 +41,30 @@ COURSE_NAMES_DICT = {
 def log_progress(percent: int, message: str):
     print(f"[PROGRESS:{percent}] {message}", flush=True)
 
-def clean_title_text(title: str, course_code: str = "") -> str:
+def load_settings() -> Dict:
+    if os.path.exists(SETTINGS_FILE):
+        try:
+            with open(SETTINGS_FILE, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except Exception as e:
+            print(f"[!] Warning: Could not read settings.json: {e}")
+    return {}
+
+def save_settings(settings: Dict):
+    try:
+        os.makedirs(DATA_DIR, exist_ok=True)
+        with open(SETTINGS_FILE, "w", encoding="utf-8") as f:
+            json.dump(settings, f, indent=2)
+    except Exception as e:
+        print(f"[!] Warning: Could not save settings.json: {e}")
+
+def clean_title_text(title: str, course_code: str = "", course_names: Dict[str, str] = None) -> str:
     cleaned = title.strip()
     cleaned = re.sub(r'^[A-Z]{3,4}\d{4}[A-Za-z0-9_]*:\s*', '', cleaned)
     cleaned = re.sub(r'^[A-Z]{3,4}\d{4}\s+[^:]+:\s*', '', cleaned)
-    for code, name in COURSE_NAMES_DICT.items():
+    
+    names_dict = {**COURSE_NAMES_DICT, **(course_names or {})}
+    for code, name in names_dict.items():
         if cleaned.startswith(f"{code} {name}"):
             cleaned = cleaned[len(f"{code} {name}"):].strip()
         elif cleaned.startswith(f"{code}:"):
@@ -65,8 +85,9 @@ def categorize_notification(text: str) -> str:
         return "Deadlines & Quizzes"
     return "Announcements"
 
-def extract_course_code_and_name(text: str, course_map: Dict[str, str]) -> Tuple[str, str]:
-    for target in TARGET_COURSE_CODES:
+def extract_course_code_and_name(text: str, course_map: Dict[str, str], target_codes: List[str] = None) -> Tuple[str, str]:
+    targets = target_codes or DEFAULT_TARGET_COURSE_CODES
+    for target in targets:
         if target.lower() in text.lower():
             name = course_map.get(target) or COURSE_NAMES_DICT.get(target, "")
             return target, name
@@ -80,13 +101,74 @@ def extract_course_code_and_name(text: str, course_map: Dict[str, str]) -> Tuple
     return "", ""
 
 class OUSLCrawler:
-    def __init__(self, username: str, password: str, state_manager: StateManager = None, filter_seen: bool = False):
+    def __init__(
+        self,
+        username: str,
+        password: str,
+        state_manager: StateManager = None,
+        filter_seen: bool = False,
+        target_courses: Optional[List[str]] = None
+    ):
         self.username = username
         self.password = password
         self.state_manager = state_manager or StateManager(os.path.join(DATA_DIR, "seen_items.json"))
         self.filter_seen = filter_seen
+        
+        # Determine target courses
+        if target_courses is not None:
+            self.target_courses = target_courses
+        else:
+            env_courses = os.getenv("SELECTED_COURSES")
+            if env_courses:
+                self.target_courses = [c.strip() for c in env_courses.split(",") if c.strip()]
+            else:
+                settings = load_settings()
+                self.target_courses = settings.get("selected_courses") or DEFAULT_TARGET_COURSE_CODES
+
         self.course_map: Dict[str, str] = {}
         self.course_url_map: Dict[str, str] = {}
+
+    async def discover_courses(self) -> Dict:
+        """Logs into OUSL Moodle and extracts all enrolled courses without full forum crawling."""
+        os.makedirs(DATA_DIR, exist_ok=True)
+        log_progress(10, "Launching browser for course discovery...")
+        
+        async with async_playwright() as p:
+            browser = await p.chromium.launch(headless=True)
+            context = await browser.new_context(
+                user_agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+                ignore_https_errors=True
+            )
+            page = await context.new_page()
+
+            log_progress(25, "Connecting to OUSL IAM Keycloak server...")
+            logged_in = await self._login(page)
+            if not logged_in:
+                log_progress(100, "Authentication failed. Check your student credentials.")
+                await browser.close()
+                return {"error": "Authentication failed", "success": False, "courses": []}
+
+            log_progress(60, "Logged in. Discovering all enrolled courses from Moodle...")
+            discovered = await self._scrape_all_enrolled_courses(page)
+            await browser.close()
+
+            log_progress(90, f"Discovered {len(discovered)} registered courses. Saving to settings...")
+            settings = load_settings()
+            settings["discovered_courses"] = discovered
+            
+            # If no selected courses exist, select all by default
+            if not settings.get("selected_courses"):
+                settings["selected_courses"] = [c["code"] for c in discovered]
+            
+            save_settings(settings)
+            log_progress(100, f"Discovery complete! Found {len(discovered)} active courses.")
+            
+            return {
+                "success": True,
+                "count": len(discovered),
+                "courses": discovered,
+                "selected_courses": settings.get("selected_courses", [])
+            }
 
     async def run(self) -> Dict:
         os.makedirs(DATA_DIR, exist_ok=True)
@@ -110,13 +192,14 @@ class OUSLCrawler:
                 return {"error": "Authentication failed", "success": False}
 
             log_progress(20, "Authentication successful. Discovering target courses...")
-            # 2. Extract Courses
+            # 2. Extract Courses (filtered by target_courses)
             courses_list = await self._scrape_courses(page)
             for c in courses_list:
                 self.course_map[c['code']] = c['title'].replace(c['code'], '').strip()
                 self.course_url_map[c['code']] = c['url']
 
-            log_progress(35, f"Filtered to {len(courses_list)} active target courses. Extracting direct notification links...")
+            target_count = len(courses_list)
+            log_progress(35, f"Filtered to {target_count} active target courses. Extracting direct notification links...")
 
             # 3. Extract Portal Notifications with exact discussion / assignment links
             notifications = await self._scrape_notifications(page)
@@ -128,7 +211,7 @@ class OUSLCrawler:
 
             total_courses = len(courses_list)
             for i, course in enumerate(courses_list):
-                current_percent = 50 + int((i / total_courses) * 45)
+                current_percent = 50 + int((i / max(total_courses, 1)) * 45)
                 log_progress(current_percent, f"Scanning [{i+1}/{total_courses}] {course['code']} — {course['title'][:30]}...")
                 updates = await self._scrape_course_forums(page, course)
                 all_course_updates.extend(updates)
@@ -169,15 +252,9 @@ class OUSLCrawler:
                 json.dump(payload, f, indent=2)
 
             # Update last_sync_timestamp in settings.json
-            if os.path.exists(SETTINGS_FILE):
-                try:
-                    with open(SETTINGS_FILE, "r", encoding="utf-8") as f:
-                        settings = json.load(f)
-                    settings["last_sync_timestamp"] = end_time.isoformat()
-                    with open(SETTINGS_FILE, "w", encoding="utf-8") as f:
-                        json.dump(settings, f, indent=2)
-                except Exception as e:
-                    print(f"[!] Warning: Could not update settings last_sync: {e}")
+            settings = load_settings()
+            settings["last_sync_timestamp"] = end_time.isoformat()
+            save_settings(settings)
 
             log_progress(100, f"Sync complete in {duration_sec}s! {len(notifications)} alerts & {len(all_course_updates)} updates loaded.")
             return payload
@@ -218,6 +295,69 @@ class OUSLCrawler:
             print(f"[!] Error during login: {e}")
             return False
 
+    async def _scrape_all_enrolled_courses(self, page) -> List[Dict]:
+        """Scrapes all enrolled courses without filtering."""
+        courses = []
+        try:
+            await page.goto(COURSES_URL, wait_until="domcontentloaded", timeout=30000)
+            await page.wait_for_timeout(1500)
+            
+            course_elements = await page.eval_on_selector_all(
+                '.dashboard-card, .course-info-container, a[href*="/course/view.php?id="]',
+                '''elements => elements.map(e => {
+                    const link = e.querySelector('a')?.href || e.href || '';
+                    const title = e.innerText.trim();
+                    return { title, link };
+                })'''
+            )
+
+            seen_urls = set()
+            seen_codes = set()
+            for c in course_elements:
+                link = c.get('link', '')
+                title = c.get('title', '')
+                if not link or "/course/view.php?id=" not in link or link in seen_urls:
+                    continue
+                
+                first_line = title.split('\n')[0].strip()
+                first_line = re.sub(r'^(Course image|Course name|Card)\s*', '', first_line).strip()
+
+                code_match = re.search(r'([A-Z]{3,4}\d{4}|BSE|[A-Z]{2,6}\d{0,4})', first_line)
+                code = code_match.group(1) if code_match else first_line[:8].strip()
+
+                if code in seen_codes:
+                    continue
+
+                seen_codes.add(code)
+                seen_urls.add(link)
+
+                clean_title = COURSE_NAMES_DICT.get(code) or first_line
+                if not clean_title.startswith(code):
+                    clean_title = f"{code} {clean_title}"
+
+                courses.append({
+                    "code": code,
+                    "title": clean_title,
+                    "url": link
+                })
+
+        except Exception as e:
+            print(f"[!] Error discovering courses: {e}")
+
+        return courses
+
+    async def _scrape_courses(self, page) -> List[Dict]:
+        all_courses = await self._scrape_all_enrolled_courses(page)
+        if not self.target_courses:
+            return all_courses
+        
+        filtered = []
+        for c in all_courses:
+            code = c.get('code', '')
+            if any(t.lower() == code.lower() or t.lower() in c.get('title', '').lower() for t in self.target_courses):
+                filtered.append(c)
+        return filtered
+
     async def _scrape_notifications(self, page) -> List[Dict]:
         notifications = []
         try:
@@ -228,7 +368,6 @@ class OUSLCrawler:
 
             for idx, item in enumerate(items):
                 try:
-                    # Click item to reveal exact context link in the right pane
                     await item.click()
                     await page.wait_for_timeout(250)
 
@@ -236,13 +375,11 @@ class OUSLCrawler:
                         const rightPane = document.querySelector(".notification-area") || document.body;
                         const anchors = Array.from(rightPane.querySelectorAll("a"));
                         
-                        // Priority 1: Direct discussion topic or "Go to" link
                         for (const a of anchors) {
                             if (a.innerText.includes("Go to:") || a.innerText.includes("See this post") || a.href.includes("discuss.php")) {
                                 return a.href;
                             }
                         }
-                        // Priority 2: Direct mod assignment, quiz, or plugin file link
                         for (const a of anchors) {
                             if (a.href.includes("/mod/") || a.href.includes("pluginfile.php")) {
                                 return a.href;
@@ -260,15 +397,13 @@ class OUSLCrawler:
                     time_str = lines[1] if len(lines) > 1 and ("ago" in lines[1] or "day" in lines[1] or "min" in lines[1] or "hour" in lines[1]) else ""
                     category = categorize_notification(raw_title)
 
-                    code, course_name = extract_course_code_and_name(raw_title, self.course_map)
+                    code, course_name = extract_course_code_and_name(raw_title, self.course_map, self.target_courses)
                     
-                    # Filter only relevant courses
-                    if code and code not in TARGET_COURSE_CODES and not any(t in code for t in TARGET_COURSE_CODES):
+                    if self.target_courses and code and not any(t.lower() == code.lower() for t in self.target_courses):
                         continue
 
-                    clean_title = clean_title_text(raw_title, code)
+                    clean_title = clean_title_text(raw_title, code, self.course_map)
 
-                    # Ensure direct link is used
                     final_link = direct_target_link.strip() if direct_target_link else ""
                     if not final_link:
                         if code and code in self.course_url_map:
@@ -298,59 +433,6 @@ class OUSLCrawler:
             print(f"[!] Error scraping notifications: {e}")
 
         return notifications
-
-    async def _scrape_courses(self, page) -> List[Dict]:
-        courses = []
-        try:
-            await page.goto(COURSES_URL, wait_until="domcontentloaded", timeout=30000)
-            await page.wait_for_timeout(1500)
-            
-            course_elements = await page.eval_on_selector_all(
-                '.dashboard-card, .course-info-container, a[href*="/course/view.php?id="]',
-                '''elements => elements.map(e => {
-                    const link = e.querySelector('a')?.href || e.href || '';
-                    const title = e.innerText.trim();
-                    return { title, link };
-                })'''
-            )
-
-            seen_urls = set()
-            seen_codes = set()
-            for c in course_elements:
-                link = c.get('link', '')
-                title = c.get('title', '')
-                if not link or "/course/view.php?id=" not in link or link in seen_urls:
-                    continue
-                
-                first_line = title.split('\n')[0].strip()
-                first_line = re.sub(r'^(Course image|Course name|Card)\s*', '', first_line).strip()
-
-                matched_target = None
-                for target in TARGET_COURSE_CODES:
-                    if target.lower() in first_line.lower() or target.lower() in link.lower():
-                        matched_target = target
-                        break
-
-                if not matched_target:
-                    continue
-
-                if matched_target in seen_codes:
-                    continue
-
-                seen_codes.add(matched_target)
-                seen_urls.add(link)
-                clean_course_title = f"{matched_target} {COURSE_NAMES_DICT.get(matched_target, first_line)}"
-
-                courses.append({
-                    "code": matched_target,
-                    "title": clean_course_title,
-                    "url": link
-                })
-
-        except Exception as e:
-            print(f"[!] Error discovering courses: {e}")
-
-        return courses
 
     async def _scrape_course_forums(self, page, course: Dict) -> List[Dict]:
         course_name = course['title']
@@ -401,7 +483,7 @@ class OUSLCrawler:
                         if not raw_topic or not link or raw_topic.lower() == "discussion":
                             continue
 
-                        clean_topic = clean_title_text(raw_topic, course['code'])
+                        clean_topic = clean_title_text(raw_topic, course['code'], self.course_map)
                         category = categorize_notification(clean_topic)
                         is_new = self.state_manager.is_new("forum_post", clean_topic, link, time_str)
                         if self.filter_seen and not is_new:
@@ -431,8 +513,35 @@ class OUSLCrawler:
 if __name__ == "__main__":
     from dotenv import load_dotenv
     load_dotenv()
-    user = os.getenv("OUSL_USERNAME")
-    pwd = os.getenv("OUSL_PASSWORD")
-    if user and pwd:
-        crawler = OUSLCrawler(user, pwd)
+    
+    parser = argparse.ArgumentParser(description="OUSL LMS Crawler")
+    parser.add_argument("--discover", action="store_true", help="Discover all enrolled courses without full crawl")
+    parser.add_argument("--courses", type=str, help="Comma-separated list of course codes to target")
+    parser.add_argument("--username", type=str, help="OUSL Username / Student ID")
+    parser.add_argument("--password", type=str, help="OUSL Password")
+    args = parser.parse_args()
+
+    settings = load_settings()
+    user = args.username or os.getenv("OUSL_USERNAME") or settings.get("ousl_username")
+    pwd = args.password or os.getenv("OUSL_PASSWORD") or settings.get("ousl_password")
+    
+    target_courses_arg = None
+    if args.courses:
+        target_courses_arg = [c.strip() for c in args.courses.split(",") if c.strip()]
+
+    if not user or not pwd:
+        print("[!] Error: OUSL credentials must be provided via CLI, environment variables, or settings.json")
+        sys.exit(1)
+
+    crawler = OUSLCrawler(
+        username=user,
+        password=pwd,
+        target_courses=target_courses_arg
+    )
+    
+    if args.discover:
+        result = asyncio.run(crawler.discover_courses())
+        print(json.dumps(result, indent=2))
+    else:
         asyncio.run(crawler.run())
+

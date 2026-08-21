@@ -8,6 +8,7 @@ import { NotificationCard } from '@/components/NotificationCard';
 import { CourseCard } from '@/components/CourseCard';
 import { ScheduleModal } from '@/components/ScheduleModal';
 import { SyncProgressDrawer, SyncLogItem } from '@/components/SyncProgressDrawer';
+import { AccountSetupView } from '@/components/AccountSetupView';
 import { LMSDataPayload, UserSettings, CourseUpdate } from '@/lib/types';
 import { isWithinTimeframe } from '@/lib/dateUtils';
 import {
@@ -73,7 +74,7 @@ export default function DashboardPage() {
   const [timeframe, setTimeframe] = useState<'24h' | '16d'>('24h');
   const [isScheduleOpen, setIsScheduleOpen] = useState(false);
   const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
-  const [activeView, setActiveView] = useState<'Dashboard' | 'Announcements'>('Dashboard');
+  const [activeView, setActiveView] = useState<'Dashboard' | 'Announcements' | 'Account'>('Dashboard');
 
   // Sync Progress Drawer State
   const [isSyncing, setIsSyncing] = useState(false);
@@ -360,10 +361,11 @@ export default function DashboardPage() {
 
   // Determine current active category mode
   const isDedicatedCategoryView =
-    activeView === 'Announcements' ||
-    activeTab === 'Grades & Marks' ||
-    activeTab === 'Viva & Exam' ||
-    activeTab === 'Deadlines & Quizzes';
+    activeView !== 'Account' &&
+    (activeView === 'Announcements' ||
+      activeTab === 'Grades & Marks' ||
+      activeTab === 'Viva & Exam' ||
+      activeTab === 'Deadlines & Quizzes');
 
   const currentCategoryKey: 'Grades & Marks' | 'Viva & Exam' | 'Deadlines & Quizzes' | 'Announcements' =
     activeView === 'Announcements'
@@ -425,11 +427,20 @@ export default function DashboardPage() {
             activeView={activeView}
             onSelectView={setActiveView}
             announcementsCount={announcementsCounts.count24h > 0 ? announcementsCounts.count24h : announcementsCounts.count16d}
+            studentUsername={settings?.ousl_username}
+            selectedCoursesCount={settings?.selected_courses?.length}
           />
 
           {/* Right Column: Main Content Canvas */}
           <main className="flex-1 min-w-0 space-y-5">
-            {isDedicatedCategoryView ? (
+            {activeView === 'Account' ? (
+              <AccountSetupView
+                settings={settings}
+                onSaveSettings={handleSaveSettings}
+                onTriggerSync={handleSyncNow}
+                isSyncing={isSyncing}
+              />
+            ) : isDedicatedCategoryView ? (
               /* ========================================================================= */
               /* DEDICATED SEPARATE PAGES: Grades, Viva, Deadlines, Announcements          */
               /* (Shows only the category's items with Last 24 Hours / Last 16 Days toggle)*/

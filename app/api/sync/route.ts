@@ -41,6 +41,13 @@ export async function GET(req: NextRequest) {
             message: `Dispatching crawler workflow on ${githubRepo}...`,
           });
 
+          const inputs: Record<string, string> = {};
+          if (settings?.ousl_username) inputs.ousl_username = settings.ousl_username;
+          if (settings?.ousl_password) inputs.ousl_password = settings.ousl_password;
+          if (settings?.selected_courses && settings.selected_courses.length > 0) {
+            inputs.selected_courses = settings.selected_courses.join(',');
+          }
+
           const res = await fetch(
             `https://api.github.com/repos/${githubRepo}/actions/workflows/lms_check.yml/dispatches`,
             {
@@ -50,15 +57,19 @@ export async function GET(req: NextRequest) {
                 Accept: 'application/vnd.github.v3+json',
                 'User-Agent': 'OUSL-LMS-Digest',
               },
-              body: JSON.stringify({ ref: 'main' }),
+              body: JSON.stringify({
+                ref: 'main',
+                ...(Object.keys(inputs).length > 0 ? { inputs } : {}),
+              }),
             }
           );
 
           if (res.ok || res.status === 204) {
+            const courseCount = settings?.selected_courses?.length || 7;
             sendEvent({
               type: 'progress',
               progress: 75,
-              message: 'GitHub Actions crawler started! Indexing your 7 enrolled courses in the cloud...',
+              message: `GitHub Actions crawler started! Indexing your ${courseCount} selected courses in the cloud...`,
             });
 
             // Wait a brief moment to confirm dispatch
@@ -115,9 +126,18 @@ export async function GET(req: NextRequest) {
       const pythonCmd = fs.existsSync(venvPython) ? venvPython : 'python3';
 
       try {
+        const env: NodeJS.ProcessEnv = {
+          ...process.env,
+          OUSL_USERNAME: settings?.ousl_username || process.env.OUSL_USERNAME || '',
+          OUSL_PASSWORD: settings?.ousl_password || process.env.OUSL_PASSWORD || '',
+        };
+        if (settings?.selected_courses && settings.selected_courses.length > 0) {
+          env.SELECTED_COURSES = settings.selected_courses.join(',');
+        }
+
         const proc = spawn(pythonCmd, [scriptPath], {
           cwd: process.cwd(),
-          env: { ...process.env },
+          env,
         });
 
         sendEvent({

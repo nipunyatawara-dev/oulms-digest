@@ -48,6 +48,20 @@ export interface LMSDataPayload {
   courses: CourseItem[];
 }
 
+export interface DiscoveredCourseItem {
+  code: string;
+  title: string;
+  url: string;
+}
+
+export interface ConsoleLogItem {
+  id: string;
+  time: string;
+  message: string;
+  tag?: 'AUTH' | 'DISCOVERY' | 'CRAWLER' | 'SUCCESS' | 'ERROR' | 'INFO';
+  type?: 'step' | 'done' | 'error' | 'info';
+}
+
 export interface UserSettings {
   time_1?: string;
   time_2?: string;
@@ -55,7 +69,13 @@ export interface UserSettings {
   morning_time?: string;
   evening_time?: string;
   auto_sync_enabled: boolean;
+  auto_sync_on_save?: boolean;
   last_sync_timestamp?: string;
   github_token?: string;
   github_repo?: string;
+  ousl_username?: string;
+  ousl_password?: string;
+  selected_courses?: string[];
+  discovered_courses?: DiscoveredCourseItem[];
 }
+
