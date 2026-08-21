@@ -1,70 +1,70 @@
 {
   "success": true,
-  "synced_at": "2026-08-20T13:22:48.899424",
-  "duration_seconds": 67.1,
+  "synced_at": "2026-08-21T05:17:29.760093",
+  "duration_seconds": 67.4,
   "stats": {
     "total_notifications": 19,
     "total_courses": 7,
-    "total_updates": 680
+    "total_updates": 681
   },
   "notifications": [
     {
       "id": "notif-1",
-      "title": "Re: Check your eligibility",
-      "category": "Announcements",
+      "title": "Repeat Viva Time Slot Changed 21-8-2026 Check your allocated time",
+      "category": "Grades & Marks",
       "course_code": "EEI4267",
       "course_name": "Requirement Engineering",
-      "time": "6 hours 16 mins ago",
+      "time": "2 hours 44 mins ago",
       "link": "https://oulms.ou.ac.lk/course/view.php?id=3435",
       "is_new": true
     },
     {
       "id": "notif-2",
-      "title": "Re: Check your eligibility",
-      "category": "Announcements",
-      "course_code": "EEI4267",
-      "course_name": "Requirement Engineering",
-      "time": "6 hours 20 mins ago",
-      "link": "https://oulms.ou.ac.lk/course/view.php?id=3435",
+      "title": "Re: OQ Marks and CAT marks",
+      "category": "Grades & Marks",
+      "course_code": "EEI4360",
+      "course_name": "Introduction to Artificial Intelligence",
+      "time": "15 hours 45 mins ago",
+      "link": "https://oulms.ou.ac.lk/course/view.php?id=3436",
       "is_new": true
     },
     {
       "id": "notif-3",
-      "title": "Re: Issues on Mini Project viva Marks!",
-      "category": "Grades & Marks",
+      "title": "Re: Check your eligibility",
+      "category": "Announcements",
       "course_code": "EEI4267",
       "course_name": "Requirement Engineering",
-      "time": "8 hours 15 mins ago",
-      "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=96738",
+      "time": "22 hours 11 mins ago",
+      "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97006",
       "is_new": true
     },
     {
       "id": "notif-4",
-      "title": "Re: Repeat Viva on 21-8-2026 6PM onwards",
-      "category": "Viva & Exam",
+      "title": "Re: Check your eligibility",
+      "category": "Announcements",
       "course_code": "EEI4267",
       "course_name": "Requirement Engineering",
-      "time": "8 hours 19 mins ago",
-      "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97016",
+      "time": "22 hours 15 mins ago",
+      "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97006",
       "is_new": true
     },
     {
       "id": "notif-5",
-      "title": "content change",
-      "category": "Announcements",
+      "title": "Re: Issues on Mini Project viva Marks!",
+      "category": "Grades & Marks",
       "course_code": "EEI4267",
       "course_name": "Requirement Engineering",
-      "time": "8 hours 51 mins ago",
-      "link": "https://oulms.ou.ac.lk/mod/page/view.php?id=187285",
+      "time": "1 day ago",
+      "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=96738",
       "is_new": true
     },
     {
       "id": "notif-6",
-      "title": "Repeat Viva on 21-8-2026 6PM onwards",
+      "title": "Re: Repeat Viva on 21-8-2026 6PM onwards",
       "category": "Viva & Exam",
       "course_code": "EEI4267",
       "course_name": "Requirement Engineering",
-      "time": "10 hours 9 mins ago",
+      "time": "1 day ago",
       "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97016",
       "is_new": true
     },
@@ -74,128 +74,128 @@
       "category": "Announcements",
       "course_code": "EEI4267",
       "course_name": "Requirement Engineering",
-      "time": "10 hours 50 mins ago",
-      "link": "https://oulms.ou.ac.lk/mod/choice/view.php?id=149145",
+      "time": "1 day ago",
+      "link": "https://oulms.ou.ac.lk/mod/page/view.php?id=187285",
       "is_new": true
     },
     {
       "id": "notif-8",
-      "title": "content change",
-      "category": "Announcements",
+      "title": "Repeat Viva on 21-8-2026 6PM onwards",
+      "category": "Viva & Exam",
       "course_code": "EEI4267",
       "course_name": "Requirement Engineering",
-      "time": "10 hours 56 mins ago",
-      "link": "https://oulms.ou.ac.lk/mod/page/view.php?id=187285",
+      "time": "1 day 2 hours ago",
+      "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97016",
       "is_new": true
     },
     {
       "id": "notif-9",
-      "title": "Overdue: Information about those who have started training or T2T without registering for the course",
-      "category": "Deadlines & Quizzes",
-      "course_code": "",
-      "course_name": "",
-      "time": "12 hours 17 mins ago",
-      "link": "https://oulms.ou.ac.lk/mod/assign/view.php?id=179031&action=view",
-      "is_new": true
-    },
-    {
-      "id": "notif-10",
-      "title": "Issues on Mini Project viva Marks!",
-      "category": "Grades & Marks",
-      "course_code": "EEI4267",
-      "course_name": "Requirement Engineering",
-      "time": "19 hours 15 mins ago",
-      "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=96738",
-      "is_new": true
-    },
-    {
-      "id": "notif-11",
-      "title": "Re: Issues on Mini Project viva Marks!",
-      "category": "Grades & Marks",
-      "course_code": "EEI4267",
-      "course_name": "Requirement Engineering",
-      "time": "19 hours 32 mins ago",
-      "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=96738",
-      "is_new": true
-    },
-    {
-      "id": "notif-12",
-      "title": "Check your eligibility",
-      "category": "Announcements",
-      "course_code": "EEI4267",
-      "course_name": "Requirement Engineering",
-      "time": "19 hours 42 mins ago",
-      "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97006",
-      "is_new": true
-    },
-    {
-      "id": "notif-13",
-      "title": "new content",
-      "category": "Announcements",
-      "course_code": "EEI4267",
-      "course_name": "Requirement Engineering",
-      "time": "20 hours 17 mins ago",
-      "link": "https://oulms.ou.ac.lk/mod/page/view.php?id=187285",
-      "is_new": true
-    },
-    {
-      "id": "notif-14",
-      "title": "Workshop Planned for you to Improve your RE Knowledge",
-      "category": "Announcements",
-      "course_code": "EEI4267",
-      "course_name": "Requirement Engineering",
-      "time": "1 day 1 hour ago",
-      "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=96982",
-      "is_new": true
-    },
-    {
-      "id": "notif-15",
-      "title": "Mini Project Marks",
-      "category": "Grades & Marks",
-      "course_code": "AGM4367",
-      "course_name": "Economics and Marketing for Engineering",
-      "time": "1 day 4 hours ago",
-      "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=96940",
-      "is_new": true
-    },
-    {
-      "id": "notif-16",
-      "title": "Issues on Mini Project viva Marks!",
-      "category": "Grades & Marks",
-      "course_code": "EEI4267",
-      "course_name": "Requirement Engineering",
-      "time": "1 day 5 hours ago",
-      "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=96738",
-      "is_new": true
-    },
-    {
-      "id": "notif-17",
       "title": "content change",
       "category": "Announcements",
       "course_code": "EEI4267",
       "course_name": "Requirement Engineering",
-      "time": "1 day 5 hours ago",
-      "link": "https://oulms.ou.ac.lk/mod/quiz/view.php?id=149142",
+      "time": "1 day 2 hours ago",
+      "link": "https://oulms.ou.ac.lk/mod/choice/view.php?id=149145",
+      "is_new": true
+    },
+    {
+      "id": "notif-10",
+      "title": "content change",
+      "category": "Announcements",
+      "course_code": "EEI4267",
+      "course_name": "Requirement Engineering",
+      "time": "1 day 2 hours ago",
+      "link": "https://oulms.ou.ac.lk/mod/page/view.php?id=187285",
+      "is_new": true
+    },
+    {
+      "id": "notif-11",
+      "title": "Overdue: Information about those who have started training or T2T without registering for the course",
+      "category": "Deadlines & Quizzes",
+      "course_code": "",
+      "course_name": "",
+      "time": "1 day 4 hours ago",
+      "link": "https://oulms.ou.ac.lk/mod/assign/view.php?id=179031&action=view",
+      "is_new": true
+    },
+    {
+      "id": "notif-12",
+      "title": "Issues on Mini Project viva Marks!",
+      "category": "Grades & Marks",
+      "course_code": "EEI4267",
+      "course_name": "Requirement Engineering",
+      "time": "1 day 11 hours ago",
+      "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=96738",
+      "is_new": true
+    },
+    {
+      "id": "notif-13",
+      "title": "Re: Issues on Mini Project viva Marks!",
+      "category": "Grades & Marks",
+      "course_code": "EEI4267",
+      "course_name": "Requirement Engineering",
+      "time": "1 day 11 hours ago",
+      "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=96738",
+      "is_new": true
+    },
+    {
+      "id": "notif-14",
+      "title": "Check your eligibility",
+      "category": "Announcements",
+      "course_code": "EEI4267",
+      "course_name": "Requirement Engineering",
+      "time": "1 day 11 hours ago",
+      "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97006",
+      "is_new": true
+    },
+    {
+      "id": "notif-15",
+      "title": "new content",
+      "category": "Announcements",
+      "course_code": "EEI4267",
+      "course_name": "Requirement Engineering",
+      "time": "1 day 12 hours ago",
+      "link": "https://oulms.ou.ac.lk/mod/page/view.php?id=187285",
+      "is_new": true
+    },
+    {
+      "id": "notif-16",
+      "title": "Workshop Planned for you to Improve your RE Knowledge",
+      "category": "Announcements",
+      "course_code": "EEI4267",
+      "course_name": "Requirement Engineering",
+      "time": "1 day 17 hours ago",
+      "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=96982",
+      "is_new": true
+    },
+    {
+      "id": "notif-17",
+      "title": "Mini Project Marks",
+      "category": "Grades & Marks",
+      "course_code": "AGM4367",
+      "course_name": "Economics and Marketing for Engineering",
+      "time": "1 day 20 hours ago",
+      "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=96940",
       "is_new": true
     },
     {
       "id": "notif-18",
-      "title": "Re: OQ and CAT II Marks are published",
+      "title": "Issues on Mini Project viva Marks!",
       "category": "Grades & Marks",
       "course_code": "EEI4267",
       "course_name": "Requirement Engineering",
-      "time": "1 day 6 hours ago",
-      "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=96913",
+      "time": "1 day 21 hours ago",
+      "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=96738",
       "is_new": true
     },
     {
       "id": "notif-19",
-      "title": "OQ and CAT II Marks are published",
-      "category": "Grades & Marks",
+      "title": "content change",
+      "category": "Announcements",
       "course_code": "EEI4267",
       "course_name": "Requirement Engineering",
-      "time": "1 day 6 hours ago",
-      "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=96913",
+      "time": "1 day 21 hours ago",
+      "link": "https://oulms.ou.ac.lk/mod/quiz/view.php?id=149142",
       "is_new": true
     }
   ],
@@ -2515,7 +2515,7 @@
       "code": "EEI4267",
       "title": "EEI4267 Requirement Engineering",
       "url": "https://oulms.ou.ac.lk/course/view.php?id=3435",
-      "updates_count": 89,
+      "updates_count": 90,
       "updates": [
         {
           "id": "upd-1",
@@ -3434,11 +3434,11 @@
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Announcements  Forum",
-          "topic": "Check your eligibility",
-          "author": "Dr.K.V.J. Padmini 19 Aug 2026",
-          "time": "19 Aug 2026",
-          "category": "Announcements",
-          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97006",
+          "topic": "Repeat Viva Time Slot Changed 21-8-2026 Check your allocated time",
+          "author": "Dr.K.V.J. Padmini 21 Aug 2026",
+          "time": "21 Aug 2026",
+          "category": "Grades & Marks",
+          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97130",
           "is_new": true
         },
         {
@@ -3446,11 +3446,11 @@
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Announcements  Forum",
-          "topic": "Repeat Viva on 21-8-2026 6PM onwards",
-          "author": "Dr.K.V.J. Padmini 20 Aug 2026",
-          "time": "20 Aug 2026",
-          "category": "Viva & Exam",
-          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97016",
+          "topic": "Check your eligibility",
+          "author": "Dr.K.V.J. Padmini 19 Aug 2026",
+          "time": "19 Aug 2026",
+          "category": "Announcements",
+          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97006",
           "is_new": true
         },
         {
@@ -3470,6 +3470,18 @@
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Announcements  Forum",
+          "topic": "Repeat Viva on 21-8-2026 6PM onwards",
+          "author": "Dr.K.V.J. Padmini 20 Aug 2026",
+          "time": "20 Aug 2026",
+          "category": "Viva & Exam",
+          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97016",
+          "is_new": true
+        },
+        {
+          "id": "upd-81",
+          "course_code": "EEI4267",
+          "course_name": "EEI4267 Requirement Engineering",
+          "forum_name": "Announcements  Forum",
           "topic": "Workshop Planned for you to Improve your RE Knowledge",
           "author": "Dr.K.V.J. Padmini 19 Aug 2026",
           "time": "19 Aug 2026",
@@ -3478,7 +3490,7 @@
           "is_new": true
         },
         {
-          "id": "upd-81",
+          "id": "upd-82",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Announcements  Forum",
@@ -3490,7 +3502,7 @@
           "is_new": true
         },
         {
-          "id": "upd-82",
+          "id": "upd-83",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Announcements  Forum",
@@ -3502,7 +3514,7 @@
           "is_new": true
         },
         {
-          "id": "upd-83",
+          "id": "upd-84",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Announcements  Forum",
@@ -3514,7 +3526,7 @@
           "is_new": true
         },
         {
-          "id": "upd-84",
+          "id": "upd-85",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Announcements  Forum",
@@ -3526,7 +3538,7 @@
           "is_new": true
         },
         {
-          "id": "upd-85",
+          "id": "upd-86",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Announcements  Forum",
@@ -3538,7 +3550,7 @@
           "is_new": true
         },
         {
-          "id": "upd-86",
+          "id": "upd-87",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Announcements  Forum",
@@ -3550,7 +3562,7 @@
           "is_new": true
         },
         {
-          "id": "upd-87",
+          "id": "upd-88",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Announcements  Forum",
@@ -3562,7 +3574,7 @@
           "is_new": true
         },
         {
-          "id": "upd-88",
+          "id": "upd-89",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Announcements  Forum",
@@ -3574,7 +3586,7 @@
           "is_new": true
         },
         {
-          "id": "upd-89",
+          "id": "upd-90",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Announcements  Forum",
