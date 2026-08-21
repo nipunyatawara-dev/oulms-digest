@@ -1,11 +1,11 @@
 {
   "success": true,
-  "synced_at": "2026-08-21T10:57:17.247659",
-  "duration_seconds": 85.1,
+  "synced_at": "2026-08-21T17:02:00.620838",
+  "duration_seconds": 85.2,
   "stats": {
     "total_notifications": 18,
     "total_courses": 8,
-    "total_updates": 1013
+    "total_updates": 1014
   },
   "notifications": [
     {
@@ -14,7 +14,7 @@
       "category": "Announcements",
       "course_code": "EER4189",
       "course_name": "Software Design in Group",
-      "time": "1 hour 9 mins ago",
+      "time": "7 hours 14 mins ago",
       "link": "https://oulms.ou.ac.lk/course/view.php?id=3478",
       "is_new": true
     },
@@ -24,7 +24,7 @@
       "category": "Announcements",
       "course_code": "EER4189",
       "course_name": "Software Design in Group",
-      "time": "2 hours 11 mins ago",
+      "time": "8 hours 16 mins ago",
       "link": "https://oulms.ou.ac.lk/mod/page/view.php?id=184432",
       "is_new": true
     },
@@ -34,7 +34,7 @@
       "category": "Announcements",
       "course_code": "AGM4367",
       "course_name": "Economics and Marketing for Engineering",
-      "time": "2 hours 29 mins ago",
+      "time": "8 hours 34 mins ago",
       "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97169",
       "is_new": true
     },
@@ -44,7 +44,7 @@
       "category": "Announcements",
       "course_code": "EEI4267",
       "course_name": "Requirement Engineering",
-      "time": "2 hours 30 mins ago",
+      "time": "8 hours 35 mins ago",
       "link": "https://oulms.ou.ac.lk/mod/page/view.php?id=187285",
       "is_new": true
     },
@@ -54,7 +54,7 @@
       "category": "Grades & Marks",
       "course_code": "EEI4267",
       "course_name": "Requirement Engineering",
-      "time": "8 hours 23 mins ago",
+      "time": "14 hours 28 mins ago",
       "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97130",
       "is_new": true
     },
@@ -64,7 +64,7 @@
       "category": "Grades & Marks",
       "course_code": "EEI4360",
       "course_name": "Introduction to Artificial Intelligence",
-      "time": "21 hours 24 mins ago",
+      "time": "1 day 3 hours ago",
       "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=96723",
       "is_new": true
     },
@@ -74,7 +74,7 @@
       "category": "Announcements",
       "course_code": "EEI4267",
       "course_name": "Requirement Engineering",
-      "time": "1 day 3 hours ago",
+      "time": "1 day 9 hours ago",
       "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97006",
       "is_new": true
     },
@@ -84,7 +84,7 @@
       "category": "Announcements",
       "course_code": "EEI4267",
       "course_name": "Requirement Engineering",
-      "time": "1 day 3 hours ago",
+      "time": "1 day 9 hours ago",
       "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97006",
       "is_new": false
     },
@@ -94,7 +94,7 @@
       "category": "Grades & Marks",
       "course_code": "EEI4267",
       "course_name": "Requirement Engineering",
-      "time": "1 day 5 hours ago",
+      "time": "1 day 11 hours ago",
       "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=96738",
       "is_new": true
     },
@@ -104,7 +104,7 @@
       "category": "Viva & Exam",
       "course_code": "EEI4267",
       "course_name": "Requirement Engineering",
-      "time": "1 day 5 hours ago",
+      "time": "1 day 11 hours ago",
       "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97016",
       "is_new": true
     },
@@ -114,7 +114,7 @@
       "category": "Announcements",
       "course_code": "EEI4267",
       "course_name": "Requirement Engineering",
-      "time": "1 day 6 hours ago",
+      "time": "1 day 12 hours ago",
       "link": "https://oulms.ou.ac.lk/mod/page/view.php?id=187285",
       "is_new": true
     },
@@ -124,7 +124,7 @@
       "category": "Viva & Exam",
       "course_code": "EEI4267",
       "course_name": "Requirement Engineering",
-      "time": "1 day 7 hours ago",
+      "time": "1 day 13 hours ago",
       "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97016",
       "is_new": true
     },
@@ -134,7 +134,7 @@
       "category": "Announcements",
       "course_code": "EEI4267",
       "course_name": "Requirement Engineering",
-      "time": "1 day 8 hours ago",
+      "time": "1 day 14 hours ago",
       "link": "https://oulms.ou.ac.lk/mod/choice/view.php?id=149145",
       "is_new": true
     },
@@ -144,7 +144,7 @@
       "category": "Announcements",
       "course_code": "EEI4267",
       "course_name": "Requirement Engineering",
-      "time": "1 day 8 hours ago",
+      "time": "1 day 14 hours ago",
       "link": "https://oulms.ou.ac.lk/mod/page/view.php?id=187285",
       "is_new": true
     },
@@ -154,7 +154,7 @@
       "category": "Deadlines & Quizzes",
       "course_code": "",
       "course_name": "",
-      "time": "1 day 9 hours ago",
+      "time": "1 day 15 hours ago",
       "link": "https://oulms.ou.ac.lk/mod/assign/view.php?id=179031&action=view",
       "is_new": true
     },
@@ -164,7 +164,7 @@
       "category": "Grades & Marks",
       "course_code": "EEI4267",
       "course_name": "Requirement Engineering",
-      "time": "1 day 16 hours ago",
+      "time": "1 day 22 hours ago",
       "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=96738",
       "is_new": true
     },
@@ -174,7 +174,7 @@
       "category": "Grades & Marks",
       "course_code": "EEI4267",
       "course_name": "Requirement Engineering",
-      "time": "1 day 17 hours ago",
+      "time": "1 day 23 hours ago",
       "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=96738",
       "is_new": true
     },
@@ -184,7 +184,7 @@
       "category": "Announcements",
       "course_code": "EEI4267",
       "course_name": "Requirement Engineering",
-      "time": "1 day 17 hours ago",
+      "time": "1 day 23 hours ago",
       "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97006",
       "is_new": true
     }
@@ -612,7 +612,7 @@
       "code": "BSE",
       "title": "BSE Learner Support 2024/2025",
       "url": "https://oulms.ou.ac.lk/course/view.php?id=3430",
-      "updates_count": 160,
+      "updates_count": 161,
       "updates": [
         {
           "id": "upd-1",
@@ -1075,6 +1075,18 @@
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
+          "topic": "Request to Conduct Final Exam at Nattandiya Study Centre",
+          "author": "WARNAKULASOORIYA ASHEN DULARA Fernando 21 Aug 2026",
+          "time": "21 Aug 2026",
+          "category": "Viva & Exam",
+          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97223",
+          "is_new": true
+        },
+        {
+          "id": "upd-40",
+          "course_code": "BSE",
+          "course_name": "BSE Learner Support 2024/2025",
+          "forum_name": "General Forum for Learner Support",
           "topic": "Request for Guest Access to OULMS - EEI4362",
           "author": "KESHANI Yuvaraja 21 Aug 2026",
           "time": "21 Aug 2026",
@@ -1083,7 +1095,7 @@
           "is_new": true
         },
         {
-          "id": "upd-40",
+          "id": "upd-41",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1095,7 +1107,7 @@
           "is_new": true
         },
         {
-          "id": "upd-41",
+          "id": "upd-42",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1107,7 +1119,7 @@
           "is_new": true
         },
         {
-          "id": "upd-42",
+          "id": "upd-43",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1119,7 +1131,7 @@
           "is_new": true
         },
         {
-          "id": "upd-43",
+          "id": "upd-44",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1131,7 +1143,7 @@
           "is_new": true
         },
         {
-          "id": "upd-44",
+          "id": "upd-45",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1143,7 +1155,7 @@
           "is_new": true
         },
         {
-          "id": "upd-45",
+          "id": "upd-46",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1155,7 +1167,7 @@
           "is_new": true
         },
         {
-          "id": "upd-46",
+          "id": "upd-47",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1167,7 +1179,7 @@
           "is_new": true
         },
         {
-          "id": "upd-47",
+          "id": "upd-48",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1179,7 +1191,7 @@
           "is_new": true
         },
         {
-          "id": "upd-48",
+          "id": "upd-49",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1191,7 +1203,7 @@
           "is_new": true
         },
         {
-          "id": "upd-49",
+          "id": "upd-50",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1203,7 +1215,7 @@
           "is_new": true
         },
         {
-          "id": "upd-50",
+          "id": "upd-51",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1215,7 +1227,7 @@
           "is_new": true
         },
         {
-          "id": "upd-51",
+          "id": "upd-52",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1227,7 +1239,7 @@
           "is_new": true
         },
         {
-          "id": "upd-52",
+          "id": "upd-53",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1239,7 +1251,7 @@
           "is_new": true
         },
         {
-          "id": "upd-53",
+          "id": "upd-54",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1251,7 +1263,7 @@
           "is_new": true
         },
         {
-          "id": "upd-54",
+          "id": "upd-55",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1263,7 +1275,7 @@
           "is_new": true
         },
         {
-          "id": "upd-55",
+          "id": "upd-56",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1275,7 +1287,7 @@
           "is_new": true
         },
         {
-          "id": "upd-56",
+          "id": "upd-57",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1287,7 +1299,7 @@
           "is_new": true
         },
         {
-          "id": "upd-57",
+          "id": "upd-58",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1299,7 +1311,7 @@
           "is_new": true
         },
         {
-          "id": "upd-58",
+          "id": "upd-59",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1311,7 +1323,7 @@
           "is_new": true
         },
         {
-          "id": "upd-59",
+          "id": "upd-60",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1323,7 +1335,7 @@
           "is_new": true
         },
         {
-          "id": "upd-60",
+          "id": "upd-61",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1335,7 +1347,7 @@
           "is_new": true
         },
         {
-          "id": "upd-61",
+          "id": "upd-62",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1347,7 +1359,7 @@
           "is_new": true
         },
         {
-          "id": "upd-62",
+          "id": "upd-63",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1359,7 +1371,7 @@
           "is_new": true
         },
         {
-          "id": "upd-63",
+          "id": "upd-64",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1371,7 +1383,7 @@
           "is_new": true
         },
         {
-          "id": "upd-64",
+          "id": "upd-65",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1383,7 +1395,7 @@
           "is_new": true
         },
         {
-          "id": "upd-65",
+          "id": "upd-66",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1395,7 +1407,7 @@
           "is_new": true
         },
         {
-          "id": "upd-66",
+          "id": "upd-67",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1407,7 +1419,7 @@
           "is_new": true
         },
         {
-          "id": "upd-67",
+          "id": "upd-68",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1419,7 +1431,7 @@
           "is_new": true
         },
         {
-          "id": "upd-68",
+          "id": "upd-69",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1431,7 +1443,7 @@
           "is_new": true
         },
         {
-          "id": "upd-69",
+          "id": "upd-70",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1443,7 +1455,7 @@
           "is_new": true
         },
         {
-          "id": "upd-70",
+          "id": "upd-71",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1455,7 +1467,7 @@
           "is_new": true
         },
         {
-          "id": "upd-71",
+          "id": "upd-72",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1467,7 +1479,7 @@
           "is_new": true
         },
         {
-          "id": "upd-72",
+          "id": "upd-73",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1479,7 +1491,7 @@
           "is_new": true
         },
         {
-          "id": "upd-73",
+          "id": "upd-74",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1491,7 +1503,7 @@
           "is_new": true
         },
         {
-          "id": "upd-74",
+          "id": "upd-75",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1503,7 +1515,7 @@
           "is_new": true
         },
         {
-          "id": "upd-75",
+          "id": "upd-76",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1515,7 +1527,7 @@
           "is_new": true
         },
         {
-          "id": "upd-76",
+          "id": "upd-77",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1527,7 +1539,7 @@
           "is_new": true
         },
         {
-          "id": "upd-77",
+          "id": "upd-78",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1539,7 +1551,7 @@
           "is_new": true
         },
         {
-          "id": "upd-78",
+          "id": "upd-79",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1551,7 +1563,7 @@
           "is_new": true
         },
         {
-          "id": "upd-79",
+          "id": "upd-80",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1563,7 +1575,7 @@
           "is_new": true
         },
         {
-          "id": "upd-80",
+          "id": "upd-81",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1575,7 +1587,7 @@
           "is_new": true
         },
         {
-          "id": "upd-81",
+          "id": "upd-82",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1587,7 +1599,7 @@
           "is_new": true
         },
         {
-          "id": "upd-82",
+          "id": "upd-83",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1599,7 +1611,7 @@
           "is_new": true
         },
         {
-          "id": "upd-83",
+          "id": "upd-84",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1611,7 +1623,7 @@
           "is_new": true
         },
         {
-          "id": "upd-84",
+          "id": "upd-85",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1623,7 +1635,7 @@
           "is_new": true
         },
         {
-          "id": "upd-85",
+          "id": "upd-86",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1635,7 +1647,7 @@
           "is_new": true
         },
         {
-          "id": "upd-86",
+          "id": "upd-87",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1647,7 +1659,7 @@
           "is_new": true
         },
         {
-          "id": "upd-87",
+          "id": "upd-88",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1659,7 +1671,7 @@
           "is_new": true
         },
         {
-          "id": "upd-88",
+          "id": "upd-89",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1671,7 +1683,7 @@
           "is_new": true
         },
         {
-          "id": "upd-89",
+          "id": "upd-90",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1683,7 +1695,7 @@
           "is_new": true
         },
         {
-          "id": "upd-90",
+          "id": "upd-91",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1695,7 +1707,7 @@
           "is_new": true
         },
         {
-          "id": "upd-91",
+          "id": "upd-92",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1707,7 +1719,7 @@
           "is_new": true
         },
         {
-          "id": "upd-92",
+          "id": "upd-93",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1719,7 +1731,7 @@
           "is_new": true
         },
         {
-          "id": "upd-93",
+          "id": "upd-94",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1731,7 +1743,7 @@
           "is_new": true
         },
         {
-          "id": "upd-94",
+          "id": "upd-95",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1743,7 +1755,7 @@
           "is_new": true
         },
         {
-          "id": "upd-95",
+          "id": "upd-96",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1755,7 +1767,7 @@
           "is_new": true
         },
         {
-          "id": "upd-96",
+          "id": "upd-97",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1767,7 +1779,7 @@
           "is_new": true
         },
         {
-          "id": "upd-97",
+          "id": "upd-98",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1779,7 +1791,7 @@
           "is_new": true
         },
         {
-          "id": "upd-98",
+          "id": "upd-99",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1791,7 +1803,7 @@
           "is_new": true
         },
         {
-          "id": "upd-99",
+          "id": "upd-100",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1803,7 +1815,7 @@
           "is_new": true
         },
         {
-          "id": "upd-100",
+          "id": "upd-101",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1815,7 +1827,7 @@
           "is_new": true
         },
         {
-          "id": "upd-101",
+          "id": "upd-102",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1827,7 +1839,7 @@
           "is_new": true
         },
         {
-          "id": "upd-102",
+          "id": "upd-103",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1839,7 +1851,7 @@
           "is_new": true
         },
         {
-          "id": "upd-103",
+          "id": "upd-104",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1851,7 +1863,7 @@
           "is_new": true
         },
         {
-          "id": "upd-104",
+          "id": "upd-105",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1863,7 +1875,7 @@
           "is_new": true
         },
         {
-          "id": "upd-105",
+          "id": "upd-106",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1875,7 +1887,7 @@
           "is_new": true
         },
         {
-          "id": "upd-106",
+          "id": "upd-107",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1887,7 +1899,7 @@
           "is_new": true
         },
         {
-          "id": "upd-107",
+          "id": "upd-108",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1899,7 +1911,7 @@
           "is_new": true
         },
         {
-          "id": "upd-108",
+          "id": "upd-109",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1911,7 +1923,7 @@
           "is_new": true
         },
         {
-          "id": "upd-109",
+          "id": "upd-110",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1923,7 +1935,7 @@
           "is_new": true
         },
         {
-          "id": "upd-110",
+          "id": "upd-111",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1935,7 +1947,7 @@
           "is_new": true
         },
         {
-          "id": "upd-111",
+          "id": "upd-112",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1947,7 +1959,7 @@
           "is_new": true
         },
         {
-          "id": "upd-112",
+          "id": "upd-113",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1959,7 +1971,7 @@
           "is_new": true
         },
         {
-          "id": "upd-113",
+          "id": "upd-114",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1971,7 +1983,7 @@
           "is_new": true
         },
         {
-          "id": "upd-114",
+          "id": "upd-115",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1983,7 +1995,7 @@
           "is_new": true
         },
         {
-          "id": "upd-115",
+          "id": "upd-116",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1995,7 +2007,7 @@
           "is_new": true
         },
         {
-          "id": "upd-116",
+          "id": "upd-117",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2007,7 +2019,7 @@
           "is_new": true
         },
         {
-          "id": "upd-117",
+          "id": "upd-118",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2019,7 +2031,7 @@
           "is_new": true
         },
         {
-          "id": "upd-118",
+          "id": "upd-119",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2031,7 +2043,7 @@
           "is_new": true
         },
         {
-          "id": "upd-119",
+          "id": "upd-120",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2043,7 +2055,7 @@
           "is_new": true
         },
         {
-          "id": "upd-120",
+          "id": "upd-121",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2055,7 +2067,7 @@
           "is_new": true
         },
         {
-          "id": "upd-121",
+          "id": "upd-122",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2067,7 +2079,7 @@
           "is_new": true
         },
         {
-          "id": "upd-122",
+          "id": "upd-123",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2079,7 +2091,7 @@
           "is_new": true
         },
         {
-          "id": "upd-123",
+          "id": "upd-124",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2091,7 +2103,7 @@
           "is_new": true
         },
         {
-          "id": "upd-124",
+          "id": "upd-125",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2103,7 +2115,7 @@
           "is_new": true
         },
         {
-          "id": "upd-125",
+          "id": "upd-126",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2115,7 +2127,7 @@
           "is_new": true
         },
         {
-          "id": "upd-126",
+          "id": "upd-127",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2127,7 +2139,7 @@
           "is_new": true
         },
         {
-          "id": "upd-127",
+          "id": "upd-128",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2139,7 +2151,7 @@
           "is_new": true
         },
         {
-          "id": "upd-128",
+          "id": "upd-129",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2151,7 +2163,7 @@
           "is_new": true
         },
         {
-          "id": "upd-129",
+          "id": "upd-130",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2163,7 +2175,7 @@
           "is_new": true
         },
         {
-          "id": "upd-130",
+          "id": "upd-131",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2175,7 +2187,7 @@
           "is_new": true
         },
         {
-          "id": "upd-131",
+          "id": "upd-132",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2187,7 +2199,7 @@
           "is_new": true
         },
         {
-          "id": "upd-132",
+          "id": "upd-133",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2199,7 +2211,7 @@
           "is_new": true
         },
         {
-          "id": "upd-133",
+          "id": "upd-134",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2211,7 +2223,7 @@
           "is_new": true
         },
         {
-          "id": "upd-134",
+          "id": "upd-135",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2223,7 +2235,7 @@
           "is_new": true
         },
         {
-          "id": "upd-135",
+          "id": "upd-136",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2235,7 +2247,7 @@
           "is_new": true
         },
         {
-          "id": "upd-136",
+          "id": "upd-137",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Academic Counselling",
@@ -2247,7 +2259,7 @@
           "is_new": true
         },
         {
-          "id": "upd-137",
+          "id": "upd-138",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Academic Counselling",
@@ -2259,7 +2271,7 @@
           "is_new": true
         },
         {
-          "id": "upd-138",
+          "id": "upd-139",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Academic Counselling",
@@ -2271,7 +2283,7 @@
           "is_new": true
         },
         {
-          "id": "upd-139",
+          "id": "upd-140",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Academic Counselling",
@@ -2283,7 +2295,7 @@
           "is_new": true
         },
         {
-          "id": "upd-140",
+          "id": "upd-141",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Academic Counselling",
@@ -2295,7 +2307,7 @@
           "is_new": true
         },
         {
-          "id": "upd-141",
+          "id": "upd-142",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Academic Counselling",
@@ -2307,7 +2319,7 @@
           "is_new": true
         },
         {
-          "id": "upd-142",
+          "id": "upd-143",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Academic Counselling",
@@ -2319,7 +2331,7 @@
           "is_new": true
         },
         {
-          "id": "upd-143",
+          "id": "upd-144",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Academic Counselling",
@@ -2331,7 +2343,7 @@
           "is_new": true
         },
         {
-          "id": "upd-144",
+          "id": "upd-145",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Academic Counselling",
@@ -2343,7 +2355,7 @@
           "is_new": true
         },
         {
-          "id": "upd-145",
+          "id": "upd-146",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Academic Counselling",
@@ -2355,7 +2367,7 @@
           "is_new": true
         },
         {
-          "id": "upd-146",
+          "id": "upd-147",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Academic Counselling",
@@ -2367,7 +2379,7 @@
           "is_new": true
         },
         {
-          "id": "upd-147",
+          "id": "upd-148",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Academic Counselling",
@@ -2379,7 +2391,7 @@
           "is_new": true
         },
         {
-          "id": "upd-148",
+          "id": "upd-149",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Academic Counselling",
@@ -2391,7 +2403,7 @@
           "is_new": true
         },
         {
-          "id": "upd-149",
+          "id": "upd-150",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Academic Counselling",
@@ -2403,7 +2415,7 @@
           "is_new": true
         },
         {
-          "id": "upd-150",
+          "id": "upd-151",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Academic Counselling",
@@ -2415,7 +2427,7 @@
           "is_new": true
         },
         {
-          "id": "upd-151",
+          "id": "upd-152",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Academic Counselling",
@@ -2427,7 +2439,7 @@
           "is_new": true
         },
         {
-          "id": "upd-152",
+          "id": "upd-153",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Academic Counselling",
@@ -2439,7 +2451,7 @@
           "is_new": true
         },
         {
-          "id": "upd-153",
+          "id": "upd-154",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Academic Counselling",
@@ -2451,7 +2463,7 @@
           "is_new": true
         },
         {
-          "id": "upd-154",
+          "id": "upd-155",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Academic Counselling",
@@ -2463,7 +2475,7 @@
           "is_new": true
         },
         {
-          "id": "upd-155",
+          "id": "upd-156",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Academic Counselling",
@@ -2475,7 +2487,7 @@
           "is_new": true
         },
         {
-          "id": "upd-156",
+          "id": "upd-157",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Academic Counselling",
@@ -2487,7 +2499,7 @@
           "is_new": true
         },
         {
-          "id": "upd-157",
+          "id": "upd-158",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Academic Counselling",
@@ -2499,7 +2511,7 @@
           "is_new": true
         },
         {
-          "id": "upd-158",
+          "id": "upd-159",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Financial Matters",
@@ -2511,7 +2523,7 @@
           "is_new": true
         },
         {
-          "id": "upd-159",
+          "id": "upd-160",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "Questions regarding training/internships  Forum",
@@ -2523,7 +2535,7 @@
           "is_new": true
         },
         {
-          "id": "upd-160",
+          "id": "upd-161",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "Questions regarding training/internships  Forum",
