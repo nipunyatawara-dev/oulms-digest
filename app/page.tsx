@@ -9,8 +9,9 @@ import { CourseCard } from '@/components/CourseCard';
 import { ScheduleModal } from '@/components/ScheduleModal';
 import { SyncProgressDrawer, SyncLogItem } from '@/components/SyncProgressDrawer';
 import { AccountSetupView } from '@/components/AccountSetupView';
-import { LMSDataPayload, UserSettings, CourseUpdate } from '@/lib/types';
+import { LMSDataPayload, UserSettings, CourseUpdate, AttachmentItem, ExtractedLinkItem } from '@/lib/types';
 import { isWithinTimeframe } from '@/lib/dateUtils';
+import { categorizeAcademicItem } from '@/lib/categoryUtils';
 import {
   Search,
   RefreshCw,
@@ -23,6 +24,13 @@ import {
   Calendar,
   AlertCircle,
   Layers,
+  FileSpreadsheet,
+  FileText,
+  File,
+  Download,
+  Link2,
+  Table,
+  ChevronDown,
 } from 'lucide-react';
 
 interface UnifiedAcademicItem {
@@ -37,6 +45,10 @@ interface UnifiedAcademicItem {
   author: string;
   forumName: string;
   sourceType: 'portal_notification' | 'course_forum';
+  content?: string;
+  content_html?: string;
+  attachments?: AttachmentItem[];
+  links?: ExtractedLinkItem[];
 }
 
 const CATEGORY_META: Record<
@@ -72,6 +84,7 @@ export default function DashboardPage() {
   const [activeTab, setActiveTab] = useState<CategoryFilter>('All');
   const [searchQuery, setSearchQuery] = useState('');
   const [timeframe, setTimeframe] = useState<'24h' | '16d'>('24h');
+  const [expandedCategoryItemId, setExpandedCategoryItemId] = useState<string | null>(null);
   const [isScheduleOpen, setIsScheduleOpen] = useState(false);
   const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
   const [activeView, setActiveView] = useState<'Dashboard' | 'Announcements' | 'Account'>('Dashboard');
@@ -235,36 +248,46 @@ export default function DashboardPage() {
 
     // 1. From portal notifications
     (data?.notifications || []).forEach((n) => {
+      const cat = categorizeAcademicItem(n.title);
       list.push({
         id: `notif-${n.id}`,
         title: n.title,
         courseCode: n.course_code || 'PORTAL',
         courseName: n.course_name || 'OUSL Portal Notice',
-        category: n.category,
+        category: cat,
         time: n.time,
         link: n.link && n.link !== '#' ? n.link : 'https://oulms.ou.ac.lk/message/output/popup/notifications.php',
         isNew: !!n.is_new,
         author: 'Faculty Alert',
         forumName: 'Portal Notifications',
         sourceType: 'portal_notification',
+        content: n.content || n.title,
+        content_html: n.content_html,
+        attachments: n.attachments || [],
+        links: n.links || [],
       });
     });
 
     // 2. From course forums
     (data?.courses || []).forEach((course) => {
       (course.updates || []).forEach((update) => {
+        const cat = categorizeAcademicItem(update.topic);
         list.push({
           id: `upd-${course.code}-${update.id}`,
           title: update.topic,
           courseCode: course.code,
           courseName: course.title.replace(course.code, '').trim() || course.title,
-          category: update.category,
+          category: cat,
           time: update.time,
           link: update.link,
           isNew: !!update.is_new,
           author: update.author || 'Course Lecturer',
           forumName: update.forum_name || 'Course Forum',
           sourceType: 'course_forum',
+          content: update.content || update.topic,
+          content_html: update.content_html,
+          attachments: update.attachments || [],
+          links: update.links || [],
         });
       });
     });
@@ -551,81 +574,216 @@ export default function DashboardPage() {
                   </div>
                 ) : currentCategoryItems.length > 0 ? (
                   <div className="bg-[#f2ebe5] rounded-2xl divide-y divide-[#4e080c]/[0.05] overflow-hidden shadow-refero-sm">
-                    {currentCategoryItems.map((item) => (
-                      <div
-                        key={item.id}
-                        className="p-4 sm:p-5 flex items-start sm:items-center justify-between gap-3 sm:gap-4 hover:bg-[#4e080c]/[0.015] transition-colors group"
-                      >
-                        <div className="flex items-start sm:items-center gap-3.5 min-w-0 flex-1">
-                          {/* Course Code Badge */}
-                          <div className="px-2.5 py-1 rounded-lg bg-[#4e080c] text-white font-mono font-semibold text-[11.5px] tracking-wide shrink-0 shadow-refero-sm mt-0.5 sm:mt-0">
-                            {item.courseCode}
-                          </div>
+                    {currentCategoryItems.map((item) => {
+                      const isExpanded = expandedCategoryItemId === item.id;
+                      const hasAttachments = item.attachments && item.attachments.length > 0;
+                      const hasLinks = item.links && item.links.length > 0;
+                      const hasExtraContent =
+                        item.content &&
+                        item.content.trim() !== '' &&
+                        item.content.trim() !== item.title.trim();
 
-                          {/* Content Details */}
-                          <div className="min-w-0 flex-1">
-                            <div className="flex items-center gap-2 flex-wrap">
+                      return (
+                        <div key={item.id} className="transition-colors hover:bg-[#4e080c]/[0.015]">
+                          {/* Item Row Header */}
+                          <div
+                            onClick={() =>
+                              setExpandedCategoryItemId((prev) => (prev === item.id ? null : item.id))
+                            }
+                            className="p-4 sm:p-5 flex items-start sm:items-center justify-between gap-3 sm:gap-4 cursor-pointer select-none group"
+                          >
+                            <div className="flex items-start sm:items-center gap-3.5 min-w-0 flex-1">
+                              {/* Course Code Badge */}
+                              <div className="px-2.5 py-1 rounded-lg bg-[#4e080c] text-white font-mono font-semibold text-[11.5px] tracking-wide shrink-0 shadow-refero-sm mt-0.5 sm:mt-0 group-hover:scale-105 transition-transform">
+                                {item.courseCode}
+                              </div>
+
+                              {/* Content Details */}
+                              <div className="min-w-0 flex-1">
+                                <div className="flex items-center gap-2 flex-wrap">
+                                  <span className="text-[13.5px] sm:text-[14px] font-semibold text-[#4e080c] group-hover:text-[#620a0f] transition-colors leading-snug break-words">
+                                    {item.title}
+                                  </span>
+                                  {item.isNew && (
+                                    <span className="px-1.5 py-0.2 text-[10.5px] font-semibold bg-blue-100 text-blue-800 rounded-md">
+                                      New
+                                    </span>
+                                  )}
+                                  {item.category === 'Grades & Marks' && (
+                                    <span className="px-1.5 py-0.2 text-[10.5px] font-semibold bg-amber-100 text-amber-900 rounded-md">
+                                      Marks
+                                    </span>
+                                  )}
+                                </div>
+
+                                <div className="text-[12px] text-[#71717A] flex items-center gap-2 mt-1 flex-wrap">
+                                  <span className="font-medium text-[#4e080c] truncate max-w-[200px] sm:max-w-sm">
+                                    {item.courseName}
+                                  </span>
+                                  {item.forumName && (
+                                    <>
+                                      <span>&bull;</span>
+                                      <span className="truncate max-w-[180px]">{item.forumName}</span>
+                                    </>
+                                  )}
+                                  {item.author && (
+                                    <>
+                                      <span>&bull;</span>
+                                      <span className="inline-flex items-center gap-1">
+                                        <User className="w-3 h-3 text-[#8E8E93]" />
+                                        {item.author}
+                                      </span>
+                                    </>
+                                  )}
+                                  {item.time && (
+                                    <>
+                                      <span>&bull;</span>
+                                      <span className="inline-flex items-center gap-1">
+                                        <Clock className="w-3 h-3 text-[#8E8E93]" />
+                                        {item.time}
+                                      </span>
+                                    </>
+                                  )}
+                                </div>
+                              </div>
+                            </div>
+
+                            {/* Right Actions: Open Link & Expand Toggle */}
+                            <div
+                              className="flex items-center gap-2 shrink-0"
+                              onClick={(e) => e.stopPropagation()}
+                            >
                               <a
                                 href={item.link}
                                 target="_blank"
                                 rel="noreferrer"
-                                className="text-[13.5px] sm:text-[14px] font-semibold text-[#4e080c] hover:text-[#620a0f] hover:underline transition-colors leading-snug break-words"
+                                className="inline-flex items-center gap-1.5 px-3 py-1.5 text-[12.5px] font-medium text-[#4e080c] bg-white hover:bg-[#f5efe9] border border-[#4e080c]/[0.12] rounded-lg shadow-refero-sm transition-all"
                               >
-                                {item.title}
+                                <span>Open</span>
+                                <ExternalLink className="w-3 h-3 text-[#71717A]" />
                               </a>
-                              {item.isNew && (
-                                <span className="px-1.5 py-0.2 text-[10.5px] font-semibold bg-blue-100 text-blue-800 rounded-md">
-                                  New
-                                </span>
-                              )}
-                            </div>
 
-                            <div className="text-[12px] text-[#71717A] flex items-center gap-2 mt-1 flex-wrap">
-                              <span className="font-medium text-[#4e080c] truncate max-w-[200px] sm:max-w-sm">
-                                {item.courseName}
-                              </span>
-                              {item.forumName && (
-                                <>
-                                  <span>&bull;</span>
-                                  <span className="truncate max-w-[180px]">{item.forumName}</span>
-                                </>
-                              )}
-                              {item.author && (
-                                <>
-                                  <span>&bull;</span>
-                                  <span className="inline-flex items-center gap-1">
-                                    <User className="w-3 h-3 text-[#8E8E93]" />
-                                    {item.author}
-                                  </span>
-                                </>
-                              )}
-                              {item.time && (
-                                <>
-                                  <span>&bull;</span>
-                                  <span className="inline-flex items-center gap-1">
-                                    <Clock className="w-3 h-3 text-[#8E8E93]" />
-                                    {item.time}
-                                  </span>
-                                </>
-                              )}
+                              <button
+                                onClick={() =>
+                                  setExpandedCategoryItemId((prev) =>
+                                    prev === item.id ? null : item.id
+                                  )
+                                }
+                                className="p-1.5 text-[#71717A] hover:text-[#4e080c] hover:bg-[#4e080c]/[0.05] rounded-lg transition-colors"
+                                title={isExpanded ? 'Collapse' : 'Expand full details'}
+                                aria-label="Toggle details"
+                              >
+                                <ChevronDown
+                                  className={`w-4 h-4 transition-transform duration-200 ${
+                                    isExpanded ? 'rotate-180 text-[#4e080c]' : ''
+                                  }`}
+                                />
+                              </button>
                             </div>
                           </div>
-                        </div>
 
-                        {/* Right Open Button */}
-                        <div className="shrink-0">
-                          <a
-                            href={item.link}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-[12.5px] font-medium text-[#4e080c] bg-white hover:bg-[#f5efe9] border border-[#4e080c]/[0.12] rounded-lg shadow-refero-sm transition-all"
-                          >
-                            <span>Open</span>
-                            <ExternalLink className="w-3 h-3 text-[#71717A]" />
-                          </a>
+                          {/* Expanded Tile Body */}
+                          {isExpanded && (
+                            <div className="border-t border-[#4e080c]/[0.06] bg-[#fdfaf8] px-5 py-4 sm:px-6 sm:py-5 space-y-4 animate-in fade-in-50 duration-200">
+                              {/* Full Content / Message Body */}
+                              <div className="text-[13px] sm:text-[13.5px] text-[#4e080c] leading-relaxed space-y-2">
+                                {hasExtraContent ? (
+                                  <div className="whitespace-pre-line bg-white p-3.5 rounded-xl border border-[#4e080c]/[0.08] shadow-refero-sm">
+                                    {item.content}
+                                  </div>
+                                ) : (
+                                  <div className="bg-white p-3.5 rounded-xl border border-[#4e080c]/[0.08] shadow-refero-sm flex items-center gap-2 text-[#71717A]">
+                                    <Table className="w-4 h-4 text-[#4e080c]" />
+                                    <span>
+                                      Academic notice for{' '}
+                                      <strong className="text-[#4e080c]">
+                                        {item.courseCode} - {item.courseName}
+                                      </strong>
+                                      . Click below to view the linked marks, spreadsheets, or full discussion thread.
+                                    </span>
+                                  </div>
+                                )}
+                              </div>
+
+                              {/* Quick Access Links (Google Sheets, Forms, Zoom) */}
+                              {hasLinks && (
+                                <div className="space-y-1.5">
+                                  <div className="text-[11.5px] font-semibold tracking-wider uppercase text-[#71717A] flex items-center gap-1.5">
+                                    <Link2 className="w-3.5 h-3.5 text-[#4e080c]" />
+                                    <span>Quick Access & Direct Links</span>
+                                  </div>
+                                  <div className="flex flex-wrap gap-2">
+                                    {item.links?.map((lk, i) => (
+                                      <a
+                                        key={i}
+                                        href={lk.url}
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        className="inline-flex items-center gap-2 px-3 py-1.5 bg-white hover:bg-emerald-50 text-emerald-800 border border-emerald-200 rounded-lg text-[12.5px] font-medium shadow-refero-sm transition-all"
+                                      >
+                                        {lk.type === 'sheets' ? (
+                                          <FileSpreadsheet className="w-3.5 h-3.5 text-emerald-600" />
+                                        ) : (
+                                          <ExternalLink className="w-3.5 h-3.5 text-emerald-600" />
+                                        )}
+                                        <span>{lk.title}</span>
+                                      </a>
+                                    ))}
+                                  </div>
+                                </div>
+                              )}
+
+                              {/* Attached Files & Spreadsheets */}
+                              {hasAttachments && (
+                                <div className="space-y-1.5">
+                                  <div className="text-[11.5px] font-semibold tracking-wider uppercase text-[#71717A] flex items-center gap-1.5">
+                                    <FileSpreadsheet className="w-3.5 h-3.5 text-[#4e080c]" />
+                                    <span>Attached Spreadsheets & Documents</span>
+                                  </div>
+                                  <div className="flex flex-wrap gap-2">
+                                    {item.attachments?.map((att, i) => (
+                                      <a
+                                        key={i}
+                                        href={att.url}
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        className="inline-flex items-center gap-2 px-3 py-1.5 bg-white hover:bg-[#f5efe9] text-[#4e080c] border border-[#4e080c]/[0.12] rounded-lg text-[12.5px] font-medium shadow-refero-sm transition-all"
+                                      >
+                                        {att.type === 'excel' || att.type === 'csv' ? (
+                                          <FileSpreadsheet className="w-3.5 h-3.5 text-emerald-600" />
+                                        ) : att.type === 'pdf' ? (
+                                          <FileText className="w-3.5 h-3.5 text-rose-600" />
+                                        ) : (
+                                          <File className="w-3.5 h-3.5 text-[#71717A]" />
+                                        )}
+                                        <span className="truncate max-w-xs">{att.name}</span>
+                                        <Download className="w-3 h-3 text-[#71717A]" />
+                                      </a>
+                                    ))}
+                                  </div>
+                                </div>
+                              )}
+
+                              {/* Footer Meta & Direct Link */}
+                              <div className="pt-2 flex items-center justify-between gap-3 flex-wrap text-[12px] text-[#71717A] border-t border-[#4e080c]/[0.06]">
+                                <span>
+                                  Source: <strong className="text-[#4e080c]">{item.forumName}</strong> ({item.courseCode})
+                                </span>
+                                <a
+                                  href={item.link}
+                                  target="_blank"
+                                  rel="noreferrer"
+                                  className="inline-flex items-center gap-1 text-[#4e080c] font-medium hover:underline hover:text-[#620a0f]"
+                                >
+                                  <span>View Original Post on Moodle</span>
+                                  <ExternalLink className="w-3 h-3" />
+                                </a>
+                              </div>
+                            </div>
+                          )}
                         </div>
-                      </div>
-                    ))}
+                      );
+                    })}
                   </div>
                 ) : (
                   /* Empty State */

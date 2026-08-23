@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { LMSDataPayload, UserSettings } from './types';
+import { categorizeAcademicItem } from './categoryUtils';
 
 const DATA_DIR = path.join(process.cwd(), 'data');
 const DATA_FILE = path.join(DATA_DIR, 'lms_data.json');
@@ -10,7 +11,28 @@ export function getLMSData(): LMSDataPayload | null {
   try {
     if (!fs.existsSync(DATA_FILE)) return null;
     const raw = fs.readFileSync(DATA_FILE, 'utf-8');
-    return JSON.parse(raw);
+    const parsed: LMSDataPayload = JSON.parse(raw);
+
+    if (parsed) {
+      if (Array.isArray(parsed.notifications)) {
+        parsed.notifications = parsed.notifications.map((n) => ({
+          ...n,
+          category: categorizeAcademicItem(n.title || ''),
+        }));
+      }
+
+      if (Array.isArray(parsed.courses)) {
+        parsed.courses = parsed.courses.map((c) => ({
+          ...c,
+          updates: (c.updates || []).map((u) => ({
+            ...u,
+            category: categorizeAcademicItem(u.topic || ''),
+          })),
+        }));
+      }
+    }
+
+    return parsed;
   } catch (error) {
     console.error('Error reading lms_data.json:', error);
     return null;

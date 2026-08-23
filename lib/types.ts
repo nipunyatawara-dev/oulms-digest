@@ -1,3 +1,17 @@
+export interface AttachmentItem {
+  name: string;
+  url: string;
+  type?: 'excel' | 'pdf' | 'csv' | 'doc' | 'image' | 'link' | 'other';
+  size?: string;
+  local_path?: string;
+}
+
+export interface ExtractedLinkItem {
+  title: string;
+  url: string;
+  type?: 'sheets' | 'drive' | 'forms' | 'zoom' | 'general';
+}
+
 export interface NotificationItem {
   id: string;
   title: string;
@@ -7,6 +21,10 @@ export interface NotificationItem {
   time: string;
   link: string;
   is_new?: boolean;
+  content?: string;
+  content_html?: string;
+  attachments?: AttachmentItem[];
+  links?: ExtractedLinkItem[];
 }
 
 export interface ForumUpdateItem {
@@ -20,6 +38,10 @@ export interface ForumUpdateItem {
   category: 'Grades & Marks' | 'Viva & Exam' | 'Deadlines & Quizzes' | 'Announcements';
   link: string;
   is_new?: boolean;
+  content?: string;
+  content_html?: string;
+  attachments?: AttachmentItem[];
+  links?: ExtractedLinkItem[];
 }
 
 export type CourseUpdate = ForumUpdateItem;
@@ -78,4 +100,3 @@ export interface UserSettings {
   selected_courses?: string[];
   discovered_courses?: DiscoveredCourseItem[];
 }
-

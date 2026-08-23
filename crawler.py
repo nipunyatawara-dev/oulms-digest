@@ -76,14 +76,101 @@ def clean_title_text(title: str, course_code: str = "", course_names: Dict[str, 
     return cleaned if cleaned else title
 
 def categorize_notification(text: str) -> str:
+    if not text:
+        return "Announcements"
     lower = text.lower()
-    if any(k in lower for k in ["mark", "result", "grade", "cat", "oq", "tma", "ocam"]):
+
+    # 1. Direct explicit indicators for Grades & Marks
+    grade_core_keywords = [
+        "mark", "marks", "marked", "marking", "re-marking", "remarking",
+        "re-check", "recheck", "re-correction", "recorrection",
+        "re-evaluation", "reevaluation", "re-scrutiniz", "rescrutiniz",
+        "result", "results",
+        "grade", "grades", "graded", "grading",
+        "score", "scores", "scoring",
+        "eligib",  # covers eligibility, eligible, ineligible, etc.
+        "continuous assessment",
+        "transcript", "marksheet", "mark sheet", "grade sheet"
+    ]
+
+    grade_core_patterns = [
+        r"\bocam\b", r"\bocams\b",
+        r"\bcam\b", r"\bcams\b",
+        r"\bca\s*marks?\b",
+        r"\bgpa\b"
+    ]
+
+    has_core_grade = any(k in lower for k in grade_core_keywords) or any(re.search(p, lower) for p in grade_core_patterns)
+
+    if has_core_grade:
         return "Grades & Marks"
-    if any(k in lower for k in ["viva", "exam", "final", "resit", "opportunity", "schedule"]):
+
+    # 2. Deadlines & Quizzes keywords
+    deadline_keywords = [
+        "due", "deadline", "submission", "submit", "submitting", "resubmission",
+        "cutoff", "cut-off", "assignment", "quiz", "activity due",
+        "upcoming activities", "upcoming activity", "task due", "upload link"
+    ]
+    has_deadline = any(k in lower for k in deadline_keywords)
+
+    # 3. Viva & Exam keywords
+    viva_exam_keywords = [
+        "viva", "exam", "examination", "resit", "re-sit", "repeat",
+        "timetable", "time table", "schedule", "time slot", "allocated time",
+        "slot allocation", "session allocation", "venue", "exam center", "exam centre",
+        "hall ticket", "admission card", "admission form", "index number",
+        "opportunity", "final exam", "final examination"
+    ]
+    has_viva_exam = any(k in lower for k in viva_exam_keywords)
+
+    # Contextual abbreviation checks for CAT / OQ / TMA with word boundaries
+    abbr_patterns = [
+        r"\bcat\b", r"\bcats\b", r"\bcat\s*[-#]?\s*\d+\b",
+        r"\boq\b", r"\boqs\b", r"\boq\s*[-#]?\s*\d+\b",
+        r"\btma\b", r"\btmas\b", r"\btma\s*[-#]?\s*\d+\b",
+    ]
+    has_eval_abbr = any(re.search(p, lower) for p in abbr_patterns)
+
+    if has_eval_abbr:
+        if has_viva_exam:
+            return "Viva & Exam"
+        if has_deadline:
+            return "Deadlines & Quizzes"
+        return "Grades & Marks"
+
+    if has_viva_exam:
         return "Viva & Exam"
-    if any(k in lower for k in ["due", "assignment", "quiz", "deadline", "submission"]):
+
+    if has_deadline:
         return "Deadlines & Quizzes"
+
     return "Announcements"
+
+def classify_attachment_type(filename_or_url: str) -> str:
+    lower = filename_or_url.lower()
+    if lower.endswith(('.xlsx', '.xls', '.xlsm')):
+        return 'excel'
+    if lower.endswith('.csv'):
+        return 'csv'
+    if lower.endswith('.pdf'):
+        return 'pdf'
+    if lower.endswith(('.doc', '.docx')):
+        return 'doc'
+    if lower.endswith(('.png', '.jpg', '.jpeg', '.webp', '.gif')):
+        return 'image'
+    return 'other'
+
+def classify_link_type(url: str) -> str:
+    lower = url.lower()
+    if 'docs.google.com/spreadsheets' in lower or 'sheets.google.com' in lower:
+        return 'sheets'
+    if 'drive.google.com' in lower:
+        return 'drive'
+    if 'forms.gle' in lower or 'docs.google.com/forms' in lower or 'forms.office.com' in lower:
+        return 'forms'
+    if 'zoom.us' in lower or 'teams.microsoft.com' in lower or 'meet.google.com' in lower:
+        return 'zoom'
+    return 'general'
 
 def extract_course_code_and_name(text: str, course_map: Dict[str, str], target_codes: List[str] = None) -> Tuple[str, str]:
     targets = target_codes or DEFAULT_TARGET_COURSE_CODES
@@ -371,22 +458,46 @@ class OUSLCrawler:
                     await item.click()
                     await page.wait_for_timeout(250)
 
-                    direct_target_link = await page.evaluate('''() => {
-                        const rightPane = document.querySelector(".notification-area") || document.body;
+                    details = await page.evaluate('''() => {
+                        const rightPane = document.querySelector(".notification-area") || document.querySelector(".popover-region-container") || document.body;
                         const anchors = Array.from(rightPane.querySelectorAll("a"));
                         
+                        let targetLink = "";
                         for (const a of anchors) {
                             if (a.innerText.includes("Go to:") || a.innerText.includes("See this post") || a.href.includes("discuss.php")) {
-                                return a.href;
+                                targetLink = a.href;
+                                break;
                             }
                         }
-                        for (const a of anchors) {
-                            if (a.href.includes("/mod/") || a.href.includes("pluginfile.php")) {
-                                return a.href;
+                        if (!targetLink) {
+                            for (const a of anchors) {
+                                if (a.href.includes("/mod/") || a.href.includes("pluginfile.php")) {
+                                    targetLink = a.href;
+                                    break;
+                                }
                             }
                         }
-                        return "";
+
+                        const msgEl = rightPane.querySelector(".notification-message, .content, .notification-text") || rightPane;
+                        const content = msgEl ? msgEl.innerText.trim() : "";
+                        const contentHtml = msgEl ? msgEl.innerHTML : "";
+
+                        const extractedLinks = anchors
+                            .filter(a => a.href && !a.href.startsWith("javascript") && !a.href.includes("#"))
+                            .map(a => ({ title: a.innerText.trim() || a.href, url: a.href }));
+
+                        return {
+                            targetLink,
+                            content,
+                            contentHtml,
+                            extractedLinks
+                        };
                     }''')
+
+                    direct_target_link = details.get('targetLink', '')
+                    content_text = details.get('content', '')
+                    content_html = details.get('contentHtml', '')
+                    raw_extracted_links = details.get('extractedLinks', [])
 
                     raw_text = await item.inner_text()
                     if not raw_text or "Select from the list" in raw_text:
@@ -421,6 +532,26 @@ class OUSLCrawler:
                         else:
                             final_link = NOTIFICATIONS_URL
 
+                    attachments = []
+                    links_list = []
+                    for lk in raw_extracted_links:
+                        u = lk.get('url', '')
+                        t = lk.get('title', '')
+                        att_type = classify_attachment_type(u)
+                        if att_type != 'other' or 'pluginfile.php' in u:
+                            attachments.append({
+                                "name": t if t and t != u else os.path.basename(u.split('?')[0]) or "Attachment",
+                                "url": u,
+                                "type": att_type
+                            })
+                        else:
+                            link_type = classify_link_type(u)
+                            links_list.append({
+                                "title": t or u,
+                                "url": u,
+                                "type": link_type
+                            })
+
                     is_new = self.state_manager.is_new("notification", clean_title, final_link, time_str)
                     if self.filter_seen and not is_new:
                         continue
@@ -434,7 +565,11 @@ class OUSLCrawler:
                         "course_name": course_name,
                         "time": time_str,
                         "link": final_link,
-                        "is_new": is_new
+                        "is_new": is_new,
+                        "content": content_text or clean_title,
+                        "content_html": content_html,
+                        "attachments": attachments,
+                        "links": links_list
                     })
                 except Exception as ie:
                     print(f"[!] Error processing notification item {idx}: {ie}")
@@ -510,7 +645,11 @@ class OUSLCrawler:
                             "time": time_str,
                             "category": category,
                             "link": link,
-                            "is_new": is_new
+                            "is_new": is_new,
+                            "content": clean_topic,
+                            "content_html": "",
+                            "attachments": [],
+                            "links": []
                         })
                 except Exception as fe:
                     print(f"    [!] Error reading forum {forum_title}: {fe}")
