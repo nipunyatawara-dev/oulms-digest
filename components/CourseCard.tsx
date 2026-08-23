@@ -108,30 +108,14 @@ export function CourseCard({ course, defaultExpanded = false }: CourseCardProps)
         <div className="border-t border-[#4e080c]/[0.05] bg-[#fdfaf8] px-4 sm:px-6 py-2 divide-y divide-[#4e080c]/[0.05]">
           {displayedUpdates.map((update) => {
             const isTopicExpanded = expandedTopicId === update.id;
-            const validLinks = (update.links || []).filter(
-              (lk) => lk.url && lk.url !== update.link && !lk.url.endsWith('discuss.php') && !lk.url.endsWith('view.php')
-            );
+            const validLinks = update.links || [];
             const hasAttachments = Boolean(update.attachments && update.attachments.length > 0);
             const hasLinks = validLinks.length > 0;
-            const hasExtraContent = Boolean(
-              update.content &&
-              update.content.trim() !== '' &&
-              update.content.trim() !== update.topic.trim()
-            );
-            const canExpandTopic = hasExtraContent || hasAttachments || hasLinks;
-
-            const handleTopicRowClick = () => {
-              if (canExpandTopic) {
-                toggleTopic(update.id);
-              } else {
-                window.open(update.link, '_blank');
-              }
-            };
 
             return (
               <div key={update.id} className="py-3 group transition-colors">
                 <div
-                  onClick={handleTopicRowClick}
+                  onClick={() => toggleTopic(update.id)}
                   className="flex items-start justify-between gap-3 cursor-pointer select-none min-h-[44px]"
                 >
                   <div className="flex-1 min-w-0">
@@ -182,27 +166,25 @@ export function CourseCard({ course, defaultExpanded = false }: CourseCardProps)
                     >
                       <ExternalLink className="w-4 h-4" />
                     </a>
-                    {canExpandTopic && (
-                      <button
-                        onClick={() => toggleTopic(update.id)}
-                        className="min-w-[44px] min-h-[44px] flex items-center justify-center p-2 rounded-lg text-[#71717A] hover:text-[#4e080c] hover:bg-[#4e080c]/[0.05] transition-colors active:scale-95"
-                        aria-label={isTopicExpanded ? 'Collapse topic details' : 'Expand topic details'}
-                        aria-expanded={isTopicExpanded}
-                      >
-                        <ChevronDown
-                          className={`w-4 h-4 transition-transform duration-200 ${
-                            isTopicExpanded ? 'rotate-180 text-[#4e080c]' : ''
-                          }`}
-                        />
-                      </button>
-                    )}
+                    <button
+                      onClick={() => toggleTopic(update.id)}
+                      className="min-w-[44px] min-h-[44px] flex items-center justify-center p-2 rounded-lg text-[#71717A] hover:text-[#4e080c] hover:bg-[#4e080c]/[0.05] transition-colors active:scale-95"
+                      aria-label={isTopicExpanded ? 'Collapse topic details' : 'Expand topic details'}
+                      aria-expanded={isTopicExpanded}
+                    >
+                      <ChevronDown
+                        className={`w-4 h-4 transition-transform duration-200 ${
+                          isTopicExpanded ? 'rotate-180 text-[#4e080c]' : ''
+                        }`}
+                      />
+                    </button>
                   </div>
                 </div>
 
-                {/* Expanded Discussion Details (Rendered ONLY when real extra details exist) */}
-                {isTopicExpanded && canExpandTopic && (
+                {/* Expanded Discussion Details */}
+                {isTopicExpanded && (
                   <div className="mt-3 pt-3 border-t border-[#4e080c]/[0.06] space-y-3 animate-in fade-in-50 duration-150">
-                    {hasExtraContent && (
+                    {update.content && (
                       <div className="text-[12.5px] text-[#4e080c] bg-white p-3.5 rounded-xl border border-[#4e080c]/[0.08] shadow-refero-sm whitespace-pre-line">
                         {update.content}
                       </div>
@@ -211,7 +193,7 @@ export function CourseCard({ course, defaultExpanded = false }: CourseCardProps)
                     {hasLinks && (
                       <div className="space-y-1.5">
                         <div className="text-[11px] font-semibold tracking-wider uppercase text-[#71717A]">
-                          Links inside this topic:
+                          Action Links:
                         </div>
                         <div className="flex flex-wrap gap-2">
                           {validLinks.map((lk, i) => (
@@ -220,9 +202,9 @@ export function CourseCard({ course, defaultExpanded = false }: CourseCardProps)
                               href={lk.url}
                               target="_blank"
                               rel="noreferrer"
-                              className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-300 rounded-lg text-[12px] font-semibold shadow-refero-sm active:scale-[0.98] transition-all min-h-[38px]"
+                              className="inline-flex items-center gap-1.5 px-3 py-2 bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-300 rounded-lg text-[12.5px] font-semibold shadow-refero-sm active:scale-[0.98] transition-all min-h-[40px]"
                             >
-                              {lk.type === 'sheets' ? (
+                              {lk.type === 'sheets' || lk.title.toLowerCase().includes('eligib') || lk.title.toLowerCase().includes('mark') ? (
                                 <FileSpreadsheet className="w-3.5 h-3.5 text-emerald-700" />
                               ) : (
                                 <ExternalLink className="w-3.5 h-3.5 text-emerald-700" />

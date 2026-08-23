@@ -569,31 +569,17 @@ export default function DashboardPage() {
                   <div className="bg-[#f2ebe5] rounded-2xl divide-y divide-[#4e080c]/[0.05] overflow-hidden shadow-refero-sm">
                     {currentCategoryItems.map((item) => {
                       const isExpanded = expandedCategoryItemId === item.id;
-                      const validLinks = (item.links || []).filter(
-                        (lk) => lk.url && lk.url !== item.link && !lk.url.endsWith('discuss.php') && !lk.url.endsWith('view.php')
-                      );
+                      const validLinks = item.links || [];
                       const hasAttachments = Boolean(item.attachments && item.attachments.length > 0);
                       const hasLinks = validLinks.length > 0;
-                      const hasExtraContent = Boolean(
-                        item.content &&
-                        item.content.trim() !== '' &&
-                        item.content.trim() !== item.title.trim()
-                      );
-                      const canExpand = hasExtraContent || hasAttachments || hasLinks;
-
-                      const handleItemRowClick = () => {
-                        if (canExpand) {
-                          setExpandedCategoryItemId((prev) => (prev === item.id ? null : item.id));
-                        } else {
-                          window.open(item.link, '_blank');
-                        }
-                      };
 
                       return (
                         <div key={item.id} className="transition-colors hover:bg-[#4e080c]/[0.015]">
                           {/* Item Row Header */}
                           <div
-                            onClick={handleItemRowClick}
+                            onClick={() =>
+                              setExpandedCategoryItemId((prev) => (prev === item.id ? null : item.id))
+                            }
                             className="p-4 sm:p-5 flex items-start sm:items-center justify-between gap-3 sm:gap-4 cursor-pointer select-none group min-h-[54px] active:bg-[#4e080c]/[0.03] transition-colors"
                           >
                             <div className="flex items-start sm:items-center gap-3.5 min-w-0 flex-1">
@@ -668,33 +654,31 @@ export default function DashboardPage() {
                                 <ExternalLink className="w-3.5 h-3.5 text-[#71717A]" />
                               </a>
 
-                              {canExpand && (
-                                <button
-                                  onClick={() =>
-                                    setExpandedCategoryItemId((prev) =>
-                                      prev === item.id ? null : item.id
-                                    )
-                                  }
-                                  className="min-w-[44px] min-h-[44px] flex items-center justify-center p-2 text-[#71717A] hover:text-[#4e080c] hover:bg-[#4e080c]/[0.05] rounded-lg transition-colors active:scale-95"
-                                  title={isExpanded ? 'Collapse details' : 'Expand full details'}
-                                  aria-label={isExpanded ? 'Collapse details' : 'Expand full details'}
-                                  aria-expanded={isExpanded}
-                                >
-                                  <ChevronDown
-                                    className={`w-4 h-4 transition-transform duration-200 ${
-                                      isExpanded ? 'rotate-180 text-[#4e080c]' : ''
-                                    }`}
-                                  />
-                                </button>
-                              )}
+                              <button
+                                onClick={() =>
+                                  setExpandedCategoryItemId((prev) =>
+                                    prev === item.id ? null : item.id
+                                  )
+                                }
+                                className="min-w-[44px] min-h-[44px] flex items-center justify-center p-2 text-[#71717A] hover:text-[#4e080c] hover:bg-[#4e080c]/[0.05] rounded-lg transition-colors active:scale-95"
+                                title={isExpanded ? 'Collapse details' : 'Expand full details'}
+                                aria-label={isExpanded ? 'Collapse details' : 'Expand full details'}
+                                aria-expanded={isExpanded}
+                              >
+                                <ChevronDown
+                                  className={`w-4 h-4 transition-transform duration-200 ${
+                                    isExpanded ? 'rotate-180 text-[#4e080c]' : ''
+                                  }`}
+                                />
+                              </button>
                             </div>
                           </div>
 
-                          {/* Expanded Tile Body (Rendered ONLY when real extra details exist) */}
-                          {isExpanded && canExpand && (
+                          {/* Expanded Tile Body */}
+                          {isExpanded && (
                             <div className="border-t border-[#4e080c]/[0.06] bg-[#fdfaf8] px-5 py-4 sm:px-6 sm:py-5 space-y-4 animate-in fade-in-50 duration-200">
-                              {/* Full Content */}
-                              {hasExtraContent && (
+                              {/* Full Content / Message Body */}
+                              {item.content && (
                                 <div className="text-[13px] sm:text-[13.5px] text-[#4e080c] leading-relaxed whitespace-pre-line bg-white p-3.5 rounded-xl border border-[#4e080c]/[0.08] shadow-refero-sm">
                                   {item.content}
                                 </div>
@@ -704,7 +688,7 @@ export default function DashboardPage() {
                               {hasLinks && (
                                 <div className="space-y-2">
                                   <div className="text-[11.5px] font-semibold tracking-wider uppercase text-[#71717A] flex items-center gap-1.5">
-                                    <span>Links inside this notice:</span>
+                                    <span>Action Links:</span>
                                   </div>
                                   <div className="flex flex-wrap gap-2.5">
                                     {validLinks.map((lk, i) => (
@@ -713,9 +697,9 @@ export default function DashboardPage() {
                                         href={lk.url}
                                         target="_blank"
                                         rel="noreferrer"
-                                        className="inline-flex items-center gap-2 px-3.5 py-2 bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-300 rounded-xl text-[12.5px] font-semibold shadow-refero-sm active:scale-[0.98] transition-all min-h-[44px]"
+                                        className="inline-flex items-center gap-2 px-3.5 py-2.5 bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-300 rounded-xl text-[13px] font-semibold shadow-refero-sm active:scale-[0.98] transition-all min-h-[44px]"
                                       >
-                                        {lk.type === 'sheets' ? (
+                                        {lk.type === 'sheets' || lk.title.toLowerCase().includes('eligib') || lk.title.toLowerCase().includes('mark') ? (
                                           <FileSpreadsheet className="w-4 h-4 text-emerald-700 shrink-0" />
                                         ) : (
                                           <ExternalLink className="w-4 h-4 text-emerald-700 shrink-0" />
@@ -965,8 +949,10 @@ export default function DashboardPage() {
           setActiveTab(tab);
           setSearchQuery('');
         }}
-        announcementsCount={announcementsCounts.count24h > 0 ? announcementsCounts.count24h : announcementsCounts.count16d}
-        hasCredentials={!!settings?.ousl_username}
+        gradesCount={gradesCounts.count24h > 0 ? gradesCounts.count24h : gradesCounts.count16d}
+        vivaCount={vivaCounts.count24h > 0 ? vivaCounts.count24h : vivaCounts.count16d}
+        deadlinesCount={deadlinesCounts.count24h > 0 ? deadlinesCounts.count24h : deadlinesCounts.count16d}
+        coursesCount={allCourses.length}
       />
     </div>
   );

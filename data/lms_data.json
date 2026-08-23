@@ -15,11 +15,17 @@
       "course_code": "EEI4361",
       "course_name": "User Experience Engineering",
       "time": "2 hours ago",
-      "link": "https://oulms.ou.ac.lk/course/view.php?id=3439",
+      "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97304",
       "is_new": true,
-      "content": "2025/26 Eligibility Status",
+      "content": "Dear Students,\n\nYou can obtain the eligibility status via the following section:\nhttps://oulms.ou.ac.lk/mod/page/view.php?id=149349\n\nClick Here to obtain your Eligibility Status",
       "attachments": [],
-      "links": []
+      "links": [
+        {
+          "title": "Click Here to Obtain Eligibility Status",
+          "url": "https://oulms.ou.ac.lk/mod/page/view.php?id=149349",
+          "type": "sheets"
+        }
+      ]
     },
     {
       "id": "notif-2",
@@ -6699,9 +6705,15 @@
           "category": "Grades & Marks",
           "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97304",
           "is_new": true,
-          "content": "2025/26 Eligibility Status",
+          "content": "Dear Students,\n\nYou can obtain the eligibility status via the following section:\nhttps://oulms.ou.ac.lk/mod/page/view.php?id=149349\n\nClick Here to obtain your Eligibility Status",
           "attachments": [],
-          "links": []
+          "links": [
+            {
+              "title": "Click Here to Obtain Eligibility Status",
+              "url": "https://oulms.ou.ac.lk/mod/page/view.php?id=149349",
+              "type": "sheets"
+            }
+          ]
         },
         {
           "id": "upd-2",

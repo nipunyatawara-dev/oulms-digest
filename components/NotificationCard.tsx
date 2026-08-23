@@ -43,20 +43,9 @@ export function NotificationCard({ notification, defaultExpanded = false }: Noti
       ? notification.link
       : 'https://oulms.ou.ac.lk/message/output/popup/notifications.php';
 
-  // Only consider links that are truly external or different from targetLink
-  const validLinks = (notification.links || []).filter(
-    (lk) => lk.url && lk.url !== targetLink && !lk.url.endsWith('discuss.php') && !lk.url.endsWith('view.php')
-  );
-
+  const validLinks = notification.links || [];
   const hasAttachments = Boolean(notification.attachments && notification.attachments.length > 0);
   const hasLinks = validLinks.length > 0;
-  const hasFullContent = Boolean(
-    notification.content &&
-    notification.content.trim() !== '' &&
-    notification.content.trim() !== notification.title.trim()
-  );
-
-  const canExpand = hasFullContent || hasAttachments || hasLinks;
   const isGradesCategory = notification.category === 'Grades & Marks';
 
   const renderAttachmentIcon = (type?: string) => {
@@ -71,19 +60,11 @@ export function NotificationCard({ notification, defaultExpanded = false }: Noti
     }
   };
 
-  const handleRowClick = () => {
-    if (canExpand) {
-      setExpanded(!expanded);
-    } else {
-      window.open(targetLink, '_blank');
-    }
-  };
-
   return (
     <div className="transition-colors hover:bg-[#4e080c]/[0.015]">
       {/* Main Row Header */}
       <div
-        onClick={handleRowClick}
+        onClick={() => setExpanded(!expanded)}
         className="p-4 sm:p-5 flex items-start sm:items-center justify-between gap-3 sm:gap-4 cursor-pointer select-none group min-h-[54px] active:bg-[#4e080c]/[0.03] transition-colors"
       >
         <div className="flex items-start sm:items-center gap-3.5 min-w-0 flex-1">
@@ -144,37 +125,35 @@ export function NotificationCard({ notification, defaultExpanded = false }: Noti
             <ExternalLink className="w-3.5 h-3.5 text-[#71717A]" />
           </a>
 
-          {canExpand && (
-            <button
-              onClick={() => setExpanded(!expanded)}
-              className="min-w-[44px] min-h-[44px] flex items-center justify-center p-2 text-[#71717A] hover:text-[#4e080c] hover:bg-[#4e080c]/[0.05] rounded-lg transition-colors active:scale-95"
-              title={expanded ? 'Collapse details' : 'Expand full details'}
-              aria-label={expanded ? 'Collapse details' : 'Expand full details'}
-              aria-expanded={expanded}
-            >
-              <ChevronDown
-                className={`w-4 h-4 transition-transform duration-200 ${expanded ? 'rotate-180 text-[#4e080c]' : ''}`}
-              />
-            </button>
-          )}
+          <button
+            onClick={() => setExpanded(!expanded)}
+            className="min-w-[44px] min-h-[44px] flex items-center justify-center p-2 text-[#71717A] hover:text-[#4e080c] hover:bg-[#4e080c]/[0.05] rounded-lg transition-colors active:scale-95"
+            title={expanded ? 'Collapse details' : 'Expand full details'}
+            aria-label={expanded ? 'Collapse details' : 'Expand full details'}
+            aria-expanded={expanded}
+          >
+            <ChevronDown
+              className={`w-4 h-4 transition-transform duration-200 ${expanded ? 'rotate-180 text-[#4e080c]' : ''}`}
+            />
+          </button>
         </div>
       </div>
 
-      {/* Expanded Accordion Body (Only rendered if there are real contents/links/attachments) */}
-      {expanded && canExpand && (
+      {/* Expanded Accordion Body */}
+      {expanded && (
         <div className="border-t border-[#4e080c]/[0.06] bg-[#fdfaf8] px-5 py-4 sm:px-6 sm:py-5 space-y-4 animate-in fade-in-50 duration-200">
-          {/* Real Notification Content */}
-          {hasFullContent && (
+          {/* Notification Message Content */}
+          {notification.content && (
             <div className="text-[13px] sm:text-[13.5px] text-[#4e080c] leading-relaxed whitespace-pre-line bg-white p-3.5 rounded-xl border border-[#4e080c]/[0.08] shadow-refero-sm">
               {notification.content}
             </div>
           )}
 
-          {/* Action Links & External Sheets (pointing to direct target URLs, e.g. Google Sheets) */}
+          {/* Action Links & External Sheets (e.g. Click here to obtain marks / Google Sheets) */}
           {hasLinks && (
             <div className="space-y-2">
               <div className="text-[11.5px] font-semibold tracking-wider uppercase text-[#71717A] flex items-center gap-1.5">
-                <span>Links inside this notice:</span>
+                <span>Action Links:</span>
               </div>
               <div className="flex flex-wrap gap-2.5">
                 {validLinks.map((lk, i) => (
@@ -183,9 +162,9 @@ export function NotificationCard({ notification, defaultExpanded = false }: Noti
                     href={lk.url}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-2 px-3.5 py-2 bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-300 rounded-xl text-[12.5px] font-semibold shadow-refero-sm active:scale-[0.98] transition-all min-h-[44px]"
+                    className="inline-flex items-center gap-2 px-3.5 py-2.5 bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-300 rounded-xl text-[13px] font-semibold shadow-refero-sm active:scale-[0.98] transition-all min-h-[44px]"
                   >
-                    {lk.type === 'sheets' ? (
+                    {lk.type === 'sheets' || lk.title.toLowerCase().includes('eligib') || lk.title.toLowerCase().includes('mark') ? (
                       <FileSpreadsheet className="w-4 h-4 text-emerald-700 shrink-0" />
                     ) : (
                       <ExternalLink className="w-4 h-4 text-emerald-700 shrink-0" />

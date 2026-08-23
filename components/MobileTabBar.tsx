@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { LayoutDashboard, Bell, BookOpen, Key } from 'lucide-react';
+import { LayoutDashboard, GraduationCap, Calendar, AlertCircle, BookOpen } from 'lucide-react';
 import { CategoryFilter } from '@/components/CategoryTabs';
 
 interface MobileTabBarProps {
@@ -9,8 +9,10 @@ interface MobileTabBarProps {
   activeTab: CategoryFilter;
   onSelectView: (view: 'Dashboard' | 'Announcements' | 'Account') => void;
   onSelectTab: (tab: CategoryFilter) => void;
-  announcementsCount?: number;
-  hasCredentials?: boolean;
+  gradesCount?: number;
+  vivaCount?: number;
+  deadlinesCount?: number;
+  coursesCount?: number;
 }
 
 export function MobileTabBar({
@@ -18,21 +20,24 @@ export function MobileTabBar({
   activeTab,
   onSelectView,
   onSelectTab,
-  announcementsCount = 0,
-  hasCredentials = false,
+  gradesCount = 0,
+  vivaCount = 0,
+  deadlinesCount = 0,
+  coursesCount = 0,
 }: MobileTabBarProps) {
-  const isOverviewActive = activeView === 'Dashboard' && activeTab !== 'Courses';
-  const isAnnouncementsActive = activeView === 'Announcements';
+  const isOverviewActive = activeView === 'Dashboard' && activeTab === 'All';
+  const isGradesActive = activeView === 'Dashboard' && activeTab === 'Grades & Marks';
+  const isVivaActive = activeView === 'Dashboard' && activeTab === 'Viva & Exam';
+  const isDeadlinesActive = activeView === 'Dashboard' && activeTab === 'Deadlines & Quizzes';
   const isCoursesActive = activeView === 'Dashboard' && activeTab === 'Courses';
-  const isAccountActive = activeView === 'Account';
 
   return (
     <nav
       className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#fbf8f5]/95 backdrop-blur-md border-t border-[#4e080c]/[0.08] ios-safe-bottom select-none transition-all shadow-[0_-2px_10px_rgba(78,8,12,0.03)]"
       role="tablist"
-      aria-label="Main Navigation"
+      aria-label="Academic Navigation"
     >
-      <div className="flex items-center justify-around h-[52px] max-w-lg mx-auto px-2">
+      <div className="flex items-center justify-between h-[52px] max-w-lg mx-auto px-1.5">
         {/* Tab 1: Overview Feed */}
         <button
           onClick={() => {
@@ -49,39 +54,98 @@ export function MobileTabBar({
           }`}
         >
           <div className="relative">
-            <LayoutDashboard className={`w-[20px] h-[20px] transition-transform ${isOverviewActive ? 'scale-110 text-[#4e080c]' : ''}`} />
+            <LayoutDashboard className={`w-[19px] h-[19px] transition-transform ${isOverviewActive ? 'scale-110 text-[#4e080c]' : ''}`} />
           </div>
-          <span className="text-[10.5px] mt-1 tracking-tight leading-none">
+          <span className="text-[10px] mt-1 tracking-tight leading-none">
             Overview
           </span>
         </button>
 
-        {/* Tab 2: Alerts & Announcements */}
+        {/* Tab 2: Grades & Marks */}
         <button
-          onClick={() => onSelectView('Announcements')}
+          onClick={() => {
+            onSelectView('Dashboard');
+            onSelectTab('Grades & Marks');
+          }}
           role="tab"
-          aria-selected={isAnnouncementsActive}
-          aria-label={`Announcements and alerts (${announcementsCount} updates)`}
+          aria-selected={isGradesActive}
+          aria-label={`Grades and Marks (${gradesCount} updates)`}
           className={`relative flex flex-col items-center justify-center flex-1 h-full min-h-[48px] py-1 rounded-xl transition-all active:scale-95 ${
-            isAnnouncementsActive
+            isGradesActive
               ? 'text-[#4e080c] font-semibold'
               : 'text-[#71717A] hover:text-[#4e080c]'
           }`}
         >
           <div className="relative">
-            <Bell className={`w-[20px] h-[20px] transition-transform ${isAnnouncementsActive ? 'scale-110 text-[#4e080c]' : ''}`} />
-            {announcementsCount > 0 && (
-              <span className="absolute -top-1 -right-2 min-w-[15px] h-[15px] px-1 bg-[#4e080c] text-white text-[9.5px] rounded-full flex items-center justify-center font-bold shadow-refero-sm">
-                {announcementsCount > 99 ? '99+' : announcementsCount}
+            <GraduationCap className={`w-[19px] h-[19px] transition-transform ${isGradesActive ? 'scale-110 text-[#4e080c]' : ''}`} />
+            {gradesCount > 0 && (
+              <span className="absolute -top-1 -right-2 min-w-[14px] h-[14px] px-0.5 bg-[#4e080c] text-white text-[9px] rounded-full flex items-center justify-center font-bold shadow-refero-sm">
+                {gradesCount > 99 ? '99+' : gradesCount}
               </span>
             )}
           </div>
-          <span className="text-[10.5px] mt-1 tracking-tight leading-none">
-            Alerts
+          <span className="text-[10px] mt-1 tracking-tight leading-none">
+            Grades
           </span>
         </button>
 
-        {/* Tab 3: Enrolled Courses */}
+        {/* Tab 3: Viva & Exams */}
+        <button
+          onClick={() => {
+            onSelectView('Dashboard');
+            onSelectTab('Viva & Exam');
+          }}
+          role="tab"
+          aria-selected={isVivaActive}
+          aria-label={`Viva and Exams (${vivaCount} schedules)`}
+          className={`relative flex flex-col items-center justify-center flex-1 h-full min-h-[48px] py-1 rounded-xl transition-all active:scale-95 ${
+            isVivaActive
+              ? 'text-[#4e080c] font-semibold'
+              : 'text-[#71717A] hover:text-[#4e080c]'
+          }`}
+        >
+          <div className="relative">
+            <Calendar className={`w-[19px] h-[19px] transition-transform ${isVivaActive ? 'scale-110 text-[#4e080c]' : ''}`} />
+            {vivaCount > 0 && (
+              <span className="absolute -top-1 -right-2 min-w-[14px] h-[14px] px-0.5 bg-[#4e080c] text-white text-[9px] rounded-full flex items-center justify-center font-bold shadow-refero-sm">
+                {vivaCount > 99 ? '99+' : vivaCount}
+              </span>
+            )}
+          </div>
+          <span className="text-[10px] mt-1 tracking-tight leading-none">
+            Vivas
+          </span>
+        </button>
+
+        {/* Tab 4: Deadlines & Quizzes */}
+        <button
+          onClick={() => {
+            onSelectView('Dashboard');
+            onSelectTab('Deadlines & Quizzes');
+          }}
+          role="tab"
+          aria-selected={isDeadlinesActive}
+          aria-label={`Deadlines and Quizzes (${deadlinesCount} pending)`}
+          className={`relative flex flex-col items-center justify-center flex-1 h-full min-h-[48px] py-1 rounded-xl transition-all active:scale-95 ${
+            isDeadlinesActive
+              ? 'text-[#4e080c] font-semibold'
+              : 'text-[#71717A] hover:text-[#4e080c]'
+          }`}
+        >
+          <div className="relative">
+            <AlertCircle className={`w-[19px] h-[19px] transition-transform ${isDeadlinesActive ? 'scale-110 text-[#4e080c]' : ''}`} />
+            {deadlinesCount > 0 && (
+              <span className="absolute -top-1 -right-2 min-w-[14px] h-[14px] px-0.5 bg-[#4e080c] text-white text-[9px] rounded-full flex items-center justify-center font-bold shadow-refero-sm">
+                {deadlinesCount > 99 ? '99+' : deadlinesCount}
+              </span>
+            )}
+          </div>
+          <span className="text-[10px] mt-1 tracking-tight leading-none">
+            Deadlines
+          </span>
+        </button>
+
+        {/* Tab 5: Enrolled Courses */}
         <button
           onClick={() => {
             onSelectView('Dashboard');
@@ -89,41 +153,18 @@ export function MobileTabBar({
           }}
           role="tab"
           aria-selected={isCoursesActive}
-          aria-label="Enrolled registered semester courses"
-          className={`flex flex-col items-center justify-center flex-1 h-full min-h-[48px] py-1 rounded-xl transition-all active:scale-95 ${
+          aria-label={`Enrolled semester courses (${coursesCount} courses)`}
+          className={`relative flex flex-col items-center justify-center flex-1 h-full min-h-[48px] py-1 rounded-xl transition-all active:scale-95 ${
             isCoursesActive
               ? 'text-[#4e080c] font-semibold'
               : 'text-[#71717A] hover:text-[#4e080c]'
           }`}
         >
           <div className="relative">
-            <BookOpen className={`w-[20px] h-[20px] transition-transform ${isCoursesActive ? 'scale-110 text-[#4e080c]' : ''}`} />
+            <BookOpen className={`w-[19px] h-[19px] transition-transform ${isCoursesActive ? 'scale-110 text-[#4e080c]' : ''}`} />
           </div>
-          <span className="text-[10.5px] mt-1 tracking-tight leading-none">
+          <span className="text-[10px] mt-1 tracking-tight leading-none">
             Courses
-          </span>
-        </button>
-
-        {/* Tab 4: Account Credentials & Settings */}
-        <button
-          onClick={() => onSelectView('Account')}
-          role="tab"
-          aria-selected={isAccountActive}
-          aria-label="Account credentials and course whitelist settings"
-          className={`relative flex flex-col items-center justify-center flex-1 h-full min-h-[48px] py-1 rounded-xl transition-all active:scale-95 ${
-            isAccountActive
-              ? 'text-[#4e080c] font-semibold'
-              : 'text-[#71717A] hover:text-[#4e080c]'
-          }`}
-        >
-          <div className="relative">
-            <Key className={`w-[20px] h-[20px] transition-transform ${isAccountActive ? 'scale-110 text-[#4e080c]' : ''}`} />
-            {hasCredentials && (
-              <span className="absolute -top-0.5 -right-1 w-2 h-2 rounded-full bg-emerald-500 ring-2 ring-[#fbf8f5]" />
-            )}
-          </div>
-          <span className="text-[10.5px] mt-1 tracking-tight leading-none">
-            Account
           </span>
         </button>
       </div>

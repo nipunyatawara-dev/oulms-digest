@@ -644,8 +644,8 @@ class OUSLCrawler:
                         if idx < 6 and link:
                             try:
                                 post_page = await page.context.new_page()
-                                await post_page.goto(link, wait_until="domcontentloaded", timeout=12000)
-                                await post_page.wait_for_timeout(300)
+                                await post_page.goto(link, wait_until="domcontentloaded", timeout=14000)
+                                await post_page.wait_for_timeout(350)
                                 post_res = await post_page.evaluate('''() => {
                                     const postEl = document.querySelector(".forumpost .content, .post-content-container, .posting") || document.querySelector(".forumpost");
                                     if (!postEl) return { content: "", links: [] };
@@ -664,14 +664,70 @@ class OUSLCrawler:
                                     }
                                     return { content, links: extracted };
                                 }''')
-                                await post_page.close()
-                                if post_res.get('content'):
-                                    content_text = post_res['content']
-                                for lk in post_res.get('links', []):
+
+                                raw_content = post_res.get('content', '')
+                                content_text = raw_content
+                                found_links = post_res.get('links', [])
+
+                                # Also check for plaintext URLs inside the post text
+                                text_urls = re.findall(r'https?://[^\s<>\"\'\)]+', raw_content)
+                                for tu in text_urls:
+                                    if not any(fl['url'] == tu for fl in found_links):
+                                        found_links.append({"title": tu, "url": tu})
+
+                                for lk in found_links:
                                     u = lk.get('url', '')
                                     t = lk.get('title', '')
-                                    if not u or u == link or u.endswith('discuss.php') or u.endswith('view.php'):
+                                    if not u or u == link or u.endswith('discuss.php'):
                                         continue
+
+                                    # If this link points to a Moodle Page/Resource (e.g. mod/page/view.php?id=149349)
+                                    if '/mod/page/view.php' in u or '/mod/resource/view.php' in u or '/mod/url/view.php' in u:
+                                        try:
+                                            inner_page = await page.context.new_page()
+                                            await inner_page.goto(u, wait_until="domcontentloaded", timeout=12000)
+                                            await inner_page.wait_for_timeout(350)
+                                            inner_data = await inner_page.evaluate('''() => {
+                                                const mainEl = document.querySelector("#region-main, .box.generalbox, .page-content, .generalbox") || document.body;
+                                                const text = mainEl.innerText.trim();
+                                                const anchors = Array.from(mainEl.querySelectorAll("a"));
+                                                const extracted = [];
+                                                for (const a of anchors) {
+                                                    const href = a.href;
+                                                    const title = a.innerText.trim();
+                                                    if (href && !href.startsWith("javascript") && !href.includes("#") && !href.includes("/user/")) {
+                                                        extracted.push({ title: title || href, url: href });
+                                                    }
+                                                }
+                                                return { text, links: extracted };
+                                            }''')
+                                            await inner_page.close()
+
+                                            inner_text = inner_data.get('text', '')
+                                            if inner_text and inner_text not in content_text:
+                                                content_text += f"\n\n[Linked Section Details]:\n{inner_text}"
+
+                                            for ilk in inner_data.get('links', []):
+                                                iu = ilk.get('url', '')
+                                                it = ilk.get('title', '')
+                                                if not iu or iu == u or iu == link:
+                                                    continue
+                                                i_att_type = classify_attachment_type(iu)
+                                                if i_att_type != 'other' or 'pluginfile.php' in iu:
+                                                    attachments.append({
+                                                        "name": it if it and it != iu else os.path.basename(iu.split('?')[0]) or "Attachment",
+                                                        "url": iu,
+                                                        "type": i_att_type
+                                                    })
+                                                else:
+                                                    links_list.append({
+                                                        "title": it if it and it != iu else "Click Here to Obtain Eligibility Status",
+                                                        "url": iu,
+                                                        "type": classify_link_type(iu)
+                                                    })
+                                        except Exception:
+                                            pass
+
                                     att_t = classify_attachment_type(u)
                                     if att_t != 'other' or 'pluginfile.php' in u:
                                         attachments.append({
@@ -680,11 +736,14 @@ class OUSLCrawler:
                                             "type": att_t
                                         })
                                     else:
+                                        link_title = t if t and t != u else ("Eligibility Status Section" if "eligib" in u.lower() or "eligib" in clean_topic.lower() else "Open Resource")
                                         links_list.append({
-                                            "title": t or u,
+                                            "title": link_title,
                                             "url": u,
                                             "type": classify_link_type(u)
                                         })
+
+                                await post_page.close()
                             except Exception:
                                 pass
 
