@@ -9,6 +9,7 @@ import { CourseCard } from '@/components/CourseCard';
 import { ScheduleModal } from '@/components/ScheduleModal';
 import { SyncProgressDrawer, SyncLogItem } from '@/components/SyncProgressDrawer';
 import { AccountSetupView } from '@/components/AccountSetupView';
+import { MobileTabBar } from '@/components/MobileTabBar';
 import { LMSDataPayload, UserSettings, CourseUpdate, AttachmentItem, ExtractedLinkItem } from '@/lib/types';
 import { isWithinTimeframe } from '@/lib/dateUtils';
 import { categorizeAcademicItem } from '@/lib/categoryUtils';
@@ -428,7 +429,6 @@ export default function DashboardPage() {
           setIsDrawerOpen(true);
           setIsDrawerMinimized(false);
         }}
-        onToggleMobileSidebar={() => setIsMobileSidebarOpen(!isMobileSidebarOpen)}
         hasLogs={syncLogs.length > 0}
         settings={settings}
         lastSyncedAt={data?.synced_at}
@@ -441,9 +441,9 @@ export default function DashboardPage() {
       />
 
       {/* Main Content Layout */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-10 py-6 sm:py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-10 py-5 sm:py-8">
         <div className="flex items-start gap-6 lg:gap-8">
-          {/* Left Column: Persistent Sidebar Navigation */}
+          {/* Left Column: Persistent Desktop Sidebar */}
           <Sidebar
             activeTab={activeTab}
             onSelectTab={(tab) => {
@@ -451,22 +451,13 @@ export default function DashboardPage() {
               setSearchQuery('');
             }}
             counts={sidebarCounts}
-            onOpenSchedule={() => setIsScheduleOpen(true)}
-            onToggleDrawer={() => {
-              setIsDrawerOpen(true);
-              setIsDrawerMinimized(false);
-            }}
-            isMobileOpen={isMobileSidebarOpen}
-            onCloseMobile={() => setIsMobileSidebarOpen(false)}
             activeView={activeView}
             onSelectView={setActiveView}
-            announcementsCount={announcementsCounts.count24h > 0 ? announcementsCounts.count24h : announcementsCounts.count16d}
             studentUsername={settings?.ousl_username}
-            selectedCoursesCount={settings?.selected_courses?.length}
           />
 
           {/* Right Column: Main Content Canvas */}
-          <main className="flex-1 min-w-0 space-y-5">
+          <main className="flex-1 min-w-0 space-y-5 ios-safe-pb-nav">
             {activeView === 'Account' ? (
               <AccountSetupView
                 settings={settings}
@@ -499,10 +490,11 @@ export default function DashboardPage() {
                       </div>
 
                       {/* 24h / 16d Timeframe Toggle */}
-                      <div className="flex items-center p-1 bg-[#4e080c]/[0.05] rounded-xl self-start sm:self-auto select-none">
+                      <div className="flex items-center p-1 bg-[#4e080c]/[0.05] rounded-xl self-start sm:self-auto select-none gap-1" role="group" aria-label="Timeframe selector">
                         <button
                           onClick={() => setTimeframe('24h')}
-                          className={`px-3.5 py-1.5 rounded-lg text-[13px] font-medium transition-all flex items-center gap-2 ${
+                          aria-pressed={timeframe === '24h'}
+                          className={`px-3.5 py-2 rounded-lg text-[13px] font-medium transition-all flex items-center gap-2 min-h-[40px] active:scale-[0.98] ${
                             timeframe === '24h'
                               ? 'bg-white text-[#4e080c] shadow-refero-sm'
                               : 'text-[#71717A] hover:text-[#4e080c]'
@@ -510,7 +502,7 @@ export default function DashboardPage() {
                         >
                           <span>Last 24 Hours</span>
                           <span
-                            className={`text-[11px] px-1.5 py-0.2 rounded-full font-semibold ${
+                            className={`text-[11px] px-1.5 py-0.5 rounded-full font-semibold ${
                               timeframe === '24h'
                                 ? 'bg-[#4e080c] text-white'
                                 : 'bg-[#4e080c]/[0.12] text-[#71717A]'
@@ -522,7 +514,8 @@ export default function DashboardPage() {
 
                         <button
                           onClick={() => setTimeframe('16d')}
-                          className={`px-3.5 py-1.5 rounded-lg text-[13px] font-medium transition-all flex items-center gap-2 ${
+                          aria-pressed={timeframe === '16d'}
+                          className={`px-3.5 py-2 rounded-lg text-[13px] font-medium transition-all flex items-center gap-2 min-h-[40px] active:scale-[0.98] ${
                             timeframe === '16d'
                               ? 'bg-white text-[#4e080c] shadow-refero-sm'
                               : 'text-[#71717A] hover:text-[#4e080c]'
@@ -530,7 +523,7 @@ export default function DashboardPage() {
                         >
                           <span>Last 16 Days</span>
                           <span
-                            className={`text-[11px] px-1.5 py-0.2 rounded-full font-semibold ${
+                            className={`text-[11px] px-1.5 py-0.5 rounded-full font-semibold ${
                               timeframe === '16d'
                                 ? 'bg-[#4e080c] text-white'
                                 : 'bg-[#4e080c]/[0.12] text-[#71717A]'
@@ -576,21 +569,32 @@ export default function DashboardPage() {
                   <div className="bg-[#f2ebe5] rounded-2xl divide-y divide-[#4e080c]/[0.05] overflow-hidden shadow-refero-sm">
                     {currentCategoryItems.map((item) => {
                       const isExpanded = expandedCategoryItemId === item.id;
-                      const hasAttachments = item.attachments && item.attachments.length > 0;
-                      const hasLinks = item.links && item.links.length > 0;
-                      const hasExtraContent =
+                      const validLinks = (item.links || []).filter(
+                        (lk) => lk.url && lk.url !== item.link && !lk.url.endsWith('discuss.php') && !lk.url.endsWith('view.php')
+                      );
+                      const hasAttachments = Boolean(item.attachments && item.attachments.length > 0);
+                      const hasLinks = validLinks.length > 0;
+                      const hasExtraContent = Boolean(
                         item.content &&
                         item.content.trim() !== '' &&
-                        item.content.trim() !== item.title.trim();
+                        item.content.trim() !== item.title.trim()
+                      );
+                      const canExpand = hasExtraContent || hasAttachments || hasLinks;
+
+                      const handleItemRowClick = () => {
+                        if (canExpand) {
+                          setExpandedCategoryItemId((prev) => (prev === item.id ? null : item.id));
+                        } else {
+                          window.open(item.link, '_blank');
+                        }
+                      };
 
                       return (
                         <div key={item.id} className="transition-colors hover:bg-[#4e080c]/[0.015]">
                           {/* Item Row Header */}
                           <div
-                            onClick={() =>
-                              setExpandedCategoryItemId((prev) => (prev === item.id ? null : item.id))
-                            }
-                            className="p-4 sm:p-5 flex items-start sm:items-center justify-between gap-3 sm:gap-4 cursor-pointer select-none group"
+                            onClick={handleItemRowClick}
+                            className="p-4 sm:p-5 flex items-start sm:items-center justify-between gap-3 sm:gap-4 cursor-pointer select-none group min-h-[54px] active:bg-[#4e080c]/[0.03] transition-colors"
                           >
                             <div className="flex items-start sm:items-center gap-3.5 min-w-0 flex-1">
                               {/* Course Code Badge */}
@@ -605,18 +609,18 @@ export default function DashboardPage() {
                                     {item.title}
                                   </span>
                                   {item.isNew && (
-                                    <span className="px-1.5 py-0.2 text-[10.5px] font-semibold bg-blue-100 text-blue-800 rounded-md">
+                                    <span className="px-1.5 py-0.5 text-[10.5px] font-semibold bg-blue-100 text-blue-800 rounded-md">
                                       New
                                     </span>
                                   )}
                                   {item.category === 'Grades & Marks' && (
-                                    <span className="px-1.5 py-0.2 text-[10.5px] font-semibold bg-amber-100 text-amber-900 rounded-md">
+                                    <span className="px-1.5 py-0.5 text-[10.5px] font-semibold bg-amber-100 text-amber-900 rounded-md">
                                       Marks
                                     </span>
                                   )}
                                 </div>
 
-                                <div className="text-[12px] text-[#71717A] flex items-center gap-2 mt-1 flex-wrap">
+                                <div className="text-[12px] text-[#71717A] flex items-center gap-2 mt-0.5 flex-wrap">
                                   <span className="font-medium text-[#4e080c] truncate max-w-[200px] sm:max-w-sm">
                                     {item.courseName}
                                   </span>
@@ -650,81 +654,71 @@ export default function DashboardPage() {
 
                             {/* Right Actions: Open Link & Expand Toggle */}
                             <div
-                              className="flex items-center gap-2 shrink-0"
+                              className="flex items-center gap-1.5 sm:gap-2 shrink-0"
                               onClick={(e) => e.stopPropagation()}
                             >
                               <a
                                 href={item.link}
                                 target="_blank"
                                 rel="noreferrer"
-                                className="inline-flex items-center gap-1.5 px-3 py-1.5 text-[12.5px] font-medium text-[#4e080c] bg-white hover:bg-[#f5efe9] border border-[#4e080c]/[0.12] rounded-lg shadow-refero-sm transition-all"
+                                className="inline-flex items-center justify-center gap-1.5 px-3 sm:px-3.5 py-2 text-[12.5px] font-medium text-[#4e080c] bg-white hover:bg-[#f5efe9] border border-[#4e080c]/[0.12] rounded-lg shadow-refero-sm active:scale-[0.98] transition-all min-h-[44px]"
+                                title="Open in Moodle / Portal"
                               >
                                 <span>Open</span>
-                                <ExternalLink className="w-3 h-3 text-[#71717A]" />
+                                <ExternalLink className="w-3.5 h-3.5 text-[#71717A]" />
                               </a>
 
-                              <button
-                                onClick={() =>
-                                  setExpandedCategoryItemId((prev) =>
-                                    prev === item.id ? null : item.id
-                                  )
-                                }
-                                className="p-1.5 text-[#71717A] hover:text-[#4e080c] hover:bg-[#4e080c]/[0.05] rounded-lg transition-colors"
-                                title={isExpanded ? 'Collapse' : 'Expand full details'}
-                                aria-label="Toggle details"
-                              >
-                                <ChevronDown
-                                  className={`w-4 h-4 transition-transform duration-200 ${
-                                    isExpanded ? 'rotate-180 text-[#4e080c]' : ''
-                                  }`}
-                                />
-                              </button>
+                              {canExpand && (
+                                <button
+                                  onClick={() =>
+                                    setExpandedCategoryItemId((prev) =>
+                                      prev === item.id ? null : item.id
+                                    )
+                                  }
+                                  className="min-w-[44px] min-h-[44px] flex items-center justify-center p-2 text-[#71717A] hover:text-[#4e080c] hover:bg-[#4e080c]/[0.05] rounded-lg transition-colors active:scale-95"
+                                  title={isExpanded ? 'Collapse details' : 'Expand full details'}
+                                  aria-label={isExpanded ? 'Collapse details' : 'Expand full details'}
+                                  aria-expanded={isExpanded}
+                                >
+                                  <ChevronDown
+                                    className={`w-4 h-4 transition-transform duration-200 ${
+                                      isExpanded ? 'rotate-180 text-[#4e080c]' : ''
+                                    }`}
+                                  />
+                                </button>
+                              )}
                             </div>
                           </div>
 
-                          {/* Expanded Tile Body */}
-                          {isExpanded && (
+                          {/* Expanded Tile Body (Rendered ONLY when real extra details exist) */}
+                          {isExpanded && canExpand && (
                             <div className="border-t border-[#4e080c]/[0.06] bg-[#fdfaf8] px-5 py-4 sm:px-6 sm:py-5 space-y-4 animate-in fade-in-50 duration-200">
-                              {/* Full Content / Message Body */}
-                              <div className="text-[13px] sm:text-[13.5px] text-[#4e080c] leading-relaxed space-y-2">
-                                {hasExtraContent ? (
-                                  <div className="whitespace-pre-line bg-white p-3.5 rounded-xl border border-[#4e080c]/[0.08] shadow-refero-sm">
-                                    {item.content}
-                                  </div>
-                                ) : (
-                                  <div className="bg-white p-3.5 rounded-xl border border-[#4e080c]/[0.08] shadow-refero-sm flex items-center gap-2 text-[#71717A]">
-                                    <Table className="w-4 h-4 text-[#4e080c]" />
-                                    <span>
-                                      Academic notice for{' '}
-                                      <strong className="text-[#4e080c]">
-                                        {item.courseCode} - {item.courseName}
-                                      </strong>
-                                      . Click below to view the linked marks, spreadsheets, or full discussion thread.
-                                    </span>
-                                  </div>
-                                )}
-                              </div>
+                              {/* Full Content */}
+                              {hasExtraContent && (
+                                <div className="text-[13px] sm:text-[13.5px] text-[#4e080c] leading-relaxed whitespace-pre-line bg-white p-3.5 rounded-xl border border-[#4e080c]/[0.08] shadow-refero-sm">
+                                  {item.content}
+                                </div>
+                              )}
 
-                              {/* Quick Access Links (Google Sheets, Forms, Zoom) */}
+                              {/* Direct Target Links (Google Sheets, Forms, External URLs) */}
                               {hasLinks && (
-                                <div className="space-y-1.5">
+                                <div className="space-y-2">
                                   <div className="text-[11.5px] font-semibold tracking-wider uppercase text-[#71717A] flex items-center gap-1.5">
-                                    <Link2 className="w-3.5 h-3.5 text-[#4e080c]" />
-                                    <span>Quick Access & Direct Links</span>
+                                    <span>Links inside this notice:</span>
                                   </div>
-                                  <div className="flex flex-wrap gap-2">
-                                    {item.links?.map((lk, i) => (
+                                  <div className="flex flex-wrap gap-2.5">
+                                    {validLinks.map((lk, i) => (
                                       <a
                                         key={i}
                                         href={lk.url}
                                         target="_blank"
                                         rel="noreferrer"
-                                        className="inline-flex items-center gap-2 px-3 py-1.5 bg-white hover:bg-emerald-50 text-emerald-800 border border-emerald-200 rounded-lg text-[12.5px] font-medium shadow-refero-sm transition-all"
+                                        className="inline-flex items-center gap-2 px-3.5 py-2 bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-300 rounded-xl text-[12.5px] font-semibold shadow-refero-sm active:scale-[0.98] transition-all min-h-[44px]"
                                       >
                                         {lk.type === 'sheets' ? (
-                                          <FileSpreadsheet className="w-3.5 h-3.5 text-emerald-600" />
+                                          <FileSpreadsheet className="w-4 h-4 text-emerald-700 shrink-0" />
                                         ) : (
-                                          <ExternalLink className="w-3.5 h-3.5 text-emerald-600" />
+                                          <ExternalLink className="w-4 h-4 text-emerald-700 shrink-0" />
                                         )}
                                         <span>{lk.title}</span>
                                       </a>
@@ -733,52 +727,35 @@ export default function DashboardPage() {
                                 </div>
                               )}
 
-                              {/* Attached Files & Spreadsheets */}
+                              {/* Attached Files (Excel, CSV, PDF) */}
                               {hasAttachments && (
-                                <div className="space-y-1.5">
+                                <div className="space-y-2">
                                   <div className="text-[11.5px] font-semibold tracking-wider uppercase text-[#71717A] flex items-center gap-1.5">
-                                    <FileSpreadsheet className="w-3.5 h-3.5 text-[#4e080c]" />
-                                    <span>Attached Spreadsheets & Documents</span>
+                                    <span>Attached Files:</span>
                                   </div>
-                                  <div className="flex flex-wrap gap-2">
+                                  <div className="flex flex-wrap gap-2.5">
                                     {item.attachments?.map((att, i) => (
                                       <a
                                         key={i}
                                         href={att.url}
                                         target="_blank"
                                         rel="noreferrer"
-                                        className="inline-flex items-center gap-2 px-3 py-1.5 bg-white hover:bg-[#f5efe9] text-[#4e080c] border border-[#4e080c]/[0.12] rounded-lg text-[12.5px] font-medium shadow-refero-sm transition-all"
+                                        className="inline-flex items-center gap-2 px-3.5 py-2 bg-white hover:bg-[#f5efe9] active:bg-[#ede3da] text-[#4e080c] border border-[#4e080c]/[0.12] rounded-xl text-[12.5px] font-medium shadow-refero-sm active:scale-[0.98] transition-all min-h-[44px]"
                                       >
                                         {att.type === 'excel' || att.type === 'csv' ? (
-                                          <FileSpreadsheet className="w-3.5 h-3.5 text-emerald-600" />
+                                          <FileSpreadsheet className="w-4 h-4 text-emerald-600 shrink-0" />
                                         ) : att.type === 'pdf' ? (
-                                          <FileText className="w-3.5 h-3.5 text-rose-600" />
+                                          <FileText className="w-4 h-4 text-rose-600 shrink-0" />
                                         ) : (
-                                          <File className="w-3.5 h-3.5 text-[#71717A]" />
+                                          <File className="w-4 h-4 text-[#71717A] shrink-0" />
                                         )}
                                         <span className="truncate max-w-xs">{att.name}</span>
-                                        <Download className="w-3 h-3 text-[#71717A]" />
+                                        <Download className="w-3.5 h-3.5 text-[#71717A] shrink-0" />
                                       </a>
                                     ))}
                                   </div>
                                 </div>
                               )}
-
-                              {/* Footer Meta & Direct Link */}
-                              <div className="pt-2 flex items-center justify-between gap-3 flex-wrap text-[12px] text-[#71717A] border-t border-[#4e080c]/[0.06]">
-                                <span>
-                                  Source: <strong className="text-[#4e080c]">{item.forumName}</strong> ({item.courseCode})
-                                </span>
-                                <a
-                                  href={item.link}
-                                  target="_blank"
-                                  rel="noreferrer"
-                                  className="inline-flex items-center gap-1 text-[#4e080c] font-medium hover:underline hover:text-[#620a0f]"
-                                >
-                                  <span>View Original Post on Moodle</span>
-                                  <ExternalLink className="w-3 h-3" />
-                                </a>
-                              </div>
                             </div>
                           )}
                         </div>
@@ -974,6 +951,22 @@ export default function DashboardPage() {
         logs={syncLogs}
         isComplete={isSyncComplete}
         isError={isSyncError}
+      />
+
+      {/* iOS Native Bottom Navigation Tab Bar */}
+      <MobileTabBar
+        activeView={activeView}
+        activeTab={activeTab}
+        onSelectView={(v) => {
+          setActiveView(v);
+          setSearchQuery('');
+        }}
+        onSelectTab={(tab) => {
+          setActiveTab(tab);
+          setSearchQuery('');
+        }}
+        announcementsCount={announcementsCounts.count24h > 0 ? announcementsCounts.count24h : announcementsCounts.count16d}
+        hasCredentials={!!settings?.ousl_username}
       />
     </div>
   );

@@ -26,24 +26,30 @@ export function CategoryTabs({ activeTab, onChange, counts }: CategoryTabsProps)
   ];
 
   return (
-    <div className="flex items-center gap-1.5 p-1 bg-[#4e080c]/[0.05] rounded-lg overflow-x-auto no-scrollbar max-w-full select-none">
+    <div
+      className="flex items-center gap-1.5 p-1.5 bg-[#4e080c]/[0.05] rounded-xl overflow-x-auto no-scrollbar max-w-full select-none"
+      role="tablist"
+      aria-label="Category Filters"
+    >
       {tabs.map((tab) => {
         const isActive = activeTab === tab.id;
         return (
           <button
             key={tab.id}
+            role="tab"
+            aria-selected={isActive}
             onClick={() => onChange(tab.id)}
-            className={`px-3 py-1 rounded-md text-[12.5px] font-medium transition-all whitespace-nowrap flex items-center gap-1.5 ${
+            className={`px-3.5 py-2 rounded-lg text-[13px] font-medium transition-all whitespace-nowrap flex items-center gap-2 min-h-[40px] active:scale-[0.98] ${
               isActive
-                ? 'bg-white text-[#4e080c] shadow-refero-sm'
-                : 'text-[#71717A] hover:text-[#4e080c] hover:bg-[#4e080c]/[0.02]'
+                ? 'bg-white text-[#4e080c] shadow-refero-sm font-semibold'
+                : 'text-[#71717A] hover:text-[#4e080c] hover:bg-[#4e080c]/[0.03]'
             }`}
           >
             <span>{tab.label}</span>
             {tab.count > 0 && (
               <span
-                className={`text-[11px] px-1.5 py-0.2 rounded font-normal ${
-                  isActive ? 'bg-[#4e080c]/[0.08] text-[#4e080c]' : 'text-[#71717A]'
+                className={`text-[11px] px-1.5 py-0.5 rounded-full font-medium ${
+                  isActive ? 'bg-[#4e080c]/[0.08] text-[#4e080c]' : 'text-[#71717A] bg-[#4e080c]/[0.04]'
                 }`}
               >
                 {tab.count}

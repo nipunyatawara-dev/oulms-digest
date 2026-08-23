@@ -62,20 +62,13 @@ export function Sidebar({
                 href={portalLoginUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="text-[#71717A] hover:text-[#4e080c] transition-colors"
+                className="text-[#71717A] hover:text-[#4e080c] transition-colors p-1"
                 title="Open OUSL Moodle Profile"
+                aria-label="Open OUSL Moodle Profile"
               >
                 <ExternalLink className="w-3.5 h-3.5" />
               </a>
             </div>
-            {isMobileOpen && (
-              <button
-                onClick={onCloseMobile}
-                className="md:hidden p-1 text-[#71717A] hover:text-[#4e080c] rounded-lg"
-              >
-                <X className="w-4 h-4" />
-              </button>
-            )}
           </div>
           <p className="text-[11.5px] text-[#71717A] mt-0.5 truncate">
             {studentUsername ? 'Logged in Student' : 'Active Student'} &bull; oulms.ou.ac.lk
@@ -272,24 +265,8 @@ export function Sidebar({
   );
 
   return (
-    <>
-      {/* Desktop Fixed Sidebar */}
-      <aside className="hidden md:block w-52 lg:w-56 shrink-0 pr-2 sticky top-6">
-        {sidebarContent}
-      </aside>
-
-      {/* Mobile Slide-over Sidebar Drawer */}
-      {isMobileOpen && (
-        <div className="fixed inset-0 z-50 md:hidden flex">
-          <div
-            onClick={onCloseMobile}
-            className="fixed inset-0 bg-black/30 backdrop-blur-xs transition-opacity"
-          />
-          <div className="relative w-64 max-w-[80vw] bg-[#fbf8f5] h-full p-5 shadow-refero-lg border-r border-[#4e080c]/[0.12] z-10">
-            {sidebarContent}
-          </div>
-        </div>
-      )}
-    </>
+    <aside className="hidden md:block w-52 lg:w-56 shrink-0 pr-2 sticky top-6">
+      {sidebarContent}
+    </aside>
   );
 }

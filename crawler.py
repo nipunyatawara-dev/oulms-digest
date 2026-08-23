@@ -531,12 +531,14 @@ class OUSLCrawler:
                             final_link = self.course_url_map[code]
                         else:
                             final_link = NOTIFICATIONS_URL
-
+                    
                     attachments = []
                     links_list = []
                     for lk in raw_extracted_links:
                         u = lk.get('url', '')
                         t = lk.get('title', '')
+                        if not u or u == final_link or u.endswith('discuss.php') or u.endswith('view.php'):
+                            continue
                         att_type = classify_attachment_type(u)
                         if att_type != 'other' or 'pluginfile.php' in u:
                             attachments.append({
@@ -571,11 +573,11 @@ class OUSLCrawler:
                         "attachments": attachments,
                         "links": links_list
                     })
-                except Exception as ie:
-                    print(f"[!] Error processing notification item {idx}: {ie}")
+                except Exception as ne:
+                    print(f"    [!] Error reading notification item: {ne}")
 
         except Exception as e:
-            print(f"[!] Error scraping notifications: {e}")
+            print(f"[!] Error fetching notifications: {e}")
 
         return notifications
 
@@ -619,7 +621,7 @@ class OUSLCrawler:
                         })'''
                     )
 
-                    for d in discussions:
+                    for idx, d in enumerate(discussions):
                         raw_topic = d.get('topic', '').strip()
                         link = d.get('link', '')
                         author = d.get('author', '').strip().replace('\n', ' ')
@@ -634,6 +636,58 @@ class OUSLCrawler:
                         if self.filter_seen and not is_new:
                             continue
 
+                        content_text = ""
+                        attachments = []
+                        links_list = []
+
+                        # For recent discussions, inspect post body to extract real embedded links & attachments
+                        if idx < 6 and link:
+                            try:
+                                post_page = await page.context.new_page()
+                                await post_page.goto(link, wait_until="domcontentloaded", timeout=12000)
+                                await post_page.wait_for_timeout(300)
+                                post_res = await post_page.evaluate('''() => {
+                                    const postEl = document.querySelector(".forumpost .content, .post-content-container, .posting") || document.querySelector(".forumpost");
+                                    if (!postEl) return { content: "", links: [] };
+                                    const content = postEl.innerText.trim();
+                                    const anchors = Array.from(postEl.querySelectorAll("a"));
+                                    const extracted = [];
+                                    for (const a of anchors) {
+                                        const href = a.href;
+                                        const title = a.innerText.trim();
+                                        if (!href || href.startsWith("javascript") || href.includes("#") || href.includes("discuss.php?d=") || href.includes("post.php?reply=")) {
+                                            continue;
+                                        }
+                                        if (!href.includes("/user/") && !href.includes("/mod/forum/view.php")) {
+                                            extracted.push({ title: title || href, url: href });
+                                        }
+                                    }
+                                    return { content, links: extracted };
+                                }''')
+                                await post_page.close()
+                                if post_res.get('content'):
+                                    content_text = post_res['content']
+                                for lk in post_res.get('links', []):
+                                    u = lk.get('url', '')
+                                    t = lk.get('title', '')
+                                    if not u or u == link or u.endswith('discuss.php') or u.endswith('view.php'):
+                                        continue
+                                    att_t = classify_attachment_type(u)
+                                    if att_t != 'other' or 'pluginfile.php' in u:
+                                        attachments.append({
+                                            "name": t if t and t != u else os.path.basename(u.split('?')[0]) or "Attachment",
+                                            "url": u,
+                                            "type": att_t
+                                        })
+                                    else:
+                                        links_list.append({
+                                            "title": t or u,
+                                            "url": u,
+                                            "type": classify_link_type(u)
+                                        })
+                            except Exception:
+                                pass
+
                         self.state_manager.mark_seen("forum_post", clean_topic, link, time_str)
                         updates.append({
                             "id": f"upd-{len(updates)+1}",
@@ -646,10 +700,10 @@ class OUSLCrawler:
                             "category": category,
                             "link": link,
                             "is_new": is_new,
-                            "content": clean_topic,
+                            "content": content_text or clean_topic,
                             "content_html": "",
-                            "attachments": [],
-                            "links": []
+                            "attachments": attachments,
+                            "links": links_list
                         })
                 except Exception as fe:
                     print(f"    [!] Error reading forum {forum_title}: {fe}")

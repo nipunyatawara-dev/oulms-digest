@@ -11,12 +11,9 @@ import {
   FileSpreadsheet,
   FileText,
   File,
-  Link2,
-  Table,
-  Eye,
   Download,
 } from 'lucide-react';
-import { NotificationItem, AttachmentItem, ExtractedLinkItem } from '@/lib/types';
+import { NotificationItem } from '@/lib/types';
 
 interface NotificationCardProps {
   notification: NotificationItem;
@@ -46,13 +43,20 @@ export function NotificationCard({ notification, defaultExpanded = false }: Noti
       ? notification.link
       : 'https://oulms.ou.ac.lk/message/output/popup/notifications.php';
 
-  const hasAttachments = notification.attachments && notification.attachments.length > 0;
-  const hasLinks = notification.links && notification.links.length > 0;
-  const hasFullContent =
+  // Only consider links that are truly external or different from targetLink
+  const validLinks = (notification.links || []).filter(
+    (lk) => lk.url && lk.url !== targetLink && !lk.url.endsWith('discuss.php') && !lk.url.endsWith('view.php')
+  );
+
+  const hasAttachments = Boolean(notification.attachments && notification.attachments.length > 0);
+  const hasLinks = validLinks.length > 0;
+  const hasFullContent = Boolean(
     notification.content &&
     notification.content.trim() !== '' &&
-    notification.content.trim() !== notification.title.trim();
+    notification.content.trim() !== notification.title.trim()
+  );
 
+  const canExpand = hasFullContent || hasAttachments || hasLinks;
   const isGradesCategory = notification.category === 'Grades & Marks';
 
   const renderAttachmentIcon = (type?: string) => {
@@ -67,12 +71,20 @@ export function NotificationCard({ notification, defaultExpanded = false }: Noti
     }
   };
 
+  const handleRowClick = () => {
+    if (canExpand) {
+      setExpanded(!expanded);
+    } else {
+      window.open(targetLink, '_blank');
+    }
+  };
+
   return (
     <div className="transition-colors hover:bg-[#4e080c]/[0.015]">
       {/* Main Row Header */}
       <div
-        onClick={() => setExpanded(!expanded)}
-        className="p-4 sm:p-5 flex items-start sm:items-center justify-between gap-3 sm:gap-4 cursor-pointer select-none group"
+        onClick={handleRowClick}
+        className="p-4 sm:p-5 flex items-start sm:items-center justify-between gap-3 sm:gap-4 cursor-pointer select-none group min-h-[54px] active:bg-[#4e080c]/[0.03] transition-colors"
       >
         <div className="flex items-start sm:items-center gap-3.5 min-w-0 flex-1">
           {/* Left Category Icon */}
@@ -87,12 +99,12 @@ export function NotificationCard({ notification, defaultExpanded = false }: Noti
                 {notification.title}
               </span>
               {notification.is_new && (
-                <span className="px-1.5 py-0.2 text-[10.5px] font-semibold bg-blue-100 text-blue-800 rounded-md">
+                <span className="px-1.5 py-0.5 text-[10.5px] font-semibold bg-blue-100 text-blue-800 rounded-md">
                   New
                 </span>
               )}
               {isGradesCategory && (
-                <span className="px-1.5 py-0.2 text-[10.5px] font-semibold bg-amber-100 text-amber-900 rounded-md">
+                <span className="px-1.5 py-0.5 text-[10.5px] font-semibold bg-amber-100 text-amber-900 rounded-md">
                   Marks
                 </span>
               )}
@@ -119,70 +131,64 @@ export function NotificationCard({ notification, defaultExpanded = false }: Noti
         </div>
 
         {/* Right Actions: Open Link & Expand Toggle */}
-        <div className="flex items-center gap-2 shrink-0" onClick={(e) => e.stopPropagation()}>
+        <div className="flex items-center gap-1.5 sm:gap-2 shrink-0" onClick={(e) => e.stopPropagation()}>
           <a
             href={targetLink}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-1 px-3 py-1.5 text-[12.5px] font-medium text-[#4e080c] bg-white hover:bg-[#f5efe9] border border-[#4e080c]/[0.12] rounded-lg shadow-refero-sm transition-all"
+            className="inline-flex items-center justify-center gap-1.5 px-3 sm:px-3.5 py-2 text-[12.5px] font-medium text-[#4e080c] bg-white hover:bg-[#f5efe9] border border-[#4e080c]/[0.12] rounded-lg shadow-refero-sm active:scale-[0.98] transition-all min-h-[44px]"
             title="Open in OUSL Portal"
+            aria-label={`Open notice "${notification.title}" in OUSL Portal`}
           >
             <span>Open</span>
-            <ExternalLink className="w-3 h-3 text-[#71717A]" />
+            <ExternalLink className="w-3.5 h-3.5 text-[#71717A]" />
           </a>
 
-          <button
-            onClick={() => setExpanded(!expanded)}
-            className="p-1.5 text-[#71717A] hover:text-[#4e080c] hover:bg-[#4e080c]/[0.05] rounded-lg transition-colors"
-            title={expanded ? 'Collapse' : 'Expand full details'}
-            aria-label="Toggle details"
-          >
-            <ChevronDown
-              className={`w-4 h-4 transition-transform duration-200 ${expanded ? 'rotate-180 text-[#4e080c]' : ''}`}
-            />
-          </button>
+          {canExpand && (
+            <button
+              onClick={() => setExpanded(!expanded)}
+              className="min-w-[44px] min-h-[44px] flex items-center justify-center p-2 text-[#71717A] hover:text-[#4e080c] hover:bg-[#4e080c]/[0.05] rounded-lg transition-colors active:scale-95"
+              title={expanded ? 'Collapse details' : 'Expand full details'}
+              aria-label={expanded ? 'Collapse details' : 'Expand full details'}
+              aria-expanded={expanded}
+            >
+              <ChevronDown
+                className={`w-4 h-4 transition-transform duration-200 ${expanded ? 'rotate-180 text-[#4e080c]' : ''}`}
+              />
+            </button>
+          )}
         </div>
       </div>
 
-      {/* Expanded Accordion Body */}
-      {expanded && (
+      {/* Expanded Accordion Body (Only rendered if there are real contents/links/attachments) */}
+      {expanded && canExpand && (
         <div className="border-t border-[#4e080c]/[0.06] bg-[#fdfaf8] px-5 py-4 sm:px-6 sm:py-5 space-y-4 animate-in fade-in-50 duration-200">
-          {/* Notification Full Content / Body */}
-          <div className="text-[13px] sm:text-[13.5px] text-[#4e080c] leading-relaxed space-y-2">
-            {hasFullContent ? (
-              <div className="whitespace-pre-line bg-white p-3.5 rounded-xl border border-[#4e080c]/[0.08] shadow-refero-sm">
-                {notification.content}
-              </div>
-            ) : (
-              <div className="bg-white p-3.5 rounded-xl border border-[#4e080c]/[0.08] shadow-refero-sm flex items-center gap-2 text-[#71717A]">
-                <Table className="w-4 h-4 text-[#4e080c]" />
-                <span>
-                  Academic update for <strong className="text-[#4e080c]">{notification.course_code || 'OUSL Portal'}</strong>. Click below to view the linked marks, tables, or complete notice.
-                </span>
-              </div>
-            )}
-          </div>
+          {/* Real Notification Content */}
+          {hasFullContent && (
+            <div className="text-[13px] sm:text-[13.5px] text-[#4e080c] leading-relaxed whitespace-pre-line bg-white p-3.5 rounded-xl border border-[#4e080c]/[0.08] shadow-refero-sm">
+              {notification.content}
+            </div>
+          )}
 
-          {/* Action Links & External Sheets (e.g. Google Sheets Marks / Drive) */}
+          {/* Action Links & External Sheets (pointing to direct target URLs, e.g. Google Sheets) */}
           {hasLinks && (
-            <div className="space-y-1.5">
+            <div className="space-y-2">
               <div className="text-[11.5px] font-semibold tracking-wider uppercase text-[#71717A] flex items-center gap-1.5">
-                <Link2 className="w-3.5 h-3.5 text-[#4e080c]" />
-                <span>Quick Access & Links</span>
+                <span>Links inside this notice:</span>
               </div>
-              <div className="flex flex-wrap gap-2">
-                {notification.links?.map((lk, i) => (
+              <div className="flex flex-wrap gap-2.5">
+                {validLinks.map((lk, i) => (
                   <a
                     key={i}
                     href={lk.url}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-2 px-3 py-1.5 bg-white hover:bg-emerald-50 text-emerald-800 border border-emerald-200 rounded-lg text-[12.5px] font-medium shadow-refero-sm transition-all group"
+                    className="inline-flex items-center gap-2 px-3.5 py-2 bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-300 rounded-xl text-[12.5px] font-semibold shadow-refero-sm active:scale-[0.98] transition-all min-h-[44px]"
                   >
                     {lk.type === 'sheets' ? (
-                      <FileSpreadsheet className="w-3.5 h-3.5 text-emerald-600" />
+                      <FileSpreadsheet className="w-4 h-4 text-emerald-700 shrink-0" />
                     ) : (
-                      <ExternalLink className="w-3.5 h-3.5 text-emerald-600" />
+                      <ExternalLink className="w-4 h-4 text-emerald-700 shrink-0" />
                     )}
                     <span>{lk.title}</span>
                   </a>
@@ -191,46 +197,29 @@ export function NotificationCard({ notification, defaultExpanded = false }: Noti
             </div>
           )}
 
-          {/* Direct File Attachments (Excel, CSV, PDF) */}
+          {/* Direct File Attachments */}
           {hasAttachments && (
-            <div className="space-y-1.5">
+            <div className="space-y-2">
               <div className="text-[11.5px] font-semibold tracking-wider uppercase text-[#71717A] flex items-center gap-1.5">
-                <FileSpreadsheet className="w-3.5 h-3.5 text-[#4e080c]" />
-                <span>Attached Files & Spreadsheets</span>
+                <span>Attached Files:</span>
               </div>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2.5">
                 {notification.attachments?.map((att, i) => (
                   <a
                     key={i}
                     href={att.url}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-2 px-3 py-1.5 bg-white hover:bg-[#f5efe9] text-[#4e080c] border border-[#4e080c]/[0.12] rounded-lg text-[12.5px] font-medium shadow-refero-sm transition-all"
+                    className="inline-flex items-center gap-2 px-3.5 py-2 bg-white hover:bg-[#f5efe9] active:bg-[#ede3da] text-[#4e080c] border border-[#4e080c]/[0.12] rounded-xl text-[12.5px] font-medium shadow-refero-sm active:scale-[0.98] transition-all min-h-[44px]"
                   >
                     {renderAttachmentIcon(att.type)}
                     <span className="truncate max-w-xs">{att.name}</span>
-                    <Download className="w-3 h-3 text-[#71717A]" />
+                    <Download className="w-3.5 h-3.5 text-[#71717A] shrink-0" />
                   </a>
                 ))}
               </div>
             </div>
           )}
-
-          {/* Quick CTA Bottom Toolbar */}
-          <div className="pt-2 flex items-center justify-between gap-3 flex-wrap text-[12px] text-[#71717A] border-t border-[#4e080c]/[0.06]">
-            <span>
-              Category: <strong className="text-[#4e080c]">{notification.category}</strong>
-            </span>
-            <a
-              href={targetLink}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-1 text-[#4e080c] font-medium hover:underline hover:text-[#620a0f]"
-            >
-              <span>View Discussion / Full Notice on OUSL Portal</span>
-              <ExternalLink className="w-3 h-3" />
-            </a>
-          </div>
         </div>
       )}
     </div>

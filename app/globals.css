@@ -10,6 +10,8 @@
   html {
     scrollbar-gutter: stable;
     overflow-y: scroll;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
   }
 
   body {
@@ -19,20 +21,34 @@
     letter-spacing: -0.015em;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    -webkit-touch-callout: none;
   }
+}
+
+/* iOS Safe Area Utilities */
+.ios-safe-bottom {
+  padding-bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
+}
+
+.ios-safe-top {
+  padding-top: calc(0.5rem + env(safe-area-inset-top, 0px));
+}
+
+.ios-safe-pb-nav {
+  padding-bottom: calc(5rem + env(safe-area-inset-bottom, 0px));
 }
 
 /* Refero-style subtle button interactions */
 .refero-btn-primary {
-  @apply bg-[#4e080c] text-white text-[13px] font-medium px-3.5 py-1.5 rounded-lg hover:bg-[#620a0f] active:scale-[0.98] transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-refero-sm flex items-center justify-center gap-1.5;
+  @apply bg-[#4e080c] text-white text-[13px] font-medium px-3.5 py-2 rounded-lg hover:bg-[#620a0f] active:scale-[0.98] transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-refero-sm flex items-center justify-center gap-1.5 min-h-[38px];
 }
 
 .refero-btn-secondary {
-  @apply bg-white hover:bg-[#f5efe9] text-[#4e080c] text-[13px] font-medium px-3.5 py-1.5 rounded-lg border border-[#4e080c]/[0.12] active:scale-[0.98] transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-refero-sm flex items-center justify-center gap-1.5;
+  @apply bg-white hover:bg-[#f5efe9] text-[#4e080c] text-[13px] font-medium px-3.5 py-2 rounded-lg border border-[#4e080c]/[0.12] active:scale-[0.98] transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-refero-sm flex items-center justify-center gap-1.5 min-h-[38px];
 }
 
 .refero-btn-ghost {
-  @apply text-[#71717A] hover:text-[#4e080c] hover:bg-[#4e080c]/[0.06] text-[13px] font-medium px-3 py-1.5 rounded-lg active:scale-[0.98] transition-all flex items-center gap-1.5;
+  @apply text-[#71717A] hover:text-[#4e080c] hover:bg-[#4e080c]/[0.06] text-[13px] font-medium px-3 py-2 rounded-lg active:scale-[0.98] transition-all flex items-center gap-1.5 min-h-[38px];
 }
 
 .refero-card {
