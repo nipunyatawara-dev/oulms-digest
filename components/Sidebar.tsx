@@ -3,7 +3,6 @@
 import React from 'react';
 import {
   LayoutDashboard,
-  Settings,
   Layers,
   GraduationCap,
   Calendar,
@@ -14,7 +13,6 @@ import {
   LogIn,
   X,
   Key,
-  UserCheck,
 } from 'lucide-react';
 import { CategoryFilter } from '@/components/CategoryTabs';
 
@@ -28,8 +26,8 @@ interface SidebarProps {
     deadlines: number;
     courses: number;
   };
-  onOpenSchedule: () => void;
-  onToggleDrawer: () => void;
+  onOpenSchedule?: () => void;
+  onToggleDrawer?: () => void;
   isMobileOpen?: boolean;
   onCloseMobile?: () => void;
   activeView?: 'Dashboard' | 'Announcements' | 'Account';
@@ -43,15 +41,11 @@ export function Sidebar({
   activeTab,
   onSelectTab,
   counts,
-  onOpenSchedule,
-  onToggleDrawer,
   isMobileOpen,
   onCloseMobile,
   activeView = 'Dashboard',
   onSelectView,
-  announcementsCount = 0,
   studentUsername,
-  selectedCoursesCount,
 }: SidebarProps) {
   const portalLoginUrl = 'https://oulms.ou.ac.lk/login/index.php';
   const displayStudent = studentUsername ? studentUsername.split('@')[0] : 'OUSL Student';
@@ -88,7 +82,7 @@ export function Sidebar({
           </p>
         </div>
 
-        {/* Section 1: Core Navigation */}
+        {/* Section 1: Core Navigation (Overview) */}
         <div className="space-y-0.5">
           <button
             onClick={() => {
@@ -111,41 +105,6 @@ export function Sidebar({
                 {counts.all}
               </span>
             )}
-          </button>
-
-          <button
-            onClick={() => {
-              onSelectView?.('Account');
-              onCloseMobile?.();
-            }}
-            className={`w-full flex items-center justify-between px-2.5 py-1.5 rounded-lg text-left transition-all ${
-              activeView === 'Account'
-                ? 'bg-[#e8ddd5] text-[#4e080c] font-medium'
-                : 'text-[#71717A] hover:text-[#4e080c] hover:bg-[#4e080c]/[0.05]'
-            }`}
-          >
-            <div className="flex items-center gap-2.5">
-              <Key className="w-4 h-4 text-[#71717A]" />
-              <span>Credentials & Courses</span>
-            </div>
-            {studentUsername ? (
-              <span className="w-2 h-2 rounded-full bg-emerald-500" title="Configured" />
-            ) : (
-              <span className="text-[10px] px-1.5 py-0.2 rounded bg-amber-100 text-amber-800 font-semibold">
-                Setup
-              </span>
-            )}
-          </button>
-
-          <button
-            onClick={() => {
-              onOpenSchedule();
-              onCloseMobile?.();
-            }}
-            className="w-full flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-left text-[#71717A] hover:text-[#4e080c] hover:bg-[#4e080c]/[0.05] transition-all"
-          >
-            <Settings className="w-4 h-4 text-[#71717A]" />
-            <span>Schedule</span>
           </button>
         </div>
 
@@ -256,8 +215,32 @@ export function Sidebar({
         {/* Divider */}
         <div className="border-t border-[#4e080c]/[0.08]" />
 
-        {/* Section 4: Direct Links */}
+        {/* Section 4: Credentials, Portal Login & Docs */}
         <div className="space-y-0.5">
+          <button
+            onClick={() => {
+              onSelectView?.('Account');
+              onCloseMobile?.();
+            }}
+            className={`w-full flex items-center justify-between px-2.5 py-1.5 rounded-lg text-left transition-all ${
+              activeView === 'Account'
+                ? 'bg-[#e8ddd5] text-[#4e080c] font-medium'
+                : 'text-[#71717A] hover:text-[#4e080c] hover:bg-[#4e080c]/[0.05]'
+            }`}
+          >
+            <div className="flex items-center gap-2.5">
+              <Key className="w-4 h-4 text-[#71717A]" />
+              <span>Credentials & Courses</span>
+            </div>
+            {studentUsername ? (
+              <span className="w-2 h-2 rounded-full bg-emerald-500" title="Configured" />
+            ) : (
+              <span className="text-[10px] px-1.5 py-0.2 rounded bg-amber-100 text-amber-800 font-semibold">
+                Setup
+              </span>
+            )}
+          </button>
+
           <a
             href={portalLoginUrl}
             target="_blank"
