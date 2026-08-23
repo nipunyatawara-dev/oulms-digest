@@ -12,7 +12,7 @@ import { AccountSetupView } from '@/components/AccountSetupView';
 import { MobileTabBar } from '@/components/MobileTabBar';
 import { LMSDataPayload, UserSettings, CourseUpdate, AttachmentItem, ExtractedLinkItem } from '@/lib/types';
 import { isWithinTimeframe } from '@/lib/dateUtils';
-import { categorizeAcademicItem } from '@/lib/categoryUtils';
+import { categorizeAcademicItem, getCourseGradebookUrl } from '@/lib/categoryUtils';
 import {
   Search,
   RefreshCw,
@@ -32,6 +32,10 @@ import {
   Link2,
   Table,
   ChevronDown,
+  GraduationCap,
+  Folder,
+  Video,
+  CheckSquare,
 } from 'lucide-react';
 
 interface UnifiedAcademicItem {
@@ -572,6 +576,8 @@ export default function DashboardPage() {
                       const validLinks = item.links || [];
                       const hasAttachments = Boolean(item.attachments && item.attachments.length > 0);
                       const hasLinks = validLinks.length > 0;
+                      const isGrades = item.category === 'Grades & Marks';
+                      const gradebookUrl = getCourseGradebookUrl(item.link);
 
                       return (
                         <div key={item.id} className="transition-colors hover:bg-[#4e080c]/[0.015]">
@@ -684,29 +690,59 @@ export default function DashboardPage() {
                                 </div>
                               )}
 
-                              {/* Direct Target Links (Google Sheets, Forms, External URLs) */}
-                              {hasLinks && (
+                              {/* Direct Target Links & Contextual Actions */}
+                              {(hasLinks || (isGrades && gradebookUrl)) && (
                                 <div className="space-y-2">
                                   <div className="text-[11.5px] font-semibold tracking-wider uppercase text-[#71717A] flex items-center gap-1.5">
-                                    <span>Action Links:</span>
+                                    <span>Direct Action:</span>
                                   </div>
                                   <div className="flex flex-wrap gap-2.5">
-                                    {validLinks.map((lk, i) => (
+                                    {validLinks.map((lk, i) => {
+                                      const t = (lk.title + ' ' + lk.url).toLowerCase();
+                                      const isSheet = lk.type === 'sheets' || t.includes('sheet') || t.includes('excel') || t.includes('marks');
+                                      const isForm = lk.type === 'forms' || t.includes('form') || t.includes('survey');
+                                      const isGrade = lk.type === 'grades' || t.includes('gradebook') || t.includes('grade');
+                                      const isDrive = lk.type === 'drive' || t.includes('drive') || t.includes('onedrive');
+                                      const isZoom = lk.type === 'zoom' || t.includes('zoom') || t.includes('teams') || t.includes('meet');
+
+                                      return (
+                                        <a
+                                          key={i}
+                                          href={lk.url}
+                                          target="_blank"
+                                          rel="noreferrer"
+                                          className="inline-flex items-center gap-2 px-3.5 py-2.5 bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-300 rounded-xl text-[13px] font-semibold shadow-refero-sm active:scale-[0.98] transition-all min-h-[44px]"
+                                        >
+                                          {isSheet ? (
+                                            <FileSpreadsheet className="w-4 h-4 text-emerald-700 shrink-0" />
+                                          ) : isForm ? (
+                                            <CheckSquare className="w-4 h-4 text-blue-700 shrink-0" />
+                                          ) : isGrade ? (
+                                            <GraduationCap className="w-4 h-4 text-amber-700 shrink-0" />
+                                          ) : isDrive ? (
+                                            <Folder className="w-4 h-4 text-indigo-700 shrink-0" />
+                                          ) : isZoom ? (
+                                            <Video className="w-4 h-4 text-purple-700 shrink-0" />
+                                          ) : (
+                                            <ExternalLink className="w-4 h-4 text-emerald-700 shrink-0" />
+                                          )}
+                                          <span>{lk.title}</span>
+                                        </a>
+                                      );
+                                    })}
+
+                                    {!hasLinks && isGrades && gradebookUrl && (
                                       <a
-                                        key={i}
-                                        href={lk.url}
+                                        href={gradebookUrl}
                                         target="_blank"
                                         rel="noreferrer"
-                                        className="inline-flex items-center gap-2 px-3.5 py-2.5 bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-300 rounded-xl text-[13px] font-semibold shadow-refero-sm active:scale-[0.98] transition-all min-h-[44px]"
+                                        className="inline-flex items-center gap-2 px-3.5 py-2.5 bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-300 rounded-xl text-[13px] font-semibold shadow-refero-sm active:scale-[0.98] transition-all min-h-[44px]"
+                                        title="Open course gradebook on OUSL Portal"
                                       >
-                                        {lk.type === 'sheets' || lk.title.toLowerCase().includes('eligib') || lk.title.toLowerCase().includes('mark') ? (
-                                          <FileSpreadsheet className="w-4 h-4 text-emerald-700 shrink-0" />
-                                        ) : (
-                                          <ExternalLink className="w-4 h-4 text-emerald-700 shrink-0" />
-                                        )}
-                                        <span>{lk.title}</span>
+                                        <GraduationCap className="w-4 h-4 text-amber-700 shrink-0" />
+                                        <span>Check Course Gradebook</span>
                                       </a>
-                                    ))}
+                                    )}
                                   </div>
                                 </div>
                               )}

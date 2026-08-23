@@ -9,7 +9,7 @@ export interface AttachmentItem {
 export interface ExtractedLinkItem {
   title: string;
   url: string;
-  type?: 'sheets' | 'drive' | 'forms' | 'zoom' | 'general';
+  type?: 'sheets' | 'drive' | 'forms' | 'zoom' | 'grades' | 'quiz' | 'assignment' | 'general';
 }
 
 export interface NotificationItem {

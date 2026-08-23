@@ -10,8 +10,13 @@ import {
   FileText,
   File,
   Download,
+  GraduationCap,
+  Folder,
+  Video,
+  CheckSquare,
 } from 'lucide-react';
-import { CourseItem } from '@/lib/types';
+import { CourseItem, ExtractedLinkItem } from '@/lib/types';
+import { getCourseGradebookUrl } from '@/lib/categoryUtils';
 
 interface CourseCardProps {
   course: CourseItem;
@@ -28,6 +33,26 @@ export function CourseCard({ course, defaultExpanded = false }: CourseCardProps)
 
   const toggleTopic = (id: string) => {
     setExpandedTopicId((prev) => (prev === id ? null : id));
+  };
+
+  const renderLinkIcon = (lk: ExtractedLinkItem) => {
+    const t = (lk.title + ' ' + lk.url).toLowerCase();
+    if (lk.type === 'sheets' || t.includes('sheet') || t.includes('excel') || t.includes('marks')) {
+      return <FileSpreadsheet className="w-3.5 h-3.5 text-emerald-700 shrink-0" />;
+    }
+    if (lk.type === 'forms' || t.includes('form') || t.includes('survey')) {
+      return <CheckSquare className="w-3.5 h-3.5 text-blue-700 shrink-0" />;
+    }
+    if (lk.type === 'grades' || t.includes('gradebook') || t.includes('grade')) {
+      return <GraduationCap className="w-3.5 h-3.5 text-amber-700 shrink-0" />;
+    }
+    if (lk.type === 'drive' || t.includes('drive') || t.includes('onedrive')) {
+      return <Folder className="w-3.5 h-3.5 text-indigo-700 shrink-0" />;
+    }
+    if (lk.type === 'zoom' || t.includes('zoom') || t.includes('teams') || t.includes('meet')) {
+      return <Video className="w-3.5 h-3.5 text-purple-700 shrink-0" />;
+    }
+    return <ExternalLink className="w-3.5 h-3.5 text-emerald-700 shrink-0" />;
   };
 
   const renderAttachmentIcon = (type?: string) => {
@@ -111,6 +136,8 @@ export function CourseCard({ course, defaultExpanded = false }: CourseCardProps)
             const validLinks = update.links || [];
             const hasAttachments = Boolean(update.attachments && update.attachments.length > 0);
             const hasLinks = validLinks.length > 0;
+            const isGrades = update.category === 'Grades & Marks';
+            const gradebookUrl = getCourseGradebookUrl(course.url || update.link);
 
             return (
               <div key={update.id} className="py-3 group transition-colors">
@@ -190,10 +217,11 @@ export function CourseCard({ course, defaultExpanded = false }: CourseCardProps)
                       </div>
                     )}
 
-                    {hasLinks && (
+                    {/* Action Links & Contextual Shortcuts */}
+                    {(hasLinks || (isGrades && gradebookUrl)) && (
                       <div className="space-y-1.5">
                         <div className="text-[11px] font-semibold tracking-wider uppercase text-[#71717A]">
-                          Action Links:
+                          Direct Action:
                         </div>
                         <div className="flex flex-wrap gap-2">
                           {validLinks.map((lk, i) => (
@@ -204,14 +232,23 @@ export function CourseCard({ course, defaultExpanded = false }: CourseCardProps)
                               rel="noreferrer"
                               className="inline-flex items-center gap-1.5 px-3 py-2 bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-300 rounded-lg text-[12.5px] font-semibold shadow-refero-sm active:scale-[0.98] transition-all min-h-[40px]"
                             >
-                              {lk.type === 'sheets' || lk.title.toLowerCase().includes('eligib') || lk.title.toLowerCase().includes('mark') ? (
-                                <FileSpreadsheet className="w-3.5 h-3.5 text-emerald-700" />
-                              ) : (
-                                <ExternalLink className="w-3.5 h-3.5 text-emerald-700" />
-                              )}
+                              {renderLinkIcon(lk)}
                               <span>{lk.title}</span>
                             </a>
                           ))}
+
+                          {!hasLinks && isGrades && gradebookUrl && (
+                            <a
+                              href={gradebookUrl}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="inline-flex items-center gap-1.5 px-3 py-2 bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-300 rounded-lg text-[12.5px] font-semibold shadow-refero-sm active:scale-[0.98] transition-all min-h-[40px]"
+                              title="Open course gradebook on OUSL Portal"
+                            >
+                              <GraduationCap className="w-3.5 h-3.5 text-amber-700 shrink-0" />
+                              <span>Check Course Gradebook</span>
+                            </a>
+                          )}
                         </div>
                       </div>
                     )}

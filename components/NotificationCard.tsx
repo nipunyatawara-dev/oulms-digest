@@ -12,8 +12,13 @@ import {
   FileText,
   File,
   Download,
+  GraduationCap,
+  Folder,
+  Video,
+  CheckSquare,
 } from 'lucide-react';
-import { NotificationItem } from '@/lib/types';
+import { NotificationItem, ExtractedLinkItem } from '@/lib/types';
+import { getCourseGradebookUrl } from '@/lib/categoryUtils';
 
 interface NotificationCardProps {
   notification: NotificationItem;
@@ -47,6 +52,27 @@ export function NotificationCard({ notification, defaultExpanded = false }: Noti
   const hasAttachments = Boolean(notification.attachments && notification.attachments.length > 0);
   const hasLinks = validLinks.length > 0;
   const isGradesCategory = notification.category === 'Grades & Marks';
+  const gradebookUrl = getCourseGradebookUrl(targetLink);
+
+  const renderLinkIcon = (lk: ExtractedLinkItem) => {
+    const t = (lk.title + ' ' + lk.url).toLowerCase();
+    if (lk.type === 'sheets' || t.includes('sheet') || t.includes('excel') || t.includes('marks')) {
+      return <FileSpreadsheet className="w-4 h-4 text-emerald-700 shrink-0" />;
+    }
+    if (lk.type === 'forms' || t.includes('form') || t.includes('survey')) {
+      return <CheckSquare className="w-4 h-4 text-blue-700 shrink-0" />;
+    }
+    if (lk.type === 'grades' || t.includes('gradebook') || t.includes('grade')) {
+      return <GraduationCap className="w-4 h-4 text-amber-700 shrink-0" />;
+    }
+    if (lk.type === 'drive' || t.includes('drive') || t.includes('onedrive')) {
+      return <Folder className="w-4 h-4 text-indigo-700 shrink-0" />;
+    }
+    if (lk.type === 'zoom' || t.includes('zoom') || t.includes('teams') || t.includes('meet')) {
+      return <Video className="w-4 h-4 text-purple-700 shrink-0" />;
+    }
+    return <ExternalLink className="w-4 h-4 text-emerald-700 shrink-0" />;
+  };
 
   const renderAttachmentIcon = (type?: string) => {
     switch (type) {
@@ -149,13 +175,14 @@ export function NotificationCard({ notification, defaultExpanded = false }: Noti
             </div>
           )}
 
-          {/* Action Links & External Sheets (e.g. Click here to obtain marks / Google Sheets) */}
-          {hasLinks && (
+          {/* Action Links & Contextual Shortcuts */}
+          {(hasLinks || (isGradesCategory && gradebookUrl)) && (
             <div className="space-y-2">
               <div className="text-[11.5px] font-semibold tracking-wider uppercase text-[#71717A] flex items-center gap-1.5">
-                <span>Action Links:</span>
+                <span>Direct Action:</span>
               </div>
               <div className="flex flex-wrap gap-2.5">
+                {/* Dynamically extracted links from the notice body */}
                 {validLinks.map((lk, i) => (
                   <a
                     key={i}
@@ -164,14 +191,24 @@ export function NotificationCard({ notification, defaultExpanded = false }: Noti
                     rel="noreferrer"
                     className="inline-flex items-center gap-2 px-3.5 py-2.5 bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-300 rounded-xl text-[13px] font-semibold shadow-refero-sm active:scale-[0.98] transition-all min-h-[44px]"
                   >
-                    {lk.type === 'sheets' || lk.title.toLowerCase().includes('eligib') || lk.title.toLowerCase().includes('mark') ? (
-                      <FileSpreadsheet className="w-4 h-4 text-emerald-700 shrink-0" />
-                    ) : (
-                      <ExternalLink className="w-4 h-4 text-emerald-700 shrink-0" />
-                    )}
+                    {renderLinkIcon(lk)}
                     <span>{lk.title}</span>
                   </a>
                 ))}
+
+                {/* Contextual Course Gradebook button when no custom links are in the notice */}
+                {!hasLinks && isGradesCategory && gradebookUrl && (
+                  <a
+                    href={gradebookUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 px-3.5 py-2.5 bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-300 rounded-xl text-[13px] font-semibold shadow-refero-sm active:scale-[0.98] transition-all min-h-[44px]"
+                    title="Open course gradebook on OUSL Portal"
+                  >
+                    <GraduationCap className="w-4 h-4 text-amber-700 shrink-0" />
+                    <span>Check Course Gradebook</span>
+                  </a>
+                )}
               </div>
             </div>
           )}

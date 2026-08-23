@@ -139,3 +139,27 @@ export function categorizeAcademicItem(text: string): AcademicCategory {
 
   return 'Announcements';
 }
+
+/**
+ * Extracts a numeric Moodle course or resource ID from a URL (e.g. /course/view.php?id=3439 -> 3439)
+ */
+export function getCourseIdFromUrl(url?: string): string | null {
+  if (!url) return null;
+  const match = url.match(/[?&]id=(\d+)/);
+  return match ? match[1] : null;
+}
+
+/**
+ * Constructs the direct user gradebook URL for a course
+ */
+export function getCourseGradebookUrl(courseUrlOrId?: string): string {
+  if (!courseUrlOrId) return 'https://oulms.ou.ac.lk';
+  if (/^\d+$/.test(courseUrlOrId)) {
+    return `https://oulms.ou.ac.lk/grade/report/user/index.php?id=${courseUrlOrId}`;
+  }
+  const id = getCourseIdFromUrl(courseUrlOrId);
+  if (id) {
+    return `https://oulms.ou.ac.lk/grade/report/user/index.php?id=${id}`;
+  }
+  return courseUrlOrId;
+}
