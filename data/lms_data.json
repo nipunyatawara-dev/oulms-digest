@@ -1,191 +1,191 @@
 {
   "success": true,
-  "synced_at": "2026-08-21T17:02:00.620838",
-  "duration_seconds": 85.2,
+  "synced_at": "2026-08-23T07:27:45.311519",
+  "duration_seconds": 84.7,
   "stats": {
     "total_notifications": 18,
     "total_courses": 8,
-    "total_updates": 1014
+    "total_updates": 1022
   },
   "notifications": [
     {
       "id": "notif-1",
-      "title": "Project Governance Tool",
+      "title": "2025/26 Eligibility Status",
       "category": "Announcements",
-      "course_code": "EER4189",
-      "course_name": "Software Design in Group",
-      "time": "7 hours 14 mins ago",
-      "link": "https://oulms.ou.ac.lk/course/view.php?id=3478",
+      "course_code": "EEI4361",
+      "course_name": "User Experience Engineering",
+      "time": "1 hour 51 mins ago",
+      "link": "https://oulms.ou.ac.lk/course/view.php?id=3439",
       "is_new": true
     },
     {
       "id": "notif-2",
-      "title": "content change",
+      "title": "Re: Workshop Planned for you to Improve your RE Knowledge",
       "category": "Announcements",
-      "course_code": "EER4189",
-      "course_name": "Software Design in Group",
-      "time": "8 hours 16 mins ago",
-      "link": "https://oulms.ou.ac.lk/mod/page/view.php?id=184432",
+      "course_code": "EEI4267",
+      "course_name": "Requirement Engineering",
+      "time": "3 hours 53 mins ago",
+      "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=96982",
       "is_new": true
     },
     {
       "id": "notif-3",
-      "title": "Eligibility",
+      "title": "Re: Workshop Planned for you to Improve your RE Knowledge",
       "category": "Announcements",
-      "course_code": "AGM4367",
-      "course_name": "Economics and Marketing for Engineering",
-      "time": "8 hours 34 mins ago",
-      "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97169",
+      "course_code": "EEI4267",
+      "course_name": "Requirement Engineering",
+      "time": "5 hours 14 mins ago",
+      "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=96982",
       "is_new": true
     },
     {
       "id": "notif-4",
-      "title": "content change",
-      "category": "Announcements",
-      "course_code": "EEI4267",
-      "course_name": "Requirement Engineering",
-      "time": "8 hours 35 mins ago",
-      "link": "https://oulms.ou.ac.lk/mod/page/view.php?id=187285",
+      "title": "You have upcoming activities due",
+      "category": "Deadlines & Quizzes",
+      "course_code": "",
+      "course_name": "",
+      "time": "23 hours 14 mins ago",
+      "link": "https://oulms.ou.ac.lk/report/insights/action.php?action=viewupcoming&predictionid=6337880&forwardurl=https%3A%2F%2Foulms.ou.ac.lk%2Fmod%2Fassign%2Fview.php%3Fid%3D182736",
       "is_new": true
     },
     {
       "id": "notif-5",
-      "title": "Repeat Viva Time Slot Changed 21-8-2026 Check your allocated time",
+      "title": "Final Eligibility Marks Updated",
       "category": "Grades & Marks",
       "course_code": "EEI4267",
       "course_name": "Requirement Engineering",
-      "time": "14 hours 28 mins ago",
-      "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97130",
+      "time": "1 day 13 hours ago",
+      "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97226",
       "is_new": true
     },
     {
       "id": "notif-6",
-      "title": "Re: OQ Marks and CAT marks",
-      "category": "Grades & Marks",
-      "course_code": "EEI4360",
-      "course_name": "Introduction to Artificial Intelligence",
-      "time": "1 day 3 hours ago",
-      "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=96723",
+      "title": "content change",
+      "category": "Announcements",
+      "course_code": "EEI4267",
+      "course_name": "Requirement Engineering",
+      "time": "1 day 14 hours ago",
+      "link": "https://oulms.ou.ac.lk/mod/page/view.php?id=187285",
       "is_new": true
     },
     {
       "id": "notif-7",
-      "title": "Re: Check your eligibility",
+      "title": "Project Governance Tool",
       "category": "Announcements",
-      "course_code": "EEI4267",
-      "course_name": "Requirement Engineering",
-      "time": "1 day 9 hours ago",
-      "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97006",
+      "course_code": "EER4189",
+      "course_name": "Software Design in Group",
+      "time": "1 day 21 hours ago",
+      "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97186",
       "is_new": true
     },
     {
       "id": "notif-8",
-      "title": "Re: Check your eligibility",
+      "title": "content change",
       "category": "Announcements",
-      "course_code": "EEI4267",
-      "course_name": "Requirement Engineering",
-      "time": "1 day 9 hours ago",
-      "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97006",
-      "is_new": false
+      "course_code": "EER4189",
+      "course_name": "Software Design in Group",
+      "time": "1 day 22 hours ago",
+      "link": "https://oulms.ou.ac.lk/mod/page/view.php?id=184432",
+      "is_new": true
     },
     {
       "id": "notif-9",
-      "title": "Re: Issues on Mini Project viva Marks!",
-      "category": "Grades & Marks",
-      "course_code": "EEI4267",
-      "course_name": "Requirement Engineering",
-      "time": "1 day 11 hours ago",
-      "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=96738",
+      "title": "Eligibility",
+      "category": "Announcements",
+      "course_code": "AGM4367",
+      "course_name": "Economics and Marketing for Engineering",
+      "time": "1 day 23 hours ago",
+      "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97169",
       "is_new": true
     },
     {
       "id": "notif-10",
-      "title": "Re: Repeat Viva on 21-8-2026 6PM onwards",
-      "category": "Viva & Exam",
+      "title": "content change",
+      "category": "Announcements",
       "course_code": "EEI4267",
       "course_name": "Requirement Engineering",
-      "time": "1 day 11 hours ago",
-      "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97016",
+      "time": "1 day 23 hours ago",
+      "link": "https://oulms.ou.ac.lk/mod/page/view.php?id=187285",
       "is_new": true
     },
     {
       "id": "notif-11",
-      "title": "content change",
-      "category": "Announcements",
+      "title": "Repeat Viva Time Slot Changed 21-8-2026 Check your allocated time",
+      "category": "Grades & Marks",
       "course_code": "EEI4267",
       "course_name": "Requirement Engineering",
-      "time": "1 day 12 hours ago",
-      "link": "https://oulms.ou.ac.lk/mod/page/view.php?id=187285",
+      "time": "2 days 4 hours ago",
+      "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97130",
       "is_new": true
     },
     {
       "id": "notif-12",
-      "title": "Repeat Viva on 21-8-2026 6PM onwards",
-      "category": "Viva & Exam",
-      "course_code": "EEI4267",
-      "course_name": "Requirement Engineering",
-      "time": "1 day 13 hours ago",
-      "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97016",
+      "title": "Re: OQ Marks and CAT marks",
+      "category": "Grades & Marks",
+      "course_code": "EEI4360",
+      "course_name": "Introduction to Artificial Intelligence",
+      "time": "2 days 17 hours ago",
+      "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=96723",
       "is_new": true
     },
     {
       "id": "notif-13",
-      "title": "content change",
+      "title": "Re: Check your eligibility",
       "category": "Announcements",
       "course_code": "EEI4267",
       "course_name": "Requirement Engineering",
-      "time": "1 day 14 hours ago",
-      "link": "https://oulms.ou.ac.lk/mod/choice/view.php?id=149145",
+      "time": "3 days ago",
+      "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97006",
       "is_new": true
     },
     {
       "id": "notif-14",
-      "title": "content change",
+      "title": "Re: Check your eligibility",
       "category": "Announcements",
       "course_code": "EEI4267",
       "course_name": "Requirement Engineering",
-      "time": "1 day 14 hours ago",
-      "link": "https://oulms.ou.ac.lk/mod/page/view.php?id=187285",
-      "is_new": true
+      "time": "3 days ago",
+      "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97006",
+      "is_new": false
     },
     {
       "id": "notif-15",
-      "title": "Overdue: Information about those who have started training or T2T without registering for the course",
-      "category": "Deadlines & Quizzes",
-      "course_code": "",
-      "course_name": "",
-      "time": "1 day 15 hours ago",
-      "link": "https://oulms.ou.ac.lk/mod/assign/view.php?id=179031&action=view",
-      "is_new": true
-    },
-    {
-      "id": "notif-16",
-      "title": "Issues on Mini Project viva Marks!",
-      "category": "Grades & Marks",
-      "course_code": "EEI4267",
-      "course_name": "Requirement Engineering",
-      "time": "1 day 22 hours ago",
-      "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=96738",
-      "is_new": true
-    },
-    {
-      "id": "notif-17",
       "title": "Re: Issues on Mini Project viva Marks!",
       "category": "Grades & Marks",
       "course_code": "EEI4267",
       "course_name": "Requirement Engineering",
-      "time": "1 day 23 hours ago",
+      "time": "3 days 2 hours ago",
       "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=96738",
       "is_new": true
     },
     {
-      "id": "notif-18",
-      "title": "Check your eligibility",
+      "id": "notif-16",
+      "title": "Re: Repeat Viva on 21-8-2026 6PM onwards",
+      "category": "Viva & Exam",
+      "course_code": "EEI4267",
+      "course_name": "Requirement Engineering",
+      "time": "3 days 2 hours ago",
+      "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97016",
+      "is_new": true
+    },
+    {
+      "id": "notif-17",
+      "title": "content change",
       "category": "Announcements",
       "course_code": "EEI4267",
       "course_name": "Requirement Engineering",
-      "time": "1 day 23 hours ago",
-      "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97006",
+      "time": "3 days 2 hours ago",
+      "link": "https://oulms.ou.ac.lk/mod/page/view.php?id=187285",
+      "is_new": true
+    },
+    {
+      "id": "notif-18",
+      "title": "Repeat Viva on 21-8-2026 6PM onwards",
+      "category": "Viva & Exam",
+      "course_code": "EEI4267",
+      "course_name": "Requirement Engineering",
+      "time": "3 days 4 hours ago",
+      "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97016",
       "is_new": true
     }
   ],
@@ -195,7 +195,7 @@
       "code": "AGM4367",
       "title": "AGM4367 Economics and Marketing for Engineering",
       "url": "https://oulms.ou.ac.lk/course/view.php?id=3361",
-      "updates_count": 34,
+      "updates_count": 36,
       "updates": [
         {
           "id": "upd-1",
@@ -430,6 +430,30 @@
           "course_code": "AGM4367",
           "course_name": "AGM4367 Economics and Marketing for Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
+          "topic": "Request Regarding Eligibility - AGM4367",
+          "author": "R.M.K.G. Udara 22 Aug 2026",
+          "time": "22 Aug 2026",
+          "category": "Announcements",
+          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97231",
+          "is_new": true
+        },
+        {
+          "id": "upd-21",
+          "course_code": "AGM4367",
+          "course_name": "AGM4367 Economics and Marketing for Engineering",
+          "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
+          "topic": "Request Regarding Eligibility - AGM4367",
+          "author": "D.S. Dilshari 21 Aug 2026",
+          "time": "21 Aug 2026",
+          "category": "Announcements",
+          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97227",
+          "is_new": true
+        },
+        {
+          "id": "upd-22",
+          "course_code": "AGM4367",
+          "course_name": "AGM4367 Economics and Marketing for Engineering",
+          "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
           "topic": "Regarding mini project group details",
           "author": "A. A. M. Afrath 19 Aug 2026",
           "time": "19 Aug 2026",
@@ -438,7 +462,7 @@
           "is_new": true
         },
         {
-          "id": "upd-21",
+          "id": "upd-23",
           "course_code": "AGM4367",
           "course_name": "AGM4367 Economics and Marketing for Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -450,7 +474,7 @@
           "is_new": true
         },
         {
-          "id": "upd-22",
+          "id": "upd-24",
           "course_code": "AGM4367",
           "course_name": "AGM4367 Economics and Marketing for Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -462,7 +486,7 @@
           "is_new": true
         },
         {
-          "id": "upd-23",
+          "id": "upd-25",
           "course_code": "AGM4367",
           "course_name": "AGM4367 Economics and Marketing for Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -474,7 +498,7 @@
           "is_new": true
         },
         {
-          "id": "upd-24",
+          "id": "upd-26",
           "course_code": "AGM4367",
           "course_name": "AGM4367 Economics and Marketing for Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -486,7 +510,7 @@
           "is_new": true
         },
         {
-          "id": "upd-25",
+          "id": "upd-27",
           "course_code": "AGM4367",
           "course_name": "AGM4367 Economics and Marketing for Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -498,7 +522,7 @@
           "is_new": true
         },
         {
-          "id": "upd-26",
+          "id": "upd-28",
           "course_code": "AGM4367",
           "course_name": "AGM4367 Economics and Marketing for Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -510,7 +534,7 @@
           "is_new": true
         },
         {
-          "id": "upd-27",
+          "id": "upd-29",
           "course_code": "AGM4367",
           "course_name": "AGM4367 Economics and Marketing for Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -522,7 +546,7 @@
           "is_new": true
         },
         {
-          "id": "upd-28",
+          "id": "upd-30",
           "course_code": "AGM4367",
           "course_name": "AGM4367 Economics and Marketing for Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -534,7 +558,7 @@
           "is_new": true
         },
         {
-          "id": "upd-29",
+          "id": "upd-31",
           "course_code": "AGM4367",
           "course_name": "AGM4367 Economics and Marketing for Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -546,7 +570,7 @@
           "is_new": true
         },
         {
-          "id": "upd-30",
+          "id": "upd-32",
           "course_code": "AGM4367",
           "course_name": "AGM4367 Economics and Marketing for Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -558,7 +582,7 @@
           "is_new": true
         },
         {
-          "id": "upd-31",
+          "id": "upd-33",
           "course_code": "AGM4367",
           "course_name": "AGM4367 Economics and Marketing for Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -570,7 +594,7 @@
           "is_new": true
         },
         {
-          "id": "upd-32",
+          "id": "upd-34",
           "course_code": "AGM4367",
           "course_name": "AGM4367 Economics and Marketing for Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -582,7 +606,7 @@
           "is_new": true
         },
         {
-          "id": "upd-33",
+          "id": "upd-35",
           "course_code": "AGM4367",
           "course_name": "AGM4367 Economics and Marketing for Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -594,7 +618,7 @@
           "is_new": true
         },
         {
-          "id": "upd-34",
+          "id": "upd-36",
           "course_code": "AGM4367",
           "course_name": "AGM4367 Economics and Marketing for Engineering",
           "forum_name": "Day School 01 - Discussion Forum",
@@ -2553,82 +2577,10 @@
       "code": "EEI4267",
       "title": "EEI4267 Requirement Engineering",
       "url": "https://oulms.ou.ac.lk/course/view.php?id=3435",
-      "updates_count": 90,
+      "updates_count": 92,
       "updates": [
         {
           "id": "upd-1",
-          "course_code": "EEI4267",
-          "course_name": "EEI4267 Requirement Engineering",
-          "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
-          "topic": "Kind Request to Review Viva Grade \u2013 S24016633",
-          "author": "I.W.A.S. Wickramaarachchi 19 Aug 2026",
-          "time": "19 Aug 2026",
-          "category": "Grades & Marks",
-          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97008",
-          "is_new": true
-        },
-        {
-          "id": "upd-2",
-          "course_code": "EEI4267",
-          "course_name": "EEI4267 Requirement Engineering",
-          "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
-          "topic": "Eligible issue",
-          "author": "B.K.G.R.K. Sewwandi 19 Aug 2026",
-          "time": "19 Aug 2026",
-          "category": "Announcements",
-          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97009",
-          "is_new": true
-        },
-        {
-          "id": "upd-3",
-          "course_code": "EEI4267",
-          "course_name": "EEI4267 Requirement Engineering",
-          "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
-          "topic": "I want to participate for the MINI PROJECT Repeat VIVA 21-8-2026 7 -8PM.",
-          "author": "Dr.K.V.J. Padmini 19 Aug 2026",
-          "time": "19 Aug 2026",
-          "category": "Viva & Exam",
-          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=96915",
-          "is_new": true
-        },
-        {
-          "id": "upd-4",
-          "course_code": "EEI4267",
-          "course_name": "EEI4267 Requirement Engineering",
-          "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
-          "topic": "Issues on Mini Project viva Marks!",
-          "author": "Dr.K.V.J. Padmini 17 Aug 2026",
-          "time": "17 Aug 2026",
-          "category": "Grades & Marks",
-          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=96738",
-          "is_new": true
-        },
-        {
-          "id": "upd-5",
-          "course_code": "EEI4267",
-          "course_name": "EEI4267 Requirement Engineering",
-          "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
-          "topic": "Regarding cat II marks",
-          "author": "S. Nirojini 19 Aug 2026",
-          "time": "19 Aug 2026",
-          "category": "Grades & Marks",
-          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=96975",
-          "is_new": true
-        },
-        {
-          "id": "upd-6",
-          "course_code": "EEI4267",
-          "course_name": "EEI4267 Requirement Engineering",
-          "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
-          "topic": "Eligibility issue",
-          "author": "S. Nirojini 19 Aug 2026",
-          "time": "19 Aug 2026",
-          "category": "Announcements",
-          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97007",
-          "is_new": true
-        },
-        {
-          "id": "upd-7",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -2640,7 +2592,91 @@
           "is_new": true
         },
         {
+          "id": "upd-2",
+          "course_code": "EEI4267",
+          "course_name": "EEI4267 Requirement Engineering",
+          "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
+          "topic": "Request to Review Late Submission Status",
+          "author": "B.W. Godage 22 Aug 2026",
+          "time": "22 Aug 2026",
+          "category": "Deadlines & Quizzes",
+          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97256",
+          "is_new": true
+        },
+        {
+          "id": "upd-3",
+          "course_code": "EEI4267",
+          "course_name": "EEI4267 Requirement Engineering",
+          "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
+          "topic": "Kind Request to Review Viva Grade \u2013 S24016633",
+          "author": "I.W.A.S. Wickramaarachchi 19 Aug 2026",
+          "time": "19 Aug 2026",
+          "category": "Grades & Marks",
+          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97008",
+          "is_new": true
+        },
+        {
+          "id": "upd-4",
+          "course_code": "EEI4267",
+          "course_name": "EEI4267 Requirement Engineering",
+          "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
+          "topic": "Eligible issue",
+          "author": "B.K.G.R.K. Sewwandi 19 Aug 2026",
+          "time": "19 Aug 2026",
+          "category": "Announcements",
+          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97009",
+          "is_new": true
+        },
+        {
+          "id": "upd-5",
+          "course_code": "EEI4267",
+          "course_name": "EEI4267 Requirement Engineering",
+          "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
+          "topic": "I want to participate for the MINI PROJECT Repeat VIVA 21-8-2026 7 -8PM.",
+          "author": "Dr.K.V.J. Padmini 19 Aug 2026",
+          "time": "19 Aug 2026",
+          "category": "Viva & Exam",
+          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=96915",
+          "is_new": true
+        },
+        {
+          "id": "upd-6",
+          "course_code": "EEI4267",
+          "course_name": "EEI4267 Requirement Engineering",
+          "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
+          "topic": "Issues on Mini Project viva Marks!",
+          "author": "Dr.K.V.J. Padmini 17 Aug 2026",
+          "time": "17 Aug 2026",
+          "category": "Grades & Marks",
+          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=96738",
+          "is_new": true
+        },
+        {
+          "id": "upd-7",
+          "course_code": "EEI4267",
+          "course_name": "EEI4267 Requirement Engineering",
+          "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
+          "topic": "Regarding cat II marks",
+          "author": "S. Nirojini 19 Aug 2026",
+          "time": "19 Aug 2026",
+          "category": "Grades & Marks",
+          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=96975",
+          "is_new": true
+        },
+        {
           "id": "upd-8",
+          "course_code": "EEI4267",
+          "course_name": "EEI4267 Requirement Engineering",
+          "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
+          "topic": "Eligibility issue",
+          "author": "S. Nirojini 19 Aug 2026",
+          "time": "19 Aug 2026",
+          "category": "Announcements",
+          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97007",
+          "is_new": true
+        },
+        {
+          "id": "upd-9",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -2652,7 +2688,7 @@
           "is_new": true
         },
         {
-          "id": "upd-9",
+          "id": "upd-10",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -2664,7 +2700,7 @@
           "is_new": true
         },
         {
-          "id": "upd-10",
+          "id": "upd-11",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -2676,7 +2712,7 @@
           "is_new": true
         },
         {
-          "id": "upd-11",
+          "id": "upd-12",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -2688,7 +2724,7 @@
           "is_new": true
         },
         {
-          "id": "upd-12",
+          "id": "upd-13",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -2700,7 +2736,7 @@
           "is_new": true
         },
         {
-          "id": "upd-13",
+          "id": "upd-14",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -2712,7 +2748,7 @@
           "is_new": true
         },
         {
-          "id": "upd-14",
+          "id": "upd-15",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -2724,7 +2760,7 @@
           "is_new": true
         },
         {
-          "id": "upd-15",
+          "id": "upd-16",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -2736,7 +2772,7 @@
           "is_new": true
         },
         {
-          "id": "upd-16",
+          "id": "upd-17",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -2748,7 +2784,7 @@
           "is_new": true
         },
         {
-          "id": "upd-17",
+          "id": "upd-18",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -2760,7 +2796,7 @@
           "is_new": true
         },
         {
-          "id": "upd-18",
+          "id": "upd-19",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -2772,7 +2808,7 @@
           "is_new": true
         },
         {
-          "id": "upd-19",
+          "id": "upd-20",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -2784,7 +2820,7 @@
           "is_new": true
         },
         {
-          "id": "upd-20",
+          "id": "upd-21",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -2796,7 +2832,7 @@
           "is_new": true
         },
         {
-          "id": "upd-21",
+          "id": "upd-22",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -2808,7 +2844,7 @@
           "is_new": true
         },
         {
-          "id": "upd-22",
+          "id": "upd-23",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -2820,7 +2856,7 @@
           "is_new": true
         },
         {
-          "id": "upd-23",
+          "id": "upd-24",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -2832,7 +2868,7 @@
           "is_new": true
         },
         {
-          "id": "upd-24",
+          "id": "upd-25",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -2844,7 +2880,7 @@
           "is_new": true
         },
         {
-          "id": "upd-25",
+          "id": "upd-26",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -2856,7 +2892,7 @@
           "is_new": true
         },
         {
-          "id": "upd-26",
+          "id": "upd-27",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -2868,7 +2904,7 @@
           "is_new": true
         },
         {
-          "id": "upd-27",
+          "id": "upd-28",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -2880,7 +2916,7 @@
           "is_new": true
         },
         {
-          "id": "upd-28",
+          "id": "upd-29",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -2892,7 +2928,7 @@
           "is_new": true
         },
         {
-          "id": "upd-29",
+          "id": "upd-30",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -2904,7 +2940,7 @@
           "is_new": true
         },
         {
-          "id": "upd-30",
+          "id": "upd-31",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -2916,7 +2952,7 @@
           "is_new": true
         },
         {
-          "id": "upd-31",
+          "id": "upd-32",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -2928,7 +2964,7 @@
           "is_new": true
         },
         {
-          "id": "upd-32",
+          "id": "upd-33",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -2940,7 +2976,7 @@
           "is_new": true
         },
         {
-          "id": "upd-33",
+          "id": "upd-34",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -2952,7 +2988,7 @@
           "is_new": true
         },
         {
-          "id": "upd-34",
+          "id": "upd-35",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -2964,7 +3000,7 @@
           "is_new": true
         },
         {
-          "id": "upd-35",
+          "id": "upd-36",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -2976,7 +3012,7 @@
           "is_new": true
         },
         {
-          "id": "upd-36",
+          "id": "upd-37",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -2988,7 +3024,7 @@
           "is_new": true
         },
         {
-          "id": "upd-37",
+          "id": "upd-38",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -3000,7 +3036,7 @@
           "is_new": true
         },
         {
-          "id": "upd-38",
+          "id": "upd-39",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -3012,7 +3048,7 @@
           "is_new": true
         },
         {
-          "id": "upd-39",
+          "id": "upd-40",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -3024,7 +3060,7 @@
           "is_new": true
         },
         {
-          "id": "upd-40",
+          "id": "upd-41",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -3036,7 +3072,7 @@
           "is_new": true
         },
         {
-          "id": "upd-41",
+          "id": "upd-42",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -3048,7 +3084,7 @@
           "is_new": true
         },
         {
-          "id": "upd-42",
+          "id": "upd-43",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -3060,7 +3096,7 @@
           "is_new": true
         },
         {
-          "id": "upd-43",
+          "id": "upd-44",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -3072,7 +3108,7 @@
           "is_new": true
         },
         {
-          "id": "upd-44",
+          "id": "upd-45",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -3084,7 +3120,7 @@
           "is_new": true
         },
         {
-          "id": "upd-45",
+          "id": "upd-46",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -3096,7 +3132,7 @@
           "is_new": true
         },
         {
-          "id": "upd-46",
+          "id": "upd-47",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -3108,7 +3144,7 @@
           "is_new": true
         },
         {
-          "id": "upd-47",
+          "id": "upd-48",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -3120,7 +3156,7 @@
           "is_new": true
         },
         {
-          "id": "upd-48",
+          "id": "upd-49",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -3132,7 +3168,7 @@
           "is_new": true
         },
         {
-          "id": "upd-49",
+          "id": "upd-50",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -3144,7 +3180,7 @@
           "is_new": true
         },
         {
-          "id": "upd-50",
+          "id": "upd-51",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -3156,7 +3192,7 @@
           "is_new": true
         },
         {
-          "id": "upd-51",
+          "id": "upd-52",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -3168,7 +3204,7 @@
           "is_new": true
         },
         {
-          "id": "upd-52",
+          "id": "upd-53",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -3180,7 +3216,7 @@
           "is_new": true
         },
         {
-          "id": "upd-53",
+          "id": "upd-54",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -3192,7 +3228,7 @@
           "is_new": true
         },
         {
-          "id": "upd-54",
+          "id": "upd-55",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -3204,7 +3240,7 @@
           "is_new": true
         },
         {
-          "id": "upd-55",
+          "id": "upd-56",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -3216,7 +3252,7 @@
           "is_new": true
         },
         {
-          "id": "upd-56",
+          "id": "upd-57",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -3228,7 +3264,7 @@
           "is_new": true
         },
         {
-          "id": "upd-57",
+          "id": "upd-58",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -3240,7 +3276,7 @@
           "is_new": true
         },
         {
-          "id": "upd-58",
+          "id": "upd-59",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -3252,7 +3288,7 @@
           "is_new": true
         },
         {
-          "id": "upd-59",
+          "id": "upd-60",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -3264,7 +3300,7 @@
           "is_new": true
         },
         {
-          "id": "upd-60",
+          "id": "upd-61",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -3276,7 +3312,7 @@
           "is_new": true
         },
         {
-          "id": "upd-61",
+          "id": "upd-62",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -3288,7 +3324,7 @@
           "is_new": true
         },
         {
-          "id": "upd-62",
+          "id": "upd-63",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -3300,7 +3336,7 @@
           "is_new": true
         },
         {
-          "id": "upd-63",
+          "id": "upd-64",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -3312,7 +3348,7 @@
           "is_new": true
         },
         {
-          "id": "upd-64",
+          "id": "upd-65",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -3324,7 +3360,7 @@
           "is_new": true
         },
         {
-          "id": "upd-65",
+          "id": "upd-66",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -3336,7 +3372,7 @@
           "is_new": true
         },
         {
-          "id": "upd-66",
+          "id": "upd-67",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -3348,7 +3384,7 @@
           "is_new": true
         },
         {
-          "id": "upd-67",
+          "id": "upd-68",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -3360,7 +3396,7 @@
           "is_new": true
         },
         {
-          "id": "upd-68",
+          "id": "upd-69",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -3372,7 +3408,7 @@
           "is_new": true
         },
         {
-          "id": "upd-69",
+          "id": "upd-70",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -3384,7 +3420,7 @@
           "is_new": true
         },
         {
-          "id": "upd-70",
+          "id": "upd-71",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -3396,7 +3432,7 @@
           "is_new": true
         },
         {
-          "id": "upd-71",
+          "id": "upd-72",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -3408,7 +3444,7 @@
           "is_new": true
         },
         {
-          "id": "upd-72",
+          "id": "upd-73",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -3420,7 +3456,7 @@
           "is_new": true
         },
         {
-          "id": "upd-73",
+          "id": "upd-74",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -3432,7 +3468,7 @@
           "is_new": true
         },
         {
-          "id": "upd-74",
+          "id": "upd-75",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -3444,7 +3480,7 @@
           "is_new": true
         },
         {
-          "id": "upd-75",
+          "id": "upd-76",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -3456,7 +3492,7 @@
           "is_new": true
         },
         {
-          "id": "upd-76",
+          "id": "upd-77",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -3468,55 +3504,7 @@
           "is_new": true
         },
         {
-          "id": "upd-77",
-          "course_code": "EEI4267",
-          "course_name": "EEI4267 Requirement Engineering",
-          "forum_name": "Announcements  Forum",
-          "topic": "Repeat Viva Time Slot Changed 21-8-2026 Check your allocated time",
-          "author": "Dr.K.V.J. Padmini 21 Aug 2026",
-          "time": "21 Aug 2026",
-          "category": "Grades & Marks",
-          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97130",
-          "is_new": true
-        },
-        {
           "id": "upd-78",
-          "course_code": "EEI4267",
-          "course_name": "EEI4267 Requirement Engineering",
-          "forum_name": "Announcements  Forum",
-          "topic": "Check your eligibility",
-          "author": "Dr.K.V.J. Padmini 19 Aug 2026",
-          "time": "19 Aug 2026",
-          "category": "Announcements",
-          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97006",
-          "is_new": true
-        },
-        {
-          "id": "upd-79",
-          "course_code": "EEI4267",
-          "course_name": "EEI4267 Requirement Engineering",
-          "forum_name": "Announcements  Forum",
-          "topic": "OQ and CAT II Marks are published",
-          "author": "Dr.K.V.J. Padmini 19 Aug 2026",
-          "time": "19 Aug 2026",
-          "category": "Grades & Marks",
-          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=96913",
-          "is_new": true
-        },
-        {
-          "id": "upd-80",
-          "course_code": "EEI4267",
-          "course_name": "EEI4267 Requirement Engineering",
-          "forum_name": "Announcements  Forum",
-          "topic": "Repeat Viva on 21-8-2026 6PM onwards",
-          "author": "Dr.K.V.J. Padmini 20 Aug 2026",
-          "time": "20 Aug 2026",
-          "category": "Viva & Exam",
-          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97016",
-          "is_new": true
-        },
-        {
-          "id": "upd-81",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Announcements  Forum",
@@ -3528,7 +3516,67 @@
           "is_new": true
         },
         {
+          "id": "upd-79",
+          "course_code": "EEI4267",
+          "course_name": "EEI4267 Requirement Engineering",
+          "forum_name": "Announcements  Forum",
+          "topic": "Final Eligibility Marks Updated",
+          "author": "Dr.K.V.J. Padmini 21 Aug 2026",
+          "time": "21 Aug 2026",
+          "category": "Grades & Marks",
+          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97226",
+          "is_new": true
+        },
+        {
+          "id": "upd-80",
+          "course_code": "EEI4267",
+          "course_name": "EEI4267 Requirement Engineering",
+          "forum_name": "Announcements  Forum",
+          "topic": "Repeat Viva Time Slot Changed 21-8-2026 Check your allocated time",
+          "author": "Dr.K.V.J. Padmini 21 Aug 2026",
+          "time": "21 Aug 2026",
+          "category": "Grades & Marks",
+          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97130",
+          "is_new": true
+        },
+        {
+          "id": "upd-81",
+          "course_code": "EEI4267",
+          "course_name": "EEI4267 Requirement Engineering",
+          "forum_name": "Announcements  Forum",
+          "topic": "Check your eligibility",
+          "author": "Dr.K.V.J. Padmini 19 Aug 2026",
+          "time": "19 Aug 2026",
+          "category": "Announcements",
+          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97006",
+          "is_new": true
+        },
+        {
           "id": "upd-82",
+          "course_code": "EEI4267",
+          "course_name": "EEI4267 Requirement Engineering",
+          "forum_name": "Announcements  Forum",
+          "topic": "Repeat Viva on 21-8-2026 6PM onwards",
+          "author": "Dr.K.V.J. Padmini 20 Aug 2026",
+          "time": "20 Aug 2026",
+          "category": "Viva & Exam",
+          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97016",
+          "is_new": true
+        },
+        {
+          "id": "upd-83",
+          "course_code": "EEI4267",
+          "course_name": "EEI4267 Requirement Engineering",
+          "forum_name": "Announcements  Forum",
+          "topic": "OQ and CAT II Marks are published",
+          "author": "Dr.K.V.J. Padmini 19 Aug 2026",
+          "time": "19 Aug 2026",
+          "category": "Grades & Marks",
+          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=96913",
+          "is_new": true
+        },
+        {
+          "id": "upd-84",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Announcements  Forum",
@@ -3540,7 +3588,7 @@
           "is_new": true
         },
         {
-          "id": "upd-83",
+          "id": "upd-85",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Announcements  Forum",
@@ -3552,7 +3600,7 @@
           "is_new": true
         },
         {
-          "id": "upd-84",
+          "id": "upd-86",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Announcements  Forum",
@@ -3564,7 +3612,7 @@
           "is_new": true
         },
         {
-          "id": "upd-85",
+          "id": "upd-87",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Announcements  Forum",
@@ -3576,7 +3624,7 @@
           "is_new": true
         },
         {
-          "id": "upd-86",
+          "id": "upd-88",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Announcements  Forum",
@@ -3588,7 +3636,7 @@
           "is_new": true
         },
         {
-          "id": "upd-87",
+          "id": "upd-89",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Announcements  Forum",
@@ -3600,7 +3648,7 @@
           "is_new": true
         },
         {
-          "id": "upd-88",
+          "id": "upd-90",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Announcements  Forum",
@@ -3612,7 +3660,7 @@
           "is_new": true
         },
         {
-          "id": "upd-89",
+          "id": "upd-91",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Announcements  Forum",
@@ -3624,7 +3672,7 @@
           "is_new": true
         },
         {
-          "id": "upd-90",
+          "id": "upd-92",
           "course_code": "EEI4267",
           "course_name": "EEI4267 Requirement Engineering",
           "forum_name": "Announcements  Forum",
@@ -4069,6 +4117,18 @@
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
+          "topic": "Requesting Model Final Paper",
+          "author": "D.M.S.N BANDARA 22 Aug 2026",
+          "time": "22 Aug 2026",
+          "category": "Viva & Exam",
+          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97280",
+          "is_new": true
+        },
+        {
+          "id": "upd-37",
+          "course_code": "EEI4360",
+          "course_name": "EEI4360 Introduction to Artificial Intelligence",
+          "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
           "topic": "Request for Another Opportunity to Complete Missed Quizzes",
           "author": "K.G Gayashan 19 Aug 2026",
           "time": "19 Aug 2026",
@@ -4077,7 +4137,7 @@
           "is_new": true
         },
         {
-          "id": "upd-37",
+          "id": "upd-38",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4089,7 +4149,7 @@
           "is_new": true
         },
         {
-          "id": "upd-38",
+          "id": "upd-39",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4101,7 +4161,7 @@
           "is_new": true
         },
         {
-          "id": "upd-39",
+          "id": "upd-40",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4113,7 +4173,7 @@
           "is_new": true
         },
         {
-          "id": "upd-40",
+          "id": "upd-41",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4125,7 +4185,7 @@
           "is_new": true
         },
         {
-          "id": "upd-41",
+          "id": "upd-42",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4137,7 +4197,7 @@
           "is_new": true
         },
         {
-          "id": "upd-42",
+          "id": "upd-43",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4149,7 +4209,7 @@
           "is_new": true
         },
         {
-          "id": "upd-43",
+          "id": "upd-44",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4161,7 +4221,7 @@
           "is_new": true
         },
         {
-          "id": "upd-44",
+          "id": "upd-45",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4173,7 +4233,7 @@
           "is_new": true
         },
         {
-          "id": "upd-45",
+          "id": "upd-46",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4185,7 +4245,7 @@
           "is_new": true
         },
         {
-          "id": "upd-46",
+          "id": "upd-47",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4197,7 +4257,7 @@
           "is_new": true
         },
         {
-          "id": "upd-47",
+          "id": "upd-48",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4209,7 +4269,7 @@
           "is_new": true
         },
         {
-          "id": "upd-48",
+          "id": "upd-49",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4221,7 +4281,7 @@
           "is_new": true
         },
         {
-          "id": "upd-49",
+          "id": "upd-50",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4233,7 +4293,7 @@
           "is_new": true
         },
         {
-          "id": "upd-50",
+          "id": "upd-51",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4245,7 +4305,7 @@
           "is_new": true
         },
         {
-          "id": "upd-51",
+          "id": "upd-52",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4257,7 +4317,7 @@
           "is_new": true
         },
         {
-          "id": "upd-52",
+          "id": "upd-53",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4269,7 +4329,7 @@
           "is_new": true
         },
         {
-          "id": "upd-53",
+          "id": "upd-54",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4281,7 +4341,7 @@
           "is_new": true
         },
         {
-          "id": "upd-54",
+          "id": "upd-55",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4293,7 +4353,7 @@
           "is_new": true
         },
         {
-          "id": "upd-55",
+          "id": "upd-56",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4305,7 +4365,7 @@
           "is_new": true
         },
         {
-          "id": "upd-56",
+          "id": "upd-57",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4317,7 +4377,7 @@
           "is_new": true
         },
         {
-          "id": "upd-57",
+          "id": "upd-58",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4329,7 +4389,7 @@
           "is_new": true
         },
         {
-          "id": "upd-58",
+          "id": "upd-59",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4341,7 +4401,7 @@
           "is_new": true
         },
         {
-          "id": "upd-59",
+          "id": "upd-60",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4353,7 +4413,7 @@
           "is_new": true
         },
         {
-          "id": "upd-60",
+          "id": "upd-61",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4365,7 +4425,7 @@
           "is_new": true
         },
         {
-          "id": "upd-61",
+          "id": "upd-62",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4377,7 +4437,7 @@
           "is_new": true
         },
         {
-          "id": "upd-62",
+          "id": "upd-63",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4389,7 +4449,7 @@
           "is_new": true
         },
         {
-          "id": "upd-63",
+          "id": "upd-64",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4401,7 +4461,7 @@
           "is_new": true
         },
         {
-          "id": "upd-64",
+          "id": "upd-65",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4413,7 +4473,7 @@
           "is_new": true
         },
         {
-          "id": "upd-65",
+          "id": "upd-66",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4425,7 +4485,7 @@
           "is_new": true
         },
         {
-          "id": "upd-66",
+          "id": "upd-67",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4437,7 +4497,7 @@
           "is_new": true
         },
         {
-          "id": "upd-67",
+          "id": "upd-68",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4449,7 +4509,7 @@
           "is_new": true
         },
         {
-          "id": "upd-68",
+          "id": "upd-69",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4461,7 +4521,7 @@
           "is_new": true
         },
         {
-          "id": "upd-69",
+          "id": "upd-70",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4473,7 +4533,7 @@
           "is_new": true
         },
         {
-          "id": "upd-70",
+          "id": "upd-71",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4485,7 +4545,7 @@
           "is_new": true
         },
         {
-          "id": "upd-71",
+          "id": "upd-72",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4497,7 +4557,7 @@
           "is_new": true
         },
         {
-          "id": "upd-72",
+          "id": "upd-73",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4509,7 +4569,7 @@
           "is_new": true
         },
         {
-          "id": "upd-73",
+          "id": "upd-74",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4521,7 +4581,7 @@
           "is_new": true
         },
         {
-          "id": "upd-74",
+          "id": "upd-75",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4533,7 +4593,7 @@
           "is_new": true
         },
         {
-          "id": "upd-75",
+          "id": "upd-76",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4545,7 +4605,7 @@
           "is_new": true
         },
         {
-          "id": "upd-76",
+          "id": "upd-77",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4557,7 +4617,7 @@
           "is_new": true
         },
         {
-          "id": "upd-77",
+          "id": "upd-78",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4569,7 +4629,7 @@
           "is_new": true
         },
         {
-          "id": "upd-78",
+          "id": "upd-79",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4581,7 +4641,7 @@
           "is_new": true
         },
         {
-          "id": "upd-79",
+          "id": "upd-80",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4593,7 +4653,7 @@
           "is_new": true
         },
         {
-          "id": "upd-80",
+          "id": "upd-81",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4605,7 +4665,7 @@
           "is_new": true
         },
         {
-          "id": "upd-81",
+          "id": "upd-82",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4617,7 +4677,7 @@
           "is_new": true
         },
         {
-          "id": "upd-82",
+          "id": "upd-83",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4629,7 +4689,7 @@
           "is_new": true
         },
         {
-          "id": "upd-83",
+          "id": "upd-84",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4641,7 +4701,7 @@
           "is_new": true
         },
         {
-          "id": "upd-84",
+          "id": "upd-85",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4653,7 +4713,7 @@
           "is_new": true
         },
         {
-          "id": "upd-85",
+          "id": "upd-86",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4665,7 +4725,7 @@
           "is_new": true
         },
         {
-          "id": "upd-86",
+          "id": "upd-87",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4677,7 +4737,7 @@
           "is_new": true
         },
         {
-          "id": "upd-87",
+          "id": "upd-88",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4689,7 +4749,7 @@
           "is_new": true
         },
         {
-          "id": "upd-88",
+          "id": "upd-89",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4701,7 +4761,7 @@
           "is_new": true
         },
         {
-          "id": "upd-89",
+          "id": "upd-90",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4713,7 +4773,7 @@
           "is_new": true
         },
         {
-          "id": "upd-90",
+          "id": "upd-91",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4725,7 +4785,7 @@
           "is_new": true
         },
         {
-          "id": "upd-91",
+          "id": "upd-92",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4737,7 +4797,7 @@
           "is_new": true
         },
         {
-          "id": "upd-92",
+          "id": "upd-93",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4749,7 +4809,7 @@
           "is_new": true
         },
         {
-          "id": "upd-93",
+          "id": "upd-94",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4761,7 +4821,7 @@
           "is_new": true
         },
         {
-          "id": "upd-94",
+          "id": "upd-95",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4773,7 +4833,7 @@
           "is_new": true
         },
         {
-          "id": "upd-95",
+          "id": "upd-96",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4785,7 +4845,7 @@
           "is_new": true
         },
         {
-          "id": "upd-96",
+          "id": "upd-97",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4797,7 +4857,7 @@
           "is_new": true
         },
         {
-          "id": "upd-97",
+          "id": "upd-98",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4809,7 +4869,7 @@
           "is_new": true
         },
         {
-          "id": "upd-98",
+          "id": "upd-99",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4821,7 +4881,7 @@
           "is_new": true
         },
         {
-          "id": "upd-99",
+          "id": "upd-100",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4833,7 +4893,7 @@
           "is_new": true
         },
         {
-          "id": "upd-100",
+          "id": "upd-101",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4845,7 +4905,7 @@
           "is_new": true
         },
         {
-          "id": "upd-101",
+          "id": "upd-102",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4857,7 +4917,7 @@
           "is_new": true
         },
         {
-          "id": "upd-102",
+          "id": "upd-103",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4869,7 +4929,7 @@
           "is_new": true
         },
         {
-          "id": "upd-103",
+          "id": "upd-104",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4881,7 +4941,7 @@
           "is_new": true
         },
         {
-          "id": "upd-104",
+          "id": "upd-105",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4893,7 +4953,7 @@
           "is_new": true
         },
         {
-          "id": "upd-105",
+          "id": "upd-106",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4905,7 +4965,7 @@
           "is_new": true
         },
         {
-          "id": "upd-106",
+          "id": "upd-107",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4917,7 +4977,7 @@
           "is_new": true
         },
         {
-          "id": "upd-107",
+          "id": "upd-108",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4929,7 +4989,7 @@
           "is_new": true
         },
         {
-          "id": "upd-108",
+          "id": "upd-109",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4941,7 +5001,7 @@
           "is_new": true
         },
         {
-          "id": "upd-109",
+          "id": "upd-110",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4953,7 +5013,7 @@
           "is_new": true
         },
         {
-          "id": "upd-110",
+          "id": "upd-111",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4965,7 +5025,7 @@
           "is_new": true
         },
         {
-          "id": "upd-111",
+          "id": "upd-112",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4977,7 +5037,7 @@
           "is_new": true
         },
         {
-          "id": "upd-112",
+          "id": "upd-113",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -4989,7 +5049,7 @@
           "is_new": true
         },
         {
-          "id": "upd-113",
+          "id": "upd-114",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -5001,7 +5061,7 @@
           "is_new": true
         },
         {
-          "id": "upd-114",
+          "id": "upd-115",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -5013,7 +5073,7 @@
           "is_new": true
         },
         {
-          "id": "upd-115",
+          "id": "upd-116",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -5025,7 +5085,7 @@
           "is_new": true
         },
         {
-          "id": "upd-116",
+          "id": "upd-117",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -5037,7 +5097,7 @@
           "is_new": true
         },
         {
-          "id": "upd-117",
+          "id": "upd-118",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -5049,7 +5109,7 @@
           "is_new": true
         },
         {
-          "id": "upd-118",
+          "id": "upd-119",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -5061,7 +5121,7 @@
           "is_new": true
         },
         {
-          "id": "upd-119",
+          "id": "upd-120",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -5073,7 +5133,7 @@
           "is_new": true
         },
         {
-          "id": "upd-120",
+          "id": "upd-121",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -5085,7 +5145,7 @@
           "is_new": true
         },
         {
-          "id": "upd-121",
+          "id": "upd-122",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -5097,7 +5157,7 @@
           "is_new": true
         },
         {
-          "id": "upd-122",
+          "id": "upd-123",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -5109,7 +5169,7 @@
           "is_new": true
         },
         {
-          "id": "upd-123",
+          "id": "upd-124",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -5121,7 +5181,7 @@
           "is_new": true
         },
         {
-          "id": "upd-124",
+          "id": "upd-125",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -5133,7 +5193,7 @@
           "is_new": true
         },
         {
-          "id": "upd-125",
+          "id": "upd-126",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -5145,7 +5205,7 @@
           "is_new": true
         },
         {
-          "id": "upd-126",
+          "id": "upd-127",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -5157,7 +5217,7 @@
           "is_new": true
         },
         {
-          "id": "upd-127",
+          "id": "upd-128",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -5169,7 +5229,7 @@
           "is_new": true
         },
         {
-          "id": "upd-128",
+          "id": "upd-129",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -5181,7 +5241,7 @@
           "is_new": true
         },
         {
-          "id": "upd-129",
+          "id": "upd-130",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -5193,7 +5253,7 @@
           "is_new": true
         },
         {
-          "id": "upd-130",
+          "id": "upd-131",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -5205,7 +5265,7 @@
           "is_new": true
         },
         {
-          "id": "upd-131",
+          "id": "upd-132",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -5217,7 +5277,7 @@
           "is_new": true
         },
         {
-          "id": "upd-132",
+          "id": "upd-133",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -5229,7 +5289,7 @@
           "is_new": true
         },
         {
-          "id": "upd-133",
+          "id": "upd-134",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -5241,7 +5301,7 @@
           "is_new": true
         },
         {
-          "id": "upd-134",
+          "id": "upd-135",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -5250,18 +5310,6 @@
           "time": "13 May 2026",
           "category": "Announcements",
           "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=85622",
-          "is_new": true
-        },
-        {
-          "id": "upd-135",
-          "course_code": "EEI4360",
-          "course_name": "EEI4360 Introduction to Artificial Intelligence",
-          "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
-          "topic": "ILS 01 Recordings and Presentation slides",
-          "author": "R.M.T.I Rathnayake 13 May 2026",
-          "time": "13 May 2026",
-          "category": "Announcements",
-          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=85672",
           "is_new": true
         },
         {
@@ -5283,10 +5331,22 @@
       "code": "EEI4361",
       "title": "EEI4361 User Experience Engineering",
       "url": "https://oulms.ou.ac.lk/course/view.php?id=3439",
-      "updates_count": 32,
+      "updates_count": 33,
       "updates": [
         {
           "id": "upd-1",
+          "course_code": "EEI4361",
+          "course_name": "EEI4361 User Experience Engineering",
+          "forum_name": "Announcements  Forum",
+          "topic": "2025/26 Eligibility Status",
+          "author": "Mr. B. M. G. S. T. K. Wickramasinghe 23 Aug 2026",
+          "time": "23 Aug 2026",
+          "category": "Announcements",
+          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97304",
+          "is_new": true
+        },
+        {
+          "id": "upd-2",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Announcements  Forum",
@@ -5298,7 +5358,7 @@
           "is_new": true
         },
         {
-          "id": "upd-2",
+          "id": "upd-3",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Announcements  Forum",
@@ -5310,7 +5370,7 @@
           "is_new": true
         },
         {
-          "id": "upd-3",
+          "id": "upd-4",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Announcements  Forum",
@@ -5322,7 +5382,7 @@
           "is_new": true
         },
         {
-          "id": "upd-4",
+          "id": "upd-5",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Announcements  Forum",
@@ -5334,7 +5394,7 @@
           "is_new": true
         },
         {
-          "id": "upd-5",
+          "id": "upd-6",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Announcements  Forum",
@@ -5346,7 +5406,7 @@
           "is_new": true
         },
         {
-          "id": "upd-6",
+          "id": "upd-7",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Announcements  Forum",
@@ -5358,7 +5418,7 @@
           "is_new": true
         },
         {
-          "id": "upd-7",
+          "id": "upd-8",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -5370,7 +5430,7 @@
           "is_new": true
         },
         {
-          "id": "upd-8",
+          "id": "upd-9",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -5382,7 +5442,7 @@
           "is_new": true
         },
         {
-          "id": "upd-9",
+          "id": "upd-10",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -5394,7 +5454,7 @@
           "is_new": true
         },
         {
-          "id": "upd-10",
+          "id": "upd-11",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -5406,7 +5466,7 @@
           "is_new": true
         },
         {
-          "id": "upd-11",
+          "id": "upd-12",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -5418,7 +5478,7 @@
           "is_new": true
         },
         {
-          "id": "upd-12",
+          "id": "upd-13",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -5430,7 +5490,7 @@
           "is_new": true
         },
         {
-          "id": "upd-13",
+          "id": "upd-14",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -5442,7 +5502,7 @@
           "is_new": true
         },
         {
-          "id": "upd-14",
+          "id": "upd-15",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -5454,7 +5514,7 @@
           "is_new": true
         },
         {
-          "id": "upd-15",
+          "id": "upd-16",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -5466,7 +5526,7 @@
           "is_new": true
         },
         {
-          "id": "upd-16",
+          "id": "upd-17",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -5478,7 +5538,7 @@
           "is_new": true
         },
         {
-          "id": "upd-17",
+          "id": "upd-18",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -5490,7 +5550,7 @@
           "is_new": true
         },
         {
-          "id": "upd-18",
+          "id": "upd-19",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -5502,7 +5562,7 @@
           "is_new": true
         },
         {
-          "id": "upd-19",
+          "id": "upd-20",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -5514,7 +5574,7 @@
           "is_new": true
         },
         {
-          "id": "upd-20",
+          "id": "upd-21",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -5526,7 +5586,7 @@
           "is_new": true
         },
         {
-          "id": "upd-21",
+          "id": "upd-22",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -5538,7 +5598,7 @@
           "is_new": true
         },
         {
-          "id": "upd-22",
+          "id": "upd-23",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Mini Project Related Queries  Forum",
@@ -5550,7 +5610,7 @@
           "is_new": true
         },
         {
-          "id": "upd-23",
+          "id": "upd-24",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Mini Project Related Queries  Forum",
@@ -5562,7 +5622,7 @@
           "is_new": true
         },
         {
-          "id": "upd-24",
+          "id": "upd-25",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Mini Project Related Queries  Forum",
@@ -5574,7 +5634,7 @@
           "is_new": true
         },
         {
-          "id": "upd-25",
+          "id": "upd-26",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Mini Project Related Queries  Forum",
@@ -5586,7 +5646,7 @@
           "is_new": true
         },
         {
-          "id": "upd-26",
+          "id": "upd-27",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Mini Project Related Queries  Forum",
@@ -5598,7 +5658,7 @@
           "is_new": true
         },
         {
-          "id": "upd-27",
+          "id": "upd-28",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Mini Project Related Queries  Forum",
@@ -5610,7 +5670,7 @@
           "is_new": true
         },
         {
-          "id": "upd-28",
+          "id": "upd-29",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Mini Project Related Queries  Forum",
@@ -5622,7 +5682,7 @@
           "is_new": true
         },
         {
-          "id": "upd-29",
+          "id": "upd-30",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Mini Project Related Queries  Forum",
@@ -5634,7 +5694,7 @@
           "is_new": true
         },
         {
-          "id": "upd-30",
+          "id": "upd-31",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Mini Project Related Queries  Forum",
@@ -5646,7 +5706,7 @@
           "is_new": true
         },
         {
-          "id": "upd-31",
+          "id": "upd-32",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Mini Project Related Queries  Forum",
@@ -5658,7 +5718,7 @@
           "is_new": true
         },
         {
-          "id": "upd-32",
+          "id": "upd-33",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Mini Project Related Queries  Forum",
@@ -5911,27 +5971,15 @@
           "course_code": "EEI4362",
           "course_name": "EEI4362 Object Oriented Design",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
-          "topic": "Request for recheck the eligibility marks",
-          "author": "A.N.J.F Vaz 19 Aug 2026",
-          "time": "19 Aug 2026",
+          "topic": "Request to Recheck Eligibility Marks",
+          "author": "B.H HEMAL 18 Aug 2026",
+          "time": "18 Aug 2026",
           "category": "Grades & Marks",
-          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=96894",
+          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=96845",
           "is_new": true
         },
         {
           "id": "upd-21",
-          "course_code": "EEI4362",
-          "course_name": "EEI4362 Object Oriented Design",
-          "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
-          "topic": "Lab 02 Marks",
-          "author": "M.B. Sharqi Sajjath 19 Aug 2026",
-          "time": "19 Aug 2026",
-          "category": "Grades & Marks",
-          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97004",
-          "is_new": true
-        },
-        {
-          "id": "upd-22",
           "course_code": "EEI4362",
           "course_name": "EEI4362 Object Oriented Design",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -5943,15 +5991,27 @@
           "is_new": true
         },
         {
+          "id": "upd-22",
+          "course_code": "EEI4362",
+          "course_name": "EEI4362 Object Oriented Design",
+          "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
+          "topic": "Request for recheck the eligibility marks",
+          "author": "A.N.J.F Vaz 19 Aug 2026",
+          "time": "19 Aug 2026",
+          "category": "Grades & Marks",
+          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=96894",
+          "is_new": true
+        },
+        {
           "id": "upd-23",
           "course_code": "EEI4362",
           "course_name": "EEI4362 Object Oriented Design",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
-          "topic": "Request to Recheck Eligibility Marks",
-          "author": "B.H HEMAL 18 Aug 2026",
-          "time": "18 Aug 2026",
+          "topic": "Lab 02 Marks",
+          "author": "M.B. Sharqi Sajjath 19 Aug 2026",
+          "time": "19 Aug 2026",
           "category": "Grades & Marks",
-          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=96845",
+          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97004",
           "is_new": true
         },
         {
@@ -7003,27 +7063,15 @@
           "course_code": "EEI4362",
           "course_name": "EEI4362 Object Oriented Design",
           "forum_name": "Forum",
-          "topic": "Request for recheck the eligibility marks",
-          "author": "A.N.J.F Vaz 19 Aug 2026",
-          "time": "19 Aug 2026",
+          "topic": "Request to Recheck Eligibility Marks",
+          "author": "B.H HEMAL 18 Aug 2026",
+          "time": "18 Aug 2026",
           "category": "Grades & Marks",
-          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=96894",
+          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=96845",
           "is_new": false
         },
         {
           "id": "upd-112",
-          "course_code": "EEI4362",
-          "course_name": "EEI4362 Object Oriented Design",
-          "forum_name": "Forum",
-          "topic": "Lab 02 Marks",
-          "author": "M.B. Sharqi Sajjath 19 Aug 2026",
-          "time": "19 Aug 2026",
-          "category": "Grades & Marks",
-          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97004",
-          "is_new": false
-        },
-        {
-          "id": "upd-113",
           "course_code": "EEI4362",
           "course_name": "EEI4362 Object Oriented Design",
           "forum_name": "Forum",
@@ -7035,15 +7083,27 @@
           "is_new": false
         },
         {
+          "id": "upd-113",
+          "course_code": "EEI4362",
+          "course_name": "EEI4362 Object Oriented Design",
+          "forum_name": "Forum",
+          "topic": "Request for recheck the eligibility marks",
+          "author": "A.N.J.F Vaz 19 Aug 2026",
+          "time": "19 Aug 2026",
+          "category": "Grades & Marks",
+          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=96894",
+          "is_new": false
+        },
+        {
           "id": "upd-114",
           "course_code": "EEI4362",
           "course_name": "EEI4362 Object Oriented Design",
           "forum_name": "Forum",
-          "topic": "Request to Recheck Eligibility Marks",
-          "author": "B.H HEMAL 18 Aug 2026",
-          "time": "18 Aug 2026",
+          "topic": "Lab 02 Marks",
+          "author": "M.B. Sharqi Sajjath 19 Aug 2026",
+          "time": "19 Aug 2026",
           "category": "Grades & Marks",
-          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=96845",
+          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97004",
           "is_new": false
         },
         {
@@ -8085,7 +8145,7 @@
       "code": "EER4189",
       "title": "EER4189 Software Design in Group",
       "url": "https://oulms.ou.ac.lk/course/view.php?id=3478",
-      "updates_count": 34,
+      "updates_count": 37,
       "updates": [
         {
           "id": "upd-1",
@@ -8224,6 +8284,42 @@
           "course_code": "EER4189",
           "course_name": "EER4189 Software Design in Group",
           "forum_name": "Help wanted/Help given  Forum",
+          "topic": "Request for Group Assignment",
+          "author": "R SAVITHKUMAR 23 Aug 2026",
+          "time": "23 Aug 2026",
+          "category": "Deadlines & Quizzes",
+          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97314",
+          "is_new": true
+        },
+        {
+          "id": "upd-13",
+          "course_code": "EER4189",
+          "course_name": "EER4189 Software Design in Group",
+          "forum_name": "Help wanted/Help given  Forum",
+          "topic": "Supervisor Approval Pending for Submission - Group 28 - Deadline 26 August",
+          "author": "L.G.P. Chamuditha 23 Aug 2026",
+          "time": "23 Aug 2026",
+          "category": "Deadlines & Quizzes",
+          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97302",
+          "is_new": true
+        },
+        {
+          "id": "upd-14",
+          "course_code": "EER4189",
+          "course_name": "EER4189 Software Design in Group",
+          "forum_name": "Help wanted/Help given  Forum",
+          "topic": "Supervisor Approval Pending for Submission - Group 10 - Deadline 26 August",
+          "author": "W.M.S.C Walisinghe 22 Aug 2026",
+          "time": "22 Aug 2026",
+          "category": "Deadlines & Quizzes",
+          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97266",
+          "is_new": true
+        },
+        {
+          "id": "upd-15",
+          "course_code": "EER4189",
+          "course_name": "EER4189 Software Design in Group",
+          "forum_name": "Help wanted/Help given  Forum",
           "topic": "Request for Guidance on Supervisor Contact",
           "author": "C Yadhoo 21 Aug 2026",
           "time": "21 Aug 2026",
@@ -8232,7 +8328,7 @@
           "is_new": true
         },
         {
-          "id": "upd-13",
+          "id": "upd-16",
           "course_code": "EER4189",
           "course_name": "EER4189 Software Design in Group",
           "forum_name": "Help wanted/Help given  Forum",
@@ -8244,7 +8340,7 @@
           "is_new": true
         },
         {
-          "id": "upd-14",
+          "id": "upd-17",
           "course_code": "EER4189",
           "course_name": "EER4189 Software Design in Group",
           "forum_name": "Help wanted/Help given  Forum",
@@ -8256,7 +8352,7 @@
           "is_new": true
         },
         {
-          "id": "upd-15",
+          "id": "upd-18",
           "course_code": "EER4189",
           "course_name": "EER4189 Software Design in Group",
           "forum_name": "Help wanted/Help given  Forum",
@@ -8268,7 +8364,7 @@
           "is_new": true
         },
         {
-          "id": "upd-16",
+          "id": "upd-19",
           "course_code": "EER4189",
           "course_name": "EER4189 Software Design in Group",
           "forum_name": "Help wanted/Help given  Forum",
@@ -8280,7 +8376,7 @@
           "is_new": true
         },
         {
-          "id": "upd-17",
+          "id": "upd-20",
           "course_code": "EER4189",
           "course_name": "EER4189 Software Design in Group",
           "forum_name": "Help wanted/Help given  Forum",
@@ -8292,7 +8388,7 @@
           "is_new": true
         },
         {
-          "id": "upd-18",
+          "id": "upd-21",
           "course_code": "EER4189",
           "course_name": "EER4189 Software Design in Group",
           "forum_name": "Help wanted/Help given  Forum",
@@ -8304,7 +8400,7 @@
           "is_new": true
         },
         {
-          "id": "upd-19",
+          "id": "upd-22",
           "course_code": "EER4189",
           "course_name": "EER4189 Software Design in Group",
           "forum_name": "Help wanted/Help given  Forum",
@@ -8316,7 +8412,7 @@
           "is_new": true
         },
         {
-          "id": "upd-20",
+          "id": "upd-23",
           "course_code": "EER4189",
           "course_name": "EER4189 Software Design in Group",
           "forum_name": "Help wanted/Help given  Forum",
@@ -8328,7 +8424,7 @@
           "is_new": true
         },
         {
-          "id": "upd-21",
+          "id": "upd-24",
           "course_code": "EER4189",
           "course_name": "EER4189 Software Design in Group",
           "forum_name": "Help wanted/Help given  Forum",
@@ -8340,7 +8436,7 @@
           "is_new": true
         },
         {
-          "id": "upd-22",
+          "id": "upd-25",
           "course_code": "EER4189",
           "course_name": "EER4189 Software Design in Group",
           "forum_name": "Help wanted/Help given  Forum",
@@ -8352,7 +8448,7 @@
           "is_new": true
         },
         {
-          "id": "upd-23",
+          "id": "upd-26",
           "course_code": "EER4189",
           "course_name": "EER4189 Software Design in Group",
           "forum_name": "Help wanted/Help given  Forum",
@@ -8364,7 +8460,7 @@
           "is_new": true
         },
         {
-          "id": "upd-24",
+          "id": "upd-27",
           "course_code": "EER4189",
           "course_name": "EER4189 Software Design in Group",
           "forum_name": "Help wanted/Help given  Forum",
@@ -8376,7 +8472,7 @@
           "is_new": true
         },
         {
-          "id": "upd-25",
+          "id": "upd-28",
           "course_code": "EER4189",
           "course_name": "EER4189 Software Design in Group",
           "forum_name": "Help wanted/Help given  Forum",
@@ -8388,7 +8484,7 @@
           "is_new": true
         },
         {
-          "id": "upd-26",
+          "id": "upd-29",
           "course_code": "EER4189",
           "course_name": "EER4189 Software Design in Group",
           "forum_name": "Help wanted/Help given  Forum",
@@ -8400,7 +8496,7 @@
           "is_new": true
         },
         {
-          "id": "upd-27",
+          "id": "upd-30",
           "course_code": "EER4189",
           "course_name": "EER4189 Software Design in Group",
           "forum_name": "Help wanted/Help given  Forum",
@@ -8412,7 +8508,7 @@
           "is_new": true
         },
         {
-          "id": "upd-28",
+          "id": "upd-31",
           "course_code": "EER4189",
           "course_name": "EER4189 Software Design in Group",
           "forum_name": "Help wanted/Help given  Forum",
@@ -8424,7 +8520,7 @@
           "is_new": true
         },
         {
-          "id": "upd-29",
+          "id": "upd-32",
           "course_code": "EER4189",
           "course_name": "EER4189 Software Design in Group",
           "forum_name": "Help wanted/Help given  Forum",
@@ -8436,7 +8532,7 @@
           "is_new": true
         },
         {
-          "id": "upd-30",
+          "id": "upd-33",
           "course_code": "EER4189",
           "course_name": "EER4189 Software Design in Group",
           "forum_name": "Help wanted/Help given  Forum",
@@ -8448,7 +8544,7 @@
           "is_new": true
         },
         {
-          "id": "upd-31",
+          "id": "upd-34",
           "course_code": "EER4189",
           "course_name": "EER4189 Software Design in Group",
           "forum_name": "Help wanted/Help given  Forum",
@@ -8460,7 +8556,7 @@
           "is_new": true
         },
         {
-          "id": "upd-32",
+          "id": "upd-35",
           "course_code": "EER4189",
           "course_name": "EER4189 Software Design in Group",
           "forum_name": "Help wanted/Help given  Forum",
@@ -8472,7 +8568,7 @@
           "is_new": true
         },
         {
-          "id": "upd-33",
+          "id": "upd-36",
           "course_code": "EER4189",
           "course_name": "EER4189 Software Design in Group",
           "forum_name": "Help wanted/Help given  Forum",
@@ -8484,7 +8580,7 @@
           "is_new": true
         },
         {
-          "id": "upd-34",
+          "id": "upd-37",
           "course_code": "EER4189",
           "course_name": "EER4189 Software Design in Group",
           "forum_name": "Help wanted/Help given  Forum",
