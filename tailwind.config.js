@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -10,14 +11,22 @@ module.exports = {
       colors: {
         refero: {
           canvas: "#fbf8f5",
+          "canvas-dark": "#0f0f11",
           card: "#f2ebe5",
+          "card-dark": "#18181b",
           "card-hover": "#e8ddd5",
+          "card-hover-dark": "#27272a",
           "card-light": "#fdfaf8",
+          "card-light-dark": "#1f1f23",
           "card-white": "#FFFFFF",
           border: "rgba(78, 8, 12, 0.08)",
+          "border-dark": "rgba(255, 255, 255, 0.08)",
           "border-strong": "rgba(78, 8, 12, 0.12)",
+          "border-strong-dark": "rgba(255, 255, 255, 0.14)",
           dark: "#4e080c",
+          "dark-text": "#f4f4f5",
           muted: "#71717A",
+          "muted-dark": "#a1a1aa",
           subtle: "#8E8E93",
           active: "#e8ddd5",
         },
