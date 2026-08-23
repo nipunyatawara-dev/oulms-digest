@@ -1,9 +1,9 @@
 {
   "success": true,
-  "synced_at": "2026-08-23T07:27:45.311519",
-  "duration_seconds": 84.7,
+  "synced_at": "2026-08-23T07:36:05.238006",
+  "duration_seconds": 86.8,
   "stats": {
-    "total_notifications": 18,
+    "total_notifications": 20,
     "total_courses": 8,
     "total_updates": 1022
   },
@@ -14,7 +14,7 @@
       "category": "Announcements",
       "course_code": "EEI4361",
       "course_name": "User Experience Engineering",
-      "time": "1 hour 51 mins ago",
+      "time": "2 hours ago",
       "link": "https://oulms.ou.ac.lk/course/view.php?id=3439",
       "is_new": true
     },
@@ -24,8 +24,8 @@
       "category": "Announcements",
       "course_code": "EEI4267",
       "course_name": "Requirement Engineering",
-      "time": "3 hours 53 mins ago",
-      "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=96982",
+      "time": "4 hours 1 min ago",
+      "link": "https://oulms.ou.ac.lk/course/view.php?id=3435",
       "is_new": true
     },
     {
@@ -34,17 +34,17 @@
       "category": "Announcements",
       "course_code": "EEI4267",
       "course_name": "Requirement Engineering",
-      "time": "5 hours 14 mins ago",
-      "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=96982",
+      "time": "5 hours 22 mins ago",
+      "link": "https://oulms.ou.ac.lk/course/view.php?id=3435",
       "is_new": true
     },
     {
       "id": "notif-4",
       "title": "You have upcoming activities due",
       "category": "Deadlines & Quizzes",
-      "course_code": "",
-      "course_name": "",
-      "time": "23 hours 14 mins ago",
+      "course_code": "PORTAL",
+      "course_name": "OUSL Portal Notice",
+      "time": "23 hours 22 mins ago",
       "link": "https://oulms.ou.ac.lk/report/insights/action.php?action=viewupcoming&predictionid=6337880&forwardurl=https%3A%2F%2Foulms.ou.ac.lk%2Fmod%2Fassign%2Fview.php%3Fid%3D182736",
       "is_new": true
     },
@@ -110,32 +110,32 @@
     },
     {
       "id": "notif-11",
-      "title": "Repeat Viva Time Slot Changed 21-8-2026 Check your allocated time",
-      "category": "Grades & Marks",
-      "course_code": "EEI4267",
-      "course_name": "Requirement Engineering",
-      "time": "2 days 4 hours ago",
-      "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97130",
+      "title": "Updated Semester 01 Final Examination Timetable",
+      "category": "Viva & Exam",
+      "course_code": "FET2025",
+      "course_name": "Course FET2025",
+      "time": "1 day 23 hours ago",
+      "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97162",
       "is_new": true
     },
     {
       "id": "notif-12",
-      "title": "Re: OQ Marks and CAT marks",
+      "title": "Repeat Viva Time Slot Changed 21-8-2026 Check your allocated time",
       "category": "Grades & Marks",
-      "course_code": "EEI4360",
-      "course_name": "Introduction to Artificial Intelligence",
-      "time": "2 days 17 hours ago",
-      "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=96723",
+      "course_code": "EEI4267",
+      "course_name": "Requirement Engineering",
+      "time": "2 days 5 hours ago",
+      "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97130",
       "is_new": true
     },
     {
       "id": "notif-13",
-      "title": "Re: Check your eligibility",
-      "category": "Announcements",
-      "course_code": "EEI4267",
-      "course_name": "Requirement Engineering",
-      "time": "3 days ago",
-      "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97006",
+      "title": "Re: OQ Marks and CAT marks",
+      "category": "Grades & Marks",
+      "course_code": "EEI4360",
+      "course_name": "Introduction to Artificial Intelligence",
+      "time": "2 days 18 hours ago",
+      "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=96723",
       "is_new": true
     },
     {
@@ -146,10 +146,30 @@
       "course_name": "Requirement Engineering",
       "time": "3 days ago",
       "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97006",
-      "is_new": false
+      "is_new": true
     },
     {
       "id": "notif-15",
+      "title": "Re: Check your eligibility",
+      "category": "Announcements",
+      "course_code": "EEI4267",
+      "course_name": "Requirement Engineering",
+      "time": "3 days ago",
+      "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97006",
+      "is_new": false
+    },
+    {
+      "id": "notif-16",
+      "title": "TAI5277 Kaledo Style Practice for Resit students",
+      "category": "Viva & Exam",
+      "course_code": "FET2025",
+      "course_name": "Course FET2025",
+      "time": "3 days 2 hours ago",
+      "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97028",
+      "is_new": true
+    },
+    {
+      "id": "notif-17",
       "title": "Re: Issues on Mini Project viva Marks!",
       "category": "Grades & Marks",
       "course_code": "EEI4267",
@@ -159,7 +179,7 @@
       "is_new": true
     },
     {
-      "id": "notif-16",
+      "id": "notif-18",
       "title": "Re: Repeat Viva on 21-8-2026 6PM onwards",
       "category": "Viva & Exam",
       "course_code": "EEI4267",
@@ -169,17 +189,17 @@
       "is_new": true
     },
     {
-      "id": "notif-17",
+      "id": "notif-19",
       "title": "content change",
       "category": "Announcements",
       "course_code": "EEI4267",
       "course_name": "Requirement Engineering",
-      "time": "3 days 2 hours ago",
+      "time": "3 days 3 hours ago",
       "link": "https://oulms.ou.ac.lk/mod/page/view.php?id=187285",
       "is_new": true
     },
     {
-      "id": "notif-18",
+      "id": "notif-20",
       "title": "Repeat Viva on 21-8-2026 6PM onwards",
       "category": "Viva & Exam",
       "course_code": "EEI4267",
