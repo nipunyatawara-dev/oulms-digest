@@ -394,13 +394,23 @@ class OUSLCrawler:
 
                     lines = [line.strip() for line in raw_text.split('\n') if line.strip()]
                     raw_title = lines[0] if lines else raw_text
-                    time_str = lines[1] if len(lines) > 1 and ("ago" in lines[1] or "day" in lines[1] or "min" in lines[1] or "hour" in lines[1]) else ""
+                    
+                    time_str = ""
+                    for l in lines[1:]:
+                        if re.search(r'(\d+\s*(?:hour|min|sec|day|week|month)s?\s*ago|yesterday|today|\d{1,2}\s+[A-Za-z]{3,9})', l, re.IGNORECASE):
+                            time_str = l.strip()
+                            break
+                    if not time_str and len(lines) > 1:
+                        time_str = lines[1]
+
                     category = categorize_notification(raw_title)
 
                     code, course_name = extract_course_code_and_name(raw_title, self.course_map, self.target_courses)
-                    
-                    if self.target_courses and code and not any(t.lower() == code.lower() for t in self.target_courses):
-                        continue
+                    if not code:
+                        code = "PORTAL"
+                        course_name = "OUSL Portal Notice"
+                    elif not course_name:
+                        course_name = self.course_map.get(code) or COURSE_NAMES_DICT.get(code, f"Course {code}")
 
                     clean_title = clean_title_text(raw_title, code, self.course_map)
 

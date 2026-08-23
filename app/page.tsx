@@ -274,7 +274,12 @@ export default function DashboardPage() {
 
   // Counts helper for any category and timeframe
   const getCategoryCounts = (category: 'Grades & Marks' | 'Viva & Exam' | 'Deadlines & Quizzes' | 'Announcements') => {
-    const items = allAcademicItems.filter((i) => i.category === category);
+    const items = allAcademicItems.filter((i) => {
+      if (category === 'Announcements') {
+        return i.category === 'Announcements' || i.sourceType === 'portal_notification';
+      }
+      return i.category === category;
+    });
     const count24h = items.filter((i) => isWithinTimeframe(i.time, '24h', syncedBaseDate)).length;
     const count16d = items.filter((i) => isWithinTimeframe(i.time, '16d', syncedBaseDate)).length;
     return { count24h, count16d, total: items.length };
@@ -305,7 +310,13 @@ export default function DashboardPage() {
   // Filtered items for Dedicated Category Views (Grades, Viva, Deadlines, Announcements)
   const getFilteredCategoryItems = (category: 'Grades & Marks' | 'Viva & Exam' | 'Deadlines & Quizzes' | 'Announcements') => {
     return allAcademicItems.filter((item) => {
-      if (item.category !== category) return false;
+      if (category === 'Announcements') {
+        if (item.category !== 'Announcements' && item.sourceType !== 'portal_notification') {
+          return false;
+        }
+      } else {
+        if (item.category !== category) return false;
+      }
       const matchesTime = isWithinTimeframe(item.time, timeframe, syncedBaseDate);
       if (!matchesTime) return false;
 
