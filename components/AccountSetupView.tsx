@@ -19,7 +19,7 @@ import {
   Copy,
   Trash2,
   Play,
-  Sparkles,
+  Save,
   BookOpen,
   AlertCircle,
   Clock,
@@ -283,24 +283,24 @@ export function AccountSetupView({
   return (
     <div className="space-y-6 select-none">
       {/* 1. Header Hero Card */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-[#EAEAE5] p-5 sm:p-6 rounded-2xl shadow-refero-sm">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-[#EAEAE5] dark:bg-[#18181b] p-5 sm:p-6 rounded-2xl shadow-refero-sm border border-transparent dark:border-white/[0.08]">
         <div>
           <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-lg bg-[#18181B] text-white flex items-center justify-center shadow-refero-sm">
+            <div className="w-8 h-8 rounded-lg bg-[#4e080c] dark:bg-[#4e080c] text-white flex items-center justify-center shadow-refero-sm">
               <Key className="w-4 h-4" />
             </div>
-            <h1 className="text-[17px] sm:text-[18px] font-semibold text-[#18181B] tracking-tight">
+            <h1 className="text-[17px] sm:text-[18px] font-semibold text-[#18181B] dark:text-[#f4f4f5] tracking-tight">
               Credentials & Course Manager
             </h1>
           </div>
-          <p className="text-[12.5px] sm:text-[13px] text-[#71717A] mt-1.5 leading-relaxed max-w-2xl">
+          <p className="text-[12.5px] sm:text-[13px] text-[#71717A] dark:text-[#a1a1aa] mt-1.5 leading-relaxed max-w-2xl">
             Configure your personal OUSL LMS login credentials and customize which enrolled semester courses to track and index for announcements, CATs, grades, and vivas.
           </p>
         </div>
 
         {/* Quick Summary Badges */}
         <div className="flex items-center gap-2 flex-wrap self-start sm:self-auto">
-          <div className="px-3 py-1.5 bg-white rounded-xl border border-black/[0.08] shadow-refero-sm text-[12px] font-medium text-[#18181B] flex items-center gap-1.5">
+          <div className="px-3 py-1.5 bg-white dark:bg-[#27272a] rounded-xl border border-black/[0.08] dark:border-white/[0.08] shadow-refero-sm text-[12px] font-medium text-[#18181B] dark:text-[#f4f4f5] flex items-center gap-1.5">
             <span
               className={`w-2 h-2 rounded-full ${
                 username ? 'bg-emerald-500' : 'bg-amber-400'
@@ -309,8 +309,8 @@ export function AccountSetupView({
             <span>{username ? `ID: ${username.split('@')[0]}` : 'Credentials Unset'}</span>
           </div>
 
-          <div className="px-3 py-1.5 bg-white rounded-xl border border-black/[0.08] shadow-refero-sm text-[12px] font-medium text-[#18181B] flex items-center gap-1.5">
-            <Layers className="w-3.5 h-3.5 text-[#71717A]" />
+          <div className="px-3 py-1.5 bg-white dark:bg-[#27272a] rounded-xl border border-black/[0.08] dark:border-white/[0.08] shadow-refero-sm text-[12px] font-medium text-[#18181B] dark:text-[#f4f4f5] flex items-center gap-1.5">
+            <Layers className="w-3.5 h-3.5 text-[#71717A] dark:text-[#a1a1aa]" />
             <span>
               {selectedCourses.length} / {discoveredCourses.length} Active
             </span>
@@ -322,22 +322,22 @@ export function AccountSetupView({
         {/* Left Column: Credentials & Course Whitelist (7 Cols) */}
         <div className="lg:col-span-7 space-y-6">
           {/* Card 1: OUSL LMS Credentials Form */}
-          <div className="bg-[#EAEAE5] p-5 sm:p-6 rounded-2xl shadow-refero-sm space-y-4">
-            <div className="flex items-center justify-between pb-3 border-b border-black/[0.06]">
+          <div className="bg-[#EAEAE5] dark:bg-[#18181b] p-5 sm:p-6 rounded-2xl shadow-refero-sm space-y-4 border border-transparent dark:border-white/[0.08]">
+            <div className="flex items-center justify-between pb-3 border-b border-black/[0.06] dark:border-white/[0.06]">
               <div className="flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-[#18181B]" />
-                <h2 className="text-[14.5px] font-semibold text-[#18181B]">
+                <ShieldCheck className="w-4 h-4 text-[#4e080c] dark:text-[#f4f4f5]" />
+                <h2 className="text-[14.5px] font-semibold text-[#18181B] dark:text-[#f4f4f5]">
                   1. OUSL LMS Student Credentials
                 </h2>
               </div>
-              <span className="text-[11px] text-[#71717A]">Keycloak IAM OAuth2</span>
+              <span className="text-[11px] text-[#71717A] dark:text-[#a1a1aa]">Keycloak IAM OAuth2</span>
             </div>
 
             <form onSubmit={handleSaveCredentials} className="space-y-4">
               {/* Username Input */}
               <div>
-                <label className="text-[12px] font-semibold text-[#18181B] flex items-center gap-1.5 mb-1.5">
-                  <User className="w-3.5 h-3.5 text-[#71717A]" />
+                <label className="text-[12px] font-semibold text-[#18181B] dark:text-[#f4f4f5] flex items-center gap-1.5 mb-1.5">
+                  <User className="w-3.5 h-3.5 text-[#71717A] dark:text-[#a1a1aa]" />
                   <span>OUSL Student Username / Email</span>
                 </label>
                 <input
@@ -345,18 +345,18 @@ export function AccountSetupView({
                   placeholder="e.g. s12345678@ousl.lk or student ID"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
-                  className="w-full px-3.5 py-2.5 text-[14px] bg-white rounded-xl border border-black/[0.08] shadow-refero-sm focus:outline-none focus:ring-1 focus:ring-black/20 transition-all placeholder:text-[#71717A] min-h-[44px]"
+                  className="w-full px-3.5 py-2.5 text-[14px] bg-white dark:bg-[#222226] text-[#18181B] dark:text-[#f4f4f5] rounded-xl border border-black/[0.08] dark:border-white/[0.12] shadow-refero-sm focus:outline-none focus:ring-1 focus:ring-black/20 dark:focus:ring-white/20 transition-all placeholder:text-[#71717A] dark:placeholder:text-[#71717a] min-h-[44px]"
                 />
               </div>
 
               {/* Password Input */}
               <div>
-                <label className="text-[12px] font-semibold text-[#18181B] flex items-center justify-between mb-1.5">
+                <label className="text-[12px] font-semibold text-[#18181B] dark:text-[#f4f4f5] flex items-center justify-between mb-1.5">
                   <span className="flex items-center gap-1.5">
-                    <Lock className="w-3.5 h-3.5 text-[#71717A]" />
+                    <Lock className="w-3.5 h-3.5 text-[#71717A] dark:text-[#a1a1aa]" />
                     <span>OUSL Student Password</span>
                   </span>
-                  <span className="text-[11px] text-[#71717A]">Stored locally</span>
+                  <span className="text-[11px] text-[#71717A] dark:text-[#a1a1aa]">Stored locally</span>
                 </label>
                 <div className="relative">
                   <input
@@ -364,12 +364,12 @@ export function AccountSetupView({
                     placeholder="Enter your OUSL Moodle / IAM password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    className="w-full pl-3.5 pr-12 py-2.5 text-[14px] bg-white rounded-xl border border-black/[0.08] shadow-refero-sm focus:outline-none focus:ring-1 focus:ring-black/20 transition-all placeholder:text-[#71717A] min-h-[44px]"
+                    className="w-full pl-3.5 pr-12 py-2.5 text-[14px] bg-white dark:bg-[#222226] text-[#18181B] dark:text-[#f4f4f5] rounded-xl border border-black/[0.08] dark:border-white/[0.12] shadow-refero-sm focus:outline-none focus:ring-1 focus:ring-black/20 dark:focus:ring-white/20 transition-all placeholder:text-[#71717A] dark:placeholder:text-[#71717a] min-h-[44px]"
                   />
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-1.5 top-1/2 -translate-y-1/2 min-w-[44px] min-h-[44px] flex items-center justify-center text-[#71717A] hover:text-[#18181B] active:scale-95 transition-all rounded-lg"
+                    className="absolute right-1.5 top-1/2 -translate-y-1/2 min-w-[44px] min-h-[44px] flex items-center justify-center text-[#71717A] dark:text-[#a1a1aa] hover:text-[#18181B] dark:hover:text-[#f4f4f5] active:scale-95 transition-all rounded-lg"
                     title={showPassword ? 'Hide password' : 'Show password'}
                     aria-label={showPassword ? 'Hide password' : 'Show password'}
                   >
@@ -379,16 +379,16 @@ export function AccountSetupView({
               </div>
 
               {/* Auto Sync Toggle */}
-              <div className="flex items-center justify-between p-3.5 rounded-2xl bg-white/70 border border-black/[0.04] mt-2">
+              <div className="flex items-center justify-between p-3.5 rounded-2xl bg-white/70 dark:bg-[#222226] border border-black/[0.04] dark:border-white/[0.06] mt-2">
                 <div className="pr-3">
-                  <span className="text-[12.5px] font-semibold text-[#18181B] block">
+                  <span className="text-[12.5px] font-semibold text-[#18181B] dark:text-[#f4f4f5] block">
                     Auto-Discover Courses on Save
                   </span>
-                  <span className="text-[11px] text-[#71717A] block">
+                  <span className="text-[11px] text-[#71717A] dark:text-[#a1a1aa] block">
                     Automatically pull all enrolled semester courses when credentials are updated
                   </span>
                 </div>
-                <label className="relative inline-flex items-center cursor-pointer shrink-0 min-h-[44px] min-w-[48px] justify-end">
+                <label className="inline-flex items-center cursor-pointer shrink-0 min-h-[44px] min-w-[48px] justify-end">
                   <input
                     type="checkbox"
                     role="switch"
@@ -398,7 +398,7 @@ export function AccountSetupView({
                     onChange={(e) => setAutoSyncOnSave(e.target.checked)}
                     className="sr-only peer"
                   />
-                  <div className="w-11 h-6 bg-black/[0.15] peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[11px] after:right-[22px] peer-checked:after:right-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#18181B]" />
+                  <div className="relative w-11 h-6 bg-black/[0.15] dark:bg-white/[0.15] peer-focus-visible:ring-2 peer-focus-visible:ring-[#4e080c]/40 dark:peer-focus-visible:ring-white/40 rounded-full peer peer-checked:bg-[#4e080c] dark:peer-checked:bg-[#4e080c] transition-colors after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:shadow-xs after:transition-transform peer-checked:after:translate-x-5" />
                 </label>
               </div>
 
@@ -408,7 +408,7 @@ export function AccountSetupView({
                   type="button"
                   onClick={handleDiscoverCourses}
                   disabled={isDiscovering || !username || !password}
-                  className="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 text-[12.5px] font-medium text-[#18181B] bg-white hover:bg-[#F9F9F7] active:bg-[#ede3da] border border-black/[0.08] rounded-xl shadow-refero-sm disabled:opacity-50 active:scale-[0.98] transition-all min-h-[44px]"
+                  className="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 text-[12.5px] font-medium text-[#18181B] dark:text-[#f4f4f5] bg-white dark:bg-[#27272a] hover:bg-[#F9F9F7] dark:hover:bg-[#323238] active:bg-[#ede3da] border border-black/[0.08] dark:border-white/[0.12] rounded-xl shadow-refero-sm disabled:opacity-50 active:scale-[0.98] transition-all min-h-[44px]"
                 >
                   <RefreshCw className={`w-3.5 h-3.5 ${isDiscovering ? 'animate-spin' : ''}`} />
                   <span>{isDiscovering ? 'Discovering...' : 'Discover Enrolled Courses'}</span>
@@ -417,7 +417,7 @@ export function AccountSetupView({
                 <button
                   type="submit"
                   disabled={isSavingCreds}
-                  className="inline-flex items-center justify-center gap-1.5 px-5 py-2.5 text-[12.5px] font-medium text-white bg-[#18181B] hover:bg-[#27272A] rounded-xl shadow-refero-sm disabled:opacity-60 active:scale-[0.98] transition-all min-h-[44px]"
+                  className="inline-flex items-center justify-center gap-1.5 px-5 py-2.5 text-[12.5px] font-medium text-white bg-[#4e080c] dark:bg-[#4e080c] hover:bg-[#620a0f] dark:hover:bg-[#620a0f] rounded-xl shadow-refero-sm disabled:opacity-60 active:scale-[0.98] transition-all min-h-[44px]"
                 >
                   {credsSavedSuccess ? (
                     <>
@@ -428,7 +428,7 @@ export function AccountSetupView({
                     <span>Saving...</span>
                   ) : (
                     <>
-                      <Sparkles className="w-3.5 h-3.5" />
+                      <Save className="w-3.5 h-3.5" />
                       <span>Save Credentials</span>
                     </>
                   )}
@@ -438,16 +438,16 @@ export function AccountSetupView({
           </div>
 
           {/* Card 2: Enrolled Courses & Whitelist Selection */}
-          <div className="bg-[#EAEAE5] p-5 sm:p-6 rounded-2xl shadow-refero-sm space-y-4">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-black/[0.06]">
+          <div className="bg-[#EAEAE5] dark:bg-[#18181b] p-5 sm:p-6 rounded-2xl shadow-refero-sm space-y-4 border border-transparent dark:border-white/[0.08]">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-black/[0.06] dark:border-white/[0.06]">
               <div>
                 <div className="flex items-center gap-2">
-                  <Layers className="w-4 h-4 text-[#18181B]" />
-                  <h2 className="text-[14.5px] font-semibold text-[#18181B]">
+                  <Layers className="w-4 h-4 text-[#4e080c] dark:text-[#f4f4f5]" />
+                  <h2 className="text-[14.5px] font-semibold text-[#18181B] dark:text-[#f4f4f5]">
                     2. Enrolled Courses Whitelist
                   </h2>
                 </div>
-                <p className="text-[11.5px] text-[#71717A] mt-0.5">
+                <p className="text-[11.5px] text-[#71717A] dark:text-[#a1a1aa] mt-0.5">
                   Tick courses individually to select which ones are crawled and indexed.
                 </p>
               </div>
@@ -457,13 +457,13 @@ export function AccountSetupView({
                 <div className="flex items-center gap-2 self-start sm:self-auto">
                   <button
                     onClick={handleSelectAllCourses}
-                    className="px-3.5 py-1.5 text-[12px] font-medium text-[#18181B] bg-white rounded-xl border border-black/[0.08] shadow-refero-sm hover:bg-[#F9F9F7] active:bg-[#ede3da] active:scale-[0.98] transition-all min-h-[38px]"
+                    className="px-3.5 py-1.5 text-[12px] font-medium text-[#18181B] dark:text-[#f4f4f5] bg-white dark:bg-[#27272a] rounded-xl border border-black/[0.08] dark:border-white/[0.12] shadow-refero-sm hover:bg-[#F9F9F7] dark:hover:bg-[#323238] active:bg-[#ede3da] active:scale-[0.98] transition-all min-h-[38px]"
                   >
                     Select All
                   </button>
                   <button
                     onClick={handleDeselectAllCourses}
-                    className="px-3.5 py-1.5 text-[12px] font-medium text-[#71717A] bg-white rounded-xl border border-black/[0.08] shadow-refero-sm hover:bg-[#F9F9F7] active:bg-[#ede3da] hover:text-[#18181B] active:scale-[0.98] transition-all min-h-[38px]"
+                    className="px-3.5 py-1.5 text-[12px] font-medium text-[#71717A] dark:text-[#a1a1aa] bg-white dark:bg-[#27272a] rounded-xl border border-black/[0.08] dark:border-white/[0.12] shadow-refero-sm hover:bg-[#F9F9F7] dark:hover:bg-[#323238] active:bg-[#ede3da] hover:text-[#18181B] dark:hover:text-[#f4f4f5] active:scale-[0.98] transition-all min-h-[38px]"
                   >
                     Deselect All
                   </button>
@@ -474,13 +474,13 @@ export function AccountSetupView({
             {/* Course Search */}
             {discoveredCourses.length > 0 && (
               <div className="relative">
-                <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-[#71717A]" />
+                <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-[#71717A] dark:text-[#a1a1aa]" />
                 <input
                   type="text"
                   placeholder="Search discovered courses..."
                   value={courseSearchQuery}
                   onChange={(e) => setCourseSearchQuery(e.target.value)}
-                  className="w-full pl-9 pr-3.5 py-2 text-[14px] bg-white rounded-xl border border-black/[0.08] shadow-refero-sm focus:outline-none focus:ring-1 focus:ring-black/20 transition-all placeholder:text-[#71717A] min-h-[44px]"
+                  className="w-full pl-9 pr-3.5 py-2 text-[14px] bg-white dark:bg-[#222226] text-[#18181B] dark:text-[#f4f4f5] rounded-xl border border-black/[0.08] dark:border-white/[0.12] shadow-refero-sm focus:outline-none focus:ring-1 focus:ring-black/20 dark:focus:ring-white/20 transition-all placeholder:text-[#71717A] dark:placeholder:text-[#71717a] min-h-[44px]"
                 />
               </div>
             )}
@@ -497,10 +497,10 @@ export function AccountSetupView({
                       aria-checked={isChecked}
                       tabIndex={0}
                       onClick={() => handleToggleCourse(course.code)}
-                      className={`p-3.5 rounded-2xl border transition-all cursor-pointer flex items-center justify-between gap-3 min-h-[54px] select-none active:bg-black/[0.04] ${
+                      className={`p-3.5 rounded-2xl border transition-all cursor-pointer flex items-center justify-between gap-3 min-h-[54px] select-none active:bg-black/[0.04] dark:active:bg-white/[0.04] ${
                         isChecked
-                          ? 'bg-white border-black/[0.12] shadow-refero-sm'
-                          : 'bg-black/[0.02] border-black/[0.04] opacity-70 hover:opacity-100'
+                          ? 'bg-white dark:bg-[#222226] border-black/[0.12] dark:border-white/[0.12] shadow-refero-sm'
+                          : 'bg-black/[0.02] dark:bg-white/[0.02] border-black/[0.04] dark:border-white/[0.04] opacity-70 hover:opacity-100'
                       }`}
                     >
                       <div className="flex items-center gap-3 min-w-0">
@@ -508,8 +508,8 @@ export function AccountSetupView({
                         <div
                           className={`w-6 h-6 rounded-lg flex items-center justify-center transition-all shrink-0 ${
                             isChecked
-                              ? 'bg-[#18181B] text-white'
-                              : 'border border-black/30 bg-white hover:border-black'
+                              ? 'bg-[#4e080c] dark:bg-[#4e080c] text-white'
+                              : 'border border-black/30 dark:border-white/30 bg-white dark:bg-[#27272a] hover:border-black dark:hover:border-white'
                           }`}
                         >
                           {isChecked && <Check className="w-4 h-4" />}
@@ -518,20 +518,20 @@ export function AccountSetupView({
                         {/* Course Code & Title */}
                         <div className="min-w-0">
                           <div className="flex items-center gap-2">
-                            <span className="font-mono text-[12px] font-bold text-[#18181B]">
+                            <span className="font-mono text-[12px] font-bold text-[#18181B] dark:text-[#f4f4f5]">
                               {course.code}
                             </span>
                             <span
                               className={`text-[10.5px] px-1.5 py-0.5 rounded-full font-medium ${
                                 isChecked
-                                  ? 'bg-emerald-100 text-emerald-800'
-                                  : 'bg-black/[0.06] text-[#71717A]'
+                                  ? 'bg-emerald-100 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300'
+                                  : 'bg-black/[0.06] dark:bg-white/[0.08] text-[#71717A] dark:text-[#a1a1aa]'
                               }`}
                             >
                               {isChecked ? 'Crawling' : 'Skipped'}
                             </span>
                           </div>
-                          <p className="text-[12px] text-[#71717A] truncate max-w-sm mt-0.5">
+                          <p className="text-[12px] text-[#71717A] dark:text-[#a1a1aa] truncate max-w-sm mt-0.5">
                             {course.title.replace(course.code, '').trim() || course.title}
                           </p>
                         </div>
@@ -543,7 +543,7 @@ export function AccountSetupView({
                           href={course.url}
                           target="_blank"
                           rel="noreferrer"
-                          className="min-w-[44px] min-h-[44px] flex items-center justify-center text-[#71717A] hover:text-[#18181B] hover:bg-black/[0.04] active:bg-black/[0.08] rounded-xl transition-colors active:scale-95"
+                          className="min-w-[44px] min-h-[44px] flex items-center justify-center text-[#71717A] dark:text-[#a1a1aa] hover:text-[#18181B] dark:hover:text-[#f4f4f5] hover:bg-black/[0.04] dark:hover:bg-white/[0.06] active:bg-black/[0.08] rounded-xl transition-colors active:scale-95"
                           title="Open course on OUSL Moodle"
                           aria-label={`Open ${course.code} on OUSL Moodle`}
                         >
@@ -556,20 +556,20 @@ export function AccountSetupView({
               </div>
             ) : (
               /* Empty Discovery State */
-              <div className="p-8 text-center bg-white/60 rounded-2xl border border-black/[0.04] space-y-2">
-                <BookOpen className="w-6 h-6 mx-auto text-[#71717A]" />
-                <p className="text-[13.5px] font-semibold text-[#18181B]">
+              <div className="p-8 text-center bg-white/60 dark:bg-[#222226] rounded-2xl border border-black/[0.04] dark:border-white/[0.06] space-y-2">
+                <BookOpen className="w-6 h-6 mx-auto text-[#71717A] dark:text-[#a1a1aa]" />
+                <p className="text-[13.5px] font-semibold text-[#18181B] dark:text-[#f4f4f5]">
                   No courses discovered yet
                 </p>
-                <p className="text-[12px] text-[#71717A] max-w-xs mx-auto">
+                <p className="text-[12px] text-[#71717A] dark:text-[#a1a1aa] max-w-xs mx-auto">
                   Enter your credentials above and click &quot;Discover Enrolled Courses&quot; to fetch your registered courses.
                 </p>
               </div>
             )}
 
             {/* Course Whitelist Actions */}
-            <div className="flex items-center justify-between gap-3 pt-2.5 border-t border-black/[0.06] flex-wrap">
-              <span className="text-[12px] text-[#71717A]">
+            <div className="flex items-center justify-between gap-3 pt-2.5 border-t border-black/[0.06] dark:border-white/[0.06] flex-wrap">
+              <span className="text-[12px] text-[#71717A] dark:text-[#a1a1aa]">
                 {selectedCourses.length} of {discoveredCourses.length} courses active for crawl
               </span>
 
@@ -578,7 +578,7 @@ export function AccountSetupView({
                   type="button"
                   onClick={handleSaveCourseSelection}
                   disabled={isSavingCourses}
-                  className="px-4 py-2.5 text-[12.5px] font-medium text-[#18181B] bg-white hover:bg-[#F9F9F7] active:bg-[#ede3da] border border-black/[0.08] rounded-xl shadow-refero-sm active:scale-[0.98] transition-all min-h-[44px]"
+                  className="px-4 py-2.5 text-[12.5px] font-medium text-[#18181B] dark:text-[#f4f4f5] bg-white dark:bg-[#27272a] hover:bg-[#F9F9F7] dark:hover:bg-[#323238] active:bg-[#ede3da] border border-black/[0.08] dark:border-white/[0.12] rounded-xl shadow-refero-sm active:scale-[0.98] transition-all min-h-[44px]"
                 >
                   {coursesSavedSuccess ? 'Saved Selection!' : 'Save Selection'}
                 </button>
@@ -587,7 +587,7 @@ export function AccountSetupView({
                   type="button"
                   onClick={onTriggerSync}
                   disabled={isSyncing || selectedCourses.length === 0}
-                  className="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 text-[12.5px] font-medium text-white bg-[#18181B] hover:bg-[#27272A] rounded-xl shadow-refero-sm disabled:opacity-60 active:scale-[0.98] transition-all min-h-[44px]"
+                  className="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 text-[12.5px] font-medium text-white bg-[#4e080c] dark:bg-[#4e080c] hover:bg-[#620a0f] dark:hover:bg-[#620a0f] rounded-xl shadow-refero-sm disabled:opacity-60 active:scale-[0.98] transition-all min-h-[44px]"
                 >
                   <Play className="w-3.5 h-3.5" />
                   <span>{isSyncing ? 'Crawling...' : 'Crawl Selected Now'}</span>
@@ -603,7 +603,7 @@ export function AccountSetupView({
           <div className="lg:hidden">
             <button
               onClick={() => setIsConsoleOpenMobile(!isConsoleOpenMobile)}
-              className="w-full p-4 rounded-2xl bg-[#18181B] text-white flex items-center justify-between shadow-refero-sm min-h-[48px] active:scale-[0.99] transition-all select-none"
+              className="w-full p-4 rounded-2xl bg-[#18181B] dark:bg-[#1f1f23] text-white flex items-center justify-between shadow-refero-sm min-h-[48px] active:scale-[0.99] transition-all select-none border border-transparent dark:border-white/[0.08]"
               aria-expanded={isConsoleOpenMobile}
               aria-label="Toggle Live Console Output"
             >
@@ -624,7 +624,7 @@ export function AccountSetupView({
 
           {/* Console Window (Always visible on desktop, toggleable on mobile) */}
           <div
-            className={`bg-[#18181B] text-[#F4F4F0] rounded-2xl shadow-refero-lg overflow-hidden flex flex-col h-full min-h-[420px] ${
+            className={`bg-[#18181B] text-[#F4F4F0] rounded-2xl shadow-refero-lg overflow-hidden flex flex-col h-full min-h-[420px] border border-transparent dark:border-white/[0.08] ${
               isConsoleOpenMobile ? 'flex' : 'hidden lg:flex'
             }`}
           >

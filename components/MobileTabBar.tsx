@@ -33,7 +33,7 @@ export function MobileTabBar({
 
   return (
     <nav
-      className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#fbf8f5]/95 backdrop-blur-md border-t border-[#4e080c]/[0.08] ios-safe-bottom select-none transition-all shadow-[0_-2px_10px_rgba(78,8,12,0.03)]"
+      className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#fbf8f5]/95 dark:bg-[#0f0f11]/95 backdrop-blur-md border-t border-[#4e080c]/[0.08] dark:border-white/[0.08] ios-safe-bottom select-none transition-all shadow-[0_-2px_10px_rgba(78,8,12,0.03)] dark:shadow-[0_-2px_10px_rgba(0,0,0,0.3)]"
       role="tablist"
       aria-label="Academic Navigation"
     >
@@ -50,7 +50,7 @@ export function MobileTabBar({
           className={`flex flex-col items-center justify-center flex-1 h-full min-h-[48px] py-1 rounded-xl transition-all active:scale-95 ${
             isOverviewActive
               ? 'text-[#4e080c] font-semibold'
-              : 'text-[#71717A] hover:text-[#4e080c]'
+              : 'text-[#71717A] dark:text-[#a1a1aa] hover:text-[#4e080c] dark:hover:text-[#f4f4f5]'
           }`}
         >
           <div className="relative">
@@ -73,7 +73,7 @@ export function MobileTabBar({
           className={`relative flex flex-col items-center justify-center flex-1 h-full min-h-[48px] py-1 rounded-xl transition-all active:scale-95 ${
             isGradesActive
               ? 'text-[#4e080c] font-semibold'
-              : 'text-[#71717A] hover:text-[#4e080c]'
+              : 'text-[#71717A] dark:text-[#a1a1aa] hover:text-[#4e080c] dark:hover:text-[#f4f4f5]'
           }`}
         >
           <div className="relative">
@@ -101,7 +101,7 @@ export function MobileTabBar({
           className={`relative flex flex-col items-center justify-center flex-1 h-full min-h-[48px] py-1 rounded-xl transition-all active:scale-95 ${
             isVivaActive
               ? 'text-[#4e080c] font-semibold'
-              : 'text-[#71717A] hover:text-[#4e080c]'
+              : 'text-[#71717A] dark:text-[#a1a1aa] hover:text-[#4e080c] dark:hover:text-[#f4f4f5]'
           }`}
         >
           <div className="relative">
@@ -129,7 +129,7 @@ export function MobileTabBar({
           className={`relative flex flex-col items-center justify-center flex-1 h-full min-h-[48px] py-1 rounded-xl transition-all active:scale-95 ${
             isDeadlinesActive
               ? 'text-[#4e080c] font-semibold'
-              : 'text-[#71717A] hover:text-[#4e080c]'
+              : 'text-[#71717A] dark:text-[#a1a1aa] hover:text-[#4e080c] dark:hover:text-[#f4f4f5]'
           }`}
         >
           <div className="relative">
@@ -157,7 +157,7 @@ export function MobileTabBar({
           className={`relative flex flex-col items-center justify-center flex-1 h-full min-h-[48px] py-1 rounded-xl transition-all active:scale-95 ${
             isCoursesActive
               ? 'text-[#4e080c] font-semibold'
-              : 'text-[#71717A] hover:text-[#4e080c]'
+              : 'text-[#71717A] dark:text-[#a1a1aa] hover:text-[#4e080c] dark:hover:text-[#f4f4f5]'
           }`}
         >
           <div className="relative">

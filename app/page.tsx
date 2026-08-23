@@ -423,7 +423,7 @@ export default function DashboardPage() {
   const currentCategoryItems = isDedicatedCategoryView ? getFilteredCategoryItems(currentCategoryKey) : [];
 
   return (
-    <div className="min-h-screen bg-[#fbf8f5] text-[#4e080c]">
+    <div className="min-h-screen bg-[#fbf8f5] dark:bg-[#0f0f11] text-[#4e080c] dark:text-[#f4f4f5] transition-colors duration-200">
       {/* Top Navigation Header */}
       <Header
         isSyncing={isSyncing}
@@ -480,28 +480,28 @@ export default function DashboardPage() {
                   const meta = CATEGORY_META[currentCategoryKey];
                   const Icon = meta.icon;
                   return (
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-[#f2ebe5] p-5 sm:p-6 rounded-2xl shadow-refero-sm">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-[#f2ebe5] dark:bg-[#18181b] p-5 sm:p-6 rounded-2xl shadow-refero-sm border border-transparent dark:border-white/[0.08]">
                       <div>
                         <div className="flex items-center gap-2">
-                          <Icon className="w-5 h-5 text-[#4e080c]" />
-                          <h1 className="text-[17px] sm:text-[18px] font-semibold text-[#4e080c] tracking-tight">
+                          <Icon className="w-5 h-5 text-[#4e080c] dark:text-[#f4f4f5]" />
+                          <h1 className="text-[17px] sm:text-[18px] font-semibold text-[#4e080c] dark:text-[#f4f4f5] tracking-tight">
                             {meta.title}
                           </h1>
                         </div>
-                        <p className="text-[12.5px] sm:text-[13px] text-[#71717A] mt-1">
+                        <p className="text-[12.5px] sm:text-[13px] text-[#71717A] dark:text-[#a1a1aa] mt-1">
                           {meta.desc}
                         </p>
                       </div>
 
                       {/* 24h / 16d Timeframe Toggle */}
-                      <div className="flex items-center p-1 bg-[#4e080c]/[0.05] rounded-xl self-start sm:self-auto select-none gap-1" role="group" aria-label="Timeframe selector">
+                      <div className="flex items-center p-1 bg-[#4e080c]/[0.05] dark:bg-white/[0.06] rounded-xl self-start sm:self-auto select-none gap-1" role="group" aria-label="Timeframe selector">
                         <button
                           onClick={() => setTimeframe('24h')}
                           aria-pressed={timeframe === '24h'}
                           className={`px-3.5 py-2 rounded-lg text-[13px] font-medium transition-all flex items-center gap-2 min-h-[40px] active:scale-[0.98] ${
                             timeframe === '24h'
-                              ? 'bg-white text-[#4e080c] shadow-refero-sm'
-                              : 'text-[#71717A] hover:text-[#4e080c]'
+                              ? 'bg-white dark:bg-[#27272a] text-[#4e080c] dark:text-[#f4f4f5] shadow-refero-sm font-semibold'
+                              : 'text-[#71717A] dark:text-[#a1a1aa] hover:text-[#4e080c] dark:hover:text-[#f4f4f5]'
                           }`}
                         >
                           <span>Last 24 Hours</span>
@@ -509,7 +509,7 @@ export default function DashboardPage() {
                             className={`text-[11px] px-1.5 py-0.5 rounded-full font-semibold ${
                               timeframe === '24h'
                                 ? 'bg-[#4e080c] text-white'
-                                : 'bg-[#4e080c]/[0.12] text-[#71717A]'
+                                : 'bg-[#4e080c]/[0.12] dark:bg-white/[0.12] text-[#71717A] dark:text-[#a1a1aa]'
                             }`}
                           >
                             {currentCategoryCounts.count24h}
@@ -521,8 +521,8 @@ export default function DashboardPage() {
                           aria-pressed={timeframe === '16d'}
                           className={`px-3.5 py-2 rounded-lg text-[13px] font-medium transition-all flex items-center gap-2 min-h-[40px] active:scale-[0.98] ${
                             timeframe === '16d'
-                              ? 'bg-white text-[#4e080c] shadow-refero-sm'
-                              : 'text-[#71717A] hover:text-[#4e080c]'
+                              ? 'bg-white dark:bg-[#27272a] text-[#4e080c] dark:text-[#f4f4f5] shadow-refero-sm font-semibold'
+                              : 'text-[#71717A] dark:text-[#a1a1aa] hover:text-[#4e080c] dark:hover:text-[#f4f4f5]'
                           }`}
                         >
                           <span>Last 16 Days</span>
@@ -530,7 +530,7 @@ export default function DashboardPage() {
                             className={`text-[11px] px-1.5 py-0.5 rounded-full font-semibold ${
                               timeframe === '16d'
                                 ? 'bg-[#4e080c] text-white'
-                                : 'bg-[#4e080c]/[0.12] text-[#71717A]'
+                                : 'bg-[#4e080c]/[0.12] dark:bg-white/[0.12] text-[#71717A] dark:text-[#a1a1aa]'
                             }`}
                           >
                             {currentCategoryCounts.count16d}
@@ -543,34 +543,34 @@ export default function DashboardPage() {
 
                 {/* Search Bar & Result Summary */}
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 pt-1">
-                  <div className="text-[13px] font-semibold text-[#4e080c]">
+                  <div className="text-[13px] font-semibold text-[#4e080c] dark:text-[#f4f4f5]">
                     Showing {currentCategoryItems.length}{' '}
                     {currentCategoryItems.length === 1 ? 'item' : 'items'} from the{' '}
                     {timeframe === '24h' ? 'last 24 hours' : 'last 16 days'}
                   </div>
 
                   <div className="relative min-w-[240px] sm:w-72">
-                    <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-[#71717A]" />
+                    <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-[#71717A] dark:text-[#a1a1aa]" />
                     <input
                       type="text"
                       placeholder={`Search in ${CATEGORY_META[currentCategoryKey].title}...`}
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
-                      className="w-full pl-9 pr-3.5 py-1.5 text-[13px] bg-white rounded-lg border border-[#4e080c]/[0.12] shadow-refero-sm focus:outline-none focus:ring-1 focus:ring-[#4e080c]/20 transition-all placeholder:text-[#71717A]"
+                      className="w-full pl-9 pr-3.5 py-1.5 text-[13px] bg-white dark:bg-[#18181b] text-[#4e080c] dark:text-[#f4f4f5] rounded-lg border border-[#4e080c]/[0.12] dark:border-white/[0.12] shadow-refero-sm focus:outline-none focus:ring-1 focus:ring-[#4e080c]/20 dark:focus:ring-white/20 transition-all placeholder:text-[#71717A] dark:placeholder:text-[#71717a]"
                     />
                   </div>
                 </div>
 
                 {/* Category Items List (No course containers) */}
                 {loading ? (
-                  <div className="p-16 text-center text-[#71717A] flex flex-col items-center justify-center gap-2 bg-[#f2ebe5] rounded-2xl">
-                    <RefreshCw className="w-5 h-5 animate-spin text-[#4e080c]" />
-                    <p className="text-[13.5px] font-medium text-[#4e080c]">
+                  <div className="p-16 text-center text-[#71717A] dark:text-[#a1a1aa] flex flex-col items-center justify-center gap-2 bg-[#f2ebe5] dark:bg-[#18181b] rounded-2xl border border-transparent dark:border-white/[0.08]">
+                    <RefreshCw className="w-5 h-5 animate-spin text-[#4e080c] dark:text-[#a1a1aa]" />
+                    <p className="text-[13.5px] font-medium text-[#4e080c] dark:text-[#f4f4f5]">
                       Loading updates...
                     </p>
                   </div>
                 ) : currentCategoryItems.length > 0 ? (
-                  <div className="bg-[#f2ebe5] rounded-2xl divide-y divide-[#4e080c]/[0.05] overflow-hidden shadow-refero-sm">
+                  <div className="bg-[#f2ebe5] dark:bg-[#18181b] rounded-2xl divide-y divide-[#4e080c]/[0.05] dark:divide-white/[0.06] overflow-hidden shadow-refero-sm border border-transparent dark:border-white/[0.08]">
                     {currentCategoryItems.map((item) => {
                       const isExpanded = expandedCategoryItemId === item.id;
                       const validLinks = item.links || [];
@@ -580,13 +580,13 @@ export default function DashboardPage() {
                       const gradebookUrl = getCourseGradebookUrl(item.link);
 
                       return (
-                        <div key={item.id} className="transition-colors hover:bg-[#4e080c]/[0.015]">
+                        <div key={item.id} className="transition-colors hover:bg-[#4e080c]/[0.015] dark:hover:bg-white/[0.02]">
                           {/* Item Row Header */}
                           <div
                             onClick={() =>
                               setExpandedCategoryItemId((prev) => (prev === item.id ? null : item.id))
                             }
-                            className="p-4 sm:p-5 flex items-start sm:items-center justify-between gap-3 sm:gap-4 cursor-pointer select-none group min-h-[54px] active:bg-[#4e080c]/[0.03] transition-colors"
+                            className="p-4 sm:p-5 flex items-start sm:items-center justify-between gap-3 sm:gap-4 cursor-pointer select-none group min-h-[54px] active:bg-[#4e080c]/[0.03] dark:active:bg-white/[0.04] transition-colors"
                           >
                             <div className="flex items-start sm:items-center gap-3.5 min-w-0 flex-1">
                               {/* Course Code Badge */}
@@ -597,23 +597,23 @@ export default function DashboardPage() {
                               {/* Content Details */}
                               <div className="min-w-0 flex-1">
                                 <div className="flex items-center gap-2 flex-wrap">
-                                  <span className="text-[13.5px] sm:text-[14px] font-semibold text-[#4e080c] group-hover:text-[#620a0f] transition-colors leading-snug break-words">
+                                  <span className="text-[13.5px] sm:text-[14px] font-semibold text-[#4e080c] dark:text-[#f4f4f5] group-hover:text-[#620a0f] dark:group-hover:text-white transition-colors leading-snug break-words">
                                     {item.title}
                                   </span>
                                   {item.isNew && (
-                                    <span className="px-1.5 py-0.5 text-[10.5px] font-semibold bg-blue-100 text-blue-800 rounded-md">
+                                    <span className="px-1.5 py-0.5 text-[10.5px] font-semibold bg-blue-100 dark:bg-blue-950/60 text-blue-800 dark:text-blue-300 rounded-md">
                                       New
                                     </span>
                                   )}
                                   {item.category === 'Grades & Marks' && (
-                                    <span className="px-1.5 py-0.5 text-[10.5px] font-semibold bg-amber-100 text-amber-900 rounded-md">
+                                    <span className="px-1.5 py-0.5 text-[10.5px] font-semibold bg-amber-100 dark:bg-amber-950/60 text-amber-900 dark:text-amber-300 rounded-md">
                                       Marks
                                     </span>
                                   )}
                                 </div>
 
-                                <div className="text-[12px] text-[#71717A] flex items-center gap-2 mt-0.5 flex-wrap">
-                                  <span className="font-medium text-[#4e080c] truncate max-w-[200px] sm:max-w-sm">
+                                <div className="text-[12px] text-[#71717A] dark:text-[#a1a1aa] flex items-center gap-2 mt-0.5 flex-wrap">
+                                  <span className="font-medium text-[#4e080c] dark:text-[#f4f4f5] truncate max-w-[200px] sm:max-w-sm">
                                     {item.courseName}
                                   </span>
                                   {item.forumName && (
@@ -626,7 +626,7 @@ export default function DashboardPage() {
                                     <>
                                       <span>&bull;</span>
                                       <span className="inline-flex items-center gap-1">
-                                        <User className="w-3 h-3 text-[#8E8E93]" />
+                                        <User className="w-3 h-3 text-[#8E8E93] dark:text-[#71717a]" />
                                         {item.author}
                                       </span>
                                     </>
@@ -635,7 +635,7 @@ export default function DashboardPage() {
                                     <>
                                       <span>&bull;</span>
                                       <span className="inline-flex items-center gap-1">
-                                        <Clock className="w-3 h-3 text-[#8E8E93]" />
+                                        <Clock className="w-3 h-3 text-[#8E8E93] dark:text-[#71717a]" />
                                         {item.time}
                                       </span>
                                     </>
@@ -653,11 +653,11 @@ export default function DashboardPage() {
                                 href={item.link}
                                 target="_blank"
                                 rel="noreferrer"
-                                className="inline-flex items-center justify-center gap-1.5 px-3 sm:px-3.5 py-2 text-[12.5px] font-medium text-[#4e080c] bg-white hover:bg-[#f5efe9] border border-[#4e080c]/[0.12] rounded-lg shadow-refero-sm active:scale-[0.98] transition-all min-h-[44px]"
+                                className="inline-flex items-center justify-center gap-1.5 px-3 sm:px-3.5 py-2 text-[12.5px] font-medium text-[#4e080c] dark:text-[#f4f4f5] bg-white dark:bg-[#27272a] hover:bg-[#f5efe9] dark:hover:bg-[#323238] border border-[#4e080c]/[0.12] dark:border-white/[0.12] rounded-lg shadow-refero-sm active:scale-[0.98] transition-all min-h-[44px]"
                                 title="Open in Moodle / Portal"
                               >
                                 <span>Open</span>
-                                <ExternalLink className="w-3.5 h-3.5 text-[#71717A]" />
+                                <ExternalLink className="w-3.5 h-3.5 text-[#71717A] dark:text-[#a1a1aa]" />
                               </a>
 
                               <button
@@ -666,14 +666,14 @@ export default function DashboardPage() {
                                     prev === item.id ? null : item.id
                                   )
                                 }
-                                className="min-w-[44px] min-h-[44px] flex items-center justify-center p-2 text-[#71717A] hover:text-[#4e080c] hover:bg-[#4e080c]/[0.05] rounded-lg transition-colors active:scale-95"
+                                className="min-w-[44px] min-h-[44px] flex items-center justify-center p-2 text-[#71717A] dark:text-[#a1a1aa] hover:text-[#4e080c] dark:hover:text-[#f4f4f5] hover:bg-[#4e080c]/[0.05] dark:hover:bg-white/[0.06] rounded-lg transition-colors active:scale-95"
                                 title={isExpanded ? 'Collapse details' : 'Expand full details'}
                                 aria-label={isExpanded ? 'Collapse details' : 'Expand full details'}
                                 aria-expanded={isExpanded}
                               >
                                 <ChevronDown
                                   className={`w-4 h-4 transition-transform duration-200 ${
-                                    isExpanded ? 'rotate-180 text-[#4e080c]' : ''
+                                    isExpanded ? 'rotate-180 text-[#4e080c] dark:text-[#f4f4f5]' : ''
                                   }`}
                                 />
                               </button>
@@ -682,10 +682,10 @@ export default function DashboardPage() {
 
                           {/* Expanded Tile Body */}
                           {isExpanded && (
-                            <div className="border-t border-[#4e080c]/[0.06] bg-[#fdfaf8] px-5 py-4 sm:px-6 sm:py-5 space-y-4 animate-in fade-in-50 duration-200">
+                            <div className="border-t border-[#4e080c]/[0.06] dark:border-white/[0.06] bg-[#fdfaf8] dark:bg-[#151518] px-5 py-4 sm:px-6 sm:py-5 space-y-4 animate-in fade-in-50 duration-200">
                               {/* Full Content / Message Body */}
                               {item.content && (
-                                <div className="text-[13px] sm:text-[13.5px] text-[#4e080c] leading-relaxed whitespace-pre-line bg-white p-3.5 rounded-xl border border-[#4e080c]/[0.08] shadow-refero-sm">
+                                <div className="text-[13px] sm:text-[13.5px] text-[#4e080c] dark:text-[#f4f4f5] leading-relaxed whitespace-pre-line bg-white dark:bg-[#1f1f23] p-3.5 rounded-xl border border-[#4e080c]/[0.08] dark:border-white/[0.08] shadow-refero-sm">
                                   {item.content}
                                 </div>
                               )}
@@ -693,7 +693,7 @@ export default function DashboardPage() {
                               {/* Direct Target Links & Contextual Actions */}
                               {(hasLinks || (isGrades && gradebookUrl)) && (
                                 <div className="space-y-2">
-                                  <div className="text-[11.5px] font-semibold tracking-wider uppercase text-[#71717A] flex items-center gap-1.5">
+                                  <div className="text-[11.5px] font-semibold tracking-wider uppercase text-[#71717A] dark:text-[#a1a1aa] flex items-center gap-1.5">
                                     <span>Direct Action:</span>
                                   </div>
                                   <div className="flex flex-wrap gap-2.5">
@@ -711,20 +711,20 @@ export default function DashboardPage() {
                                           href={lk.url}
                                           target="_blank"
                                           rel="noreferrer"
-                                          className="inline-flex items-center gap-2 px-3.5 py-2.5 bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-300 rounded-xl text-[13px] font-semibold shadow-refero-sm active:scale-[0.98] transition-all min-h-[44px]"
+                                          className="inline-flex items-center gap-2 px-3.5 py-2.5 bg-emerald-50 dark:bg-emerald-950/40 hover:bg-emerald-100 dark:hover:bg-emerald-900/50 text-emerald-900 dark:text-emerald-200 border border-emerald-300 dark:border-emerald-700/50 rounded-xl text-[13px] font-semibold shadow-refero-sm active:scale-[0.98] transition-all min-h-[44px]"
                                         >
                                           {isSheet ? (
-                                            <FileSpreadsheet className="w-4 h-4 text-emerald-700 shrink-0" />
+                                            <FileSpreadsheet className="w-4 h-4 text-emerald-700 dark:text-emerald-400 shrink-0" />
                                           ) : isForm ? (
-                                            <CheckSquare className="w-4 h-4 text-blue-700 shrink-0" />
+                                            <CheckSquare className="w-4 h-4 text-blue-700 dark:text-blue-400 shrink-0" />
                                           ) : isGrade ? (
-                                            <GraduationCap className="w-4 h-4 text-amber-700 shrink-0" />
+                                            <GraduationCap className="w-4 h-4 text-amber-700 dark:text-amber-400 shrink-0" />
                                           ) : isDrive ? (
-                                            <Folder className="w-4 h-4 text-indigo-700 shrink-0" />
+                                            <Folder className="w-4 h-4 text-indigo-700 dark:text-indigo-400 shrink-0" />
                                           ) : isZoom ? (
-                                            <Video className="w-4 h-4 text-purple-700 shrink-0" />
+                                            <Video className="w-4 h-4 text-purple-700 dark:text-purple-400 shrink-0" />
                                           ) : (
-                                            <ExternalLink className="w-4 h-4 text-emerald-700 shrink-0" />
+                                            <ExternalLink className="w-4 h-4 text-emerald-700 dark:text-emerald-400 shrink-0" />
                                           )}
                                           <span>{lk.title}</span>
                                         </a>
@@ -736,10 +736,10 @@ export default function DashboardPage() {
                                         href={gradebookUrl}
                                         target="_blank"
                                         rel="noreferrer"
-                                        className="inline-flex items-center gap-2 px-3.5 py-2.5 bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-300 rounded-xl text-[13px] font-semibold shadow-refero-sm active:scale-[0.98] transition-all min-h-[44px]"
+                                        className="inline-flex items-center gap-2 px-3.5 py-2.5 bg-amber-50 dark:bg-amber-950/40 hover:bg-amber-100 dark:hover:bg-amber-900/50 text-amber-900 dark:text-amber-200 border border-amber-300 dark:border-amber-700/50 rounded-xl text-[13px] font-semibold shadow-refero-sm active:scale-[0.98] transition-all min-h-[44px]"
                                         title="Open course gradebook on OUSL Portal"
                                       >
-                                        <GraduationCap className="w-4 h-4 text-amber-700 shrink-0" />
+                                        <GraduationCap className="w-4 h-4 text-amber-700 dark:text-amber-400 shrink-0" />
                                         <span>Check Course Gradebook</span>
                                       </a>
                                     )}
@@ -750,7 +750,7 @@ export default function DashboardPage() {
                               {/* Attached Files (Excel, CSV, PDF) */}
                               {hasAttachments && (
                                 <div className="space-y-2">
-                                  <div className="text-[11.5px] font-semibold tracking-wider uppercase text-[#71717A] flex items-center gap-1.5">
+                                  <div className="text-[11.5px] font-semibold tracking-wider uppercase text-[#71717A] dark:text-[#a1a1aa] flex items-center gap-1.5">
                                     <span>Attached Files:</span>
                                   </div>
                                   <div className="flex flex-wrap gap-2.5">
@@ -760,17 +760,17 @@ export default function DashboardPage() {
                                         href={att.url}
                                         target="_blank"
                                         rel="noreferrer"
-                                        className="inline-flex items-center gap-2 px-3.5 py-2 bg-white hover:bg-[#f5efe9] active:bg-[#ede3da] text-[#4e080c] border border-[#4e080c]/[0.12] rounded-xl text-[12.5px] font-medium shadow-refero-sm active:scale-[0.98] transition-all min-h-[44px]"
+                                        className="inline-flex items-center gap-2 px-3.5 py-2 bg-white dark:bg-[#1f1f23] hover:bg-[#f5efe9] dark:hover:bg-[#27272a] active:bg-[#ede3da] text-[#4e080c] dark:text-[#f4f4f5] border border-[#4e080c]/[0.12] dark:border-white/[0.12] rounded-xl text-[12.5px] font-medium shadow-refero-sm active:scale-[0.98] transition-all min-h-[44px]"
                                       >
                                         {att.type === 'excel' || att.type === 'csv' ? (
-                                          <FileSpreadsheet className="w-4 h-4 text-emerald-600 shrink-0" />
+                                          <FileSpreadsheet className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
                                         ) : att.type === 'pdf' ? (
-                                          <FileText className="w-4 h-4 text-rose-600 shrink-0" />
+                                          <FileText className="w-4 h-4 text-rose-600 dark:text-rose-400 shrink-0" />
                                         ) : (
-                                          <File className="w-4 h-4 text-[#71717A] shrink-0" />
+                                          <File className="w-4 h-4 text-[#71717A] dark:text-[#a1a1aa] shrink-0" />
                                         )}
                                         <span className="truncate max-w-xs">{att.name}</span>
-                                        <Download className="w-3.5 h-3.5 text-[#71717A] shrink-0" />
+                                        <Download className="w-3.5 h-3.5 text-[#71717A] dark:text-[#a1a1aa] shrink-0" />
                                       </a>
                                     ))}
                                   </div>
@@ -784,11 +784,11 @@ export default function DashboardPage() {
                   </div>
                 ) : (
                   /* Empty State */
-                  <div className="p-16 text-center bg-[#f2ebe5] rounded-2xl text-[#71717A] space-y-2">
+                  <div className="p-16 text-center bg-[#f2ebe5] dark:bg-[#18181b] rounded-2xl text-[#71717A] dark:text-[#a1a1aa] border border-transparent dark:border-white/[0.08] space-y-2">
                     {React.createElement(CATEGORY_META[currentCategoryKey].icon, {
-                      className: 'w-8 h-8 mx-auto text-[#71717A]',
+                      className: 'w-8 h-8 mx-auto text-[#71717A] dark:text-[#a1a1aa]',
                     })}
-                    <h3 className="text-[15px] font-semibold text-[#4e080c]">
+                    <h3 className="text-[15px] font-semibold text-[#4e080c] dark:text-[#f4f4f5]">
                       No {CATEGORY_META[currentCategoryKey].title.toLowerCase()} in the{' '}
                       {timeframe === '24h' ? 'last 24 hours' : 'last 16 days'}
                     </h3>
@@ -801,7 +801,7 @@ export default function DashboardPage() {
                       <div className="pt-2">
                         <button
                           onClick={() => setTimeframe('16d')}
-                          className="px-4 py-1.5 bg-white text-[#4e080c] border border-[#4e080c]/[0.12] rounded-lg text-[12.5px] font-medium hover:bg-[#f5efe9] shadow-refero-sm transition-all"
+                          className="px-4 py-1.5 bg-white dark:bg-[#27272a] text-[#4e080c] dark:text-[#f4f4f5] border border-[#4e080c]/[0.12] dark:border-white/[0.12] rounded-lg text-[12.5px] font-medium hover:bg-[#f5efe9] dark:hover:bg-[#323238] shadow-refero-sm transition-all"
                         >
                           View Last 16 Days ({currentCategoryCounts.count16d})
                         </button>
@@ -815,59 +815,59 @@ export default function DashboardPage() {
               /* ENROLLED COURSES VIEW (Dedicated Enrolled Courses List)                   */
               /* ========================================================================= */
               <div className="space-y-5">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-[#f2ebe5] p-5 sm:p-6 rounded-2xl shadow-refero-sm">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-[#f2ebe5] dark:bg-[#18181b] p-5 sm:p-6 rounded-2xl shadow-refero-sm border border-transparent dark:border-white/[0.08]">
                   <div>
                     <div className="flex items-center gap-2">
-                      <Layers className="w-5 h-5 text-[#4e080c]" />
-                      <h1 className="text-[17px] sm:text-[18px] font-semibold text-[#4e080c] tracking-tight">
+                      <Layers className="w-5 h-5 text-[#4e080c] dark:text-[#f4f4f5]" />
+                      <h1 className="text-[17px] sm:text-[18px] font-semibold text-[#4e080c] dark:text-[#f4f4f5] tracking-tight">
                         Enrolled Courses
                       </h1>
                     </div>
-                    <p className="text-[12.5px] sm:text-[13px] text-[#71717A] mt-1">
-                      Your 7 registered active semester courses on OUSL Moodle.
+                    <p className="text-[12.5px] sm:text-[13px] text-[#71717A] dark:text-[#a1a1aa] mt-1">
+                      Your {allCourses.length} registered active semester courses on OUSL Moodle.
                     </p>
                   </div>
-                  <div className="text-[12.5px] font-medium px-3 py-1 bg-white rounded-lg border border-[#4e080c]/[0.12] shadow-refero-sm text-[#4e080c] self-start sm:self-auto">
+                  <div className="text-[12.5px] font-medium px-3 py-1 bg-white dark:bg-[#27272a] rounded-lg border border-[#4e080c]/[0.12] dark:border-white/[0.12] shadow-refero-sm text-[#4e080c] dark:text-[#f4f4f5] self-start sm:self-auto">
                     {allCourses.length} Registered Courses
                   </div>
                 </div>
 
                 {/* Search Bar */}
-                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 pt-1">
-                  <span className="text-[13px] font-semibold text-[#4e080c]">
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 pt-1">
+                  <span className="text-[13px] font-semibold text-[#4e080c] dark:text-[#f4f4f5]">
                     Showing {filteredCourses.length} {filteredCourses.length === 1 ? 'course' : 'courses'}
                   </span>
 
                   <div className="relative min-w-[240px] sm:w-72">
-                    <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-[#71717A]" />
+                    <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-[#71717A] dark:text-[#a1a1aa]" />
                     <input
                       type="text"
                       placeholder="Search courses..."
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
-                      className="w-full pl-9 pr-3.5 py-1.5 text-[13px] bg-white rounded-lg border border-[#4e080c]/[0.12] shadow-refero-sm focus:outline-none focus:ring-1 focus:ring-[#4e080c]/20 transition-all placeholder:text-[#71717A]"
+                      className="w-full pl-9 pr-3.5 py-1.5 text-[13px] bg-white dark:bg-[#18181b] text-[#4e080c] dark:text-[#f4f4f5] rounded-lg border border-[#4e080c]/[0.12] dark:border-white/[0.12] shadow-refero-sm focus:outline-none focus:ring-1 focus:ring-[#4e080c]/20 dark:focus:ring-white/20 transition-all placeholder:text-[#71717A] dark:placeholder:text-[#71717a]"
                     />
                   </div>
                 </div>
 
                 {/* Enrolled Courses List */}
                 {loading ? (
-                  <div className="p-16 text-center text-[#71717A] flex flex-col items-center justify-center gap-2 bg-[#f2ebe5] rounded-2xl">
-                    <RefreshCw className="w-5 h-5 animate-spin text-[#4e080c]" />
-                    <p className="text-[13.5px] font-medium text-[#4e080c]">
+                  <div className="p-16 text-center text-[#71717A] dark:text-[#a1a1aa] flex flex-col items-center justify-center gap-2 bg-[#f2ebe5] dark:bg-[#18181b] rounded-2xl border border-transparent dark:border-white/[0.08]">
+                    <RefreshCw className="w-5 h-5 animate-spin text-[#4e080c] dark:text-[#a1a1aa]" />
+                    <p className="text-[13.5px] font-medium text-[#4e080c] dark:text-[#f4f4f5]">
                       Loading courses...
                     </p>
                   </div>
                 ) : filteredCourses.length > 0 ? (
-                  <div className="bg-[#f2ebe5] rounded-2xl divide-y divide-[#4e080c]/[0.05] overflow-hidden shadow-refero-sm">
+                  <div className="bg-[#f2ebe5] dark:bg-[#18181b] rounded-2xl divide-y divide-[#4e080c]/[0.05] dark:divide-white/[0.06] overflow-hidden shadow-refero-sm border border-transparent dark:border-white/[0.08]">
                     {filteredCourses.map((course) => (
                       <CourseCard key={course.id} course={course} defaultExpanded={false} />
                     ))}
                   </div>
                 ) : (
-                  <div className="p-12 text-center bg-[#f2ebe5] rounded-2xl text-[#71717A]">
-                    <BookOpen className="w-7 h-7 mx-auto mb-2 text-[#71717A]" />
-                    <p className="text-[14px] font-semibold text-[#4e080c]">
+                  <div className="p-12 text-center bg-[#f2ebe5] dark:bg-[#18181b] rounded-2xl text-[#71717A] dark:text-[#a1a1aa] border border-transparent dark:border-white/[0.08]">
+                    <BookOpen className="w-7 h-7 mx-auto mb-2 text-[#71717A] dark:text-[#a1a1aa]" />
+                    <p className="text-[14px] font-semibold text-[#4e080c] dark:text-[#f4f4f5]">
                       No courses found
                     </p>
                     <p className="text-[12px] mt-0.5">
@@ -884,28 +884,28 @@ export default function DashboardPage() {
                 {/* Search Bar & Active Filter Label */}
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 pt-1">
                   <div className="flex items-center gap-2">
-                    <span className="text-[13px] font-semibold text-[#4e080c]">
+                    <span className="text-[13px] font-semibold text-[#4e080c] dark:text-[#f4f4f5]">
                       All Academic Feeds
                     </span>
                   </div>
 
                   <div className="relative min-w-[240px] sm:w-72">
-                    <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-[#71717A]" />
+                    <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-[#71717A] dark:text-[#a1a1aa]" />
                     <input
                       type="text"
                       placeholder="Search announcements, CATs, vivas..."
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
-                      className="w-full pl-9 pr-3.5 py-1.5 text-[13px] bg-white rounded-lg border border-[#4e080c]/[0.12] shadow-refero-sm focus:outline-none focus:ring-1 focus:ring-[#4e080c]/20 transition-all placeholder:text-[#71717A]"
+                      className="w-full pl-9 pr-3.5 py-1.5 text-[13px] bg-white dark:bg-[#18181b] text-[#4e080c] dark:text-[#f4f4f5] rounded-lg border border-[#4e080c]/[0.12] dark:border-white/[0.12] shadow-refero-sm focus:outline-none focus:ring-1 focus:ring-[#4e080c]/20 dark:focus:ring-white/20 transition-all placeholder:text-[#71717A] dark:placeholder:text-[#71717a]"
                     />
                   </div>
                 </div>
 
                 {/* Content Feed Section */}
                 {loading ? (
-                  <div className="p-16 text-center text-[#71717A] flex flex-col items-center justify-center gap-2 bg-[#f2ebe5] rounded-2xl">
-                    <RefreshCw className="w-5 h-5 animate-spin text-[#4e080c]" />
-                    <p className="text-[13.5px] font-medium text-[#4e080c]">
+                  <div className="p-16 text-center text-[#71717A] dark:text-[#a1a1aa] flex flex-col items-center justify-center gap-2 bg-[#f2ebe5] dark:bg-[#18181b] rounded-2xl border border-transparent dark:border-white/[0.08]">
+                    <RefreshCw className="w-5 h-5 animate-spin text-[#4e080c] dark:text-[#a1a1aa]" />
+                    <p className="text-[13.5px] font-medium text-[#4e080c] dark:text-[#f4f4f5]">
                       Loading academic updates...
                     </p>
                   </div>
@@ -913,7 +913,7 @@ export default function DashboardPage() {
                   <div className="space-y-4">
                     {/* 1. Portal Notifications & System Alerts Group */}
                     {filteredOverviewNotifications.length > 0 && (
-                      <div className="bg-[#f2ebe5] rounded-2xl divide-y divide-[#4e080c]/[0.05] overflow-hidden shadow-refero-sm">
+                      <div className="bg-[#f2ebe5] dark:bg-[#18181b] rounded-2xl divide-y divide-[#4e080c]/[0.05] dark:divide-white/[0.06] overflow-hidden shadow-refero-sm border border-transparent dark:border-white/[0.08]">
                         {filteredOverviewNotifications.map((notif) => (
                           <NotificationCard key={notif.id} notification={notif} />
                         ))}
@@ -922,7 +922,7 @@ export default function DashboardPage() {
 
                     {/* 2. Course Announcements & Discussions Group */}
                     {filteredCourses.length > 0 ? (
-                      <div className="bg-[#f2ebe5] rounded-2xl divide-y divide-[#4e080c]/[0.05] overflow-hidden shadow-refero-sm">
+                      <div className="bg-[#f2ebe5] dark:bg-[#18181b] rounded-2xl divide-y divide-[#4e080c]/[0.05] dark:divide-white/[0.06] overflow-hidden shadow-refero-sm border border-transparent dark:border-white/[0.08]">
                         {filteredCourses.map((course) => (
                           <CourseCard
                             key={course.id}
@@ -932,9 +932,9 @@ export default function DashboardPage() {
                         ))}
                       </div>
                     ) : filteredOverviewNotifications.length === 0 ? (
-                      <div className="p-12 text-center bg-[#f2ebe5] rounded-2xl text-[#71717A]">
-                        <BookOpen className="w-7 h-7 mx-auto mb-2 text-[#71717A]" />
-                        <p className="text-[14px] font-semibold text-[#4e080c]">
+                      <div className="p-12 text-center bg-[#f2ebe5] dark:bg-[#18181b] rounded-2xl text-[#71717A] dark:text-[#a1a1aa] border border-transparent dark:border-white/[0.08]">
+                        <BookOpen className="w-7 h-7 mx-auto mb-2 text-[#71717A] dark:text-[#a1a1aa]" />
+                        <p className="text-[14px] font-semibold text-[#4e080c] dark:text-[#f4f4f5]">
                           No updates matching your search
                         </p>
                         <p className="text-[12px] mt-0.5">

@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { X, Clock, Bell, Check, Sparkles } from 'lucide-react';
+import { X, Clock, Bell, Check, Save } from 'lucide-react';
 import { UserSettings } from '@/lib/types';
 
 interface ScheduleModalProps {
@@ -66,28 +66,28 @@ export function ScheduleModal({
       {/* Backdrop tap to close */}
       <div className="fixed inset-0" onClick={onClose} />
 
-      <div className="relative w-full max-w-lg sm:max-w-md bg-[#fbf8f5] rounded-t-3xl sm:rounded-2xl border-t sm:border border-[#4e080c]/[0.12] shadow-refero-lg overflow-hidden p-6 sm:p-7 ios-safe-bottom animate-slide-in-up sm:animate-fade-in z-10">
+      <div className="relative w-full max-w-lg sm:max-w-md bg-[#fbf8f5] dark:bg-[#18181b] rounded-t-3xl sm:rounded-2xl border-t sm:border border-[#4e080c]/[0.12] dark:border-white/[0.08] shadow-refero-lg overflow-hidden p-6 sm:p-7 ios-safe-bottom animate-slide-in-up sm:animate-fade-in z-10">
         {/* iOS Sheet Grabber Bar */}
-        <div className="w-10 h-1 bg-[#4e080c]/20 rounded-full mx-auto mb-4 sm:hidden" />
+        <div className="w-10 h-1 bg-[#4e080c]/20 dark:bg-white/20 rounded-full mx-auto mb-4 sm:hidden" />
 
         {/* Header */}
-        <div className="flex items-center justify-between pb-4 border-b border-[#4e080c]/[0.08]">
+        <div className="flex items-center justify-between pb-4 border-b border-[#4e080c]/[0.08] dark:border-white/[0.08]">
           <div className="flex items-center gap-2.5">
-            <div className="w-9 h-9 rounded-xl bg-[#f2ebe5] text-[#4e080c] flex items-center justify-center shadow-refero-sm">
+            <div className="w-9 h-9 rounded-xl bg-[#f2ebe5] dark:bg-[#27272a] text-[#4e080c] dark:text-[#f4f4f5] flex items-center justify-center shadow-refero-sm">
               <Clock className="w-4 h-4" />
             </div>
             <div>
-              <h2 className="text-[16px] font-semibold text-[#4e080c] tracking-tight">
+              <h2 className="text-[16px] font-semibold text-[#4e080c] dark:text-[#f4f4f5] tracking-tight">
                 Daily Crawl Schedule
               </h2>
-              <p className="text-[12px] text-[#71717A]">
+              <p className="text-[12px] text-[#71717A] dark:text-[#a1a1aa]">
                 Automated background academic indexing
               </p>
             </div>
           </div>
           <button
             onClick={onClose}
-            className="min-w-[44px] min-h-[44px] rounded-xl bg-[#4e080c]/[0.05] hover:bg-[#4e080c]/[0.1] active:bg-[#4e080c]/[0.15] flex items-center justify-center text-[#71717A] hover:text-[#4e080c] transition-all active:scale-95"
+            className="min-w-[44px] min-h-[44px] rounded-xl bg-[#4e080c]/[0.05] dark:bg-white/[0.06] hover:bg-[#4e080c]/[0.1] dark:hover:bg-white/[0.1] active:bg-[#4e080c]/[0.15] flex items-center justify-center text-[#71717A] dark:text-[#a1a1aa] hover:text-[#4e080c] dark:hover:text-[#f4f4f5] transition-all active:scale-95"
             aria-label="Close schedule settings"
           >
             <X className="w-4 h-4" />
@@ -97,19 +97,19 @@ export function ScheduleModal({
         {/* Form */}
         <form onSubmit={handleFormSubmit} className="mt-5 space-y-3.5">
           {/* Toggle Auto Sync */}
-          <div className="flex items-center justify-between p-3.5 rounded-2xl bg-[#f2ebe5] border border-[#4e080c]/[0.05]">
+          <div className="flex items-center justify-between p-3.5 rounded-2xl bg-[#f2ebe5] dark:bg-[#222226] border border-[#4e080c]/[0.05] dark:border-white/[0.06]">
             <div className="flex items-center gap-2.5 pr-2">
-              <Bell className="w-4 h-4 text-[#4e080c] shrink-0" />
+              <Bell className="w-4 h-4 text-[#4e080c] dark:text-[#f4f4f5] shrink-0" />
               <div>
-                <span className="text-[13px] font-semibold text-[#4e080c] block">
+                <span className="text-[13px] font-semibold text-[#4e080c] dark:text-[#f4f4f5] block">
                   Automatic Background Sync
                 </span>
-                <span className="text-[11.5px] text-[#71717A] block">
+                <span className="text-[11.5px] text-[#71717A] dark:text-[#a1a1aa] block">
                   Scheduled crawler execution
                 </span>
               </div>
             </div>
-            <label className="relative inline-flex items-center cursor-pointer min-h-[44px] min-w-[48px] justify-end">
+            <label className="inline-flex items-center cursor-pointer min-h-[44px] min-w-[48px] justify-end">
               <input
                 type="checkbox"
                 role="switch"
@@ -119,58 +119,58 @@ export function ScheduleModal({
                 onChange={(e) => setAutoSync(e.target.checked)}
                 className="sr-only peer"
               />
-              <div className="w-11 h-6 bg-[#4e080c]/[0.15] peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[11px] after:right-[22px] peer-checked:after:right-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#4e080c]" />
+              <div className="relative w-11 h-6 bg-[#4e080c]/[0.15] dark:bg-white/[0.15] peer-focus-visible:ring-2 peer-focus-visible:ring-[#4e080c]/40 dark:peer-focus-visible:ring-white/40 rounded-full peer peer-checked:bg-[#4e080c] dark:peer-checked:bg-[#4e080c] transition-colors after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:shadow-xs after:transition-transform peer-checked:after:translate-x-5" />
             </label>
           </div>
 
           {/* Time Picker 1: Morning */}
-          <div className="p-3.5 rounded-2xl bg-[#f2ebe5] border border-[#4e080c]/[0.05]">
+          <div className="p-3.5 rounded-2xl bg-[#f2ebe5] dark:bg-[#222226] border border-[#4e080c]/[0.05] dark:border-white/[0.06]">
             <div className="flex items-center justify-between mb-1.5">
-              <label className="text-[12.5px] font-semibold text-[#4e080c] flex items-center gap-1.5">
+              <label className="text-[12.5px] font-semibold text-[#4e080c] dark:text-[#f4f4f5] flex items-center gap-1.5">
                 <span>1. Morning Crawl</span>
               </label>
-              <span className="text-[11px] text-[#71717A]">Sri Lanka Time</span>
+              <span className="text-[11px] text-[#71717A] dark:text-[#a1a1aa]">Sri Lanka Time</span>
             </div>
             <input
               type="time"
               value={time1}
               onChange={(e) => setTime1(e.target.value)}
               disabled={!autoSync}
-              className="w-full px-3.5 py-2 rounded-xl bg-white border border-[#4e080c]/[0.12] text-[14px] font-medium text-[#4e080c] focus:outline-none focus:ring-1 focus:ring-[#4e080c]/20 disabled:opacity-40 min-h-[44px]"
+              className="w-full px-3.5 py-2 rounded-xl bg-white dark:bg-[#18181b] border border-[#4e080c]/[0.12] dark:border-white/[0.12] text-[14px] font-medium text-[#4e080c] dark:text-[#f4f4f5] focus:outline-none focus:ring-1 focus:ring-[#4e080c]/20 dark:focus:ring-white/20 disabled:opacity-40 min-h-[44px]"
             />
           </div>
 
           {/* Time Picker 2: Afternoon */}
-          <div className="p-3.5 rounded-2xl bg-[#f2ebe5] border border-[#4e080c]/[0.05]">
+          <div className="p-3.5 rounded-2xl bg-[#f2ebe5] dark:bg-[#222226] border border-[#4e080c]/[0.05] dark:border-white/[0.06]">
             <div className="flex items-center justify-between mb-1.5">
-              <label className="text-[12.5px] font-semibold text-[#4e080c] flex items-center gap-1.5">
+              <label className="text-[12.5px] font-semibold text-[#4e080c] dark:text-[#f4f4f5] flex items-center gap-1.5">
                 <span>2. Afternoon Crawl</span>
               </label>
-              <span className="text-[11px] text-[#71717A]">Sri Lanka Time</span>
+              <span className="text-[11px] text-[#71717A] dark:text-[#a1a1aa]">Sri Lanka Time</span>
             </div>
             <input
               type="time"
               value={time2}
               onChange={(e) => setTime2(e.target.value)}
               disabled={!autoSync}
-              className="w-full px-3.5 py-2 rounded-xl bg-white border border-[#4e080c]/[0.12] text-[14px] font-medium text-[#4e080c] focus:outline-none focus:ring-1 focus:ring-[#4e080c]/20 disabled:opacity-40 min-h-[44px]"
+              className="w-full px-3.5 py-2 rounded-xl bg-white dark:bg-[#18181b] border border-[#4e080c]/[0.12] dark:border-white/[0.12] text-[14px] font-medium text-[#4e080c] dark:text-[#f4f4f5] focus:outline-none focus:ring-1 focus:ring-[#4e080c]/20 dark:focus:ring-white/20 disabled:opacity-40 min-h-[44px]"
             />
           </div>
 
           {/* Time Picker 3: Night */}
-          <div className="p-3.5 rounded-2xl bg-[#f2ebe5] border border-[#4e080c]/[0.05]">
+          <div className="p-3.5 rounded-2xl bg-[#f2ebe5] dark:bg-[#222226] border border-[#4e080c]/[0.05] dark:border-white/[0.06]">
             <div className="flex items-center justify-between mb-1.5">
-              <label className="text-[12.5px] font-semibold text-[#4e080c] flex items-center gap-1.5">
+              <label className="text-[12.5px] font-semibold text-[#4e080c] dark:text-[#f4f4f5] flex items-center gap-1.5">
                 <span>3. Night Crawl</span>
               </label>
-              <span className="text-[11px] text-[#71717A]">Sri Lanka Time</span>
+              <span className="text-[11px] text-[#71717A] dark:text-[#a1a1aa]">Sri Lanka Time</span>
             </div>
             <input
               type="time"
               value={time3}
               onChange={(e) => setTime3(e.target.value)}
               disabled={!autoSync}
-              className="w-full px-3.5 py-2 rounded-xl bg-white border border-[#4e080c]/[0.12] text-[14px] font-medium text-[#4e080c] focus:outline-none focus:ring-1 focus:ring-[#4e080c]/20 disabled:opacity-40 min-h-[44px]"
+              className="w-full px-3.5 py-2 rounded-xl bg-white dark:bg-[#18181b] border border-[#4e080c]/[0.12] dark:border-white/[0.12] text-[14px] font-medium text-[#4e080c] dark:text-[#f4f4f5] focus:outline-none focus:ring-1 focus:ring-[#4e080c]/20 dark:focus:ring-white/20 disabled:opacity-40 min-h-[44px]"
             />
           </div>
 
@@ -179,14 +179,14 @@ export function ScheduleModal({
             <button
               type="button"
               onClick={onClose}
-              className="px-4 py-2.5 rounded-xl text-[13px] font-medium text-[#71717A] hover:text-[#4e080c] hover:bg-[#4e080c]/[0.05] active:scale-[0.98] transition-colors min-h-[44px]"
+              className="px-4 py-2.5 rounded-xl text-[13px] font-medium text-[#71717A] dark:text-[#a1a1aa] hover:text-[#4e080c] dark:hover:text-[#f4f4f5] hover:bg-[#4e080c]/[0.05] dark:hover:bg-white/[0.06] active:scale-[0.98] transition-colors min-h-[44px]"
             >
               Cancel
             </button>
             <button
               type="submit"
               disabled={isSaving}
-              className="inline-flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-xl text-[13px] font-medium text-white bg-[#4e080c] hover:bg-[#620a0f] shadow-refero-sm disabled:opacity-60 active:scale-[0.98] transition-all min-h-[44px]"
+              className="inline-flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-xl text-[13px] font-medium text-white bg-[#4e080c] dark:bg-[#4e080c] hover:bg-[#620a0f] dark:hover:bg-[#620a0f] shadow-refero-sm disabled:opacity-60 active:scale-[0.98] transition-all min-h-[44px]"
             >
               {savedSuccess ? (
                 <>
@@ -197,7 +197,7 @@ export function ScheduleModal({
                 <span>Saving...</span>
               ) : (
                 <>
-                  <Sparkles className="w-4 h-4" />
+                  <Save className="w-4 h-4" />
                   <span>Save Schedule</span>
                 </>
               )}
