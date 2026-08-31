@@ -6,7 +6,6 @@ import { categorizeAcademicItem } from './categoryUtils';
 const DATA_DIR = path.join(process.cwd(), 'data');
 const DATA_FILE = path.join(DATA_DIR, 'lms_data.json');
 const SETTINGS_FILE = path.join(DATA_DIR, 'settings.json');
-const LOCAL_SECRETS_FILE = path.join(DATA_DIR, 'local_secrets.json');
 
 function readJsonFile<T>(filePath: string): Partial<T> {
   if (!fs.existsSync(filePath)) return {};
@@ -77,33 +76,31 @@ export function getSettings(): UserSettings {
 
   try {
     const sharedSettings = readJsonFile<UserSettings>(SETTINGS_FILE);
-    const localSecrets = readJsonFile<UserSettings>(LOCAL_SECRETS_FILE);
-    return { ...defaults, ...sharedSettings, ...localSecrets };
+    return { ...defaults, ...sharedSettings };
   } catch (error) {
     console.error('Error reading settings.json:', error);
     return defaults;
   }
 }
 
+export function getClientSettings(): UserSettings {
+  const { ousl_username, ousl_password, github_token, ...clientSettings } = getSettings();
+  return clientSettings;
+}
+
 export function saveSettings(settings: Partial<UserSettings>): UserSettings {
   const current = getSettings();
-  const updated = { ...current, ...settings };
+  const safeSettings = { ...settings };
+  delete safeSettings.ousl_username;
+  delete safeSettings.ousl_password;
+  delete safeSettings.github_token;
+  const updated = { ...current, ...safeSettings };
   try {
     if (!fs.existsSync(DATA_DIR)) {
       fs.mkdirSync(DATA_DIR, { recursive: true });
     }
-    const {
-      ousl_username,
-      ousl_password,
-      github_token,
-      ...sharedSettings
-    } = updated;
+    const { ousl_username, ousl_password, github_token, ...sharedSettings } = updated;
     fs.writeFileSync(SETTINGS_FILE, JSON.stringify(sharedSettings, null, 2), 'utf-8');
-    fs.writeFileSync(
-      LOCAL_SECRETS_FILE,
-      JSON.stringify({ ousl_username, ousl_password, github_token }, null, 2),
-      'utf-8'
-    );
   } catch (error) {
     console.error('Error saving settings.json:', error);
   }

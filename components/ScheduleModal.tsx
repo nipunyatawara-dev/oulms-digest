@@ -46,7 +46,6 @@ export function ScheduleModal({
         time_1: time1,
         time_2: time2,
         time_3: time3,
-        github_token: activeSettings?.github_token,
         auto_sync_enabled: autoSync,
       });
       setSavedSuccess(true);
@@ -208,4 +207,3 @@ export function ScheduleModal({
     </div>
   );
 }
-

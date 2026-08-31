@@ -305,6 +305,14 @@ class OUSLCrawler:
 
             log_progress(60, "Logged in. Discovering all enrolled courses from Moodle...")
             discovered = await self._scrape_all_enrolled_courses(page)
+            if not discovered:
+                log_progress(100, "No enrolled courses were found. Existing settings were preserved.")
+                await browser.close()
+                return {
+                    "error": "No enrolled courses were found after login. Check the saved credentials and try again.",
+                    "success": False,
+                    "courses": [],
+                }
             await browser.close()
 
             log_progress(90, f"Discovered {len(discovered)} registered courses. Saving to settings...")
@@ -347,8 +355,24 @@ class OUSLCrawler:
                 return {"error": "Authentication failed", "success": False}
 
             log_progress(20, "Authentication successful. Discovering target courses...")
-            # 2. Extract Courses (filtered by target_courses)
-            courses_list = await self._scrape_courses(page)
+            # 2. Always retain the complete enrolled-course catalogue, then crawl
+            # only the user's selected subset.
+            all_enrolled_courses = await self._scrape_all_enrolled_courses(page)
+            courses_list = [
+                course for course in all_enrolled_courses
+                if not self.target_courses or any(
+                    target.lower() == course.get('code', '').lower()
+                    or target.lower() in course.get('title', '').lower()
+                    for target in self.target_courses
+                )
+            ]
+            if not courses_list:
+                log_progress(100, "No selected courses were found. Existing digest data was preserved.")
+                await browser.close()
+                return {
+                    "error": "No selected courses were found after login. Check the saved credentials and course selection.",
+                    "success": False,
+                }
             for c in courses_list:
                 self.course_map[c['code']] = c['title'].replace(c['code'], '').strip()
                 self.course_url_map[c['code']] = c['url']
@@ -406,7 +430,8 @@ class OUSLCrawler:
                     "total_resources": sum(course.get("resources_count", 0) for course in structured_courses)
                 },
                 "notifications": notifications,
-                "courses": structured_courses
+                "courses": structured_courses,
+                "available_courses": all_enrolled_courses,
             }
 
             # Save to lms_data.json
@@ -416,6 +441,8 @@ class OUSLCrawler:
             # Update last_sync_timestamp in settings.json
             settings = load_settings()
             settings["last_sync_timestamp"] = end_time.isoformat()
+            settings["discovered_courses"] = all_enrolled_courses
+            settings["selected_courses"] = self.target_courses
             save_settings(settings)
 
             log_progress(100, f"Sync complete in {duration_sec}s! {len(notifications)} alerts & {len(all_course_updates)} updates loaded.")
@@ -448,7 +475,21 @@ class OUSLCrawler:
             await page.wait_for_load_state("domcontentloaded", timeout=45000)
             await page.wait_for_timeout(1500)
 
-            if "login/index.php" in page.url and not "loginredirect" in page.url:
+            # A rejected IAM login remains on the IAM host. Older logic treated that
+            # page as success simply because it was no longer the Moodle login URL.
+            # Verify access to an authenticated Moodle page before continuing.
+            await page.goto(COURSES_URL, wait_until="domcontentloaded", timeout=45000)
+            await page.wait_for_timeout(1200)
+            parsed_url = urlparse(page.url)
+            is_logged_in = await page.evaluate('''() =>
+                document.body?.classList.contains('loggedin') ||
+                Boolean(document.querySelector('[data-region="usermenu"], .usermenu, .userbutton'))
+            ''')
+            if (
+                parsed_url.hostname != "oulms.ou.ac.lk"
+                or parsed_url.path.startswith("/login/")
+                or not is_logged_in
+            ):
                 return False
 
             return True
@@ -462,7 +503,11 @@ class OUSLCrawler:
         courses = []
         try:
             await page.goto(COURSES_URL, wait_until="domcontentloaded", timeout=30000)
-            await page.wait_for_timeout(1500)
+            await page.wait_for_timeout(2500)
+
+            parsed_url = urlparse(page.url)
+            if parsed_url.path.startswith("/login/"):
+                raise RuntimeError("Moodle redirected course discovery back to the login page")
             
             course_elements = await page.eval_on_selector_all(
                 '.dashboard-card, .course-info-container, a[href*="/course/view.php?id="]',
@@ -1170,6 +1215,7 @@ class OUSLCrawler:
 
 if __name__ == "__main__":
     from dotenv import load_dotenv
+    load_dotenv(".env.local")
     load_dotenv()
     
     parser = argparse.ArgumentParser(description="OUSL LMS Crawler")
@@ -1179,9 +1225,8 @@ if __name__ == "__main__":
     parser.add_argument("--password", type=str, help="OUSL Password")
     args = parser.parse_args()
 
-    settings = load_settings()
-    user = args.username or os.getenv("OUSL_USERNAME") or settings.get("ousl_username")
-    pwd = args.password or os.getenv("OUSL_PASSWORD") or settings.get("ousl_password")
+    user = args.username or os.getenv("OUSL_USERNAME")
+    pwd = args.password or os.getenv("OUSL_PASSWORD")
     
     target_courses_arg = None
     if args.courses:

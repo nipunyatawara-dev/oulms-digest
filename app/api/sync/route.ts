@@ -15,8 +15,12 @@ export async function GET(req: NextRequest) {
   const venvPython = path.join(process.cwd(), '.venv', 'bin', 'python');
   
   const settings = getSettings();
-  const githubToken = req.nextUrl.searchParams.get('token') || process.env.GITHUB_TOKEN || process.env.GH_TOKEN || settings?.github_token;
-  const githubRepo = req.nextUrl.searchParams.get('repo') || process.env.GITHUB_REPOSITORY || settings?.github_repo || DEFAULT_REPO;
+  const requestedCourses = req.nextUrl.searchParams.get('courses')
+    ?.split(',')
+    .map((code) => code.trim())
+    .filter(Boolean);
+  const githubToken = process.env.GITHUB_TOKEN || process.env.GH_TOKEN;
+  const githubRepo = process.env.GITHUB_REPOSITORY || settings?.github_repo || DEFAULT_REPO;
 
   // Determine if we should attempt local Python execution
   const hasLocalPython = fs.existsSync(venvPython) || (!process.env.VERCEL && !process.env.AWS_LAMBDA_FUNCTION_NAME && fs.existsSync(scriptPath));
@@ -43,10 +47,9 @@ export async function GET(req: NextRequest) {
           });
 
           const inputs: Record<string, string> = {};
-          if (settings?.ousl_username) inputs.ousl_username = settings.ousl_username;
-          if (settings?.ousl_password) inputs.ousl_password = settings.ousl_password;
-          if (settings?.selected_courses && settings.selected_courses.length > 0) {
-            inputs.selected_courses = settings.selected_courses.join(',');
+          const selectedCourses = requestedCourses?.length ? requestedCourses : settings?.selected_courses;
+          if (selectedCourses && selectedCourses.length > 0) {
+            inputs.selected_courses = selectedCourses.join(',');
           }
 
           const res = await fetch(
@@ -124,13 +127,13 @@ export async function GET(req: NextRequest) {
       }
 
       // 3. Local execution with Python/Playwright
-      const localUsername = settings?.ousl_username || process.env.OUSL_USERNAME || '';
-      const localPassword = settings?.ousl_password || process.env.OUSL_PASSWORD || '';
+      const localUsername = process.env.OUSL_USERNAME || '';
+      const localPassword = process.env.OUSL_PASSWORD || '';
       if (!localUsername || !localPassword) {
         sendEvent({
           type: 'error',
           success: false,
-          message: 'OUSL credentials are not configured for local sync. Open “Credentials & Courses” in the sidebar, save your login, then retry Sync Now.',
+          message: 'OUSL credentials are not configured for local sync. Add OUSL_USERNAME and OUSL_PASSWORD to .env.local, restart npm run dev, then retry.',
         });
         controller.close();
         return;
@@ -144,8 +147,9 @@ export async function GET(req: NextRequest) {
           OUSL_USERNAME: localUsername,
           OUSL_PASSWORD: localPassword,
         };
-        if (settings?.selected_courses && settings.selected_courses.length > 0) {
-          env.SELECTED_COURSES = settings.selected_courses.join(',');
+        const selectedCourses = requestedCourses?.length ? requestedCourses : settings?.selected_courses;
+        if (selectedCourses && selectedCourses.length > 0) {
+          env.SELECTED_COURSES = selectedCourses.join(',');
         }
 
         const proc = spawn(pythonCmd, [scriptPath], {

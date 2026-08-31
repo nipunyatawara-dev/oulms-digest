@@ -8,7 +8,7 @@ import { NotificationCard } from '@/components/NotificationCard';
 import { CourseCard } from '@/components/CourseCard';
 import { ScheduleModal } from '@/components/ScheduleModal';
 import { SyncProgressDrawer, SyncLogItem } from '@/components/SyncProgressDrawer';
-import { AccountSetupView } from '@/components/AccountSetupView';
+import { CourseSelectorView } from '@/components/CourseSelectorView';
 import { MobileTabBar } from '@/components/MobileTabBar';
 import { CourseDetailView, ExamPreparationView } from '@/components/CourseContentExplorer';
 import { LMSDataPayload, UserSettings, CourseUpdate, AttachmentItem, ExtractedLinkItem } from '@/lib/types';
@@ -84,6 +84,17 @@ const CATEGORY_META: Record<
   },
 };
 
+const COURSE_SELECTION_STORAGE_KEY = 'oulms-digest:selected-courses';
+
+function courseMatchesSelection(courseCode: string, selectedCodes?: string[]) {
+  if (!selectedCodes) return true;
+  const course = courseCode.toLowerCase();
+  return selectedCodes.some((selectedCode) => {
+    const selected = selectedCode.toLowerCase();
+    return course === selected || course.startsWith(selected) || selected.startsWith(course);
+  });
+}
+
 export default function DashboardPage() {
   const [data, setData] = useState<LMSDataPayload | null>(null);
   const [settings, setSettings] = useState<UserSettings | null>(null);
@@ -113,7 +124,17 @@ export default function DashboardPage() {
       if (res.ok) {
         const json = await res.json();
         setData(json.data);
-        setSettings(json.settings);
+        let selectedCourses = json.settings?.selected_courses;
+        const storedSelection = window.localStorage.getItem(COURSE_SELECTION_STORAGE_KEY);
+        if (storedSelection) {
+          try {
+            const parsed = JSON.parse(storedSelection);
+            if (Array.isArray(parsed)) selectedCourses = parsed;
+          } catch {
+            window.localStorage.removeItem(COURSE_SELECTION_STORAGE_KEY);
+          }
+        }
+        setSettings({ ...json.settings, selected_courses: selectedCourses });
       }
     } catch (e) {
       console.error('Failed to load LMS data:', e);
@@ -128,10 +149,27 @@ export default function DashboardPage() {
     return () => clearInterval(timer);
   }, []);
 
-  const handleSyncNow = () => {
+  const handleSyncNow = (selectionOverride?: string[]) => {
     if (isSyncing) {
       setIsDrawerOpen(true);
       setIsDrawerMinimized(false);
+      return;
+    }
+
+    const selectedForCrawl = selectionOverride || settings?.selected_courses;
+    if (selectedForCrawl && selectedForCrawl.length === 0) {
+      setIsDrawerOpen(true);
+      setIsDrawerMinimized(false);
+      setIsSyncError(true);
+      setIsSyncComplete(false);
+      setCurrentSyncMessage('Select at least one course before starting a crawl.');
+      setSyncLogs([{
+        id: `log-${Date.now()}`,
+        time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' }),
+        message: 'Select at least one course before starting a crawl.',
+        progress: 0,
+        type: 'error',
+      }]);
       return;
     }
 
@@ -153,7 +191,9 @@ export default function DashboardPage() {
     setSyncLogs([initialLog]);
 
     try {
-      const eventSource = new EventSource('/api/sync');
+      const params = new URLSearchParams();
+      if (selectedForCrawl?.length) params.set('courses', selectedForCrawl.join(','));
+      const eventSource = new EventSource(`/api/sync?${params.toString()}`);
 
       eventSource.onmessage = (event) => {
         try {
@@ -179,7 +219,12 @@ export default function DashboardPage() {
             setIsSyncComplete(true);
             setIsSyncing(false);
             if (payload.data) setData(payload.data);
-            if (payload.settings) setSettings(payload.settings);
+            if (payload.settings) {
+              setSettings((current) => ({
+                ...payload.settings,
+                selected_courses: current?.selected_courses || payload.settings.selected_courses,
+              }));
+            }
             setSyncLogs((prev) => [
               ...prev,
               {
@@ -233,7 +278,18 @@ export default function DashboardPage() {
       });
       if (res.ok) {
         const json = await res.json();
-        setSettings(json.settings);
+        if (newSettings.selected_courses !== undefined) {
+          window.localStorage.setItem(
+            COURSE_SELECTION_STORAGE_KEY,
+            JSON.stringify(newSettings.selected_courses)
+          );
+        }
+        setSettings({
+          ...json.settings,
+          ...(newSettings.selected_courses !== undefined
+            ? { selected_courses: newSettings.selected_courses }
+            : {}),
+        });
       }
     } catch (e) {
       console.error('Error saving settings:', e);
@@ -250,12 +306,25 @@ export default function DashboardPage() {
     return new Date();
   }, [data?.synced_at]);
 
+  const visibleCourses = useMemo(
+    () => (data?.courses || []).filter((course) => courseMatchesSelection(course.code, settings?.selected_courses)),
+    [data?.courses, settings?.selected_courses]
+  );
+
+  const visibleNotifications = useMemo(
+    () => (data?.notifications || []).filter((notification) => {
+      if (!notification.course_code || notification.course_code === 'PORTAL') return true;
+      return courseMatchesSelection(notification.course_code, settings?.selected_courses);
+    }),
+    [data?.notifications, settings?.selected_courses]
+  );
+
   // Extract all unified items from notifications and course forums
   const allAcademicItems = useMemo<UnifiedAcademicItem[]>(() => {
     const list: UnifiedAcademicItem[] = [];
 
     // 1. From portal notifications
-    (data?.notifications || []).forEach((n) => {
+    visibleNotifications.forEach((n) => {
       const cat = categorizeAcademicItem(n.title);
       list.push({
         id: `notif-${n.id}`,
@@ -277,7 +346,7 @@ export default function DashboardPage() {
     });
 
     // 2. From course forums
-    (data?.courses || []).forEach((course) => {
+    visibleCourses.forEach((course) => {
       (course.updates || []).forEach((update) => {
         const cat = categorizeAcademicItem(update.topic);
         list.push({
@@ -301,7 +370,7 @@ export default function DashboardPage() {
     });
 
     return list;
-  }, [data]);
+  }, [visibleCourses, visibleNotifications]);
 
   // Counts helper for any category and timeframe
   const getCategoryCounts = (category: 'Grades & Marks' | 'Viva & Exam' | 'Deadlines & Quizzes' | 'Announcements') => {
@@ -322,8 +391,13 @@ export default function DashboardPage() {
   const deadlinesCounts = useMemo(() => getCategoryCounts('Deadlines & Quizzes'), [allAcademicItems, syncedBaseDate]);
 
   // Standard Dashboard Filter calculations
-  const allNotifications = data?.notifications || [];
-  const allCourses = data?.courses || [];
+  const allNotifications = visibleNotifications;
+  const allCourses = visibleCourses;
+  const availableCourses = data?.available_courses?.length
+    ? data.available_courses
+    : settings?.discovered_courses?.length
+      ? settings.discovered_courses
+      : (data?.courses || []).map((course) => ({ code: course.code, title: course.title, url: course.url }));
 
   const allUpdates: CourseUpdate[] = [];
   allCourses.forEach((c) => {
@@ -435,7 +509,7 @@ export default function DashboardPage() {
       {/* Top Navigation Header */}
       <Header
         isSyncing={isSyncing}
-        onSync={handleSyncNow}
+        onSync={() => handleSyncNow()}
         onOpenSchedule={() => setIsScheduleOpen(true)}
         onToggleDrawer={() => {
           setIsDrawerOpen(true);
@@ -474,10 +548,11 @@ export default function DashboardPage() {
           {/* Right Column: Main Content Canvas */}
           <main className="flex-1 min-w-0 space-y-5 ios-safe-pb-nav">
             {activeView === 'Account' ? (
-              <AccountSetupView
+              <CourseSelectorView
                 settings={settings}
+                availableCourses={availableCourses}
                 onSaveSettings={handleSaveSettings}
-                onTriggerSync={handleSyncNow}
+                onCrawlSelection={(courseCodes) => handleSyncNow(courseCodes)}
                 isSyncing={isSyncing}
               />
             ) : activeTab === 'Exam Preparation' && activeView === 'Dashboard' ? (

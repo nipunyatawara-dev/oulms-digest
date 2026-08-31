@@ -130,6 +130,7 @@ export interface LMSDataPayload {
   stats: DigestStats;
   notifications: NotificationItem[];
   courses: CourseItem[];
+  available_courses?: DiscoveredCourseItem[];
 }
 
 export interface DiscoveredCourseItem {

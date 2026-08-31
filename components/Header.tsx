@@ -7,10 +7,7 @@ import {
   Activity,
   Bell,
   LayoutDashboard,
-  User,
   Settings,
-  Key,
-  ShieldCheck,
   ExternalLink,
   X,
   ChevronRight,
@@ -191,8 +188,8 @@ export function Header({
           <button
             onClick={() => setIsMobileMenuOpen(true)}
             className="md:hidden min-w-[44px] min-h-[44px] flex items-center justify-center rounded-xl bg-white dark:bg-[#18181b] text-[#4e080c] dark:text-[#f4f4f5] border border-[#4e080c]/[0.12] dark:border-white/[0.12] shadow-refero-sm hover:bg-[#f5efe9] dark:hover:bg-[#27272a] active:scale-95 transition-all relative"
-            aria-label="Settings & Account Menu"
-            title="Settings & Account Menu"
+            aria-label="Settings menu"
+            title="Settings menu"
           >
             <Settings className="w-4 h-4 text-[#4e080c] dark:text-[#f4f4f5]" />
             {studentUsername && (
@@ -223,7 +220,7 @@ export function Header({
                     {displayStudent}
                   </div>
                   <p className="text-[11.5px] text-[#71717A] dark:text-[#a1a1aa]">
-                    {studentUsername ? 'OUSL Student Account' : 'Credentials Not Set'}
+                    Personal course dashboard
                   </p>
                 </div>
               </div>
@@ -287,31 +284,7 @@ export function Header({
 
             {/* Menu Items */}
             <div className="space-y-2">
-              {/* Account Credentials & IAM */}
-              <button
-                onClick={() => {
-                  onSelectView?.('Account');
-                  setIsMobileMenuOpen(false);
-                }}
-                className="w-full flex items-center justify-between p-3.5 rounded-2xl bg-white dark:bg-[#222226] hover:bg-[#f5efe9] dark:hover:bg-[#27272a] active:bg-[#ede3da] border border-[#4e080c]/[0.08] dark:border-white/[0.08] text-left transition-all min-h-[50px] active:scale-[0.98]"
-              >
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-[#4e080c]/[0.05] dark:bg-white/[0.08] text-[#4e080c] dark:text-[#f4f4f5] flex items-center justify-center">
-                    <Key className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <div className="text-[13.5px] font-semibold text-[#4e080c] dark:text-[#f4f4f5]">
-                      Account Credentials & IAM
-                    </div>
-                    <div className="text-[11.5px] text-[#71717A] dark:text-[#a1a1aa]">
-                      Configure student ID and password
-                    </div>
-                  </div>
-                </div>
-                <ChevronRight className="w-4 h-4 text-[#71717A] dark:text-[#a1a1aa]" />
-              </button>
-
-              {/* Course Whitelist Manager */}
+              {/* Course Selector */}
               <button
                 onClick={() => {
                   onSelectView?.('Account');
@@ -325,10 +298,10 @@ export function Header({
                   </div>
                   <div>
                     <div className="text-[13.5px] font-semibold text-[#4e080c] dark:text-[#f4f4f5]">
-                      Course Whitelist Manager
+                      Course Selector
                     </div>
                     <div className="text-[11.5px] text-[#71717A] dark:text-[#a1a1aa]">
-                      Select courses to crawl and index
+                      Choose courses shown and crawled
                     </div>
                   </div>
                 </div>
@@ -403,5 +376,3 @@ export function Header({
     </>
   );
 }
-
-

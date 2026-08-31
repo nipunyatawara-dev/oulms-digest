@@ -1,133 +1,143 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextRequest } from 'next/server';
 import { spawn } from 'child_process';
 import path from 'path';
 import fs from 'fs';
-import { getSettings, saveSettings } from '@/lib/dataStore';
+import { getLMSData, getSettings } from '@/lib/dataStore';
 import { explainPythonFailure, resolveProjectPython } from '@/lib/pythonRuntime';
 
 export const dynamic = 'force-dynamic';
 
+const DEFAULT_REPO = 'nipunyatawara-dev/oulms-digest';
+
 export async function GET(req: NextRequest) {
   const encoder = new TextEncoder();
-  const scriptPath = path.join(process.cwd(), 'crawler.py');
-  const venvPython = path.join(process.cwd(), '.venv', 'bin', 'python');
-
+  const rootDir = process.cwd();
+  const scriptPath = path.join(rootDir, 'crawler.py');
+  const venvPython = path.join(rootDir, '.venv', 'bin', 'python');
   const settings = getSettings();
-  const username = req.nextUrl.searchParams.get('username') || settings?.ousl_username || process.env.OUSL_USERNAME;
-  const password = req.nextUrl.searchParams.get('password') || settings?.ousl_password || process.env.OUSL_PASSWORD;
-
-  if (!username || !password) {
-    return NextResponse.json(
-      { success: false, error: 'OUSL Username and Password must be provided.' },
-      { status: 400 }
-    );
-  }
-
-  const hasLocalPython = fs.existsSync(venvPython) || (!process.env.VERCEL && !process.env.AWS_LAMBDA_FUNCTION_NAME && fs.existsSync(scriptPath));
+  const data = getLMSData();
+  const knownCourses =
+    data?.available_courses ||
+    settings.discovered_courses ||
+    (data?.courses || []).map((course) => ({ code: course.code, title: course.title, url: course.url }));
+  const selectedCourses = req.nextUrl.searchParams.get('courses') || settings.selected_courses?.join(',') || '';
+  const githubToken = process.env.GITHUB_TOKEN || process.env.GH_TOKEN;
+  const githubRepo = process.env.GITHUB_REPOSITORY || DEFAULT_REPO;
+  const hasLocalPython =
+    fs.existsSync(venvPython) ||
+    (!process.env.VERCEL && !process.env.AWS_LAMBDA_FUNCTION_NAME && fs.existsSync(scriptPath));
 
   const stream = new ReadableStream({
     async start(controller) {
-      const sendEvent = (data: any) => {
-        controller.enqueue(encoder.encode(`data: ${JSON.stringify(data)}\n\n`));
+      const sendEvent = (payload: Record<string, unknown>) => {
+        controller.enqueue(encoder.encode(`data: ${JSON.stringify(payload)}\n\n`));
       };
 
-      if (!hasLocalPython && !fs.existsSync(venvPython)) {
-        sendEvent({
-          type: 'start',
-          progress: 5,
-          message: 'Checking execution environment...',
-        });
+      if (!hasLocalPython) {
+        if (!githubToken) {
+          sendEvent({
+            type: 'error',
+            success: false,
+            message: 'Course discovery on Vercel requires GITHUB_TOKEN. Add it in Vercel Project Settings and redeploy.',
+          });
+          controller.close();
+          return;
+        }
 
-        sendEvent({
-          type: 'error',
-          success: false,
-          message: 'Local browser automation is unavailable in serverless mode. Please run locally or configure scheduled GitHub Actions.',
-        });
+        sendEvent({ type: 'start', progress: 15, message: 'Starting one-time course discovery through GitHub Actions...' });
+        try {
+          const response = await fetch(
+            `https://api.github.com/repos/${githubRepo}/actions/workflows/lms_check.yml/dispatches`,
+            {
+              method: 'POST',
+              headers: {
+                Authorization: `Bearer ${githubToken}`,
+                Accept: 'application/vnd.github+json',
+                'User-Agent': 'OUSL-LMS-Digest',
+              },
+              body: JSON.stringify({
+                ref: 'main',
+                ...(selectedCourses ? { inputs: { selected_courses: selectedCourses } } : {}),
+              }),
+            }
+          );
 
+          if (!response.ok && response.status !== 204) {
+            throw new Error(`GitHub workflow dispatch failed (${response.status})`);
+          }
+
+          sendEvent({
+            type: 'done',
+            success: true,
+            progress: 100,
+            message: 'Course discovery started in GitHub Actions. The refreshed catalogue will appear after the Action and Vercel deployment finish.',
+            courses: knownCourses,
+          });
+        } catch (error) {
+          sendEvent({
+            type: 'error',
+            success: false,
+            message: error instanceof Error ? error.message : String(error),
+          });
+        }
         controller.close();
         return;
       }
 
-      const pythonCmd = resolveProjectPython();
-
-      try {
-        const env: NodeJS.ProcessEnv = {
-          ...process.env,
-          OUSL_USERNAME: username,
-          OUSL_PASSWORD: password,
-        };
-
-        const proc = spawn(pythonCmd, [scriptPath, '--discover', '--username', username, '--password', password], {
-          cwd: process.cwd(),
-          env,
-        });
-
-        sendEvent({
-          type: 'start',
-          progress: 10,
-          message: 'Connecting to OUSL IAM Keycloak server...',
-        });
-
-        let jsonBuffer = '';
-
-        proc.stdout.on('data', (data) => {
-          const text = data.toString();
-          jsonBuffer += text;
-          const lines = text.split('\n');
-          for (const line of lines) {
-            const match = line.match(/\[PROGRESS:(\d+)\]\s*(.*)/);
-            if (match) {
-              const progress = parseInt(match[1], 10);
-              const message = match[2].trim();
-              sendEvent({ type: 'progress', progress, message });
-            }
-          }
-        });
-
-        let stderrBuffer = '';
-        proc.stderr.on('data', (data) => {
-          const text = data.toString();
-          stderrBuffer = `${stderrBuffer}${text}`.slice(-6000);
-          console.error('Discover crawler stderr:', text);
-        });
-
-        proc.on('close', (code) => {
-          if (code === 0) {
-            const freshSettings = getSettings();
-            sendEvent({
-              type: 'done',
-              success: true,
-              progress: 100,
-              message: `Course discovery finished successfully! Found ${freshSettings.discovered_courses?.length || 0} courses.`,
-              settings: freshSettings,
-              courses: freshSettings.discovered_courses || [],
-            });
-          } else {
-            sendEvent({
-              type: 'error',
-              success: false,
-              message: explainPythonFailure(stderrBuffer, code, 'Course discovery'),
-            });
-          }
-          controller.close();
-        });
-
-        proc.on('error', (err) => {
-          sendEvent({
-            type: 'error',
-            success: false,
-            message: `Failed to launch course discovery: ${err.message}`,
-          });
-          controller.close();
-        });
-      } catch (err) {
+      const username = process.env.OUSL_USERNAME || '';
+      const password = process.env.OUSL_PASSWORD || '';
+      if (!username || !password) {
         sendEvent({
           type: 'error',
           success: false,
-          message: `Course discovery error: ${err instanceof Error ? err.message : String(err)}`,
+          message: 'Add OUSL_USERNAME and OUSL_PASSWORD to .env.local, restart npm run dev, then reopen Course Selector.',
         });
         controller.close();
+        return;
       }
+
+      const pythonCmd = resolveProjectPython(rootDir);
+      const env: NodeJS.ProcessEnv = { ...process.env, OUSL_USERNAME: username, OUSL_PASSWORD: password };
+      const proc = spawn(pythonCmd, [scriptPath, '--discover'], { cwd: rootDir, env });
+      sendEvent({ type: 'start', progress: 10, message: 'Discovering enrolled OUSL courses...' });
+
+      let stderrBuffer = '';
+      proc.stdout.on('data', (chunk) => {
+        for (const line of chunk.toString().split('\n')) {
+          const match = line.match(/\[PROGRESS:(\d+)\]\s*(.*)/);
+          if (match) {
+            sendEvent({ type: 'progress', progress: Number(match[1]), message: match[2].trim() });
+          }
+        }
+      });
+      proc.stderr.on('data', (chunk) => {
+        const text = chunk.toString();
+        stderrBuffer = `${stderrBuffer}${text}`.slice(-6000);
+        console.error('Course discovery stderr:', text);
+      });
+      proc.on('error', (error) => {
+        sendEvent({ type: 'error', success: false, message: `Failed to launch course discovery: ${error.message}` });
+        controller.close();
+      });
+      proc.on('close', (code) => {
+        if (code === 0) {
+          const freshSettings = getSettings();
+          sendEvent({
+            type: 'done',
+            success: true,
+            progress: 100,
+            message: `Found ${freshSettings.discovered_courses?.length || 0} enrolled courses.`,
+            courses: freshSettings.discovered_courses || knownCourses,
+          });
+        } else {
+          sendEvent({
+            type: 'error',
+            success: false,
+            message: explainPythonFailure(stderrBuffer, code, 'Course discovery'),
+          });
+        }
+        controller.close();
+      });
     },
   });
 
@@ -138,22 +148,4 @@ export async function GET(req: NextRequest) {
       Connection: 'keep-alive',
     },
   });
-}
-
-export async function POST(req: Request) {
-  try {
-    const body = await req.json();
-    const { username, password } = body;
-
-    if (username || password) {
-      saveSettings({
-        ousl_username: username,
-        ousl_password: password,
-      });
-    }
-
-    return NextResponse.json({ success: true, message: 'Credentials saved for discovery.' });
-  } catch (error) {
-    return NextResponse.json({ success: false, error: String(error) }, { status: 400 });
-  }
 }

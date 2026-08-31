@@ -49,8 +49,8 @@ export function initScheduler() {
           cwd: rootDir,
           env: {
             ...process.env,
-            OUSL_USERNAME: settings.ousl_username || process.env.OUSL_USERNAME || '',
-            OUSL_PASSWORD: settings.ousl_password || process.env.OUSL_PASSWORD || '',
+            OUSL_USERNAME: process.env.OUSL_USERNAME || '',
+            OUSL_PASSWORD: process.env.OUSL_PASSWORD || '',
             SELECTED_COURSES: settings.selected_courses?.join(',') || process.env.SELECTED_COURSES || '',
           },
         });

@@ -12,7 +12,7 @@ import {
   ExternalLink,
   LogIn,
   X,
-  Key,
+  CheckSquare,
   Sun,
   Moon,
   Laptop,
@@ -236,7 +236,7 @@ export function Sidebar({
         {/* Divider */}
         <div className="border-t border-[#4e080c]/[0.08] dark:border-white/[0.08]" />
 
-        {/* Section 4: Credentials, Portal Login & Docs */}
+        {/* Section 4: Course selection, portal login & docs */}
         <div className="space-y-0.5">
           <button
             onClick={() => {
@@ -250,16 +250,10 @@ export function Sidebar({
             }`}
           >
             <div className="flex items-center gap-2.5">
-              <Key className="w-4 h-4 text-[#71717A] dark:text-[#a1a1aa]" />
-              <span>Credentials & Courses</span>
+              <CheckSquare className="w-4 h-4 text-[#71717A] dark:text-[#a1a1aa]" />
+              <span>Course Selector</span>
             </div>
-            {studentUsername ? (
-              <span className="w-2 h-2 rounded-full bg-emerald-500" title="Configured" />
-            ) : (
-              <span className="text-[10px] px-1.5 py-0.2 rounded bg-amber-100 dark:bg-amber-900/40 text-amber-800 dark:text-amber-300 font-semibold">
-                Setup
-              </span>
-            )}
+            <span className="text-[11px] text-[#71717A] dark:text-[#a1a1aa]">{counts.courses}</span>
           </button>
 
           <a

@@ -52,11 +52,16 @@ pip install -r requirements.txt
 playwright install chromium
 ```
 
-### 2. Configure Credentials in `.env`
-Edit your `.env` file:
+### 2. Configure local credentials in `.env.local`
+Edit the git-ignored `.env.local` file created in the project root:
 ```env
 OUSL_USERNAME=your_student_id@ousl.lk
 OUSL_PASSWORD=your_password
+SELECTED_COURSES=AGM4367,EEI4267,EEI4360,EEI4361,EEI4362,EER4189,BSE
+
+# Used by the hosted Vercel app to dispatch GitHub Actions:
+GITHUB_REPOSITORY=nipunyatawara-dev/oulms-digest
+GITHUB_TOKEN=your_fine_grained_github_token
 
 # Choose your notification channel:
 # --- Option A: Telegram (Recommended) ---
@@ -74,7 +79,7 @@ SMTP_PASSWORD=your_app_password
 EMAIL_TO=your_email@gmail.com
 ```
 
-Credentials saved through the dashboard's **Credentials & Courses** screen are written to the git-ignored `data/local_secrets.json`, never to the tracked digest settings.
+The dashboard does not collect credentials. Its **Course Selector** discovers courses using these environment variables locally, or the existing GitHub Actions secrets in production.
 
 ### 3. Run Manually
 ```bash

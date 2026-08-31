@@ -4,10 +4,11 @@ import os
 import sys
 import json
 from dotenv import load_dotenv
-from crawler import OUSLCrawler, load_settings
+from crawler import OUSLCrawler
 from notifier import Notifier
 from state_manager import StateManager
 
+load_dotenv('.env.local')
 load_dotenv()
 
 async def main():
@@ -20,12 +21,11 @@ async def main():
     parser.add_argument("--password", type=str, help="OUSL Password")
     args = parser.parse_args()
 
-    settings = load_settings()
-    username = args.username or os.getenv("OUSL_USERNAME") or settings.get("ousl_username")
-    password = args.password or os.getenv("OUSL_PASSWORD") or settings.get("ousl_password")
+    username = args.username or os.getenv("OUSL_USERNAME")
+    password = args.password or os.getenv("OUSL_PASSWORD")
 
     if not username or not password:
-        print("[!] Error: OUSL_USERNAME and OUSL_PASSWORD must be set in your .env file, settings.json, or CLI arguments.")
+        print("[!] Error: OUSL_USERNAME and OUSL_PASSWORD must be set in .env.local, the environment, or CLI arguments.")
         sys.exit(1)
 
     target_courses = None
@@ -65,4 +65,3 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
-
