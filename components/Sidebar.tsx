@@ -16,6 +16,7 @@ import {
   Sun,
   Moon,
   Laptop,
+  BookMarked,
 } from 'lucide-react';
 import { CategoryFilter } from '@/components/CategoryTabs';
 import { useTheme } from '@/lib/themeContext';
@@ -29,6 +30,7 @@ interface SidebarProps {
     viva: number;
     deadlines: number;
     courses: number;
+    examPrep?: number;
   };
   onOpenSchedule?: () => void;
   onToggleDrawer?: () => void;
@@ -128,6 +130,27 @@ export function Sidebar({
               <span>Enrolled Courses</span>
             </div>
             <span className="text-[11px] text-[#71717A] dark:text-[#a1a1aa]">{counts.courses}</span>
+          </button>
+
+          <button
+            onClick={() => {
+              onSelectView?.('Dashboard');
+              onSelectTab('Exam Preparation');
+              onCloseMobile?.();
+            }}
+            className={`w-full flex items-center justify-between px-2.5 py-1.5 rounded-lg text-left transition-all ${
+              activeView === 'Dashboard' && activeTab === 'Exam Preparation'
+                ? 'bg-[#e8ddd5] dark:bg-[#27272a] text-[#4e080c] dark:text-[#f4f4f5] font-medium'
+                : 'text-[#71717A] dark:text-[#a1a1aa] hover:text-[#4e080c] dark:hover:text-[#f4f4f5] hover:bg-[#4e080c]/[0.05] dark:hover:bg-white/[0.06]'
+            }`}
+          >
+            <div className="flex items-center gap-2.5">
+              <BookMarked className="w-4 h-4 text-[#71717A] dark:text-[#a1a1aa]" />
+              <span>Exam Preparation</span>
+            </div>
+            {!!counts.examPrep && (
+              <span className="text-[11px] text-[#71717A] dark:text-[#a1a1aa]">{counts.examPrep}</span>
+            )}
           </button>
 
           <button
@@ -317,4 +340,3 @@ export function Sidebar({
     </aside>
   );
 }
-

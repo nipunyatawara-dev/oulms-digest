@@ -2,7 +2,13 @@
 
 import React from 'react';
 
-export type CategoryFilter = 'All' | 'Grades & Marks' | 'Viva & Exam' | 'Deadlines & Quizzes' | 'Courses';
+export type CategoryFilter =
+  | 'All'
+  | 'Grades & Marks'
+  | 'Viva & Exam'
+  | 'Deadlines & Quizzes'
+  | 'Courses'
+  | 'Exam Preparation';
 
 interface CategoryTabsProps {
   activeTab: CategoryFilter;
@@ -13,6 +19,7 @@ interface CategoryTabsProps {
     viva: number;
     deadlines: number;
     courses: number;
+    examPrep?: number;
   };
 }
 
@@ -23,6 +30,7 @@ export function CategoryTabs({ activeTab, onChange, counts }: CategoryTabsProps)
     { id: 'Viva & Exam', label: 'Viva & Exams', count: counts.viva },
     { id: 'Deadlines & Quizzes', label: 'Deadlines', count: counts.deadlines },
     { id: 'Courses', label: 'Courses', count: counts.courses },
+    { id: 'Exam Preparation', label: 'Exam Prep', count: counts.examPrep || 0 },
   ];
 
   return (
@@ -63,4 +71,3 @@ export function CategoryTabs({ activeTab, onChange, counts }: CategoryTabsProps)
     </div>
   );
 }
-

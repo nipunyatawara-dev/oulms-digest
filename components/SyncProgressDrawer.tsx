@@ -197,10 +197,13 @@ export function SyncProgressDrawer({
           {isError && (
             <div className="p-4 rounded-2xl bg-rose-50 dark:bg-rose-950/40 border border-rose-200/60 dark:border-rose-800/40 text-[#4e080c] dark:text-[#f4f4f5] font-sans space-y-2.5">
               <div className="text-[12.5px] font-semibold text-rose-900 dark:text-rose-300">
-                How to run the crawler:
+                Crawler needs attention
               </div>
               <p className="text-[11.5px] text-rose-800 dark:text-rose-200 leading-relaxed">
-                Headless Playwright browsing requires a full OS environment. You can trigger it directly in GitHub Actions with 1 click:
+                {currentMessage || 'The crawler stopped before the sync completed. Check the error log above and retry.'}
+              </p>
+              <p className="text-[11px] text-rose-700 dark:text-rose-300 leading-relaxed">
+                If this app is running in a cloud environment, you can run the crawler through GitHub Actions instead.
               </p>
               <div className="flex items-center gap-2 pt-1 flex-wrap">
                 <a
@@ -244,4 +247,3 @@ export function SyncProgressDrawer({
     </div>
   );
 }
-

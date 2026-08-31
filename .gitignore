@@ -1,5 +1,6 @@
 .env
 .venv/
+data/local_secrets.json
 __pycache__/
 *.pyc
 seen_items.json

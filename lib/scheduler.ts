@@ -1,6 +1,7 @@
 import { getSettings } from './dataStore';
 import { spawn } from 'child_process';
 import path from 'path';
+import { resolveProjectPython } from './pythonRuntime';
 
 let schedulerInterval: NodeJS.Timeout | null = null;
 let lastTriggeredMinute = '';
@@ -42,12 +43,16 @@ export function initScheduler() {
         
         const rootDir = process.cwd();
         const pythonScript = path.join(rootDir, 'crawler.py');
-        const venvPython = path.join(rootDir, '.venv', 'bin', 'python');
-        const pyExec = process.env.NODE_ENV === 'production' ? 'python' : venvPython;
+        const pyExec = resolveProjectPython(rootDir);
 
         const child = spawn(pyExec, [pythonScript], {
           cwd: rootDir,
-          env: process.env,
+          env: {
+            ...process.env,
+            OUSL_USERNAME: settings.ousl_username || process.env.OUSL_USERNAME || '',
+            OUSL_PASSWORD: settings.ousl_password || process.env.OUSL_PASSWORD || '',
+            SELECTED_COURSES: settings.selected_courses?.join(',') || process.env.SELECTED_COURSES || '',
+          },
         });
 
         child.stdout.on('data', (data) => {
@@ -56,6 +61,10 @@ export function initScheduler() {
 
         child.stderr.on('data', (data) => {
           console.error(`[Crawler STDERR] ${data.toString().trim()}`);
+        });
+
+        child.on('error', (err) => {
+          console.error(`[Crawler Process] Failed to start: ${err.message}`);
         });
 
         child.on('close', (code) => {

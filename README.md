@@ -2,21 +2,23 @@
 
 An automated watcher for **The Open University of Sri Lanka (OUSL)** Moodle Learning Management System (`oulms.ou.ac.lk`) and Keycloak IAM (`iam.ou.ac.lk`).
 
-It logs into your student account, checks all your enrolled courses, extracts new announcements, forum discussions, and portal notifications, and delivers a formatted digest to **Telegram**, **Discord**, or **Email** twice daily.
+It logs into your student account, checks the selected enrolled courses, indexes their Moodle sections and learning resources, extracts new announcements and portal notifications, and powers the web dashboard.
 
 ---
 
 ## 🚀 Features
 
 - **Automated IAM & Moodle Login**: Seamlessly handles OpenID Connect OAuth2 authentication.
-- **Scrapes All Enrolled Courses**: Traverses announcements, forums, and discussion boards.
+- **Structured Course Index**: Captures Moodle sections, labels, readings, files, recordings, links, forums, assignments, quizzes, books, folders, and lessons—including nested files, chapters, and embedded links.
+- **Course Explorer**: Opens each enrolled course as a section-by-section content map.
+- **Exam Preparation**: Regroups indexed material into ILS sessions, core/additional reading, projects/assessments, and exam/revision resources.
 - **Portal Notifications**: Extracts recent grades, CAT/quiz announcements, viva notices, and system alerts.
 - **Smart Deduplication (`seen_items.json`)**: Only notifies you about **new** items since the last check.
 - **Multi-channel Alerts**:
   - 📱 **Telegram Bot** (Instant push notification with direct links)
   - 💬 **Discord Webhook** (Formatted embed cards)
   - ✉️ **Email (SMTP)** (Daily morning/evening digest)
-- **Twice Daily Automation**: Ready for **GitHub Actions** (cloud) or **macOS Cron/Launchd** (local).
+- **Scheduled Automation**: Ready for **GitHub Actions** (cloud) or **macOS Cron/Launchd** (local).
 
 ---
 
@@ -24,7 +26,7 @@ It logs into your student account, checks all your enrolled courses, extracts ne
 
 ```
 ├── .github/workflows/
-│   └── lms_check.yml       # Cloud scheduler (Runs 2x daily: 7 AM & 7 PM SL time)
+│   └── lms_check.yml       # Cloud scheduler (Runs 3x daily: 7 AM, 4 PM, 10 PM SL time)
 ├── crawler.py              # Playwright browser automation & scraper
 ├── notifier.py             # Telegram, Discord, and Email dispatcher
 ├── state_manager.py        # Deduplication tracker (remembers seen posts)
@@ -72,6 +74,8 @@ SMTP_PASSWORD=your_app_password
 EMAIL_TO=your_email@gmail.com
 ```
 
+Credentials saved through the dashboard's **Credentials & Courses** screen are written to the git-ignored `data/local_secrets.json`, never to the tracked digest settings.
+
 ### 3. Run Manually
 ```bash
 # Normal check (only outputs new items):
@@ -97,7 +101,7 @@ python main.py --dry-run
 
 ## ☁️ Running 100% Free on the Cloud (GitHub Actions)
 
-You don't need to keep your laptop on! You can let GitHub run this twice daily:
+You don't need to keep your laptop on! You can let GitHub run this three times daily:
 
 1. Create a **Private** repository on GitHub.
 2. Push this codebase to your repository:
@@ -114,7 +118,7 @@ You don't need to keep your laptop on! You can let GitHub run this twice daily:
    - `OUSL_PASSWORD`
    - `TELEGRAM_BOT_TOKEN`
    - `TELEGRAM_CHAT_ID`
-4. The workflow in `.github/workflows/lms_check.yml` will automatically run at **07:00 AM** and **07:00 PM** Sri Lanka Time (UTC+5:30) every day.
+4. The workflow in `.github/workflows/lms_check.yml` will automatically run at **07:00 AM**, **04:00 PM**, and **10:00 PM** Sri Lanka Time (UTC+5:30) every day.
 
 ---
 

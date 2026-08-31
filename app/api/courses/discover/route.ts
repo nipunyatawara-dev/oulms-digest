@@ -3,6 +3,7 @@ import { spawn } from 'child_process';
 import path from 'path';
 import fs from 'fs';
 import { getSettings, saveSettings } from '@/lib/dataStore';
+import { explainPythonFailure, resolveProjectPython } from '@/lib/pythonRuntime';
 
 export const dynamic = 'force-dynamic';
 
@@ -47,7 +48,7 @@ export async function GET(req: NextRequest) {
         return;
       }
 
-      const pythonCmd = fs.existsSync(venvPython) ? venvPython : 'python3';
+      const pythonCmd = resolveProjectPython();
 
       try {
         const env: NodeJS.ProcessEnv = {
@@ -83,8 +84,11 @@ export async function GET(req: NextRequest) {
           }
         });
 
+        let stderrBuffer = '';
         proc.stderr.on('data', (data) => {
-          console.error('Discover crawler stderr:', data.toString());
+          const text = data.toString();
+          stderrBuffer = `${stderrBuffer}${text}`.slice(-6000);
+          console.error('Discover crawler stderr:', text);
         });
 
         proc.on('close', (code) => {
@@ -102,7 +106,7 @@ export async function GET(req: NextRequest) {
             sendEvent({
               type: 'error',
               success: false,
-              message: `Discovery process exited with code ${code}. Please verify your OUSL login credentials.`,
+              message: explainPythonFailure(stderrBuffer, code, 'Course discovery'),
             });
           }
           controller.close();

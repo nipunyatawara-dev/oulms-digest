@@ -10,9 +10,11 @@ import { ScheduleModal } from '@/components/ScheduleModal';
 import { SyncProgressDrawer, SyncLogItem } from '@/components/SyncProgressDrawer';
 import { AccountSetupView } from '@/components/AccountSetupView';
 import { MobileTabBar } from '@/components/MobileTabBar';
+import { CourseDetailView, ExamPreparationView } from '@/components/CourseContentExplorer';
 import { LMSDataPayload, UserSettings, CourseUpdate, AttachmentItem, ExtractedLinkItem } from '@/lib/types';
 import { isWithinTimeframe } from '@/lib/dateUtils';
 import { categorizeAcademicItem, getCourseGradebookUrl } from '@/lib/categoryUtils';
+import { countExamResources } from '@/lib/courseContent';
 import {
   Search,
   RefreshCw,
@@ -93,6 +95,7 @@ export default function DashboardPage() {
   const [isScheduleOpen, setIsScheduleOpen] = useState(false);
   const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
   const [activeView, setActiveView] = useState<'Dashboard' | 'Announcements' | 'Account'>('Dashboard');
+  const [selectedCourseCode, setSelectedCourseCode] = useState<string | null>(null);
 
   // Sync Progress Drawer State
   const [isSyncing, setIsSyncing] = useState(false);
@@ -333,7 +336,12 @@ export default function DashboardPage() {
     viva: vivaCounts.total,
     deadlines: deadlinesCounts.total,
     courses: allCourses.length,
+    examPrep: allCourses.reduce((total, course) => total + countExamResources(course.sections), 0),
   };
+
+  const selectedCourse = selectedCourseCode
+    ? allCourses.find((course) => course.code === selectedCourseCode) || null
+    : null;
 
   // Filtered items for Dedicated Category Views (Grades, Viva, Deadlines, Announcements)
   const getFilteredCategoryItems = (category: 'Grades & Marks' | 'Viva & Exam' | 'Deadlines & Quizzes' | 'Announcements') => {
@@ -448,17 +456,20 @@ export default function DashboardPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-10 py-5 sm:py-8">
         <div className="flex items-start gap-6 lg:gap-8">
           {/* Left Column: Persistent Desktop Sidebar */}
-          <Sidebar
-            activeTab={activeTab}
-            onSelectTab={(tab) => {
-              setActiveTab(tab);
-              setSearchQuery('');
-            }}
-            counts={sidebarCounts}
-            activeView={activeView}
-            onSelectView={setActiveView}
-            studentUsername={settings?.ousl_username}
-          />
+          {activeView !== 'Announcements' && (
+            <Sidebar
+              activeTab={activeTab}
+              onSelectTab={(tab) => {
+                setActiveTab(tab);
+                setSearchQuery('');
+                if (tab !== 'Courses') setSelectedCourseCode(null);
+              }}
+              counts={sidebarCounts}
+              activeView={activeView}
+              onSelectView={setActiveView}
+              studentUsername={settings?.ousl_username}
+            />
+          )}
 
           {/* Right Column: Main Content Canvas */}
           <main className="flex-1 min-w-0 space-y-5 ios-safe-pb-nav">
@@ -469,6 +480,10 @@ export default function DashboardPage() {
                 onTriggerSync={handleSyncNow}
                 isSyncing={isSyncing}
               />
+            ) : activeTab === 'Exam Preparation' && activeView === 'Dashboard' ? (
+              <ExamPreparationView courses={allCourses} />
+            ) : activeTab === 'Courses' && selectedCourse && activeView === 'Dashboard' ? (
+              <CourseDetailView course={selectedCourse} onBack={() => setSelectedCourseCode(null)} />
             ) : isDedicatedCategoryView ? (
               /* ========================================================================= */
               /* DEDICATED SEPARATE PAGES: Grades, Viva, Deadlines, Announcements          */
@@ -861,7 +876,12 @@ export default function DashboardPage() {
                 ) : filteredCourses.length > 0 ? (
                   <div className="bg-[#f2ebe5] dark:bg-[#18181b] rounded-2xl divide-y divide-[#4e080c]/[0.05] dark:divide-white/[0.06] overflow-hidden shadow-refero-sm border border-transparent dark:border-white/[0.08]">
                     {filteredCourses.map((course) => (
-                      <CourseCard key={course.id} course={course} defaultExpanded={false} />
+                      <CourseCard
+                        key={course.id}
+                        course={course}
+                        defaultExpanded={false}
+                        onOpenDetails={(selected) => setSelectedCourseCode(selected.code)}
+                      />
                     ))}
                   </div>
                 ) : (
@@ -928,6 +948,10 @@ export default function DashboardPage() {
                             key={course.id}
                             course={course}
                             defaultExpanded={filteredCourses.length <= 3}
+                            onOpenDetails={(selected) => {
+                              setActiveTab('Courses');
+                              setSelectedCourseCode(selected.code);
+                            }}
                           />
                         ))}
                       </div>
@@ -989,9 +1013,8 @@ export default function DashboardPage() {
         vivaCount={vivaCounts.count24h > 0 ? vivaCounts.count24h : vivaCounts.count16d}
         deadlinesCount={deadlinesCounts.count24h > 0 ? deadlinesCounts.count24h : deadlinesCounts.count16d}
         coursesCount={allCourses.length}
+        examPrepCount={sidebarCounts.examPrep}
       />
     </div>
   );
 }
-
-

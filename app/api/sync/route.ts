@@ -3,6 +3,7 @@ import { spawn } from 'child_process';
 import path from 'path';
 import fs from 'fs';
 import { getLMSData, getSettings } from '@/lib/dataStore';
+import { explainPythonFailure, resolveProjectPython } from '@/lib/pythonRuntime';
 
 export const dynamic = 'force-dynamic';
 
@@ -123,13 +124,25 @@ export async function GET(req: NextRequest) {
       }
 
       // 3. Local execution with Python/Playwright
-      const pythonCmd = fs.existsSync(venvPython) ? venvPython : 'python3';
+      const localUsername = settings?.ousl_username || process.env.OUSL_USERNAME || '';
+      const localPassword = settings?.ousl_password || process.env.OUSL_PASSWORD || '';
+      if (!localUsername || !localPassword) {
+        sendEvent({
+          type: 'error',
+          success: false,
+          message: 'OUSL credentials are not configured for local sync. Open “Credentials & Courses” in the sidebar, save your login, then retry Sync Now.',
+        });
+        controller.close();
+        return;
+      }
+
+      const pythonCmd = resolveProjectPython();
 
       try {
         const env: NodeJS.ProcessEnv = {
           ...process.env,
-          OUSL_USERNAME: settings?.ousl_username || process.env.OUSL_USERNAME || '',
-          OUSL_PASSWORD: settings?.ousl_password || process.env.OUSL_PASSWORD || '',
+          OUSL_USERNAME: localUsername,
+          OUSL_PASSWORD: localPassword,
         };
         if (settings?.selected_courses && settings.selected_courses.length > 0) {
           env.SELECTED_COURSES = settings.selected_courses.join(',');
@@ -159,8 +172,11 @@ export async function GET(req: NextRequest) {
           }
         });
 
+        let stderrBuffer = '';
         proc.stderr.on('data', (data) => {
-          console.error('Crawler stderr:', data.toString());
+          const text = data.toString();
+          stderrBuffer = `${stderrBuffer}${text}`.slice(-6000);
+          console.error('Crawler stderr:', text);
         });
 
         proc.on('close', (code) => {
@@ -179,7 +195,7 @@ export async function GET(req: NextRequest) {
             sendEvent({
               type: 'error',
               success: false,
-              message: `Crawler process exited with code ${code}`,
+              message: explainPythonFailure(stderrBuffer, code),
             });
           }
           controller.close();
@@ -252,4 +268,3 @@ export async function POST() {
     { status: 400 }
   );
 }
-

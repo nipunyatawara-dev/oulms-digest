@@ -6,6 +6,12 @@ import { categorizeAcademicItem } from './categoryUtils';
 const DATA_DIR = path.join(process.cwd(), 'data');
 const DATA_FILE = path.join(DATA_DIR, 'lms_data.json');
 const SETTINGS_FILE = path.join(DATA_DIR, 'settings.json');
+const LOCAL_SECRETS_FILE = path.join(DATA_DIR, 'local_secrets.json');
+
+function readJsonFile<T>(filePath: string): Partial<T> {
+  if (!fs.existsSync(filePath)) return {};
+  return JSON.parse(fs.readFileSync(filePath, 'utf-8')) as Partial<T>;
+}
 
 export function getLMSData(): LMSDataPayload | null {
   try {
@@ -70,9 +76,9 @@ export function getSettings(): UserSettings {
   };
 
   try {
-    if (!fs.existsSync(SETTINGS_FILE)) return defaults;
-    const raw = fs.readFileSync(SETTINGS_FILE, 'utf-8');
-    return { ...defaults, ...JSON.parse(raw) };
+    const sharedSettings = readJsonFile<UserSettings>(SETTINGS_FILE);
+    const localSecrets = readJsonFile<UserSettings>(LOCAL_SECRETS_FILE);
+    return { ...defaults, ...sharedSettings, ...localSecrets };
   } catch (error) {
     console.error('Error reading settings.json:', error);
     return defaults;
@@ -86,7 +92,18 @@ export function saveSettings(settings: Partial<UserSettings>): UserSettings {
     if (!fs.existsSync(DATA_DIR)) {
       fs.mkdirSync(DATA_DIR, { recursive: true });
     }
-    fs.writeFileSync(SETTINGS_FILE, JSON.stringify(updated, null, 2), 'utf-8');
+    const {
+      ousl_username,
+      ousl_password,
+      github_token,
+      ...sharedSettings
+    } = updated;
+    fs.writeFileSync(SETTINGS_FILE, JSON.stringify(sharedSettings, null, 2), 'utf-8');
+    fs.writeFileSync(
+      LOCAL_SECRETS_FILE,
+      JSON.stringify({ ousl_username, ousl_password, github_token }, null, 2),
+      'utf-8'
+    );
   } catch (error) {
     console.error('Error saving settings.json:', error);
   }

@@ -21,9 +21,10 @@ import { getCourseGradebookUrl } from '@/lib/categoryUtils';
 interface CourseCardProps {
   course: CourseItem;
   defaultExpanded?: boolean;
+  onOpenDetails?: (course: CourseItem) => void;
 }
 
-export function CourseCard({ course, defaultExpanded = false }: CourseCardProps) {
+export function CourseCard({ course, defaultExpanded = false, onOpenDetails }: CourseCardProps) {
   const [expanded, setExpanded] = useState(defaultExpanded);
   const [showAllUpdates, setShowAllUpdates] = useState(false);
   const [expandedTopicId, setExpandedTopicId] = useState<string | null>(null);
@@ -71,7 +72,12 @@ export function CourseCard({ course, defaultExpanded = false }: CourseCardProps)
     <div className="hover:bg-[#4e080c]/[0.02] dark:hover:bg-white/[0.02] transition-colors">
       {/* Course Main Row */}
       <div className="p-4 sm:p-5 flex items-start sm:items-center justify-between gap-3 sm:gap-4 select-none">
-        <div className="flex items-start sm:items-center gap-3.5 min-w-0 flex-1">
+        <button
+          type="button"
+          onClick={() => onOpenDetails?.(course)}
+          disabled={!onOpenDetails}
+          className={`flex items-start sm:items-center gap-3.5 min-w-0 flex-1 text-left ${onOpenDetails ? 'cursor-pointer group' : 'cursor-default'}`}
+        >
           {/* Left Course Code Badge */}
           <div className="px-2.5 py-1 rounded-lg bg-[#4e080c] text-white font-mono font-semibold text-[11.5px] tracking-wide shrink-0 shadow-refero-sm mt-0.5 sm:mt-0">
             {course.code}
@@ -79,11 +85,17 @@ export function CourseCard({ course, defaultExpanded = false }: CourseCardProps)
 
           {/* Center Info */}
           <div className="min-w-0 flex-1">
-            <h3 className="text-[14px] font-semibold text-[#4e080c] dark:text-[#f4f4f5] truncate">
+            <h3 className="text-[14px] font-semibold text-[#4e080c] dark:text-[#f4f4f5] truncate group-hover:text-[#620a0f] dark:group-hover:text-white">
               {course.title.replace(course.code, '').trim() || course.title}
             </h3>
             <p className="text-[12px] text-[#71717A] dark:text-[#a1a1aa] flex items-center gap-2 mt-0.5 flex-wrap">
-              <span>{course.updates_count} discussions</span>
+              <span>{course.sections_count ? `${course.sections_count} sections` : `${course.updates_count} discussions`}</span>
+              {!!course.resources_count && (
+                <>
+                  <span>&bull;</span>
+                  <span>{course.resources_count} resources</span>
+                </>
+              )}
               {updates.length > 0 && updates[0].topic && (
                 <>
                   <span>&bull;</span>
@@ -94,10 +106,18 @@ export function CourseCard({ course, defaultExpanded = false }: CourseCardProps)
               )}
             </p>
           </div>
-        </div>
+        </button>
 
         {/* Right Action Buttons */}
         <div className="flex items-center gap-2 shrink-0">
+          {onOpenDetails && (
+            <button
+              onClick={() => onOpenDetails(course)}
+              className="inline-flex items-center justify-center px-3 py-2 text-[12.5px] font-semibold text-white bg-[#4e080c] hover:bg-[#620a0f] rounded-lg shadow-refero-sm active:scale-[0.98] transition-all min-h-[44px]"
+            >
+              Explore
+            </button>
+          )}
           <a
             href={course.url}
             target="_blank"

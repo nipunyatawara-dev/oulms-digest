@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { LayoutDashboard, GraduationCap, Calendar, AlertCircle, BookOpen } from 'lucide-react';
+import { LayoutDashboard, GraduationCap, Calendar, AlertCircle, BookOpen, BookMarked } from 'lucide-react';
 import { CategoryFilter } from '@/components/CategoryTabs';
 
 interface MobileTabBarProps {
@@ -13,6 +13,7 @@ interface MobileTabBarProps {
   vivaCount?: number;
   deadlinesCount?: number;
   coursesCount?: number;
+  examPrepCount?: number;
 }
 
 export function MobileTabBar({
@@ -24,12 +25,14 @@ export function MobileTabBar({
   vivaCount = 0,
   deadlinesCount = 0,
   coursesCount = 0,
+  examPrepCount = 0,
 }: MobileTabBarProps) {
   const isOverviewActive = activeView === 'Dashboard' && activeTab === 'All';
   const isGradesActive = activeView === 'Dashboard' && activeTab === 'Grades & Marks';
   const isVivaActive = activeView === 'Dashboard' && activeTab === 'Viva & Exam';
   const isDeadlinesActive = activeView === 'Dashboard' && activeTab === 'Deadlines & Quizzes';
   const isCoursesActive = activeView === 'Dashboard' && activeTab === 'Courses';
+  const isExamPrepActive = activeView === 'Dashboard' && activeTab === 'Exam Preparation';
 
   return (
     <nav
@@ -145,7 +148,26 @@ export function MobileTabBar({
           </span>
         </button>
 
-        {/* Tab 5: Enrolled Courses */}
+        {/* Tab 5: Exam Preparation */}
+        <button
+          onClick={() => {
+            onSelectView('Dashboard');
+            onSelectTab('Exam Preparation');
+          }}
+          role="tab"
+          aria-selected={isExamPrepActive}
+          aria-label={`Exam preparation (${examPrepCount} resources)`}
+          className={`relative flex flex-col items-center justify-center flex-1 h-full min-h-[48px] py-1 rounded-xl transition-all active:scale-95 ${
+            isExamPrepActive
+              ? 'text-[#4e080c] font-semibold'
+              : 'text-[#71717A] dark:text-[#a1a1aa] hover:text-[#4e080c] dark:hover:text-[#f4f4f5]'
+          }`}
+        >
+          <BookMarked className={`w-[19px] h-[19px] transition-transform ${isExamPrepActive ? 'scale-110 text-[#4e080c]' : ''}`} />
+          <span className="text-[10px] mt-1 tracking-tight leading-none">Exam</span>
+        </button>
+
+        {/* Tab 6: Enrolled Courses */}
         <button
           onClick={() => {
             onSelectView('Dashboard');

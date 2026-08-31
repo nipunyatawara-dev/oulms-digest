@@ -46,6 +46,63 @@ export interface ForumUpdateItem {
 
 export type CourseUpdate = ForumUpdateItem;
 
+export type CourseResourceKind =
+  | 'file'
+  | 'page'
+  | 'url'
+  | 'forum'
+  | 'assignment'
+  | 'quiz'
+  | 'folder'
+  | 'book'
+  | 'lesson'
+  | 'recording'
+  | 'label'
+  | 'other';
+
+export type CourseSectionCategory =
+  | 'orientation'
+  | 'ils'
+  | 'readings'
+  | 'assessment'
+  | 'project'
+  | 'exam'
+  | 'general';
+
+export type ExamStudyGroup =
+  | 'Course Foundations'
+  | 'ILS Sessions'
+  | 'Core & Additional Reading'
+  | 'Projects & Assessments'
+  | 'Exam & Revision';
+
+export interface CourseResourceItem {
+  id: string;
+  title: string;
+  url: string;
+  kind: CourseResourceKind;
+  description?: string;
+  file_type?: string;
+  availability?: string;
+  icon_alt?: string;
+  section_title?: string;
+  subsection?: string;
+  study_group: ExamStudyGroup;
+  is_exam_relevant: boolean;
+  children?: CourseResourceItem[];
+}
+
+export interface CourseSectionItem {
+  id: string;
+  title: string;
+  summary?: string;
+  index: number;
+  category: CourseSectionCategory;
+  study_group: ExamStudyGroup;
+  resources_count: number;
+  resources: CourseResourceItem[];
+}
+
 export interface CourseItem {
   id: string;
   code: string;
@@ -53,12 +110,17 @@ export interface CourseItem {
   url: string;
   updates_count: number;
   updates: ForumUpdateItem[];
+  sections_count?: number;
+  resources_count?: number;
+  sections?: CourseSectionItem[];
 }
 
 export interface DigestStats {
   total_notifications: number;
   total_courses: number;
   total_updates: number;
+  total_sections?: number;
+  total_resources?: number;
 }
 
 export interface LMSDataPayload {

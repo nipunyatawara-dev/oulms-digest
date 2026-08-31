@@ -6,6 +6,7 @@ import re
 import sys
 import argparse
 from typing import Dict, List, Tuple, Optional
+from urllib.parse import urldefrag, urlparse
 from playwright.async_api import async_playwright
 from state_manager import StateManager
 
@@ -172,6 +173,73 @@ def classify_link_type(url: str) -> str:
         return 'zoom'
     return 'general'
 
+def classify_course_section(text: str) -> str:
+    lower = (text or "").lower()
+    if re.search(r'\b(final\s+exam|exam(?:ination)?|model\s+(?:paper|answer)|past\s+paper|revision|mock\s+exam)\b', lower):
+        return "exam"
+    if re.search(r'\b(mini\s*project|project|capstone)\b', lower):
+        return "project"
+    if re.search(r'\b(assignment|quiz|\boq\b|\bcat\b|\btma\b|assessment|viva|submission)\b', lower):
+        return "assessment"
+    if re.search(r'\bils\s*[-#]?\s*\d+\b|interactive\s+learning\s+session|lecture\s+session', lower):
+        return "ils"
+    if re.search(r'\b(essential|additional|recommended|supplementary|reading|textbook|book|article|paper|presentation|slides?|reference|fundamentals?)\b', lower):
+        return "readings"
+    if re.search(r'\b(introduction|orientation|welcome|announcement|course\s+communication|help\s+wanted|introduce\s+yourself|icebreaker|general\s+information|start\s+here)\b', lower):
+        return "orientation"
+    return "general"
+
+def get_exam_study_group(text: str, section_category: str = "general") -> str:
+    lower = (text or "").lower()
+    if section_category == "exam" or re.search(r'\b(final\s+exam|exam(?:ination)?|model\s+(?:paper|answer)|past\s+paper|revision|mock\s+exam)\b', lower):
+        return "Exam & Revision"
+    if section_category in ("project", "assessment") or re.search(r'\b(mini\s*project|project|assignment|quiz|\boq\b|\bcat\b|\btma\b|assessment|viva|submission)\b', lower):
+        return "Projects & Assessments"
+    if section_category == "ils" or re.search(r'\bils\s*[-#]?\s*\d+\b|interactive\s+learning\s+session|lecture\s+session', lower):
+        return "ILS Sessions"
+    if section_category == "readings" or re.search(r'\b(essential|additional|recommended|supplementary|reading|textbook|book|article|paper|presentation|slides?|reference|fundamentals?)\b', lower):
+        return "Core & Additional Reading"
+    return "Course Foundations"
+
+def classify_course_resource(url: str, title: str = "", hint: str = "") -> str:
+    lower = f"{url} {title} {hint}".lower()
+    if re.search(r'\.(pdf|ppt|pptx|doc|docx|xls|xlsx|csv|zip)(?:\?|$)', lower) or 'pluginfile.php' in lower or '/mod/resource/' in lower:
+        return "file"
+    if '/mod/assign/' in lower:
+        return "assignment"
+    if '/mod/quiz/' in lower:
+        return "quiz"
+    if '/mod/forum/' in lower:
+        return "forum"
+    if '/mod/folder/' in lower:
+        return "folder"
+    if '/mod/book/' in lower:
+        return "book"
+    if '/mod/lesson/' in lower:
+        return "lesson"
+    if re.search(r'\b(recording|recorded|zoom|teams|meet|youtube|video)\b', lower):
+        return "recording"
+    if '/mod/page/' in lower:
+        return "page"
+    if '/mod/url/' in lower:
+        return "url"
+    if not url:
+        return "label"
+    return "other"
+
+def is_exam_relevant_resource(text: str, kind: str, study_group: str) -> bool:
+    lower = (text or "").lower()
+    if study_group != "Course Foundations":
+        return True
+    if re.search(r'\b(announcement|help\s+wanted|introduce\s+yourself|icebreaker|general\s+forum|news\s+forum|attendance|course\s+evaluation|feedback|contact\s+information|start\s+here)\b', lower):
+        return False
+    if kind == "forum":
+        return False
+    return True
+
+def count_course_resources(resources: List[Dict]) -> int:
+    return sum(1 + count_course_resources(resource.get("children", [])) for resource in resources)
+
 def extract_course_code_and_name(text: str, course_map: Dict[str, str], target_codes: List[str] = None) -> Tuple[str, str]:
     targets = target_codes or DEFAULT_TARGET_COURSE_CODES
     for target in targets:
@@ -300,15 +368,20 @@ class OUSLCrawler:
             for i, course in enumerate(courses_list):
                 current_percent = 50 + int((i / max(total_courses, 1)) * 45)
                 log_progress(current_percent, f"Scanning [{i+1}/{total_courses}] {course['code']} — {course['title'][:30]}...")
+                sections = await self._scrape_course_content(page, course)
                 updates = await self._scrape_course_forums(page, course)
                 all_course_updates.extend(updates)
+                resources_count = sum(count_course_resources(section.get("resources", [])) for section in sections)
                 structured_courses.append({
                     "id": course['url'].split("id=")[-1] if "id=" in course['url'] else course['title'],
                     "code": course['code'],
                     "title": course['title'],
                     "url": course['url'],
                     "updates_count": len(updates),
-                    "updates": updates
+                    "updates": updates,
+                    "sections_count": len(sections),
+                    "resources_count": resources_count,
+                    "sections": sections
                 })
 
             await browser.close()
@@ -328,7 +401,9 @@ class OUSLCrawler:
                 "stats": {
                     "total_notifications": len(notifications),
                     "total_courses": len(structured_courses),
-                    "total_updates": len(all_course_updates)
+                    "total_updates": len(all_course_updates),
+                    "total_sections": sum(len(course.get("sections", [])) for course in structured_courses),
+                    "total_resources": sum(course.get("resources_count", 0) for course in structured_courses)
                 },
                 "notifications": notifications,
                 "courses": structured_courses
@@ -444,6 +519,327 @@ class OUSLCrawler:
             if any(t.lower() == code.lower() or t.lower() in c.get('title', '').lower() for t in self.target_courses):
                 filtered.append(c)
         return filtered
+
+    async def _scrape_course_content(self, page, course: Dict) -> List[Dict]:
+        """Capture the complete visible Moodle section/activity hierarchy for a course."""
+        sections = []
+        try:
+            await page.goto(course['url'], wait_until="domcontentloaded", timeout=30000)
+            await page.wait_for_timeout(900)
+
+            raw_sections = await page.evaluate('''() => {
+                const selector = 'li.section, .course-section, [data-sectionid]';
+                const candidates = Array.from(new Set(document.querySelectorAll(selector)));
+                const sectionNodes = candidates.filter((node) =>
+                    !candidates.some((other) => other !== node && other.contains(node))
+                );
+
+                const cleanText = (node) => {
+                    if (!node) return '';
+                    let text = (node.innerText || node.textContent || '');
+                    for (const hidden of node.querySelectorAll('.accesshide, .sr-only')) {
+                        const hiddenText = (hidden.innerText || hidden.textContent || '').trim();
+                        if (hiddenText) text = text.replace(hiddenText, '');
+                    }
+                    return text.replace(/\\s+/g, ' ').trim();
+                };
+
+                const validHref = (anchor) => {
+                    if (!anchor || !anchor.href) return false;
+                    const href = anchor.href;
+                    return !href.startsWith('javascript:') &&
+                        !href.includes('#') &&
+                        !href.includes('/course/view.php') &&
+                        !href.includes('/user/') &&
+                        !href.includes('/login/') &&
+                        !href.includes('/course/modedit.php');
+                };
+
+                return sectionNodes.map((section, sectionIndex) => {
+                    const titleNode = section.querySelector(
+                        'h3.sectionname, .sectionname, [data-for="section_title"] h3, .course-section-header h3, h2.sectionname'
+                    );
+                    const summaryNode = section.querySelector(
+                        '.summary, .section-summary, .description .no-overflow, .content .summarytext'
+                    );
+                    const activityCandidates = Array.from(new Set(section.querySelectorAll(
+                        'li.activity, .activity-item, [data-activityname], .mod-indent-outer'
+                    )));
+                    const activityNodes = activityCandidates.filter((node) =>
+                        !activityCandidates.some((other) => other !== node && other.contains(node))
+                    );
+
+                    let resources = [];
+                    let currentSubsection = '';
+                    for (const activity of activityNodes) {
+                        const isLabel = activity.classList.contains('modtype_label') || activity.classList.contains('label');
+                        const titleEl = activity.querySelector(
+                            '.activityname .instancename, .activity-instance .instancename, [data-region="activity-title"], .activityname, h4'
+                        );
+                        const mainLink = isLabel ? null : activity.querySelector(
+                            '.activityinstance a.aalink, .activityname a, a[href*="/mod/"], a[href*="pluginfile.php"], a[href]'
+                        );
+                        const descriptionEl = activity.querySelector(
+                            '.activity-description, .contentafterlink, .description .no-overflow, .description'
+                        );
+                        const availabilityEl = activity.querySelector('.availabilityinfo, [data-region="availabilityinfo"]');
+                        const icon = activity.querySelector('img.activityicon, .activityiconcontainer img, img.icon');
+                        const activityText = cleanText(activity);
+                        const title = cleanText(titleEl) || cleanText(mainLink) || activityText.split(' ').slice(0, 18).join(' ');
+                        const url = validHref(mainLink) ? mainLink.href : '';
+                        if (isLabel && activityText.length <= 90) {
+                            currentSubsection = activityText;
+                        }
+
+                        if (title || url) {
+                            resources.push({
+                                title,
+                                url,
+                                description: cleanText(descriptionEl) || (isLabel ? activityText : ''),
+                                availability: cleanText(availabilityEl),
+                                iconAlt: icon?.alt || '',
+                                hint: `${activity.className || ''} ${activity.dataset?.activityname || ''}`,
+                                subsection: currentSubsection,
+                            });
+                        }
+
+                        for (const anchor of activity.querySelectorAll('a[href]')) {
+                            if (!validHref(anchor) || anchor.href === url) continue;
+                            const extraTitle = cleanText(anchor);
+                            if (!extraTitle) continue;
+                            resources.push({
+                                title: extraTitle,
+                                url: anchor.href,
+                                description: '',
+                                availability: '',
+                                iconAlt: '',
+                                hint: 'embedded-link',
+                                subsection: currentSubsection,
+                            });
+                        }
+                    }
+
+                    if (activityNodes.length === 0) {
+                        resources = Array.from(section.querySelectorAll('a[href]'))
+                            .filter(validHref)
+                            .map((anchor) => ({
+                                title: cleanText(anchor),
+                                url: anchor.href,
+                                description: '',
+                                availability: '',
+                                iconAlt: '',
+                                hint: 'section-link',
+                                subsection: '',
+                            }))
+                            .filter((item) => item.title);
+                    }
+
+                    return {
+                        id: section.dataset?.sectionid || section.id || `section-${sectionIndex + 1}`,
+                        title: cleanText(titleNode) || `Course Section ${sectionIndex + 1}`,
+                        summary: cleanText(summaryNode),
+                        index: sectionIndex,
+                        resources,
+                    };
+                });
+            }''')
+
+            visited_resource_urls = set()
+            remaining_resource_visits = [1000]
+            for section_index, raw_section in enumerate(raw_sections):
+                section_title = (raw_section.get("title") or f"Course Section {section_index + 1}").strip()
+                section_summary = (raw_section.get("summary") or "").strip()
+                section_category = classify_course_section(f"{section_title} {section_summary}")
+                section_group = get_exam_study_group(f"{section_title} {section_summary}", section_category)
+                resources = []
+                seen_resources = set()
+
+                for resource_index, raw_resource in enumerate(raw_section.get("resources", [])):
+                    title = re.sub(r'\s+', ' ', (raw_resource.get("title") or "")).strip()
+                    url = (raw_resource.get("url") or "").strip()
+                    description = re.sub(r'\s+', ' ', (raw_resource.get("description") or "")).strip()
+                    availability = re.sub(r'\s+', ' ', (raw_resource.get("availability") or "")).strip()
+                    hint = raw_resource.get("hint") or ""
+                    icon_alt = raw_resource.get("iconAlt") or ""
+                    subsection = re.sub(r'\s+', ' ', (raw_resource.get("subsection") or "")).strip()
+                    if not title and not url:
+                        continue
+
+                    dedupe_key = url or f"{section_title}:{title}"
+                    if dedupe_key in seen_resources:
+                        continue
+                    seen_resources.add(dedupe_key)
+
+                    combined_text = f"{section_title} {subsection} {title} {description}"
+                    resource_category = classify_course_section(combined_text)
+                    effective_category = resource_category if resource_category != "general" else section_category
+                    study_group = get_exam_study_group(combined_text, effective_category)
+                    kind = classify_course_resource(url, title, f"{hint} {icon_alt}")
+                    extension_match = re.search(r'\.([A-Za-z0-9]{2,5})(?:\?|$)', url)
+                    is_exam_relevant = is_exam_relevant_resource(combined_text, kind, study_group)
+                    if kind == "label" and subsection and subsection.lower() == title.lower() and description.lower() == title.lower():
+                        is_exam_relevant = False
+
+                    resources.append({
+                        "id": f"{raw_section.get('id') or f'section-{section_index + 1}'}-resource-{resource_index + 1}",
+                        "title": title or "Course resource",
+                        "url": url,
+                        "kind": kind,
+                        "description": description,
+                        "file_type": extension_match.group(1).lower() if extension_match else "",
+                        "availability": availability,
+                        "icon_alt": icon_alt,
+                        "section_title": section_title,
+                        "subsection": subsection,
+                        "study_group": study_group,
+                        "is_exam_relevant": is_exam_relevant,
+                        "children": [],
+                    })
+
+                for resource in resources:
+                    await self._enrich_course_resource(
+                        page,
+                        resource,
+                        visited_urls=visited_resource_urls,
+                        remaining_visits=remaining_resource_visits,
+                    )
+
+                sections.append({
+                    "id": raw_section.get("id") or f"section-{section_index + 1}",
+                    "title": section_title,
+                    "summary": section_summary,
+                    "index": raw_section.get("index", section_index),
+                    "category": section_category,
+                    "study_group": section_group,
+                    "resources_count": count_course_resources(resources),
+                    "resources": resources,
+                })
+
+        except Exception as e:
+            print(f"[!] Error indexing course content for {course.get('code', course.get('title', 'course'))}: {e}")
+
+        return sections
+
+    async def _enrich_course_resource(
+        self,
+        page,
+        resource: Dict,
+        visited_urls: set,
+        remaining_visits: List[int],
+    ) -> None:
+        """Visit Moodle container activities and attach nested files, chapters, and links."""
+        url = (resource.get("url") or "").strip()
+        navigation_url = urldefrag(url).url
+        kind = resource.get("kind") or "other"
+        if (
+            not navigation_url
+            or navigation_url in visited_urls
+            or remaining_visits[0] <= 0
+            or urlparse(navigation_url).hostname != "oulms.ou.ac.lk"
+            or kind not in {"folder", "book", "page", "lesson", "assignment", "quiz", "forum", "other"}
+        ):
+            return
+
+        visited_urls.add(navigation_url)
+        remaining_visits[0] -= 1
+        try:
+            await page.goto(navigation_url, wait_until="domcontentloaded", timeout=25000)
+            await page.wait_for_timeout(350)
+            details = await page.evaluate('''() => {
+                const cleanText = (node) => (node?.innerText || node?.textContent || '')
+                    .replace(/\\s+/g, ' ')
+                    .trim();
+                const main = document.querySelector('#region-main, [role="main"], main');
+                if (!main) return { summary: '', children: [] };
+
+                const contentSelectors = [
+                    '.foldertree', '.book_content', '.book_toc', '.no-overflow',
+                    '.activity-description', '.assignintro', '.quizinfo',
+                    '.resourceworkaround', '.lesson-content', '.forum-post-container'
+                ];
+                const contentNodes = contentSelectors.flatMap((selector) =>
+                    Array.from(main.querySelectorAll(selector))
+                );
+                const summaryNode = contentNodes.find((node) => cleanText(node).length > 0);
+                const summary = cleanText(summaryNode).slice(0, 1800);
+                const currentUrl = new URL(location.href);
+                const isBookChapter = location.pathname.includes('/mod/book/') && currentUrl.searchParams.has('chapterid');
+
+                const anchors = Array.from(new Set([
+                    ...main.querySelectorAll('a[href]'),
+                    ...(isBookChapter ? [] : document.querySelectorAll('.book_toc a[href]'))
+                ]));
+                const children = anchors.filter((anchor) => {
+                    const href = anchor.href || '';
+                    if (!href || href.startsWith('javascript:') || href.split('#')[0] === location.href.split('#')[0]) return false;
+                    if (anchor.closest('nav, .breadcrumb, .activity-navigation, .secondary-navigation, .dropdown-menu, [data-region="drawer"]')) return false;
+                    if (isBookChapter && anchor.closest('.book_toc')) return false;
+                    if (/\\/(login|user|calendar|message|grade|admin)\\//.test(href)) return false;
+                    const inContent = contentSelectors.some((selector) => anchor.closest(selector));
+                    return href.includes('pluginfile.php') ||
+                        href.includes('/mod/forum/discuss.php') ||
+                        href.includes('/mod/book/view.php') ||
+                        (inContent && !href.includes('/course/view.php'));
+                }).map((anchor) => ({
+                    title: cleanText(anchor) || anchor.getAttribute('download') || 'Nested course resource',
+                    url: anchor.href,
+                    hint: `${anchor.className || ''} nested-resource`,
+                }));
+
+                return { summary, children };
+            }''')
+
+            detail_summary = re.sub(r'\s+', ' ', (details.get("summary") or "")).strip()
+            if detail_summary and not resource.get("description"):
+                resource["description"] = detail_summary
+
+            nested_resources = []
+            seen_urls = set()
+            for child_index, child in enumerate(details.get("children", [])):
+                child_url = (child.get("url") or "").strip()
+                normalized_child_url = urldefrag(child_url).url
+                child_title = re.sub(r'\s+', ' ', (child.get("title") or "Nested course resource")).strip()
+                if not normalized_child_url or normalized_child_url in seen_urls or normalized_child_url == navigation_url:
+                    continue
+                seen_urls.add(normalized_child_url)
+
+                section_title = resource.get("section_title") or ""
+                subsection = resource.get("subsection") or ""
+                combined_text = f"{section_title} {subsection} {resource.get('title', '')} {child_title}"
+                child_category = classify_course_section(combined_text)
+                child_group = (
+                    get_exam_study_group(combined_text, child_category)
+                    if child_category != "general"
+                    else resource.get("study_group", "Course Foundations")
+                )
+                child_kind = classify_course_resource(normalized_child_url, child_title, child.get("hint") or "")
+                extension_match = re.search(r'\.([A-Za-z0-9]{2,5})(?:\?|$)', normalized_child_url)
+                child_resource = {
+                    "id": f"{resource.get('id', 'resource')}-child-{child_index + 1}",
+                    "title": child_title,
+                    "url": normalized_child_url,
+                    "kind": child_kind,
+                    "description": "",
+                    "file_type": extension_match.group(1).lower() if extension_match else "",
+                    "availability": "",
+                    "icon_alt": "",
+                    "section_title": section_title,
+                    "subsection": subsection,
+                    "study_group": child_group,
+                    "is_exam_relevant": is_exam_relevant_resource(combined_text, child_kind, child_group),
+                    "children": [],
+                }
+                await self._enrich_course_resource(
+                    page,
+                    child_resource,
+                    visited_urls=visited_urls,
+                    remaining_visits=remaining_visits,
+                )
+                nested_resources.append(child_resource)
+
+            resource["children"] = nested_resources
+        except Exception as e:
+            print(f"[!] Could not inspect nested resource {resource.get('title', url)}: {e}")
 
     async def _scrape_notifications(self, page) -> List[Dict]:
         notifications = []
@@ -804,6 +1200,10 @@ if __name__ == "__main__":
     if args.discover:
         result = asyncio.run(crawler.discover_courses())
         print(json.dumps(result, indent=2))
+        if not result.get("success"):
+            sys.exit(1)
     else:
-        asyncio.run(crawler.run())
-
+        result = asyncio.run(crawler.run())
+        if not result.get("success"):
+            print(json.dumps(result, indent=2), file=sys.stderr)
+            sys.exit(1)
