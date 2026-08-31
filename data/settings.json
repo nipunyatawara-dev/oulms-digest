@@ -6,7 +6,7 @@
   "evening_time": "22:00",
   "auto_sync_enabled": true,
   "auto_sync_on_save": true,
-  "last_sync_timestamp": "2026-08-31T17:51:35.679451",
+  "last_sync_timestamp": "2026-08-31T19:14:01.659587",
   "selected_courses": [
     "AGM4367",
     "EEI4267",
@@ -16,5 +16,106 @@
     "EER4189",
     "BSE"
   ],
-  "discovered_courses": []
+  "discovered_courses": [
+    {
+      "code": "AGM4367",
+      "title": "AGM4367 Economics and Marketing for Engineering",
+      "url": "https://oulms.ou.ac.lk/course/view.php?id=3361"
+    },
+    {
+      "code": "BSE",
+      "title": "BSE Learner Support 2024/2025",
+      "url": "https://oulms.ou.ac.lk/course/view.php?id=3430"
+    },
+    {
+      "code": "EEI3346",
+      "title": "EEI3346 Web Application Development",
+      "url": "https://oulms.ou.ac.lk/course/view.php?id=1481"
+    },
+    {
+      "code": "EEI4267",
+      "title": "EEI4267 Requirement Engineering",
+      "url": "https://oulms.ou.ac.lk/course/view.php?id=3435"
+    },
+    {
+      "code": "EEI4360",
+      "title": "EEI4360 Introduction to Artificial Intelligence",
+      "url": "https://oulms.ou.ac.lk/course/view.php?id=3436"
+    },
+    {
+      "code": "EEI4361",
+      "title": "EEI4361 User Experience Engineering",
+      "url": "https://oulms.ou.ac.lk/course/view.php?id=3439"
+    },
+    {
+      "code": "EEI4362",
+      "title": "EEI4362 Object Oriented Design",
+      "url": "https://oulms.ou.ac.lk/course/view.php?id=3440"
+    },
+    {
+      "code": "EER4189",
+      "title": "EER4189 Software Design in Group",
+      "url": "https://oulms.ou.ac.lk/course/view.php?id=3478"
+    },
+    {
+      "code": "FET2025",
+      "title": "FET2025 Common Forum - Faculty of Engineering Technology",
+      "url": "https://oulms.ou.ac.lk/course/view.php?id=3573"
+    },
+    {
+      "code": "BSE2024",
+      "title": "BSE2024_2025",
+      "url": "https://oulms.ou.ac.lk/course/view.php?id=1831"
+    },
+    {
+      "code": "FDE3022",
+      "title": "FDE3022_2024",
+      "url": "https://oulms.ou.ac.lk/course/view.php?id=1821"
+    },
+    {
+      "code": "AGM3263",
+      "title": "AGM3263_2024",
+      "url": "https://oulms.ou.ac.lk/course/view.php?id=1466"
+    },
+    {
+      "code": "EEI3262",
+      "title": "EEI3262_2024",
+      "url": "https://oulms.ou.ac.lk/course/view.php?id=1468"
+    },
+    {
+      "code": "EEI3266",
+      "title": "EEI3266_2024",
+      "url": "https://oulms.ou.ac.lk/course/view.php?id=1471"
+    },
+    {
+      "code": "EEI3269",
+      "title": "EEI3269_2024",
+      "url": "https://oulms.ou.ac.lk/course/view.php?id=1480"
+    },
+    {
+      "code": "EEI3372",
+      "title": "EEI3372_2024",
+      "url": "https://oulms.ou.ac.lk/course/view.php?id=1482"
+    },
+    {
+      "code": "EEI4346",
+      "title": "EEI4346_2024",
+      "url": "https://oulms.ou.ac.lk/course/view.php?id=1484"
+    },
+    {
+      "code": "EEX3373",
+      "title": "EEX3373_2024",
+      "url": "https://oulms.ou.ac.lk/course/view.php?id=1510"
+    },
+    {
+      "code": "EEX3467",
+      "title": "EEX3467_2024",
+      "url": "https://oulms.ou.ac.lk/course/view.php?id=1512"
+    },
+    {
+      "code": "MHZ3459",
+      "title": "MHZ3459_2024_1",
+      "url": "https://oulms.ou.ac.lk/course/view.php?id=2131"
+    }
+  ]
 }
