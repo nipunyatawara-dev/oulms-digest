@@ -240,6 +240,40 @@ def is_exam_relevant_resource(text: str, kind: str, study_group: str) -> bool:
 def count_course_resources(resources: List[Dict]) -> int:
     return sum(1 + count_course_resources(resource.get("children", [])) for resource in resources)
 
+def sanitize_digest_payload(payload: Dict) -> Dict:
+    """Ensures nested children and string sizes remain compact and within safety bounds."""
+    courses = payload.get("courses", [])
+    total_resources = 0
+    total_sections = 0
+
+    for course in courses:
+        sections = course.get("sections", [])
+        total_sections += len(sections)
+        for section in sections:
+            sanitized_resources = []
+            for res in section.get("resources", []):
+                res_copy = dict(res)
+                clean_children = []
+                for child in res_copy.get("children", [])[:50]:
+                    child_copy = dict(child)
+                    child_copy["children"] = []
+                    url = child_copy.get("url", "")
+                    if "o=" in url or "/mod/forum/" in url or "p=" in url:
+                        continue
+                    clean_children.append(child_copy)
+                res_copy["children"] = clean_children
+                sanitized_resources.append(res_copy)
+            section["resources"] = sanitized_resources
+            section["resources_count"] = count_course_resources(sanitized_resources)
+        course["resources_count"] = sum(s.get("resources_count", 0) for s in sections)
+        total_resources += course["resources_count"]
+
+    if "stats" in payload:
+        payload["stats"]["total_resources"] = total_resources
+        payload["stats"]["total_sections"] = total_sections
+
+    return payload
+
 def extract_course_code_and_name(text: str, course_map: Dict[str, str], target_codes: List[str] = None) -> Tuple[str, str]:
     targets = target_codes or DEFAULT_TARGET_COURSE_CODES
     for target in targets:
@@ -434,6 +468,8 @@ class OUSLCrawler:
                 "available_courses": all_enrolled_courses,
             }
 
+            payload = sanitize_digest_payload(payload)
+
             # Save to lms_data.json
             with open(LMS_DATA_FILE, "w", encoding="utf-8") as f:
                 json.dump(payload, f, indent=2)
@@ -448,55 +484,70 @@ class OUSLCrawler:
             log_progress(100, f"Sync complete in {duration_sec}s! {len(notifications)} alerts & {len(all_course_updates)} updates loaded.")
             return payload
 
-    async def _login(self, page) -> bool:
-        try:
-            await page.goto(LOGIN_URL, wait_until="domcontentloaded", timeout=45000)
-            
-            iam_btn = await page.query_selector('a:has-text("IAM OUSL LMS USER"), a[href*="oauth2"]')
-            if iam_btn:
-                await iam_btn.click()
+    async def _login(self, page, max_attempts: int = 3) -> bool:
+        for attempt in range(1, max_attempts + 1):
+            try:
+                if attempt > 1:
+                    log_progress(10, f"Retrying connection to OUSL IAM Keycloak server (attempt {attempt}/{max_attempts})...")
+                await page.goto(LOGIN_URL, wait_until="domcontentloaded", timeout=45000)
+                
+                iam_btn = await page.query_selector('a:has-text("IAM OUSL LMS USER"), a[href*="oauth2"]')
+                if iam_btn:
+                    await iam_btn.click()
+                    await page.wait_for_load_state("domcontentloaded", timeout=45000)
+
+                username_input = await page.wait_for_selector('input[name="username"], input#username', timeout=15000)
+                password_input = await page.wait_for_selector('input[name="password"], input#password', timeout=15000)
+
+                if not username_input or not password_input:
+                    if attempt < max_attempts:
+                        await asyncio.sleep(4)
+                        continue
+                    return False
+
+                await username_input.fill(self.username)
+                await password_input.fill(self.password)
+
+                submit_btn = await page.query_selector('input[type="submit"], button[type="submit"], input#kc-login')
+                if submit_btn:
+                    await submit_btn.click()
+                else:
+                    await page.keyboard.press("Enter")
+
                 await page.wait_for_load_state("domcontentloaded", timeout=45000)
+                await page.wait_for_timeout(1500)
 
-            username_input = await page.wait_for_selector('input[name="username"], input#username', timeout=15000)
-            password_input = await page.wait_for_selector('input[name="password"], input#password', timeout=15000)
+                # A rejected IAM login remains on the IAM host. Older logic treated that
+                # page as success simply because it was no longer the Moodle login URL.
+                # Verify access to an authenticated Moodle page before continuing.
+                await page.goto(COURSES_URL, wait_until="domcontentloaded", timeout=45000)
+                await page.wait_for_timeout(1200)
+                parsed_url = urlparse(page.url)
+                is_logged_in = await page.evaluate('''() =>
+                    document.body?.classList.contains('loggedin') ||
+                    Boolean(document.querySelector('[data-region="usermenu"], .usermenu, .userbutton'))
+                ''')
+                if (
+                    parsed_url.hostname != "oulms.ou.ac.lk"
+                    or parsed_url.path.startswith("/login/")
+                    or not is_logged_in
+                ):
+                    if attempt < max_attempts:
+                        print(f"[!] Login verification failed on attempt {attempt}, retrying...")
+                        await asyncio.sleep(4)
+                        continue
+                    return False
 
-            if not username_input or not password_input:
+                return True
+
+            except Exception as e:
+                print(f"[!] Error during login attempt {attempt}: {e}")
+                if attempt < max_attempts:
+                    await asyncio.sleep(4)
+                    continue
                 return False
 
-            await username_input.fill(self.username)
-            await password_input.fill(self.password)
-
-            submit_btn = await page.query_selector('input[type="submit"], button[type="submit"], input#kc-login')
-            if submit_btn:
-                await submit_btn.click()
-            else:
-                await page.keyboard.press("Enter")
-
-            await page.wait_for_load_state("domcontentloaded", timeout=45000)
-            await page.wait_for_timeout(1500)
-
-            # A rejected IAM login remains on the IAM host. Older logic treated that
-            # page as success simply because it was no longer the Moodle login URL.
-            # Verify access to an authenticated Moodle page before continuing.
-            await page.goto(COURSES_URL, wait_until="domcontentloaded", timeout=45000)
-            await page.wait_for_timeout(1200)
-            parsed_url = urlparse(page.url)
-            is_logged_in = await page.evaluate('''() =>
-                document.body?.classList.contains('loggedin') ||
-                Boolean(document.querySelector('[data-region="usermenu"], .usermenu, .userbutton'))
-            ''')
-            if (
-                parsed_url.hostname != "oulms.ou.ac.lk"
-                or parsed_url.path.startswith("/login/")
-                or not is_logged_in
-            ):
-                return False
-
-            return True
-
-        except Exception as e:
-            print(f"[!] Error during login: {e}")
-            return False
+        return False
 
     async def _scrape_all_enrolled_courses(self, page) -> List[Dict]:
         """Scrapes all enrolled courses without filtering."""
@@ -690,7 +741,7 @@ class OUSLCrawler:
             }''')
 
             visited_resource_urls = set()
-            remaining_resource_visits = [1000]
+            remaining_resource_visits = [25]
             for section_index, raw_section in enumerate(raw_sections):
                 section_title = (raw_section.get("title") or f"Course Section {section_index + 1}").strip()
                 section_summary = (raw_section.get("summary") or "").strip()
@@ -747,6 +798,8 @@ class OUSLCrawler:
                         resource,
                         visited_urls=visited_resource_urls,
                         remaining_visits=remaining_resource_visits,
+                        depth=0,
+                        max_depth=1,
                     )
 
                 sections.append({
@@ -771,8 +824,13 @@ class OUSLCrawler:
         resource: Dict,
         visited_urls: set,
         remaining_visits: List[int],
+        depth: int = 0,
+        max_depth: int = 1,
     ) -> None:
         """Visit Moodle container activities and attach nested files, chapters, and links."""
+        if depth >= max_depth:
+            return
+
         url = (resource.get("url") or "").strip()
         navigation_url = urldefrag(url).url
         kind = resource.get("kind") or "other"
@@ -781,7 +839,7 @@ class OUSLCrawler:
             or navigation_url in visited_urls
             or remaining_visits[0] <= 0
             or urlparse(navigation_url).hostname != "oulms.ou.ac.lk"
-            or kind not in {"folder", "book", "page", "lesson", "assignment", "quiz", "forum", "other"}
+            or kind not in {"folder", "book", "page", "lesson", "assignment"}
         ):
             return
 
@@ -800,7 +858,7 @@ class OUSLCrawler:
                 const contentSelectors = [
                     '.foldertree', '.book_content', '.book_toc', '.no-overflow',
                     '.activity-description', '.assignintro', '.quizinfo',
-                    '.resourceworkaround', '.lesson-content', '.forum-post-container'
+                    '.resourceworkaround', '.lesson-content'
                 ];
                 const contentNodes = contentSelectors.flatMap((selector) =>
                     Array.from(main.querySelectorAll(selector))
@@ -817,15 +875,15 @@ class OUSLCrawler:
                 const children = anchors.filter((anchor) => {
                     const href = anchor.href || '';
                     if (!href || href.startsWith('javascript:') || href.split('#')[0] === location.href.split('#')[0]) return false;
-                    if (anchor.closest('nav, .breadcrumb, .activity-navigation, .secondary-navigation, .dropdown-menu, [data-region="drawer"]')) return false;
+                    if (anchor.closest('nav, .breadcrumb, .activity-navigation, .secondary-navigation, .dropdown-menu, [data-region="drawer"], .pagination, .table-pagination, [data-region="paging-control"]')) return false;
                     if (isBookChapter && anchor.closest('.book_toc')) return false;
-                    if (/\\/(login|user|calendar|message|grade|admin)\\//.test(href)) return false;
+                    if (/\\/(login|user|calendar|message|grade|admin|mod\\/forum)\\//.test(href)) return false;
+                    if (/[?&](o|p)=\\d+/.test(href)) return false;
                     const inContent = contentSelectors.some((selector) => anchor.closest(selector));
                     return href.includes('pluginfile.php') ||
-                        href.includes('/mod/forum/discuss.php') ||
                         href.includes('/mod/book/view.php') ||
                         (inContent && !href.includes('/course/view.php'));
-                }).map((anchor) => ({
+                }).slice(0, 50).map((anchor) => ({
                     title: cleanText(anchor) || anchor.getAttribute('download') || 'Nested course resource',
                     url: anchor.href,
                     hint: `${anchor.className || ''} nested-resource`,
@@ -874,15 +932,18 @@ class OUSLCrawler:
                     "is_exam_relevant": is_exam_relevant_resource(combined_text, child_kind, child_group),
                     "children": [],
                 }
-                await self._enrich_course_resource(
-                    page,
-                    child_resource,
-                    visited_urls=visited_urls,
-                    remaining_visits=remaining_visits,
-                )
+                if depth + 1 < max_depth and child_kind == "book":
+                    await self._enrich_course_resource(
+                        page,
+                        child_resource,
+                        visited_urls=visited_urls,
+                        remaining_visits=remaining_visits,
+                        depth=depth + 1,
+                        max_depth=max_depth,
+                    )
                 nested_resources.append(child_resource)
 
-            resource["children"] = nested_resources
+            resource["children"] = nested_resources[:50]
         except Exception as e:
             print(f"[!] Could not inspect nested resource {resource.get('title', url)}: {e}")
 
