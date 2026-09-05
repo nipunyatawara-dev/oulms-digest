@@ -57,7 +57,7 @@ export async function getCloudSyncStatus(repo: string, token: string, runId: str
     if (run.conclusion !== 'success') {
       return { ...base, type: 'error', progress: 0, message: `The crawl ${run.conclusion === 'cancelled' ? 'was cancelled' : `ended with ${run.conclusion || 'an unknown result'}`}. Your last successful digest is still available. Check the run details.` };
     }
-    if (data?.github_run_id === runId && data.success) {
+    if (data?.github_run_id === runId && data.success && String(data.github_run_attempt || '1') === String(run.run_attempt || 1)) {
       return { ...base, type: 'done', progress: 100, message: `Sync complete. ${data.stats.total_courses} courses updated and available on this site.` };
     }
     if (Date.now() - Date.parse(run.updated_at) > 15 * 60 * 1000) {

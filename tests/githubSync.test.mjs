@@ -76,6 +76,13 @@ test('failed, cancelled and timed out workflows never report success', async () 
   }
 });
 
+test('rerunning a workflow waits for the new attempt to publish', async () => {
+  mock([{ ...run, run_attempt: 2 }]);
+  assert.equal((await getCloudSyncStatus(repo, 'fake', runId, digest)).type, 'progress');
+  mock([{ ...run, run_attempt: 2 }]);
+  assert.equal((await getCloudSyncStatus(repo, 'fake', runId, { ...digest, github_run_attempt: '2' })).type, 'done');
+});
+
 test('stalled deployment gives actionable status, not a false success', async () => {
   mock([{ ...run, updated_at: new Date(Date.now() - 16 * 60 * 1000).toISOString() }]);
   const result = await getCloudSyncStatus(repo, 'fake', runId, null);

@@ -452,6 +452,7 @@ class OUSLCrawler:
                 "success": True,
                 "synced_at": end_time.isoformat(),
                 "github_run_id": os.getenv("GITHUB_RUN_ID", ""),
+                "github_run_attempt": os.getenv("GITHUB_RUN_ATTEMPT", "1"),
                 "duration_seconds": duration_sec,
                 "stats": {
                     "total_notifications": len(notifications),
