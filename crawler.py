@@ -445,16 +445,13 @@ class OUSLCrawler:
             await browser.close()
 
             log_progress(95, "Finalizing and saving academic digest...")
-            # Save seen state
-            if self.state_manager:
-                self.state_manager.save()
-
             end_time = datetime.datetime.now()
             duration_sec = round((end_time - start_time).total_seconds(), 1)
 
             payload = {
                 "success": True,
                 "synced_at": end_time.isoformat(),
+                "github_run_id": os.getenv("GITHUB_RUN_ID", ""),
                 "duration_seconds": duration_sec,
                 "stats": {
                     "total_notifications": len(notifications),
@@ -473,6 +470,9 @@ class OUSLCrawler:
             # Save to lms_data.json
             with open(LMS_DATA_FILE, "w", encoding="utf-8") as f:
                 json.dump(payload, f, indent=2)
+
+            if self.state_manager:
+                self.state_manager.save()
 
             # Update last_sync_timestamp in settings.json
             settings = load_settings()

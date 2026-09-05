@@ -5,6 +5,7 @@ data/local_secrets.json
 __pycache__/
 *.pyc
 seen_items.json
+!data/seen_items.json
 *.png
 .DS_Store
 node_modules/

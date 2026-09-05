@@ -126,6 +126,7 @@ export interface DigestStats {
 export interface LMSDataPayload {
   success: boolean;
   synced_at: string;
+  github_run_id?: string;
   duration_seconds: number;
   stats: DigestStats;
   notifications: NotificationItem[];

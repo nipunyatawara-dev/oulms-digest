@@ -2,8 +2,10 @@ import { NextRequest, NextResponse } from 'next/server';
 import { spawn } from 'child_process';
 import path from 'path';
 import fs from 'fs';
-import { getLMSData, getSettings } from '@/lib/dataStore';
+import { getClientSettings, getLMSData, getSettings } from '@/lib/dataStore';
 import { explainPythonFailure, resolveProjectPython } from '@/lib/pythonRuntime';
+
+import { dispatchCloudSync } from '@/lib/githubSync';
 
 export const dynamic = 'force-dynamic';
 
@@ -40,61 +42,8 @@ export async function GET(req: NextRequest) {
         });
 
         try {
-          sendEvent({
-            type: 'progress',
-            progress: 30,
-            message: `Dispatching crawler workflow on ${githubRepo}...`,
-          });
-
-          const inputs: Record<string, string> = {};
           const selectedCourses = requestedCourses?.length ? requestedCourses : settings?.selected_courses;
-          if (selectedCourses && selectedCourses.length > 0) {
-            inputs.selected_courses = selectedCourses.join(',');
-          }
-
-          const res = await fetch(
-            `https://api.github.com/repos/${githubRepo}/actions/workflows/lms_check.yml/dispatches`,
-            {
-              method: 'POST',
-              headers: {
-                Authorization: `Bearer ${githubToken}`,
-                Accept: 'application/vnd.github.v3+json',
-                'User-Agent': 'OUSL-LMS-Digest',
-              },
-              body: JSON.stringify({
-                ref: 'main',
-                ...(Object.keys(inputs).length > 0 ? { inputs } : {}),
-              }),
-            }
-          );
-
-          if (res.ok || res.status === 204) {
-            const courseCount = settings?.selected_courses?.length || 7;
-            sendEvent({
-              type: 'progress',
-              progress: 75,
-              message: `GitHub Actions crawler started! Indexing your ${courseCount} selected courses in the cloud...`,
-            });
-
-            // Wait a brief moment to confirm dispatch
-            await new Promise((r) => setTimeout(r, 1500));
-
-            sendEvent({
-              type: 'done',
-              success: true,
-              progress: 100,
-              message: 'Crawl initiated on GitHub Actions. Data will update and auto-deploy upon completion!',
-              data: getLMSData(),
-              settings: getSettings(),
-            });
-          } else {
-            const errorText = await res.text();
-            sendEvent({
-              type: 'error',
-              success: false,
-              message: `GitHub API error (${res.status}): ${errorText || 'Failed to dispatch workflow'}`,
-            });
-          }
+          sendEvent(await dispatchCloudSync(githubRepo, githubToken, selectedCourses));
         } catch (err) {
           sendEvent({
             type: 'error',
@@ -186,7 +135,7 @@ export async function GET(req: NextRequest) {
         proc.on('close', (code) => {
           if (code === 0) {
             const freshData = getLMSData();
-            const settings = getSettings();
+            const settings = getClientSettings();
             sendEvent({
               type: 'done',
               success: true,
@@ -234,41 +183,13 @@ export async function GET(req: NextRequest) {
 }
 
 export async function POST() {
-  const githubToken = process.env.GITHUB_TOKEN || process.env.GH_TOKEN;
-  const githubRepo = process.env.GITHUB_REPOSITORY || DEFAULT_REPO;
-
-  if (githubToken) {
-    try {
-      const res = await fetch(
-        `https://api.github.com/repos/${githubRepo}/actions/workflows/lms_check.yml/dispatches`,
-        {
-          method: 'POST',
-          headers: {
-            Authorization: `Bearer ${githubToken}`,
-            Accept: 'application/vnd.github.v3+json',
-            'User-Agent': 'OUSL-LMS-Digest',
-          },
-          body: JSON.stringify({ ref: 'main' }),
-        }
-      );
-
-      if (res.ok || res.status === 204) {
-        return NextResponse.json({
-          success: true,
-          message: 'GitHub Actions crawler dispatched successfully',
-        });
-      }
-    } catch (e) {
-      console.error('Error dispatching GitHub Actions:', e);
-    }
+  const token = process.env.GITHUB_TOKEN || process.env.GH_TOKEN;
+  const settings = getSettings();
+  const repo = process.env.GITHUB_REPOSITORY || settings.github_repo || DEFAULT_REPO;
+  if (!token) return NextResponse.json({ error: 'GitHub token is not configured.' }, { status: 503 });
+  try {
+    return NextResponse.json(await dispatchCloudSync(repo, token, settings.selected_courses), { status: 202 });
+  } catch (error) {
+    return NextResponse.json({ error: error instanceof Error ? error.message : 'Unable to start the crawl.' }, { status: 502 });
   }
-
-  return NextResponse.json(
-    {
-      success: false,
-      error:
-        'Serverless execution requires GITHUB_TOKEN to trigger GitHub Actions. Automated crawls run 3x daily.',
-    },
-    { status: 400 }
-  );
 }

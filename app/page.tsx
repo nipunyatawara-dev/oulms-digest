@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { Header } from '@/components/Header';
 import { Sidebar } from '@/components/Sidebar';
 import { CategoryFilter } from '@/components/CategoryTabs';
@@ -149,123 +149,155 @@ export default function DashboardPage() {
     return () => clearInterval(timer);
   }, []);
 
+  const syncSource = useRef<EventSource | null>(null);
+  const syncMonitor = useRef<AbortController | null>(null);
+  const lastSyncMessage = useRef('');
+  const [syncRunUrl, setSyncRunUrl] = useState<string | undefined>();
+  const pendingSyncKey = 'oulms-pending-cloud-sync';
+
+  type SyncEvent = {
+    type: 'start' | 'progress' | 'queued' | 'done' | 'error';
+    message: string;
+    progress?: number;
+    runId?: string;
+    runUrl?: string;
+    data?: LMSDataPayload;
+    settings?: UserSettings;
+  };
+
+  const applySyncEvent = (payload: SyncEvent) => {
+    if (payload.runUrl) setSyncRunUrl(payload.runUrl);
+    setCurrentSyncMessage(payload.message);
+    if (payload.progress !== undefined) setSyncProgress(payload.type === 'done' ? 100 : Math.min(payload.progress, 95));
+    if (lastSyncMessage.current !== payload.message) {
+      lastSyncMessage.current = payload.message;
+      setSyncLogs((prev) => [...prev, {
+        id: `log-${Date.now()}-${Math.random()}`,
+        time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' }),
+        message: payload.message,
+        progress: payload.progress ?? 0,
+        type: payload.type === 'done' ? 'done' : payload.type === 'error' ? 'error' : 'step',
+      }]);
+    }
+    if (payload.type === 'done' || payload.type === 'error') {
+      setIsSyncing(false);
+      setIsSyncComplete(payload.type === 'done');
+      setIsSyncError(payload.type === 'error');
+      localStorage.removeItem(pendingSyncKey);
+      syncSource.current?.close();
+      syncSource.current = null;
+    }
+    if (payload.type === 'done') {
+      setSyncProgress(100);
+      if (payload.data) setData(payload.data);
+      if (payload.settings) setSettings((current) => ({
+        ...payload.settings!,
+        selected_courses: current?.selected_courses || payload.settings!.selected_courses,
+      }));
+    }
+  };
+
+  const monitorCloudSync = async (runId: string, startedAt = Date.now()) => {
+    syncMonitor.current?.abort();
+    const controller = new AbortController();
+    syncMonitor.current = controller;
+    localStorage.setItem(pendingSyncKey, JSON.stringify({ runId, startedAt }));
+    let failures = 0;
+    while (!controller.signal.aborted) {
+      if (Date.now() - startedAt > 45 * 60 * 1000) {
+        applySyncEvent({ type: 'error', message: 'Status tracking timed out. The crawl may still be queued or running; check its run details before starting another sync.' });
+        return;
+      }
+      try {
+        const response = await fetch(`/api/sync/status?runId=${encodeURIComponent(runId)}`, {
+          cache: 'no-store', signal: AbortSignal.any([controller.signal, AbortSignal.timeout(25000)]),
+        });
+        const payload = await response.json();
+        if (!response.ok) throw new Error(payload.error || `Unable to check status (HTTP ${response.status}).`);
+        failures = 0;
+        applySyncEvent(payload);
+        if (payload.type === 'done' || payload.type === 'error') return;
+      } catch (error) {
+        if (controller.signal.aborted) return;
+        failures += 1;
+        if (failures >= 3) {
+          applySyncEvent({ type: 'error', message: `Could not confirm the crawl status. ${error instanceof Error ? error.message : ''} Check its run details before retrying.` });
+          return;
+        }
+        applySyncEvent({ type: 'progress', message: 'Status connection interrupted. Reconnecting to the existing crawl...' });
+      }
+      await new Promise<void>((resolve) => {
+        const finish = () => { clearTimeout(timer); controller.signal.removeEventListener('abort', finish); resolve(); };
+        const timer = setTimeout(finish, 10000);
+        controller.signal.addEventListener('abort', finish, { once: true });
+      });
+    }
+  };
+
+  useEffect(() => {
+    const pending = localStorage.getItem(pendingSyncKey);
+    if (pending) {
+      try {
+        const { runId, startedAt } = JSON.parse(pending);
+        if (!/^\d+$/.test(runId) || !Number.isFinite(startedAt)) throw new Error('Invalid saved sync');
+        setIsSyncing(true);
+        setIsDrawerOpen(true);
+        setIsDrawerMinimized(true);
+        setSyncProgress(10);
+        setCurrentSyncMessage('Reconnecting to your existing crawl...');
+        void monitorCloudSync(runId, startedAt);
+      } catch {
+        localStorage.removeItem(pendingSyncKey);
+      }
+    }
+    return () => { syncSource.current?.close(); syncMonitor.current?.abort(); };
+  }, []);
+
   const handleSyncNow = (selectionOverride?: string[]) => {
     if (isSyncing) {
       setIsDrawerOpen(true);
       setIsDrawerMinimized(false);
       return;
     }
-
     const selectedForCrawl = selectionOverride || settings?.selected_courses;
-    if (selectedForCrawl && selectedForCrawl.length === 0) {
-      setIsDrawerOpen(true);
-      setIsDrawerMinimized(false);
-      setIsSyncError(true);
-      setIsSyncComplete(false);
-      setCurrentSyncMessage('Select at least one course before starting a crawl.');
-      setSyncLogs([{
-        id: `log-${Date.now()}`,
-        time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' }),
-        message: 'Select at least one course before starting a crawl.',
-        progress: 0,
-        type: 'error',
-      }]);
-      return;
-    }
-
-    setIsSyncing(true);
     setIsDrawerOpen(true);
     setIsDrawerMinimized(false);
-    setSyncProgress(5);
-    setCurrentSyncMessage('Connecting to OUSL IAM Keycloak server...');
     setIsSyncComplete(false);
     setIsSyncError(false);
-
-    const initialLog: SyncLogItem = {
-      id: `log-${Date.now()}`,
-      time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' }),
-      message: 'Started on-demand academic crawl',
-      progress: 5,
-      type: 'step',
-    };
-    setSyncLogs([initialLog]);
-
+    setSyncRunUrl(undefined);
+    setSyncLogs([]);
+    lastSyncMessage.current = '';
+    if (selectedForCrawl && selectedForCrawl.length === 0) {
+      applySyncEvent({ type: 'error', progress: 0, message: 'Select at least one course before starting a crawl.' });
+      return;
+    }
+    setIsSyncing(true);
+    applySyncEvent({ type: 'start', progress: 5, message: 'Starting academic sync...' });
     try {
       const params = new URLSearchParams();
       if (selectedForCrawl?.length) params.set('courses', selectedForCrawl.join(','));
       const eventSource = new EventSource(`/api/sync?${params.toString()}`);
-
+      syncSource.current = eventSource;
       eventSource.onmessage = (event) => {
         try {
-          const payload = JSON.parse(event.data);
-          const timeStr = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
-
-          if (payload.type === 'start' || payload.type === 'progress') {
-            setSyncProgress(payload.progress);
-            setCurrentSyncMessage(payload.message);
-            setSyncLogs((prev) => [
-              ...prev,
-              {
-                id: `log-${Date.now()}-${Math.random()}`,
-                time: timeStr,
-                message: payload.message,
-                progress: payload.progress,
-                type: 'step',
-              },
-            ]);
-          } else if (payload.type === 'done') {
-            setSyncProgress(100);
-            setCurrentSyncMessage('Academic digest updated successfully!');
-            setIsSyncComplete(true);
-            setIsSyncing(false);
-            if (payload.data) setData(payload.data);
-            if (payload.settings) {
-              setSettings((current) => ({
-                ...payload.settings,
-                selected_courses: current?.selected_courses || payload.settings.selected_courses,
-              }));
-            }
-            setSyncLogs((prev) => [
-              ...prev,
-              {
-                id: `log-${Date.now()}`,
-                time: timeStr,
-                message: 'All 7 enrolled courses crawled and saved to store',
-                progress: 100,
-                type: 'done',
-              },
-            ]);
+          const payload: SyncEvent = JSON.parse(event.data);
+          applySyncEvent(payload);
+          if (payload.type === 'queued') {
             eventSource.close();
-          } else if (payload.type === 'error') {
-            setIsSyncError(true);
-            setIsSyncing(false);
-            setCurrentSyncMessage(payload.message || 'Crawler error occurred.');
-            setSyncLogs((prev) => [
-              ...prev,
-              {
-                id: `log-${Date.now()}`,
-                time: timeStr,
-                message: `Error: ${payload.message}`,
-                progress: syncProgress,
-                type: 'error',
-              },
-            ]);
-            eventSource.close();
+            syncSource.current = null;
+            if (!payload.runId) throw new Error('The crawl was queued without a tracking ID. Check GitHub Actions.');
+            void monitorCloudSync(payload.runId);
           }
-        } catch (err) {
-          console.error('Error parsing SSE data:', err);
+        } catch (error) {
+          applySyncEvent({ type: 'error', message: error instanceof Error ? error.message : 'Unable to read the sync status.' });
         }
       };
-
-      eventSource.onerror = (err) => {
-        console.error('EventSource error:', err);
+      eventSource.onerror = () => {
         eventSource.close();
-        setIsSyncing(false);
+        applySyncEvent({ type: 'error', message: 'The sync connection closed before completion could be confirmed. Check the crawl status before starting another sync.' });
       };
-    } catch (e) {
-      console.error('Sync trigger error:', e);
-      setIsSyncing(false);
-      setIsSyncError(true);
+    } catch (error) {
+      applySyncEvent({ type: 'error', message: error instanceof Error ? error.message : 'Unable to start sync.' });
     }
   };
 
@@ -1068,6 +1100,7 @@ export default function DashboardPage() {
         progress={syncProgress}
         currentMessage={currentSyncMessage}
         logs={syncLogs}
+        runUrl={syncRunUrl}
         isComplete={isSyncComplete}
         isError={isSyncError}
       />

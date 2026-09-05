@@ -21,6 +21,7 @@ interface SyncProgressDrawerProps {
   logs: SyncLogItem[];
   isComplete: boolean;
   isError: boolean;
+  runUrl?: string;
 }
 
 export function SyncProgressDrawer({
@@ -33,6 +34,7 @@ export function SyncProgressDrawer({
   logs,
   isComplete,
   isError,
+  runUrl,
 }: SyncProgressDrawerProps) {
   const logEndRef = useRef<HTMLDivElement>(null);
 
@@ -51,7 +53,7 @@ export function SyncProgressDrawer({
         <button
           onClick={() => onMinimize(false)}
           className="flex items-center gap-3 px-4 py-2.5 bg-[#fbf8f5] dark:bg-[#18181b] rounded-2xl shadow-refero-lg border border-[#4e080c]/[0.12] dark:border-white/[0.12] hover:bg-[#f2ebe5] dark:hover:bg-[#27272a] active:bg-[#ede3da] text-[#4e080c] dark:text-[#f4f4f5] transition-all min-h-[48px] active:scale-95"
-          aria-label={isComplete ? 'Sync complete. View logs' : `Syncing at ${progress}%. View progress logs`}
+          aria-label={isComplete ? 'Sync complete. View logs' : isError ? 'Sync needs attention. View logs' : `Syncing at ${progress}%. View progress logs`}
         >
           <div className="relative flex items-center justify-center">
             {isComplete ? (
@@ -98,6 +100,8 @@ export function SyncProgressDrawer({
             <div className="w-9 h-9 rounded-xl bg-[#f2ebe5] dark:bg-[#27272a] text-[#4e080c] dark:text-[#f4f4f5] flex items-center justify-center shadow-refero-sm">
               {isComplete ? (
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
+              ) : isError ? (
+                <AlertTriangle className="w-4 h-4 text-rose-600" />
               ) : (
                 <RefreshCw className={`w-4 h-4 text-[#4e080c] dark:text-[#f4f4f5] ${!isComplete ? 'animate-spin' : ''}`} />
               )}
@@ -107,7 +111,7 @@ export function SyncProgressDrawer({
                 Live Sync Activity
               </h2>
               <p className="text-[11.5px] text-[#71717A] dark:text-[#a1a1aa]">
-                {isComplete ? 'All courses crawled & indexed' : 'Fetching latest OUSL LMS updates...'}
+                {isComplete ? 'Digest updated' : isError ? 'Sync needs attention' : 'Checking your academic updates...'}
               </p>
             </div>
           </div>
@@ -136,7 +140,7 @@ export function SyncProgressDrawer({
         <div className="px-5 py-3.5 bg-[#f2ebe5] dark:bg-[#222226] border-b border-[#4e080c]/[0.08] dark:border-white/[0.08]">
           <div className="flex items-center justify-between text-[12px] font-medium mb-1.5">
             <span className="text-[#4e080c] dark:text-[#f4f4f5] truncate pr-2 font-medium">
-              {isComplete ? 'Finished indexing all courses' : currentMessage || 'Connecting to server...'}
+              {currentMessage || 'Connecting to server...'}
             </span>
             <span className="text-[#4e080c] dark:text-[#f4f4f5] font-semibold">{progress}%</span>
           </div>
@@ -159,7 +163,7 @@ export function SyncProgressDrawer({
         {/* Step Logs Stream */}
         <div className="flex-1 overflow-y-auto p-4 sm:p-5 space-y-2 font-mono text-[11.5px] leading-relaxed min-h-[200px]">
           <div className="text-[10.5px] font-bold text-[#71717A] dark:text-[#a1a1aa] uppercase tracking-wider font-sans mb-2">
-            Crawler Logs ({logs.length})
+            Sync Activity ({logs.length})
           </div>
 
           {logs.map((item, idx) => (
@@ -202,17 +206,15 @@ export function SyncProgressDrawer({
               <p className="text-[11.5px] text-rose-800 dark:text-rose-200 leading-relaxed">
                 {currentMessage || 'The crawler stopped before the sync completed. Check the error log above and retry.'}
               </p>
-              <p className="text-[11px] text-rose-700 dark:text-rose-300 leading-relaxed">
-                If this app is running in a cloud environment, you can run the crawler through GitHub Actions instead.
-              </p>
+
               <div className="flex items-center gap-2 pt-1 flex-wrap">
                 <a
-                  href="https://github.com/nipunyatawara-dev/oulms-digest/actions/workflows/lms_check.yml"
+                  href={runUrl || "https://github.com/nipunyatawara-dev/oulms-digest/actions/workflows/lms_check.yml"}
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-1.5 px-3.5 py-2 bg-[#4e080c] dark:bg-[#4e080c] text-white text-[12px] font-medium rounded-xl shadow-refero-sm hover:bg-[#620a0f] dark:hover:bg-[#620a0f] active:scale-[0.98] transition-all min-h-[44px]"
                 >
-                  <span>Run on GitHub Actions</span>
+                  <span>View run details</span>
                   <span className="text-[10px]">↗</span>
                 </a>
               </div>
@@ -225,7 +227,8 @@ export function SyncProgressDrawer({
         {/* Drawer Footer */}
         <div className="p-4 border-t border-[#4e080c]/[0.08] dark:border-white/[0.08] bg-[#fbf8f5] dark:bg-[#18181b] flex items-center justify-between gap-3">
           <span className="text-[11px] text-[#71717A] dark:text-[#a1a1aa]">
-            {isComplete ? 'Data saved locally' : 'Syncing in background...'}
+            {isComplete ? 'Updated digest available' : isError ? 'Completion not confirmed' : 'Syncing in background...'}
+            {runUrl && <a href={runUrl} target="_blank" rel="noreferrer" className="block underline mt-1">View run details ↗</a>}
           </span>
           {isComplete ? (
             <button

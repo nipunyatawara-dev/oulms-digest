@@ -81,6 +81,15 @@ EMAIL_TO=your_email@gmail.com
 
 The dashboard does not collect credentials. Its **Course Selector** discovers courses using these environment variables locally, or the existing GitHub Actions secrets in production.
 
+### Sync status and new-post history
+
+- `data/seen_items.json` stores hashed item identities and is committed with the digest. Scheduled and manual workflows run one at a time so they share the latest history.
+- Existing digest entries seed that history on migration. A post is **New** when first discovered; changing relative dates or replies to an existing discussion do not make the same post new again.
+- Cloud **Sync Now** tracks the exact GitHub run, then waits for that run's data to appear in the deployed site before showing 100%. Queued, running, saving, publishing, and failure states remain distinct. Refreshing the page resumes tracking the existing run.
+- The server uses GitHub's [versioned workflow dispatch API](https://docs.github.com/en/rest/actions/workflows#create-a-workflow-dispatch-event) to obtain a run ID. The configured token needs Actions read/write access; it stays on the server.
+
+Regression checks: `python3 -m unittest discover -s tests -v`, `node --test tests/githubSync.test.mjs`, and `npm run build`.
+
 ### 3. Run Manually
 ```bash
 # Normal check (only outputs new items):
