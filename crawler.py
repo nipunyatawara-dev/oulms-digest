@@ -289,6 +289,43 @@ def extract_course_code_and_name(text: str, course_map: Dict[str, str], target_c
 
     return "", ""
 
+class LoginResult:
+    def __init__(self, success: bool, error_type: str = "", message: str = "", details: str = ""):
+        self.success = success
+        self.error_type = error_type  # "network_timeout", "auth_error", "session_error", "dom_error", etc.
+        self.message = message
+        self.details = details
+
+    def to_dict(self) -> Dict:
+        if self.success:
+            return {"success": True}
+        return {
+            "success": False,
+            "error": self.message,
+            "error_type": self.error_type,
+            "details": self.details,
+        }
+
+def classify_login_exception(exc: Exception) -> Tuple[str, str]:
+    err_str = str(exc)
+    err_lower = err_str.lower()
+
+    network_patterns = [
+        "timeout", "net::err_", "econnrefused", "etimedout", "enotfound",
+        "ehostunreach", "econnreset", "socket hang up", "connection closed",
+        "ns_error_connection_refused", "ns_error_net_timeout"
+    ]
+    if any(pat in err_lower for pat in network_patterns):
+        return (
+            "network_timeout",
+            "Unable to connect to OUSL LMS server (connection timed out). The server or LEARN network may be temporarily unavailable or filtering connections."
+        )
+
+    return (
+        "browser_error",
+        f"Unexpected browser error during login: {err_str}"
+    )
+
 class OUSLCrawler:
     def __init__(
         self,
@@ -328,14 +365,14 @@ class OUSLCrawler:
                 user_agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
                 ignore_https_errors=True
             )
-            page = await context.new_page()
-
             log_progress(25, "Connecting to OUSL IAM Keycloak server...")
-            logged_in = await self._login(page)
-            if not logged_in:
-                log_progress(100, "Authentication failed. Check your student credentials.")
+            page, login_res = await self._login(context)
+            if not login_res.success or not page:
+                log_progress(100, login_res.message)
                 await browser.close()
-                return {"error": "Authentication failed", "success": False, "courses": []}
+                res_dict = login_res.to_dict()
+                res_dict["courses"] = []
+                return res_dict
 
             log_progress(60, "Logged in. Discovering all enrolled courses from Moodle...")
             discovered = await self._scrape_all_enrolled_courses(page)
@@ -378,15 +415,13 @@ class OUSLCrawler:
                 user_agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
                 ignore_https_errors=True
             )
-            page = await context.new_page()
-
             # 1. Login
             log_progress(10, "Connecting to OUSL IAM Keycloak server...")
-            logged_in = await self._login(page)
-            if not logged_in:
-                log_progress(100, "Authentication failed. Check your student credentials.")
+            page, login_res = await self._login(context)
+            if not login_res.success or not page:
+                log_progress(100, login_res.message)
                 await browser.close()
-                return {"error": "Authentication failed", "success": False}
+                return login_res.to_dict()
 
             log_progress(20, "Authentication successful. Discovering target courses...")
             # 2. Always retain the complete enrolled-course catalogue, then crawl
@@ -485,13 +520,34 @@ class OUSLCrawler:
             log_progress(100, f"Sync complete in {duration_sec}s! {len(notifications)} alerts & {len(all_course_updates)} updates loaded.")
             return payload
 
-    async def _login(self, page, max_attempts: int = 3) -> bool:
+    async def _login(self, target, max_attempts: int = 3) -> Tuple[Optional[object], LoginResult]:
+        """
+        Logs into OUSL Moodle through the OUSL IAM Keycloak server.
+        target can be a BrowserContext or a Page.
+        Returns (active_page, LoginResult).
+        """
+        if hasattr(target, 'new_page'):
+            context = target
+            owns_page = True
+        elif hasattr(target, 'context'):
+            context = target.context
+            owns_page = False
+        else:
+            raise TypeError("Target must be a BrowserContext or Page")
+
+        backoff_delays = [6, 14, 24]
+        last_result = LoginResult(success=False, error_type="unknown", message="Login not attempted")
+
         for attempt in range(1, max_attempts + 1):
+            if attempt > 1:
+                log_progress(10, f"Retrying connection to OUSL IAM Keycloak server (attempt {attempt}/{max_attempts})...")
+
+            page = None
             try:
-                if attempt > 1:
-                    log_progress(10, f"Retrying connection to OUSL IAM Keycloak server (attempt {attempt}/{max_attempts})...")
-                await page.goto(LOGIN_URL, wait_until="domcontentloaded", timeout=45000)
-                
+                page = await context.new_page() if owns_page else target
+                # Use 60s timeout for initial handshake over slow / overseas LEARN routes
+                await page.goto(LOGIN_URL, wait_until="domcontentloaded", timeout=60000)
+
                 iam_btn = await page.query_selector('a:has-text("IAM OUSL LMS USER"), a[href*="oauth2"]')
                 if iam_btn:
                     await iam_btn.click()
@@ -501,10 +557,19 @@ class OUSLCrawler:
                 password_input = await page.wait_for_selector('input[name="password"], input#password', timeout=15000)
 
                 if not username_input or not password_input:
+                    last_result = LoginResult(
+                        success=False,
+                        error_type="dom_error",
+                        message="Login form inputs could not be found on the OUSL IAM page.",
+                        details="Username or password input selector not found within timeout."
+                    )
+                    if owns_page and page:
+                        await page.close()
                     if attempt < max_attempts:
-                        await asyncio.sleep(4)
+                        delay = backoff_delays[min(attempt - 1, len(backoff_delays) - 1)]
+                        await asyncio.sleep(delay)
                         continue
-                    return False
+                    return None, last_result
 
                 await username_input.fill(self.username)
                 await password_input.fill(self.password)
@@ -518,9 +583,25 @@ class OUSLCrawler:
                 await page.wait_for_load_state("domcontentloaded", timeout=45000)
                 await page.wait_for_timeout(1500)
 
-                # A rejected IAM login remains on the IAM host. Older logic treated that
-                # page as success simply because it was no longer the Moodle login URL.
-                # Verify access to an authenticated Moodle page before continuing.
+                # Check for explicit Keycloak credential rejection
+                kc_error = await page.query_selector(
+                    '#kc-feedback, .alert-error, .alert-danger, .kc-feedback-text, [id="input-error"]'
+                )
+                if kc_error:
+                    kc_text = (await kc_error.inner_text()).strip()
+                    if kc_text and any(w in kc_text.lower() for w in ["invalid", "password", "username", "credential", "incorrect"]):
+                        last_result = LoginResult(
+                            success=False,
+                            error_type="auth_error",
+                            message="Authentication failed. Invalid student credentials.",
+                            details=kc_text
+                        )
+                        if owns_page and page:
+                            await page.close()
+                        # Explicit wrong credentials -> short circuit, do not retry
+                        return None, last_result
+
+                # Verify access to an authenticated Moodle page
                 await page.goto(COURSES_URL, wait_until="domcontentloaded", timeout=45000)
                 await page.wait_for_timeout(1200)
                 parsed_url = urlparse(page.url)
@@ -533,22 +614,44 @@ class OUSLCrawler:
                     or parsed_url.path.startswith("/login/")
                     or not is_logged_in
                 ):
+                    last_result = LoginResult(
+                        success=False,
+                        error_type="session_error",
+                        message="Login verification failed. Moodle did not establish an authenticated session.",
+                        details=f"URL: {page.url}, is_logged_in: {is_logged_in}"
+                    )
+                    if owns_page and page:
+                        await page.close()
                     if attempt < max_attempts:
                         print(f"[!] Login verification failed on attempt {attempt}, retrying...")
-                        await asyncio.sleep(4)
+                        delay = backoff_delays[min(attempt - 1, len(backoff_delays) - 1)]
+                        await asyncio.sleep(delay)
                         continue
-                    return False
+                    return None, last_result
 
-                return True
+                return page, LoginResult(success=True)
 
             except Exception as e:
-                print(f"[!] Error during login attempt {attempt}: {e}")
+                err_type, err_msg = classify_login_exception(e)
+                print(f"[!] Error during login attempt {attempt} ({err_type}): {e}")
+                last_result = LoginResult(
+                    success=False,
+                    error_type=err_type,
+                    message=err_msg,
+                    details=str(e)
+                )
+                if owns_page and page:
+                    try:
+                        await page.close()
+                    except Exception:
+                        pass
                 if attempt < max_attempts:
-                    await asyncio.sleep(4)
+                    delay = backoff_delays[min(attempt - 1, len(backoff_delays) - 1)]
+                    await asyncio.sleep(delay)
                     continue
-                return False
+                return None, last_result
 
-        return False
+        return None, last_result
 
     async def _scrape_all_enrolled_courses(self, page) -> List[Dict]:
         """Scrapes all enrolled courses without filtering."""

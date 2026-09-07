@@ -17,6 +17,21 @@ export function explainPythonFailure(stderr: string, code: number | null, task =
     return 'The Playwright Chromium browser is not installed. Run `.venv/bin/playwright install chromium`, then retry Sync Now.';
   }
 
+  try {
+    const jsonMatch = output.match(/\{[\s\S]*"success"\s*:\s*false[\s\S]*\}/);
+    if (jsonMatch) {
+      const parsed = JSON.parse(jsonMatch[0]);
+      if (parsed.error_type === 'network_timeout' || /connection timed out|unable to connect/i.test(parsed.error || '')) {
+        return 'Unable to reach OUSL LMS server (Connection Timed Out). The university server or LEARN network may be temporarily unavailable or filtering connections. Please try again later.';
+      }
+      if (parsed.error) {
+        return `${task} failed: ${parsed.error}`;
+      }
+    }
+  } catch {
+    // Fall back to line-based parsing
+  }
+
   const usefulLines = output
     .split(/\r?\n/)
     .map((line) => line.trim())

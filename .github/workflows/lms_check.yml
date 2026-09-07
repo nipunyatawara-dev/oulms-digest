@@ -50,6 +50,14 @@ jobs:
           pip install -r requirements.txt
           playwright install chromium --with-deps
 
+      - name: Network Pre-check & Diagnostics
+        run: |
+          echo "=== Runner Public IP ==="
+          curl -s https://api.ipify.org || echo "Could not determine public IP"
+          echo ""
+          echo "=== Testing connectivity to OUSL LMS (https://oulms.ou.ac.lk) ==="
+          curl -I -s --connect-timeout 15 -m 20 https://oulms.ou.ac.lk/login/index.php || echo "Warning: Direct curl probe to OUSL LMS timed out or failed. Crawler will attempt browser connection with retries."
+
       - name: Run Crawler
         env:
           OUSL_USERNAME: ${{ inputs.ousl_username || secrets.OUSL_USERNAME }}
