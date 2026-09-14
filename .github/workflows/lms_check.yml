@@ -50,13 +50,43 @@ jobs:
           pip install -r requirements.txt
           playwright install chromium --with-deps
 
-      - name: Network Pre-check & Diagnostics
+      - name: Network Pre-check & Connectivity Fallback
         run: |
           echo "=== Runner Public IP ==="
-          curl -s https://api.ipify.org || echo "Could not determine public IP"
+          curl -s --connect-timeout 5 -m 8 https://api.ipify.org || echo "Could not determine public IP"
           echo ""
-          echo "=== Testing connectivity to OUSL LMS (https://oulms.ou.ac.lk) ==="
-          curl -I -s --connect-timeout 15 -m 20 https://oulms.ou.ac.lk/login/index.php || echo "Warning: Direct curl probe to OUSL LMS timed out or failed. Crawler will attempt browser connection with retries."
+          echo "=== Testing direct connectivity to OUSL LMS (https://oulms.ou.ac.lk) ==="
+          if curl -I -s --connect-timeout 8 -m 12 https://oulms.ou.ac.lk/login/index.php >/dev/null 2>&1; then
+            echo "Direct connection to OUSL LMS succeeded."
+          else
+            echo "::warning:: Direct connection to OUSL LMS timed out or was dropped (Azure IP range blocked by LEARN)."
+            echo "Activating Cloudflare WARP egress fallback..."
+            
+            # Setup Cloudflare package repository
+            curl -fsSL https://pkg.cloudflareclient.com/pubkey.gpg | sudo gpg --yes --dearmor --output /usr/share/keyrings/cloudflare-warp-archive-keyring.gpg
+            echo "deb [arch=amd64 signed-by=/usr/share/keyrings/cloudflare-warp-archive-keyring.gpg] https://pkg.cloudflareclient.com/ $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/cloudflare-client.list
+            
+            sudo apt-get update -qq
+            sudo apt-get install -y -qq cloudflare-warp
+            
+            # Start WARP service and connect
+            sudo systemctl start warp-svc
+            sleep 2
+            sudo warp-cli --accept-tos registration new || true
+            sudo warp-cli --accept-tos mode warp || true
+            sudo warp-cli --accept-tos connect || true
+            sleep 3
+            
+            echo "=== Egress IP via Cloudflare WARP ==="
+            curl -s --connect-timeout 5 -m 8 https://api.ipify.org || echo "Could not determine WARP IP"
+            echo ""
+            echo "=== Retesting connectivity to OUSL LMS via WARP ==="
+            if curl -I -s --connect-timeout 10 -m 15 https://oulms.ou.ac.lk/login/index.php >/dev/null 2>&1; then
+              echo "Successfully connected to OUSL LMS via Cloudflare WARP!"
+            else
+              echo "::warning:: WARP probe also timed out. Crawler will attempt browser connection with internal retries."
+            fi
+          fi
 
       - name: Run Crawler
         env:
