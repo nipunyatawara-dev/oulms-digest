@@ -1,9 +1,9 @@
 {
   "success": true,
-  "synced_at": "2026-09-20T06:38:58.323803",
-  "github_run_id": "35494543264",
+  "synced_at": "2026-09-20T14:22:59.280101",
+  "github_run_id": "35516033543",
   "github_run_attempt": "1",
-  "duration_seconds": 280.9,
+  "duration_seconds": 292.3,
   "stats": {
     "total_notifications": 4,
     "total_courses": 8,
@@ -18,11 +18,11 @@
       "category": "Viva & Exam",
       "course_code": "MHZ3459",
       "course_name": "Course MHZ3459",
-      "time": "3 days 2 hours ago",
+      "time": "3 days 10 hours ago",
       "link": "https://oulms.ou.ac.lk/message/output/popup/notifications.php",
       "is_new": false,
-      "content": "MHZ3459_2024_1: Final Exam Paper Structure -25/26\n3 days 2 hours ago\nEEI4362_2025: EEI4362 Final Exam Paper Structure\n3 days 15 hours ago\nBSE2025_2026: Message for EEX5362 Resit Students\n4 days 22 hours ago\nEEI4360_2025: Re: Final Exam format\n5 days 23 hours ago",
-      "content_html": "<div class=\"content-item-container notification selected\" data-region=\"notification-content-item-container\" data-id=\"21296585\" role=\"listitem\" id=\"yui_3_18_1_1_1789886071449_15\">\n\n    <div tabindex=\"0\" aria-label=\"MHZ3459_2024_1: Final Exam Paper Structure -25/26\" id=\"yui_3_18_1_1_1789886071449_14\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1789886071449_13\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1789886071449_12\">MHZ3459_2024_1: Final Exam Paper Structure -25/26</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 2 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21290732\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4362_2025: EEI4362 Final Exam Paper Structure\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4362_2025: EEI4362 Final Exam Paper Structure</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 15 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21261006\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"BSE2025_2026: Message for EEX5362 Resit Students\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">BSE2025_2026: Message for EEX5362 Resit Students</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">4 days 22 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21235427\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Re: Final Exam format\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Re: Final Exam format</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">5 days 23 hours ago</div>\n        </div>\n\n    </div>\n</div>",
+      "content": "MHZ3459_2024_1: Final Exam Paper Structure -25/26\n3 days 10 hours ago\nEEI4362_2025: EEI4362 Final Exam Paper Structure\n3 days 23 hours ago\nBSE2025_2026: Message for EEX5362 Resit Students\n5 days 6 hours ago\nEEI4360_2025: Re: Final Exam format\n6 days 6 hours ago",
+      "content_html": "<div class=\"content-item-container notification selected\" data-region=\"notification-content-item-container\" data-id=\"21296585\" role=\"listitem\" id=\"yui_3_18_1_1_1789913902620_15\">\n\n    <div tabindex=\"0\" aria-label=\"MHZ3459_2024_1: Final Exam Paper Structure -25/26\" id=\"yui_3_18_1_1_1789913902620_14\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1789913902620_13\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1789913902620_12\">MHZ3459_2024_1: Final Exam Paper Structure -25/26</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 10 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21290732\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4362_2025: EEI4362 Final Exam Paper Structure\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4362_2025: EEI4362 Final Exam Paper Structure</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 23 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21261006\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"BSE2025_2026: Message for EEX5362 Resit Students\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">BSE2025_2026: Message for EEX5362 Resit Students</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">5 days 6 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21235427\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Re: Final Exam format\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Re: Final Exam format</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">6 days 6 hours ago</div>\n        </div>\n\n    </div>\n</div>",
       "attachments": [],
       "links": []
     },
@@ -32,11 +32,11 @@
       "category": "Viva & Exam",
       "course_code": "EEI4362",
       "course_name": "Object Oriented Design",
-      "time": "3 days 15 hours ago",
+      "time": "3 days 23 hours ago",
       "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=99001",
       "is_new": false,
-      "content": "MHZ3459_2024_1: Final Exam Paper Structure -25/26\n3 days 2 hours ago\nEEI4362_2025: EEI4362 Final Exam Paper Structure\n3 days 15 hours ago\nBSE2025_2026: Message for EEX5362 Resit Students\n4 days 22 hours ago\nEEI4360_2025: Re: Final Exam format\n5 days 23 hours ago",
-      "content_html": "<div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21296585\" role=\"listitem\" id=\"yui_3_18_1_1_1789886071449_15\">\n\n    <div tabindex=\"0\" aria-label=\"MHZ3459_2024_1: Final Exam Paper Structure -25/26\" id=\"yui_3_18_1_1_1789886071449_14\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1789886071449_13\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1789886071449_12\">MHZ3459_2024_1: Final Exam Paper Structure -25/26</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 2 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification selected\" data-region=\"notification-content-item-container\" data-id=\"21290732\" role=\"listitem\" id=\"yui_3_18_1_1_1789886071449_23\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4362_2025: EEI4362 Final Exam Paper Structure\" id=\"yui_3_18_1_1_1789886071449_22\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1789886071449_21\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1789886071449_20\">EEI4362_2025: EEI4362 Final Exam Paper Structure</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 15 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21261006\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"BSE2025_2026: Message for EEX5362 Resit Students\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">BSE2025_2026: Message for EEX5362 Resit Students</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">4 days 22 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21235427\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Re: Final Exam format\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Re: Final Exam format</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">5 days 23 hours ago</div>\n        </div>\n\n    </div>\n</div>",
+      "content": "MHZ3459_2024_1: Final Exam Paper Structure -25/26\n3 days 10 hours ago\nEEI4362_2025: EEI4362 Final Exam Paper Structure\n3 days 23 hours ago\nBSE2025_2026: Message for EEX5362 Resit Students\n5 days 6 hours ago\nEEI4360_2025: Re: Final Exam format\n6 days 6 hours ago",
+      "content_html": "<div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21296585\" role=\"listitem\" id=\"yui_3_18_1_1_1789913902620_15\">\n\n    <div tabindex=\"0\" aria-label=\"MHZ3459_2024_1: Final Exam Paper Structure -25/26\" id=\"yui_3_18_1_1_1789913902620_14\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1789913902620_13\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1789913902620_12\">MHZ3459_2024_1: Final Exam Paper Structure -25/26</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 10 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification selected\" data-region=\"notification-content-item-container\" data-id=\"21290732\" role=\"listitem\" id=\"yui_3_18_1_1_1789913902620_23\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4362_2025: EEI4362 Final Exam Paper Structure\" id=\"yui_3_18_1_1_1789913902620_22\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1789913902620_21\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1789913902620_20\">EEI4362_2025: EEI4362 Final Exam Paper Structure</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 23 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21261006\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"BSE2025_2026: Message for EEX5362 Resit Students\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">BSE2025_2026: Message for EEX5362 Resit Students</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">5 days 6 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21235427\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Re: Final Exam format\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Re: Final Exam format</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">6 days 6 hours ago</div>\n        </div>\n\n    </div>\n</div>",
       "attachments": [],
       "links": [
         {
@@ -77,11 +77,11 @@
       "category": "Viva & Exam",
       "course_code": "BSE",
       "course_name": "Learner Support 2024/2025",
-      "time": "4 days 22 hours ago",
+      "time": "5 days 6 hours ago",
       "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=98913",
       "is_new": false,
-      "content": "MHZ3459_2024_1: Final Exam Paper Structure -25/26\n3 days 2 hours ago\nEEI4362_2025: EEI4362 Final Exam Paper Structure\n3 days 15 hours ago\nBSE2025_2026: Message for EEX5362 Resit Students\n4 days 22 hours ago\nEEI4360_2025: Re: Final Exam format\n5 days 23 hours ago",
-      "content_html": "<div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21296585\" role=\"listitem\" id=\"yui_3_18_1_1_1789886071449_15\">\n\n    <div tabindex=\"0\" aria-label=\"MHZ3459_2024_1: Final Exam Paper Structure -25/26\" id=\"yui_3_18_1_1_1789886071449_14\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1789886071449_13\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1789886071449_12\">MHZ3459_2024_1: Final Exam Paper Structure -25/26</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 2 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21290732\" role=\"listitem\" id=\"yui_3_18_1_1_1789886071449_23\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4362_2025: EEI4362 Final Exam Paper Structure\" id=\"yui_3_18_1_1_1789886071449_22\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1789886071449_21\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1789886071449_20\">EEI4362_2025: EEI4362 Final Exam Paper Structure</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 15 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification selected\" data-region=\"notification-content-item-container\" data-id=\"21261006\" role=\"listitem\" id=\"yui_3_18_1_1_1789886071449_27\">\n\n    <div tabindex=\"0\" aria-label=\"BSE2025_2026: Message for EEX5362 Resit Students\" id=\"yui_3_18_1_1_1789886071449_26\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1789886071449_25\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1789886071449_24\">BSE2025_2026: Message for EEX5362 Resit Students</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">4 days 22 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21235427\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Re: Final Exam format\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Re: Final Exam format</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">5 days 23 hours ago</div>\n        </div>\n\n    </div>\n</div>",
+      "content": "MHZ3459_2024_1: Final Exam Paper Structure -25/26\n3 days 10 hours ago\nEEI4362_2025: EEI4362 Final Exam Paper Structure\n3 days 23 hours ago\nBSE2025_2026: Message for EEX5362 Resit Students\n5 days 6 hours ago\nEEI4360_2025: Re: Final Exam format\n6 days 6 hours ago",
+      "content_html": "<div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21296585\" role=\"listitem\" id=\"yui_3_18_1_1_1789913902620_15\">\n\n    <div tabindex=\"0\" aria-label=\"MHZ3459_2024_1: Final Exam Paper Structure -25/26\" id=\"yui_3_18_1_1_1789913902620_14\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1789913902620_13\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1789913902620_12\">MHZ3459_2024_1: Final Exam Paper Structure -25/26</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 10 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21290732\" role=\"listitem\" id=\"yui_3_18_1_1_1789913902620_23\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4362_2025: EEI4362 Final Exam Paper Structure\" id=\"yui_3_18_1_1_1789913902620_22\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1789913902620_21\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1789913902620_20\">EEI4362_2025: EEI4362 Final Exam Paper Structure</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 23 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification selected\" data-region=\"notification-content-item-container\" data-id=\"21261006\" role=\"listitem\" id=\"yui_3_18_1_1_1789913902620_27\">\n\n    <div tabindex=\"0\" aria-label=\"BSE2025_2026: Message for EEX5362 Resit Students\" id=\"yui_3_18_1_1_1789913902620_26\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1789913902620_25\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1789913902620_24\">BSE2025_2026: Message for EEX5362 Resit Students</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">5 days 6 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21235427\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Re: Final Exam format\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Re: Final Exam format</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">6 days 6 hours ago</div>\n        </div>\n\n    </div>\n</div>",
       "attachments": [],
       "links": [
         {
@@ -127,11 +127,11 @@
       "category": "Viva & Exam",
       "course_code": "EEI4360",
       "course_name": "Introduction to Artificial Intelligence",
-      "time": "5 days 23 hours ago",
+      "time": "6 days 6 hours ago",
       "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97801",
       "is_new": false,
-      "content": "MHZ3459_2024_1: Final Exam Paper Structure -25/26\n3 days 2 hours ago\nEEI4362_2025: EEI4362 Final Exam Paper Structure\n3 days 15 hours ago\nBSE2025_2026: Message for EEX5362 Resit Students\n4 days 22 hours ago\nEEI4360_2025: Re: Final Exam format\n5 days 23 hours ago",
-      "content_html": "<div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21296585\" role=\"listitem\" id=\"yui_3_18_1_1_1789886071449_15\">\n\n    <div tabindex=\"0\" aria-label=\"MHZ3459_2024_1: Final Exam Paper Structure -25/26\" id=\"yui_3_18_1_1_1789886071449_14\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1789886071449_13\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1789886071449_12\">MHZ3459_2024_1: Final Exam Paper Structure -25/26</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 2 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21290732\" role=\"listitem\" id=\"yui_3_18_1_1_1789886071449_23\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4362_2025: EEI4362 Final Exam Paper Structure\" id=\"yui_3_18_1_1_1789886071449_22\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1789886071449_21\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1789886071449_20\">EEI4362_2025: EEI4362 Final Exam Paper Structure</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 15 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21261006\" role=\"listitem\" id=\"yui_3_18_1_1_1789886071449_27\">\n\n    <div tabindex=\"0\" aria-label=\"BSE2025_2026: Message for EEX5362 Resit Students\" id=\"yui_3_18_1_1_1789886071449_26\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1789886071449_25\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1789886071449_24\">BSE2025_2026: Message for EEX5362 Resit Students</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">4 days 22 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification selected\" data-region=\"notification-content-item-container\" data-id=\"21235427\" role=\"listitem\" id=\"yui_3_18_1_1_1789886071449_31\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Re: Final Exam format\" id=\"yui_3_18_1_1_1789886071449_30\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1789886071449_29\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1789886071449_28\">EEI4360_2025: Re: Final Exam format</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">5 days 23 hours ago</div>\n        </div>\n\n    </div>\n</div>",
+      "content": "MHZ3459_2024_1: Final Exam Paper Structure -25/26\n3 days 10 hours ago\nEEI4362_2025: EEI4362 Final Exam Paper Structure\n3 days 23 hours ago\nBSE2025_2026: Message for EEX5362 Resit Students\n5 days 6 hours ago\nEEI4360_2025: Re: Final Exam format\n6 days 6 hours ago",
+      "content_html": "<div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21296585\" role=\"listitem\" id=\"yui_3_18_1_1_1789913902620_15\">\n\n    <div tabindex=\"0\" aria-label=\"MHZ3459_2024_1: Final Exam Paper Structure -25/26\" id=\"yui_3_18_1_1_1789913902620_14\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1789913902620_13\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1789913902620_12\">MHZ3459_2024_1: Final Exam Paper Structure -25/26</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 10 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21290732\" role=\"listitem\" id=\"yui_3_18_1_1_1789913902620_23\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4362_2025: EEI4362 Final Exam Paper Structure\" id=\"yui_3_18_1_1_1789913902620_22\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1789913902620_21\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1789913902620_20\">EEI4362_2025: EEI4362 Final Exam Paper Structure</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 23 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21261006\" role=\"listitem\" id=\"yui_3_18_1_1_1789913902620_27\">\n\n    <div tabindex=\"0\" aria-label=\"BSE2025_2026: Message for EEX5362 Resit Students\" id=\"yui_3_18_1_1_1789913902620_26\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1789913902620_25\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1789913902620_24\">BSE2025_2026: Message for EEX5362 Resit Students</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">5 days 6 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification selected\" data-region=\"notification-content-item-container\" data-id=\"21235427\" role=\"listitem\" id=\"yui_3_18_1_1_1789913902620_31\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Re: Final Exam format\" id=\"yui_3_18_1_1_1789913902620_30\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1789913902620_29\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1789913902620_28\">EEI4360_2025: Re: Final Exam format</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">6 days 6 hours ago</div>\n        </div>\n\n    </div>\n</div>",
       "attachments": [],
       "links": [
         {
@@ -10242,6 +10242,22 @@
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
+          "topic": "Regarding the Final exam",
+          "author": "M.A.R. Tharindu 20 Sept 2026",
+          "time": "20 Sept 2026",
+          "category": "Viva & Exam",
+          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=99161",
+          "is_new": true,
+          "content": "Regarding the Final exam",
+          "content_html": "",
+          "attachments": [],
+          "links": []
+        },
+        {
+          "id": "upd-111",
+          "course_code": "EEI4360",
+          "course_name": "EEI4360 Introduction to Artificial Intelligence",
+          "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
           "topic": "ILS 01 Recordings and Presentation slides",
           "author": "R.M.T.I Rathnayake 13 May 2026",
           "time": "13 May 2026",
@@ -10254,7 +10270,7 @@
           "links": []
         },
         {
-          "id": "upd-111",
+          "id": "upd-112",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10270,7 +10286,7 @@
           "links": []
         },
         {
-          "id": "upd-112",
+          "id": "upd-113",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10286,7 +10302,7 @@
           "links": []
         },
         {
-          "id": "upd-113",
+          "id": "upd-114",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10302,7 +10318,7 @@
           "links": []
         },
         {
-          "id": "upd-114",
+          "id": "upd-115",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10318,7 +10334,7 @@
           "links": []
         },
         {
-          "id": "upd-115",
+          "id": "upd-116",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10334,7 +10350,7 @@
           "links": []
         },
         {
-          "id": "upd-116",
+          "id": "upd-117",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10350,7 +10366,7 @@
           "links": []
         },
         {
-          "id": "upd-117",
+          "id": "upd-118",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10366,7 +10382,7 @@
           "links": []
         },
         {
-          "id": "upd-118",
+          "id": "upd-119",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10382,7 +10398,7 @@
           "links": []
         },
         {
-          "id": "upd-119",
+          "id": "upd-120",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10398,7 +10414,7 @@
           "links": []
         },
         {
-          "id": "upd-120",
+          "id": "upd-121",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10414,7 +10430,7 @@
           "links": []
         },
         {
-          "id": "upd-121",
+          "id": "upd-122",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10430,7 +10446,7 @@
           "links": []
         },
         {
-          "id": "upd-122",
+          "id": "upd-123",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10446,7 +10462,7 @@
           "links": []
         },
         {
-          "id": "upd-123",
+          "id": "upd-124",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10462,7 +10478,7 @@
           "links": []
         },
         {
-          "id": "upd-124",
+          "id": "upd-125",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10478,7 +10494,7 @@
           "links": []
         },
         {
-          "id": "upd-125",
+          "id": "upd-126",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10494,7 +10510,7 @@
           "links": []
         },
         {
-          "id": "upd-126",
+          "id": "upd-127",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10510,7 +10526,7 @@
           "links": []
         },
         {
-          "id": "upd-127",
+          "id": "upd-128",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10526,7 +10542,7 @@
           "links": []
         },
         {
-          "id": "upd-128",
+          "id": "upd-129",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10542,7 +10558,7 @@
           "links": []
         },
         {
-          "id": "upd-129",
+          "id": "upd-130",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10558,7 +10574,7 @@
           "links": []
         },
         {
-          "id": "upd-130",
+          "id": "upd-131",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10574,7 +10590,7 @@
           "links": []
         },
         {
-          "id": "upd-131",
+          "id": "upd-132",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10590,7 +10606,7 @@
           "links": []
         },
         {
-          "id": "upd-132",
+          "id": "upd-133",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10606,7 +10622,7 @@
           "links": []
         },
         {
-          "id": "upd-133",
+          "id": "upd-134",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10622,7 +10638,7 @@
           "links": []
         },
         {
-          "id": "upd-134",
+          "id": "upd-135",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10638,7 +10654,7 @@
           "links": []
         },
         {
-          "id": "upd-135",
+          "id": "upd-136",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10654,7 +10670,7 @@
           "links": []
         },
         {
-          "id": "upd-136",
+          "id": "upd-137",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10665,22 +10681,6 @@
           "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=85622",
           "is_new": false,
           "content": "ILS 01 Presentation slides and Recording",
-          "content_html": "",
-          "attachments": [],
-          "links": []
-        },
-        {
-          "id": "upd-137",
-          "course_code": "EEI4360",
-          "course_name": "EEI4360 Introduction to Artificial Intelligence",
-          "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
-          "topic": "Regarding Online Quiz",
-          "author": "B Sanjai 13 June 2026",
-          "time": "13 June 2026",
-          "category": "Deadlines & Quizzes",
-          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=90342",
-          "is_new": false,
-          "content": "Regarding Online Quiz",
           "content_html": "",
           "attachments": [],
           "links": []
