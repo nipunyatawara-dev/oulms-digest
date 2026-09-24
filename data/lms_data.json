@@ -1,42 +1,56 @@
 {
   "success": true,
-  "synced_at": "2026-09-24T06:29:07.423069",
-  "github_run_id": "35964175346",
+  "synced_at": "2026-09-24T15:26:01.578705",
+  "github_run_id": "36019318642",
   "github_run_attempt": "1",
-  "duration_seconds": 283.5,
+  "duration_seconds": 331.7,
   "stats": {
-    "total_notifications": 2,
+    "total_notifications": 3,
     "total_courses": 8,
-    "total_updates": 967,
+    "total_updates": 968,
     "total_sections": 105,
     "total_resources": 594
   },
   "notifications": [
     {
       "id": "notif-1",
-      "title": "Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination",
-      "category": "Viva & Exam",
-      "course_code": "FET2025",
-      "course_name": "Course FET2025",
-      "time": "1 day 23 hours ago",
-      "link": "https://oulms.ou.ac.lk/message/output/popup/notifications.php",
-      "is_new": false,
-      "content": "FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\n1 day 23 hours ago\nEEI4360_2025: Final exam scope\n3 days 8 hours ago",
-      "content_html": "<div class=\"content-item-container notification selected\" data-region=\"notification-content-item-container\" data-id=\"21383118\" role=\"listitem\" id=\"yui_3_18_1_1_1790231080318_15\">\n\n    <div tabindex=\"0\" aria-label=\"FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\" id=\"yui_3_18_1_1_1790231080318_14\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790231080318_13\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790231080318_12\">FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 day 23 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21364093\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Final exam scope\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 8 hours ago</div>\n        </div>\n\n    </div>\n</div>",
+      "title": "Overall Feedback form",
+      "category": "Announcements",
+      "course_code": "EEI4360",
+      "course_name": "Introduction to Artificial Intelligence",
+      "time": "3 mins 52 secs ago",
+      "link": "https://oulms.ou.ac.lk/course/view.php?id=3436",
+      "is_new": true,
+      "content": "EEI4360_2025: Overall Feedback form\n3 mins 52 secs ago\nFET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\n2 days 8 hours ago\nEEI4360_2025: Final exam scope\n3 days 17 hours ago",
+      "content_html": "<div class=\"content-item-container notification unread selected\" data-region=\"notification-content-item-container\" data-id=\"21408315\" role=\"listitem\" id=\"yui_3_18_1_1_1790263245026_15\">\n\n    <div tabindex=\"0\" aria-label=\"Unread notification: EEI4360_2025: Overall Feedback form\" id=\"yui_3_18_1_1_1790263245026_14\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790263245026_13\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790263245026_12\">EEI4360_2025: Overall Feedback form</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 mins 52 secs ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21383118\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">2 days 8 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21364093\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Final exam scope\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 17 hours ago</div>\n        </div>\n\n    </div>\n</div>",
       "attachments": [],
       "links": []
     },
     {
       "id": "notif-2",
+      "title": "Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination",
+      "category": "Viva & Exam",
+      "course_code": "FET2025",
+      "course_name": "Course FET2025",
+      "time": "2 days 8 hours ago",
+      "link": "https://oulms.ou.ac.lk/message/output/popup/notifications.php",
+      "is_new": false,
+      "content": "EEI4360_2025: Overall Feedback form\n3 mins 52 secs ago\nFET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\n2 days 8 hours ago\nEEI4360_2025: Final exam scope\n3 days 17 hours ago",
+      "content_html": "<div class=\"content-item-container notification unread\" data-region=\"notification-content-item-container\" data-id=\"21408315\" role=\"listitem\" id=\"yui_3_18_1_1_1790263245026_15\">\n\n    <div tabindex=\"0\" aria-label=\"Unread notification: EEI4360_2025: Overall Feedback form\" id=\"yui_3_18_1_1_1790263245026_14\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790263245026_13\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790263245026_12\">EEI4360_2025: Overall Feedback form</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 mins 52 secs ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification selected\" data-region=\"notification-content-item-container\" data-id=\"21383118\" role=\"listitem\" id=\"yui_3_18_1_1_1790263245026_23\">\n\n    <div tabindex=\"0\" aria-label=\"FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\" id=\"yui_3_18_1_1_1790263245026_22\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790263245026_21\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790263245026_20\">FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">2 days 8 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21364093\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Final exam scope\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 17 hours ago</div>\n        </div>\n\n    </div>\n</div>",
+      "attachments": [],
+      "links": []
+    },
+    {
+      "id": "notif-3",
       "title": "Final exam scope",
       "category": "Viva & Exam",
       "course_code": "EEI4360",
       "course_name": "Introduction to Artificial Intelligence",
-      "time": "3 days 8 hours ago",
+      "time": "3 days 17 hours ago",
       "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=99176",
       "is_new": false,
-      "content": "FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\n1 day 23 hours ago\nEEI4360_2025: Final exam scope\n3 days 8 hours ago",
-      "content_html": "<div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21383118\" role=\"listitem\" id=\"yui_3_18_1_1_1790231080318_15\">\n\n    <div tabindex=\"0\" aria-label=\"FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\" id=\"yui_3_18_1_1_1790231080318_14\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790231080318_13\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790231080318_12\">FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 day 23 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification selected\" data-region=\"notification-content-item-container\" data-id=\"21364093\" role=\"listitem\" id=\"yui_3_18_1_1_1790231080318_23\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Final exam scope\" id=\"yui_3_18_1_1_1790231080318_22\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790231080318_21\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790231080318_20\">EEI4360_2025: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 8 hours ago</div>\n        </div>\n\n    </div>\n</div>",
+      "content": "EEI4360_2025: Overall Feedback form\n3 mins 52 secs ago\nFET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\n2 days 8 hours ago\nEEI4360_2025: Final exam scope\n3 days 17 hours ago",
+      "content_html": "<div class=\"content-item-container notification unread\" data-region=\"notification-content-item-container\" data-id=\"21408315\" role=\"listitem\" id=\"yui_3_18_1_1_1790263245026_15\">\n\n    <div tabindex=\"0\" aria-label=\"Unread notification: EEI4360_2025: Overall Feedback form\" id=\"yui_3_18_1_1_1790263245026_14\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790263245026_13\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790263245026_12\">EEI4360_2025: Overall Feedback form</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 mins 52 secs ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21383118\" role=\"listitem\" id=\"yui_3_18_1_1_1790263245026_23\">\n\n    <div tabindex=\"0\" aria-label=\"FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\" id=\"yui_3_18_1_1_1790263245026_22\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790263245026_21\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790263245026_20\">FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">2 days 8 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification selected\" data-region=\"notification-content-item-container\" data-id=\"21364093\" role=\"listitem\" id=\"yui_3_18_1_1_1790263245026_27\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Final exam scope\" id=\"yui_3_18_1_1_1790263245026_26\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790263245026_25\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790263245026_24\">EEI4360_2025: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 17 hours ago</div>\n        </div>\n\n    </div>\n</div>",
       "attachments": [],
       "links": [
         {
@@ -8379,7 +8393,7 @@
       "code": "EEI4360",
       "title": "EEI4360 Introduction to Artificial Intelligence",
       "url": "https://oulms.ou.ac.lk/course/view.php?id=3436",
-      "updates_count": 139,
+      "updates_count": 140,
       "updates": [
         {
           "id": "upd-1",
@@ -8878,13 +8892,13 @@
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Announcements  Forum",
-          "topic": "Final exam scope",
-          "author": "Prof.(Ms) U.W. Ratnayake 21 Sept 2026",
-          "time": "21 Sept 2026",
-          "category": "Viva & Exam",
-          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=99176",
-          "is_new": false,
-          "content": "Final exam scope",
+          "topic": "Overall Feedback form",
+          "author": "Prof.(Ms) U.W. Ratnayake 24 Sept 2026",
+          "time": "24 Sept 2026",
+          "category": "Announcements",
+          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=99343",
+          "is_new": true,
+          "content": "Overall Feedback form",
           "content_html": "",
           "attachments": [],
           "links": []
@@ -8990,6 +9004,22 @@
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Announcements  Forum",
+          "topic": "Final exam scope",
+          "author": "Prof.(Ms) U.W. Ratnayake 21 Sept 2026",
+          "time": "21 Sept 2026",
+          "category": "Viva & Exam",
+          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=99176",
+          "is_new": false,
+          "content": "Final exam scope",
+          "content_html": "",
+          "attachments": [],
+          "links": []
+        },
+        {
+          "id": "upd-39",
+          "course_code": "EEI4360",
+          "course_name": "EEI4360 Introduction to Artificial Intelligence",
+          "forum_name": "Announcements  Forum",
           "topic": "OQ Marks and CAT marks",
           "author": "Prof.(Ms) U.W. Ratnayake 17 Aug 2026",
           "time": "17 Aug 2026",
@@ -9002,7 +9032,7 @@
           "links": []
         },
         {
-          "id": "upd-39",
+          "id": "upd-40",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9018,7 +9048,7 @@
           "links": []
         },
         {
-          "id": "upd-40",
+          "id": "upd-41",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9034,7 +9064,7 @@
           "links": []
         },
         {
-          "id": "upd-41",
+          "id": "upd-42",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9050,7 +9080,7 @@
           "links": []
         },
         {
-          "id": "upd-42",
+          "id": "upd-43",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9066,7 +9096,7 @@
           "links": []
         },
         {
-          "id": "upd-43",
+          "id": "upd-44",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9082,7 +9112,7 @@
           "links": []
         },
         {
-          "id": "upd-44",
+          "id": "upd-45",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9098,7 +9128,7 @@
           "links": []
         },
         {
-          "id": "upd-45",
+          "id": "upd-46",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9114,7 +9144,7 @@
           "links": []
         },
         {
-          "id": "upd-46",
+          "id": "upd-47",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9130,7 +9160,7 @@
           "links": []
         },
         {
-          "id": "upd-47",
+          "id": "upd-48",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9146,7 +9176,7 @@
           "links": []
         },
         {
-          "id": "upd-48",
+          "id": "upd-49",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9162,7 +9192,7 @@
           "links": []
         },
         {
-          "id": "upd-49",
+          "id": "upd-50",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9178,7 +9208,7 @@
           "links": []
         },
         {
-          "id": "upd-50",
+          "id": "upd-51",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9194,7 +9224,7 @@
           "links": []
         },
         {
-          "id": "upd-51",
+          "id": "upd-52",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9210,7 +9240,7 @@
           "links": []
         },
         {
-          "id": "upd-52",
+          "id": "upd-53",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9226,7 +9256,7 @@
           "links": []
         },
         {
-          "id": "upd-53",
+          "id": "upd-54",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9242,7 +9272,7 @@
           "links": []
         },
         {
-          "id": "upd-54",
+          "id": "upd-55",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9258,7 +9288,7 @@
           "links": []
         },
         {
-          "id": "upd-55",
+          "id": "upd-56",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9274,7 +9304,7 @@
           "links": []
         },
         {
-          "id": "upd-56",
+          "id": "upd-57",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9290,7 +9320,7 @@
           "links": []
         },
         {
-          "id": "upd-57",
+          "id": "upd-58",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9306,7 +9336,7 @@
           "links": []
         },
         {
-          "id": "upd-58",
+          "id": "upd-59",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9322,7 +9352,7 @@
           "links": []
         },
         {
-          "id": "upd-59",
+          "id": "upd-60",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9338,7 +9368,7 @@
           "links": []
         },
         {
-          "id": "upd-60",
+          "id": "upd-61",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9354,7 +9384,7 @@
           "links": []
         },
         {
-          "id": "upd-61",
+          "id": "upd-62",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9370,7 +9400,7 @@
           "links": []
         },
         {
-          "id": "upd-62",
+          "id": "upd-63",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9386,7 +9416,7 @@
           "links": []
         },
         {
-          "id": "upd-63",
+          "id": "upd-64",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9402,7 +9432,7 @@
           "links": []
         },
         {
-          "id": "upd-64",
+          "id": "upd-65",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9418,7 +9448,7 @@
           "links": []
         },
         {
-          "id": "upd-65",
+          "id": "upd-66",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9434,7 +9464,7 @@
           "links": []
         },
         {
-          "id": "upd-66",
+          "id": "upd-67",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9450,7 +9480,7 @@
           "links": []
         },
         {
-          "id": "upd-67",
+          "id": "upd-68",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9466,7 +9496,7 @@
           "links": []
         },
         {
-          "id": "upd-68",
+          "id": "upd-69",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9482,7 +9512,7 @@
           "links": []
         },
         {
-          "id": "upd-69",
+          "id": "upd-70",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9498,7 +9528,7 @@
           "links": []
         },
         {
-          "id": "upd-70",
+          "id": "upd-71",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9514,7 +9544,7 @@
           "links": []
         },
         {
-          "id": "upd-71",
+          "id": "upd-72",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9530,7 +9560,7 @@
           "links": []
         },
         {
-          "id": "upd-72",
+          "id": "upd-73",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9546,7 +9576,7 @@
           "links": []
         },
         {
-          "id": "upd-73",
+          "id": "upd-74",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9562,7 +9592,7 @@
           "links": []
         },
         {
-          "id": "upd-74",
+          "id": "upd-75",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9578,7 +9608,7 @@
           "links": []
         },
         {
-          "id": "upd-75",
+          "id": "upd-76",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9594,7 +9624,7 @@
           "links": []
         },
         {
-          "id": "upd-76",
+          "id": "upd-77",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9610,7 +9640,7 @@
           "links": []
         },
         {
-          "id": "upd-77",
+          "id": "upd-78",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9626,7 +9656,7 @@
           "links": []
         },
         {
-          "id": "upd-78",
+          "id": "upd-79",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9642,7 +9672,7 @@
           "links": []
         },
         {
-          "id": "upd-79",
+          "id": "upd-80",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9658,7 +9688,7 @@
           "links": []
         },
         {
-          "id": "upd-80",
+          "id": "upd-81",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9674,7 +9704,7 @@
           "links": []
         },
         {
-          "id": "upd-81",
+          "id": "upd-82",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9690,7 +9720,7 @@
           "links": []
         },
         {
-          "id": "upd-82",
+          "id": "upd-83",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9706,7 +9736,7 @@
           "links": []
         },
         {
-          "id": "upd-83",
+          "id": "upd-84",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9722,7 +9752,7 @@
           "links": []
         },
         {
-          "id": "upd-84",
+          "id": "upd-85",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9738,7 +9768,7 @@
           "links": []
         },
         {
-          "id": "upd-85",
+          "id": "upd-86",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9754,7 +9784,7 @@
           "links": []
         },
         {
-          "id": "upd-86",
+          "id": "upd-87",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9770,7 +9800,7 @@
           "links": []
         },
         {
-          "id": "upd-87",
+          "id": "upd-88",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9786,7 +9816,7 @@
           "links": []
         },
         {
-          "id": "upd-88",
+          "id": "upd-89",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9802,7 +9832,7 @@
           "links": []
         },
         {
-          "id": "upd-89",
+          "id": "upd-90",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9818,7 +9848,7 @@
           "links": []
         },
         {
-          "id": "upd-90",
+          "id": "upd-91",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9834,7 +9864,7 @@
           "links": []
         },
         {
-          "id": "upd-91",
+          "id": "upd-92",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9850,7 +9880,7 @@
           "links": []
         },
         {
-          "id": "upd-92",
+          "id": "upd-93",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9866,7 +9896,7 @@
           "links": []
         },
         {
-          "id": "upd-93",
+          "id": "upd-94",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9882,7 +9912,7 @@
           "links": []
         },
         {
-          "id": "upd-94",
+          "id": "upd-95",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9898,7 +9928,7 @@
           "links": []
         },
         {
-          "id": "upd-95",
+          "id": "upd-96",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9914,7 +9944,7 @@
           "links": []
         },
         {
-          "id": "upd-96",
+          "id": "upd-97",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9930,7 +9960,7 @@
           "links": []
         },
         {
-          "id": "upd-97",
+          "id": "upd-98",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9946,7 +9976,7 @@
           "links": []
         },
         {
-          "id": "upd-98",
+          "id": "upd-99",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9962,7 +9992,7 @@
           "links": []
         },
         {
-          "id": "upd-99",
+          "id": "upd-100",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9978,7 +10008,7 @@
           "links": []
         },
         {
-          "id": "upd-100",
+          "id": "upd-101",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -9994,7 +10024,7 @@
           "links": []
         },
         {
-          "id": "upd-101",
+          "id": "upd-102",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10010,7 +10040,7 @@
           "links": []
         },
         {
-          "id": "upd-102",
+          "id": "upd-103",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10026,7 +10056,7 @@
           "links": []
         },
         {
-          "id": "upd-103",
+          "id": "upd-104",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10042,7 +10072,7 @@
           "links": []
         },
         {
-          "id": "upd-104",
+          "id": "upd-105",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10058,7 +10088,7 @@
           "links": []
         },
         {
-          "id": "upd-105",
+          "id": "upd-106",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10074,7 +10104,7 @@
           "links": []
         },
         {
-          "id": "upd-106",
+          "id": "upd-107",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10090,7 +10120,7 @@
           "links": []
         },
         {
-          "id": "upd-107",
+          "id": "upd-108",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10106,7 +10136,7 @@
           "links": []
         },
         {
-          "id": "upd-108",
+          "id": "upd-109",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10122,7 +10152,7 @@
           "links": []
         },
         {
-          "id": "upd-109",
+          "id": "upd-110",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10138,7 +10168,7 @@
           "links": []
         },
         {
-          "id": "upd-110",
+          "id": "upd-111",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10154,7 +10184,7 @@
           "links": []
         },
         {
-          "id": "upd-111",
+          "id": "upd-112",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10170,7 +10200,7 @@
           "links": []
         },
         {
-          "id": "upd-112",
+          "id": "upd-113",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10186,7 +10216,7 @@
           "links": []
         },
         {
-          "id": "upd-113",
+          "id": "upd-114",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10202,7 +10232,7 @@
           "links": []
         },
         {
-          "id": "upd-114",
+          "id": "upd-115",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10218,7 +10248,7 @@
           "links": []
         },
         {
-          "id": "upd-115",
+          "id": "upd-116",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10234,7 +10264,7 @@
           "links": []
         },
         {
-          "id": "upd-116",
+          "id": "upd-117",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10250,7 +10280,7 @@
           "links": []
         },
         {
-          "id": "upd-117",
+          "id": "upd-118",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10266,7 +10296,7 @@
           "links": []
         },
         {
-          "id": "upd-118",
+          "id": "upd-119",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10282,7 +10312,7 @@
           "links": []
         },
         {
-          "id": "upd-119",
+          "id": "upd-120",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10298,7 +10328,7 @@
           "links": []
         },
         {
-          "id": "upd-120",
+          "id": "upd-121",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10314,7 +10344,7 @@
           "links": []
         },
         {
-          "id": "upd-121",
+          "id": "upd-122",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10330,7 +10360,7 @@
           "links": []
         },
         {
-          "id": "upd-122",
+          "id": "upd-123",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10346,7 +10376,7 @@
           "links": []
         },
         {
-          "id": "upd-123",
+          "id": "upd-124",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10362,7 +10392,7 @@
           "links": []
         },
         {
-          "id": "upd-124",
+          "id": "upd-125",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10378,7 +10408,7 @@
           "links": []
         },
         {
-          "id": "upd-125",
+          "id": "upd-126",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10394,7 +10424,7 @@
           "links": []
         },
         {
-          "id": "upd-126",
+          "id": "upd-127",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10410,7 +10440,7 @@
           "links": []
         },
         {
-          "id": "upd-127",
+          "id": "upd-128",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10426,7 +10456,7 @@
           "links": []
         },
         {
-          "id": "upd-128",
+          "id": "upd-129",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10442,7 +10472,7 @@
           "links": []
         },
         {
-          "id": "upd-129",
+          "id": "upd-130",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10458,7 +10488,7 @@
           "links": []
         },
         {
-          "id": "upd-130",
+          "id": "upd-131",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10474,7 +10504,7 @@
           "links": []
         },
         {
-          "id": "upd-131",
+          "id": "upd-132",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10490,7 +10520,7 @@
           "links": []
         },
         {
-          "id": "upd-132",
+          "id": "upd-133",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10506,7 +10536,7 @@
           "links": []
         },
         {
-          "id": "upd-133",
+          "id": "upd-134",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10522,7 +10552,7 @@
           "links": []
         },
         {
-          "id": "upd-134",
+          "id": "upd-135",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10538,7 +10568,7 @@
           "links": []
         },
         {
-          "id": "upd-135",
+          "id": "upd-136",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10554,7 +10584,7 @@
           "links": []
         },
         {
-          "id": "upd-136",
+          "id": "upd-137",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10570,7 +10600,7 @@
           "links": []
         },
         {
-          "id": "upd-137",
+          "id": "upd-138",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10586,7 +10616,7 @@
           "links": []
         },
         {
-          "id": "upd-138",
+          "id": "upd-139",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -10602,7 +10632,7 @@
           "links": []
         },
         {
-          "id": "upd-139",
+          "id": "upd-140",
           "course_code": "EEI4360",
           "course_name": "EEI4360 Introduction to Artificial Intelligence",
           "forum_name": "Installing and working with Orange - discussion forum",
