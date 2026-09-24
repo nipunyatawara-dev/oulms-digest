@@ -1,11 +1,11 @@
 {
   "success": true,
-  "synced_at": "2026-09-23T19:49:56.451822",
-  "github_run_id": "35911259091",
+  "synced_at": "2026-09-24T06:29:07.423069",
+  "github_run_id": "35964175346",
   "github_run_attempt": "1",
-  "duration_seconds": 315.0,
+  "duration_seconds": 283.5,
   "stats": {
-    "total_notifications": 3,
+    "total_notifications": 2,
     "total_courses": 8,
     "total_updates": 967,
     "total_sections": 105,
@@ -18,11 +18,11 @@
       "category": "Viva & Exam",
       "course_code": "FET2025",
       "course_name": "Course FET2025",
-      "time": "1 day 13 hours ago",
+      "time": "1 day 23 hours ago",
       "link": "https://oulms.ou.ac.lk/message/output/popup/notifications.php",
       "is_new": false,
-      "content": "FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\n1 day 13 hours ago\nEEI4360_2025: Final exam scope\n2 days 22 hours ago\nMHZ3459_2024_1: Final Exam Paper Structure -25/26\n6 days 15 hours ago",
-      "content_html": "<div class=\"content-item-container notification selected\" data-region=\"notification-content-item-container\" data-id=\"21383118\" role=\"listitem\" id=\"yui_3_18_1_1_1790192702139_15\">\n\n    <div tabindex=\"0\" aria-label=\"FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\" id=\"yui_3_18_1_1_1790192702139_14\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790192702139_13\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790192702139_12\">FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 day 13 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21364093\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Final exam scope\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">2 days 22 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21296585\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"MHZ3459_2024_1: Final Exam Paper Structure -25/26\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">MHZ3459_2024_1: Final Exam Paper Structure -25/26</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">6 days 15 hours ago</div>\n        </div>\n\n    </div>\n</div>",
+      "content": "FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\n1 day 23 hours ago\nEEI4360_2025: Final exam scope\n3 days 8 hours ago",
+      "content_html": "<div class=\"content-item-container notification selected\" data-region=\"notification-content-item-container\" data-id=\"21383118\" role=\"listitem\" id=\"yui_3_18_1_1_1790231080318_15\">\n\n    <div tabindex=\"0\" aria-label=\"FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\" id=\"yui_3_18_1_1_1790231080318_14\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790231080318_13\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790231080318_12\">FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 day 23 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21364093\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Final exam scope\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 8 hours ago</div>\n        </div>\n\n    </div>\n</div>",
       "attachments": [],
       "links": []
     },
@@ -32,55 +32,41 @@
       "category": "Viva & Exam",
       "course_code": "EEI4360",
       "course_name": "Introduction to Artificial Intelligence",
-      "time": "2 days 22 hours ago",
-      "link": "https://oulms.ou.ac.lk/course/view.php?id=3436",
+      "time": "3 days 8 hours ago",
+      "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=99176",
       "is_new": false,
-      "content": "FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\n1 day 13 hours ago\nEEI4360_2025: Final exam scope\n2 days 22 hours ago\nMHZ3459_2024_1: Final Exam Paper Structure -25/26\n6 days 15 hours ago",
-      "content_html": "<div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21383118\" role=\"listitem\" id=\"yui_3_18_1_1_1790192702139_15\">\n\n    <div tabindex=\"0\" aria-label=\"FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\" id=\"yui_3_18_1_1_1790192702139_14\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790192702139_13\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790192702139_12\">FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 day 13 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification selected\" data-region=\"notification-content-item-container\" data-id=\"21364093\" role=\"listitem\" id=\"yui_3_18_1_1_1790192702139_23\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Final exam scope\" id=\"yui_3_18_1_1_1790192702139_22\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790192702139_21\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790192702139_20\">EEI4360_2025: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">2 days 22 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21296585\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"MHZ3459_2024_1: Final Exam Paper Structure -25/26\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">MHZ3459_2024_1: Final Exam Paper Structure -25/26</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">6 days 15 hours ago</div>\n        </div>\n\n    </div>\n</div>",
-      "attachments": [],
-      "links": []
-    },
-    {
-      "id": "notif-3",
-      "title": "Final Exam Paper Structure -25/26",
-      "category": "Viva & Exam",
-      "course_code": "MHZ3459",
-      "course_name": "Course MHZ3459",
-      "time": "6 days 15 hours ago",
-      "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=99011",
-      "is_new": false,
-      "content": "FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\n1 day 13 hours ago\nEEI4360_2025: Final exam scope\n2 days 22 hours ago\nMHZ3459_2024_1: Final Exam Paper Structure -25/26\n6 days 15 hours ago",
-      "content_html": "<div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21383118\" role=\"listitem\" id=\"yui_3_18_1_1_1790192702139_15\">\n\n    <div tabindex=\"0\" aria-label=\"FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\" id=\"yui_3_18_1_1_1790192702139_14\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790192702139_13\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790192702139_12\">FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 day 13 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21364093\" role=\"listitem\" id=\"yui_3_18_1_1_1790192702139_23\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Final exam scope\" id=\"yui_3_18_1_1_1790192702139_22\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790192702139_21\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790192702139_20\">EEI4360_2025: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">2 days 22 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification selected\" data-region=\"notification-content-item-container\" data-id=\"21296585\" role=\"listitem\" id=\"yui_3_18_1_1_1790192702139_27\">\n\n    <div tabindex=\"0\" aria-label=\"MHZ3459_2024_1: Final Exam Paper Structure -25/26\" id=\"yui_3_18_1_1_1790192702139_26\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790192702139_25\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790192702139_24\">MHZ3459_2024_1: Final Exam Paper Structure -25/26</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">6 days 15 hours ago</div>\n        </div>\n\n    </div>\n</div>",
+      "content": "FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\n1 day 23 hours ago\nEEI4360_2025: Final exam scope\n3 days 8 hours ago",
+      "content_html": "<div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21383118\" role=\"listitem\" id=\"yui_3_18_1_1_1790231080318_15\">\n\n    <div tabindex=\"0\" aria-label=\"FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\" id=\"yui_3_18_1_1_1790231080318_14\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790231080318_13\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790231080318_12\">FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 day 23 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification selected\" data-region=\"notification-content-item-container\" data-id=\"21364093\" role=\"listitem\" id=\"yui_3_18_1_1_1790231080318_23\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Final exam scope\" id=\"yui_3_18_1_1_1790231080318_22\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790231080318_21\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790231080318_20\">EEI4360_2025: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 8 hours ago</div>\n        </div>\n\n    </div>\n</div>",
       "attachments": [],
       "links": [
         {
-          "title": "MHZ3459_2024_1",
-          "url": "https://oulms.ou.ac.lk/course/view.php?id=2131",
+          "title": "EEI4360_2025",
+          "url": "https://oulms.ou.ac.lk/course/view.php?id=3436",
           "type": "general"
         },
         {
           "title": "Forums",
-          "url": "https://oulms.ou.ac.lk/mod/forum/index.php?id=2131",
+          "url": "https://oulms.ou.ac.lk/mod/forum/index.php?id=3436",
           "type": "general"
         },
         {
           "title": "Announcements",
-          "url": "https://oulms.ou.ac.lk/mod/forum/view.php?f=10042",
+          "url": "https://oulms.ou.ac.lk/mod/forum/view.php?f=15995",
           "type": "general"
         },
         {
-          "title": "HS",
-          "url": "https://oulms.ou.ac.lk/user/view.php?id=21079&course=2131",
+          "title": "https://oulms.ou.ac.lk/user/view.php?id=14106&course=3436",
+          "url": "https://oulms.ou.ac.lk/user/view.php?id=14106&course=3436",
           "type": "general"
         },
         {
-          "title": "H.P.I Subasinghe",
-          "url": "https://oulms.ou.ac.lk/user/view.php?id=21079&course=2131",
+          "title": "Prof.(Ms) U.W. Ratnayake",
+          "url": "https://oulms.ou.ac.lk/user/view.php?id=14106&course=3436",
           "type": "general"
         },
         {
           "title": "Change your forum digest preferences",
-          "url": "https://oulms.ou.ac.lk/mod/forum/index.php?id=2131",
+          "url": "https://oulms.ou.ac.lk/mod/forum/index.php?id=3436",
           "type": "general"
         }
       ]
@@ -2467,7 +2453,7 @@
           "time": "23 Sept 2026",
           "category": "Announcements",
           "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=99303",
-          "is_new": true,
+          "is_new": false,
           "content": "Guest Access for MHZ5375",
           "content_html": "",
           "attachments": [],
