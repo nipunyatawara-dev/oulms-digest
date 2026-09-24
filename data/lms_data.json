@@ -1,11 +1,11 @@
 {
   "success": true,
-  "synced_at": "2026-09-24T15:26:01.578705",
-  "github_run_id": "36019318642",
+  "synced_at": "2026-09-24T20:07:57.251898",
+  "github_run_id": "36052172377",
   "github_run_attempt": "1",
-  "duration_seconds": 331.7,
+  "duration_seconds": 297.7,
   "stats": {
-    "total_notifications": 3,
+    "total_notifications": 4,
     "total_courses": 8,
     "total_updates": 968,
     "total_sections": 105,
@@ -14,43 +14,145 @@
   "notifications": [
     {
       "id": "notif-1",
-      "title": "Overall Feedback form",
-      "category": "Announcements",
+      "title": "Re: Final exam scope",
+      "category": "Viva & Exam",
       "course_code": "EEI4360",
       "course_name": "Introduction to Artificial Intelligence",
-      "time": "3 mins 52 secs ago",
+      "time": "4 hours 40 mins ago",
       "link": "https://oulms.ou.ac.lk/course/view.php?id=3436",
       "is_new": true,
-      "content": "EEI4360_2025: Overall Feedback form\n3 mins 52 secs ago\nFET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\n2 days 8 hours ago\nEEI4360_2025: Final exam scope\n3 days 17 hours ago",
-      "content_html": "<div class=\"content-item-container notification unread selected\" data-region=\"notification-content-item-container\" data-id=\"21408315\" role=\"listitem\" id=\"yui_3_18_1_1_1790263245026_15\">\n\n    <div tabindex=\"0\" aria-label=\"Unread notification: EEI4360_2025: Overall Feedback form\" id=\"yui_3_18_1_1_1790263245026_14\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790263245026_13\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790263245026_12\">EEI4360_2025: Overall Feedback form</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 mins 52 secs ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21383118\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">2 days 8 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21364093\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Final exam scope\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 17 hours ago</div>\n        </div>\n\n    </div>\n</div>",
+      "content": "EEI4360_2025: Re: Final exam scope\n4 hours 40 mins ago\nEEI4360_2025: Overall Feedback form\n4 hours 46 mins ago\nFET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\n2 days 13 hours ago\nEEI4360_2025: Final exam scope\n3 days 22 hours ago",
+      "content_html": "<div class=\"content-item-container notification unread selected\" data-region=\"notification-content-item-container\" data-id=\"21409116\" role=\"listitem\" id=\"yui_3_18_1_1_1790280192863_15\">\n\n    <div tabindex=\"0\" aria-label=\"Unread notification: EEI4360_2025: Re: Final exam scope\" id=\"yui_3_18_1_1_1790280192863_14\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790280192863_13\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790280192863_12\">EEI4360_2025: Re: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">4 hours 40 mins ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21408315\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Overall Feedback form\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Overall Feedback form</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">4 hours 46 mins ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21383118\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">2 days 13 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21364093\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Final exam scope\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 22 hours ago</div>\n        </div>\n\n    </div>\n</div>",
       "attachments": [],
       "links": []
     },
     {
       "id": "notif-2",
+      "title": "Overall Feedback form",
+      "category": "Announcements",
+      "course_code": "EEI4360",
+      "course_name": "Introduction to Artificial Intelligence",
+      "time": "4 hours 46 mins ago",
+      "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=99343",
+      "is_new": true,
+      "content": "EEI4360_2025: Re: Final exam scope\n4 hours 40 mins ago\nEEI4360_2025: Overall Feedback form\n4 hours 46 mins ago\nFET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\n2 days 13 hours ago\nEEI4360_2025: Final exam scope\n3 days 22 hours ago",
+      "content_html": "<div class=\"content-item-container notification unread\" data-region=\"notification-content-item-container\" data-id=\"21409116\" role=\"listitem\" id=\"yui_3_18_1_1_1790280192863_15\">\n\n    <div tabindex=\"0\" aria-label=\"Unread notification: EEI4360_2025: Re: Final exam scope\" id=\"yui_3_18_1_1_1790280192863_14\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790280192863_13\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790280192863_12\">EEI4360_2025: Re: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">4 hours 40 mins ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification selected\" data-region=\"notification-content-item-container\" data-id=\"21408315\" role=\"listitem\" id=\"yui_3_18_1_1_1790280192863_23\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Overall Feedback form\" id=\"yui_3_18_1_1_1790280192863_22\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790280192863_21\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790280192863_20\">EEI4360_2025: Overall Feedback form</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">4 hours 46 mins ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21383118\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">2 days 13 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21364093\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Final exam scope\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 22 hours ago</div>\n        </div>\n\n    </div>\n</div>",
+      "attachments": [],
+      "links": [
+        {
+          "title": "EEI4360_2025",
+          "url": "https://oulms.ou.ac.lk/course/view.php?id=3436",
+          "type": "general"
+        },
+        {
+          "title": "Forums",
+          "url": "https://oulms.ou.ac.lk/mod/forum/index.php?id=3436",
+          "type": "general"
+        },
+        {
+          "title": "Announcements",
+          "url": "https://oulms.ou.ac.lk/mod/forum/view.php?f=15995",
+          "type": "general"
+        },
+        {
+          "title": "https://oulms.ou.ac.lk/user/view.php?id=14106&course=3436",
+          "url": "https://oulms.ou.ac.lk/user/view.php?id=14106&course=3436",
+          "type": "general"
+        },
+        {
+          "title": "Prof.(Ms) U.W. Ratnayake",
+          "url": "https://oulms.ou.ac.lk/user/view.php?id=14106&course=3436",
+          "type": "general"
+        },
+        {
+          "title": "https://docs.google.com/forms/d/e/1FAIpQLSd-hdzG8nkcbUxp26lanrtNlvUyhpdesChRi",
+          "url": "https://docs.google.com/forms/d/e/1FAIpQLSd-hdzG8nkcbUxp26lanrtNlvUyhpdesChRi",
+          "type": "forms"
+        },
+        {
+          "title": "Change your forum digest preferences",
+          "url": "https://oulms.ou.ac.lk/mod/forum/index.php?id=3436",
+          "type": "general"
+        }
+      ]
+    },
+    {
+      "id": "notif-3",
       "title": "Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination",
       "category": "Viva & Exam",
       "course_code": "FET2025",
       "course_name": "Course FET2025",
-      "time": "2 days 8 hours ago",
-      "link": "https://oulms.ou.ac.lk/message/output/popup/notifications.php",
-      "is_new": false,
-      "content": "EEI4360_2025: Overall Feedback form\n3 mins 52 secs ago\nFET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\n2 days 8 hours ago\nEEI4360_2025: Final exam scope\n3 days 17 hours ago",
-      "content_html": "<div class=\"content-item-container notification unread\" data-region=\"notification-content-item-container\" data-id=\"21408315\" role=\"listitem\" id=\"yui_3_18_1_1_1790263245026_15\">\n\n    <div tabindex=\"0\" aria-label=\"Unread notification: EEI4360_2025: Overall Feedback form\" id=\"yui_3_18_1_1_1790263245026_14\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790263245026_13\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790263245026_12\">EEI4360_2025: Overall Feedback form</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 mins 52 secs ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification selected\" data-region=\"notification-content-item-container\" data-id=\"21383118\" role=\"listitem\" id=\"yui_3_18_1_1_1790263245026_23\">\n\n    <div tabindex=\"0\" aria-label=\"FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\" id=\"yui_3_18_1_1_1790263245026_22\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790263245026_21\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790263245026_20\">FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">2 days 8 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21364093\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Final exam scope\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 17 hours ago</div>\n        </div>\n\n    </div>\n</div>",
-      "attachments": [],
-      "links": []
+      "time": "2 days 13 hours ago",
+      "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=99228",
+      "is_new": true,
+      "content": "EEI4360_2025: Re: Final exam scope\n4 hours 40 mins ago\nEEI4360_2025: Overall Feedback form\n4 hours 46 mins ago\nFET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\n2 days 13 hours ago\nEEI4360_2025: Final exam scope\n3 days 22 hours ago",
+      "content_html": "<div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21409116\" role=\"listitem\" id=\"yui_3_18_1_1_1790280192863_15\">\n\n    <div tabindex=\"0\" aria-label=\"Unread notification: EEI4360_2025: Re: Final exam scope\" id=\"yui_3_18_1_1_1790280192863_14\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790280192863_13\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790280192863_12\">EEI4360_2025: Re: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">4 hours 40 mins ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21408315\" role=\"listitem\" id=\"yui_3_18_1_1_1790280192863_23\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Overall Feedback form\" id=\"yui_3_18_1_1_1790280192863_22\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790280192863_21\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790280192863_20\">EEI4360_2025: Overall Feedback form</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">4 hours 46 mins ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification selected\" data-region=\"notification-content-item-container\" data-id=\"21383118\" role=\"listitem\" id=\"yui_3_18_1_1_1790280192863_27\">\n\n    <div tabindex=\"0\" aria-label=\"FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\" id=\"yui_3_18_1_1_1790280192863_26\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790280192863_25\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790280192863_24\">FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">2 days 13 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21364093\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Final exam scope\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 22 hours ago</div>\n        </div>\n\n    </div>\n</div>",
+      "attachments": [
+        {
+          "name": "TAI4320%20TAI5375%20FE%20Grouping%20202526.pdf",
+          "url": "https://oulms.ou.ac.lk/pluginfile.php/427886/mod_forum/attachment/149226/TAI4320%20TAI5375%20FE%20Grouping%20202526.pdf",
+          "type": "pdf"
+        },
+        {
+          "name": "TAI4320 TAI5375 FE Grouping 202526.pdf",
+          "url": "https://oulms.ou.ac.lk/pluginfile.php/427886/mod_forum/attachment/149226/TAI4320%20TAI5375%20FE%20Grouping%20202526.pdf",
+          "type": "pdf"
+        },
+        {
+          "name": "TAI5277%20FE%20Grouping%20202526.pdf",
+          "url": "https://oulms.ou.ac.lk/pluginfile.php/427886/mod_forum/attachment/149226/TAI5277%20FE%20Grouping%20202526.pdf",
+          "type": "pdf"
+        },
+        {
+          "name": "TAI5277 FE Grouping 202526.pdf",
+          "url": "https://oulms.ou.ac.lk/pluginfile.php/427886/mod_forum/attachment/149226/TAI5277%20FE%20Grouping%20202526.pdf",
+          "type": "pdf"
+        }
+      ],
+      "links": [
+        {
+          "title": "FET2025_2026",
+          "url": "https://oulms.ou.ac.lk/course/view.php?id=3573",
+          "type": "general"
+        },
+        {
+          "title": "Forums",
+          "url": "https://oulms.ou.ac.lk/mod/forum/index.php?id=3573",
+          "type": "general"
+        },
+        {
+          "title": "General Announcements",
+          "url": "https://oulms.ou.ac.lk/mod/forum/view.php?f=16772",
+          "type": "general"
+        },
+        {
+          "title": "YP",
+          "url": "https://oulms.ou.ac.lk/user/view.php?id=61777&course=3573",
+          "type": "general"
+        },
+        {
+          "title": "Y.S.Y Perera",
+          "url": "https://oulms.ou.ac.lk/user/view.php?id=61777&course=3573",
+          "type": "general"
+        },
+        {
+          "title": "Change your forum digest preferences",
+          "url": "https://oulms.ou.ac.lk/mod/forum/index.php?id=3573",
+          "type": "general"
+        }
+      ]
     },
     {
-      "id": "notif-3",
+      "id": "notif-4",
       "title": "Final exam scope",
       "category": "Viva & Exam",
       "course_code": "EEI4360",
       "course_name": "Introduction to Artificial Intelligence",
-      "time": "3 days 17 hours ago",
+      "time": "3 days 22 hours ago",
       "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=99176",
       "is_new": false,
-      "content": "EEI4360_2025: Overall Feedback form\n3 mins 52 secs ago\nFET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\n2 days 8 hours ago\nEEI4360_2025: Final exam scope\n3 days 17 hours ago",
-      "content_html": "<div class=\"content-item-container notification unread\" data-region=\"notification-content-item-container\" data-id=\"21408315\" role=\"listitem\" id=\"yui_3_18_1_1_1790263245026_15\">\n\n    <div tabindex=\"0\" aria-label=\"Unread notification: EEI4360_2025: Overall Feedback form\" id=\"yui_3_18_1_1_1790263245026_14\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790263245026_13\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790263245026_12\">EEI4360_2025: Overall Feedback form</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 mins 52 secs ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21383118\" role=\"listitem\" id=\"yui_3_18_1_1_1790263245026_23\">\n\n    <div tabindex=\"0\" aria-label=\"FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\" id=\"yui_3_18_1_1_1790263245026_22\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790263245026_21\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790263245026_20\">FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">2 days 8 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification selected\" data-region=\"notification-content-item-container\" data-id=\"21364093\" role=\"listitem\" id=\"yui_3_18_1_1_1790263245026_27\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Final exam scope\" id=\"yui_3_18_1_1_1790263245026_26\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790263245026_25\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790263245026_24\">EEI4360_2025: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 17 hours ago</div>\n        </div>\n\n    </div>\n</div>",
+      "content": "EEI4360_2025: Re: Final exam scope\n4 hours 40 mins ago\nEEI4360_2025: Overall Feedback form\n4 hours 46 mins ago\nFET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\n2 days 13 hours ago\nEEI4360_2025: Final exam scope\n3 days 22 hours ago",
+      "content_html": "<div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21409116\" role=\"listitem\" id=\"yui_3_18_1_1_1790280192863_15\">\n\n    <div tabindex=\"0\" aria-label=\"Unread notification: EEI4360_2025: Re: Final exam scope\" id=\"yui_3_18_1_1_1790280192863_14\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790280192863_13\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790280192863_12\">EEI4360_2025: Re: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">4 hours 40 mins ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21408315\" role=\"listitem\" id=\"yui_3_18_1_1_1790280192863_23\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Overall Feedback form\" id=\"yui_3_18_1_1_1790280192863_22\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790280192863_21\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790280192863_20\">EEI4360_2025: Overall Feedback form</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">4 hours 46 mins ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21383118\" role=\"listitem\" id=\"yui_3_18_1_1_1790280192863_27\">\n\n    <div tabindex=\"0\" aria-label=\"FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\" id=\"yui_3_18_1_1_1790280192863_26\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790280192863_25\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790280192863_24\">FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">2 days 13 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification selected\" data-region=\"notification-content-item-container\" data-id=\"21364093\" role=\"listitem\" id=\"yui_3_18_1_1_1790280192863_31\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Final exam scope\" id=\"yui_3_18_1_1_1790280192863_30\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790280192863_29\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790280192863_28\">EEI4360_2025: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 22 hours ago</div>\n        </div>\n\n    </div>\n</div>",
       "attachments": [],
       "links": [
         {
@@ -8897,7 +8999,7 @@
           "time": "24 Sept 2026",
           "category": "Announcements",
           "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=99343",
-          "is_new": true,
+          "is_new": false,
           "content": "Overall Feedback form",
           "content_html": "",
           "attachments": [],
