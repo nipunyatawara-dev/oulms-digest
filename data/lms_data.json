@@ -1,9 +1,9 @@
 {
   "success": true,
-  "synced_at": "2026-09-25T06:23:14.634847",
-  "github_run_id": "36102213594",
+  "synced_at": "2026-09-25T15:27:49.081012",
+  "github_run_id": "36153712967",
   "github_run_attempt": "1",
-  "duration_seconds": 294.5,
+  "duration_seconds": 289.6,
   "stats": {
     "total_notifications": 4,
     "total_courses": 8,
@@ -18,11 +18,11 @@
       "category": "Viva & Exam",
       "course_code": "EEI4360",
       "course_name": "Introduction to Artificial Intelligence",
-      "time": "14 hours 56 mins ago",
+      "time": "1 day ago",
       "link": "https://oulms.ou.ac.lk/course/view.php?id=3436",
       "is_new": false,
-      "content": "EEI4360_2025: Re: Final exam scope\n14 hours 56 mins ago\nEEI4360_2025: Overall Feedback form\n15 hours 1 min ago\nFET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\n2 days 23 hours ago\nEEI4360_2025: Final exam scope\n4 days 8 hours ago",
-      "content_html": "<div class=\"content-item-container notification selected\" data-region=\"notification-content-item-container\" data-id=\"21409116\" role=\"listitem\" id=\"yui_3_18_1_1_1790317114800_15\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Re: Final exam scope\" id=\"yui_3_18_1_1_1790317114800_14\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790317114800_13\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790317114800_12\">EEI4360_2025: Re: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">14 hours 56 mins ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21408315\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Overall Feedback form\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Overall Feedback form</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">15 hours 1 min ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21383118\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">2 days 23 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21364093\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Final exam scope\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">4 days 8 hours ago</div>\n        </div>\n\n    </div>\n</div>",
+      "content": "EEI4360_2025: Re: Final exam scope\n1 day ago\nEEI4360_2025: Overall Feedback form\n1 day ago\nFET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\n3 days 8 hours ago\nEEI4360_2025: Final exam scope\n4 days 17 hours ago",
+      "content_html": "<div class=\"content-item-container notification selected\" data-region=\"notification-content-item-container\" data-id=\"21409116\" role=\"listitem\" id=\"yui_3_18_1_1_1790349793029_15\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Re: Final exam scope\" id=\"yui_3_18_1_1_1790349793029_14\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790349793029_13\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790349793029_12\">EEI4360_2025: Re: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 day ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21408315\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Overall Feedback form\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Overall Feedback form</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 day ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21383118\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 8 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21364093\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Final exam scope\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">4 days 17 hours ago</div>\n        </div>\n\n    </div>\n</div>",
       "attachments": [],
       "links": []
     },
@@ -32,11 +32,11 @@
       "category": "Announcements",
       "course_code": "EEI4360",
       "course_name": "Introduction to Artificial Intelligence",
-      "time": "15 hours 1 min ago",
+      "time": "1 day ago",
       "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=99343",
       "is_new": false,
-      "content": "EEI4360_2025: Re: Final exam scope\n14 hours 56 mins ago\nEEI4360_2025: Overall Feedback form\n15 hours 1 min ago\nFET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\n2 days 23 hours ago\nEEI4360_2025: Final exam scope\n4 days 8 hours ago",
-      "content_html": "<div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21409116\" role=\"listitem\" id=\"yui_3_18_1_1_1790317114800_15\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Re: Final exam scope\" id=\"yui_3_18_1_1_1790317114800_14\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790317114800_13\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790317114800_12\">EEI4360_2025: Re: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">14 hours 56 mins ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification selected\" data-region=\"notification-content-item-container\" data-id=\"21408315\" role=\"listitem\" id=\"yui_3_18_1_1_1790317114800_23\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Overall Feedback form\" id=\"yui_3_18_1_1_1790317114800_22\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790317114800_21\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790317114800_20\">EEI4360_2025: Overall Feedback form</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">15 hours 1 min ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21383118\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">2 days 23 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21364093\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Final exam scope\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">4 days 8 hours ago</div>\n        </div>\n\n    </div>\n</div>",
+      "content": "EEI4360_2025: Re: Final exam scope\n1 day ago\nEEI4360_2025: Overall Feedback form\n1 day ago\nFET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\n3 days 8 hours ago\nEEI4360_2025: Final exam scope\n4 days 17 hours ago",
+      "content_html": "<div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21409116\" role=\"listitem\" id=\"yui_3_18_1_1_1790349793029_15\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Re: Final exam scope\" id=\"yui_3_18_1_1_1790349793029_14\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790349793029_13\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790349793029_12\">EEI4360_2025: Re: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 day ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification selected\" data-region=\"notification-content-item-container\" data-id=\"21408315\" role=\"listitem\" id=\"yui_3_18_1_1_1790349793029_23\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Overall Feedback form\" id=\"yui_3_18_1_1_1790349793029_22\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790349793029_21\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790349793029_20\">EEI4360_2025: Overall Feedback form</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 day ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21383118\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 8 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21364093\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Final exam scope\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">4 days 17 hours ago</div>\n        </div>\n\n    </div>\n</div>",
       "attachments": [],
       "links": [
         {
@@ -82,11 +82,11 @@
       "category": "Viva & Exam",
       "course_code": "FET2025",
       "course_name": "Course FET2025",
-      "time": "2 days 23 hours ago",
+      "time": "3 days 8 hours ago",
       "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=99228",
       "is_new": false,
-      "content": "EEI4360_2025: Re: Final exam scope\n14 hours 56 mins ago\nEEI4360_2025: Overall Feedback form\n15 hours 1 min ago\nFET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\n2 days 23 hours ago\nEEI4360_2025: Final exam scope\n4 days 8 hours ago",
-      "content_html": "<div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21409116\" role=\"listitem\" id=\"yui_3_18_1_1_1790317114800_15\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Re: Final exam scope\" id=\"yui_3_18_1_1_1790317114800_14\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790317114800_13\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790317114800_12\">EEI4360_2025: Re: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">14 hours 56 mins ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21408315\" role=\"listitem\" id=\"yui_3_18_1_1_1790317114800_23\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Overall Feedback form\" id=\"yui_3_18_1_1_1790317114800_22\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790317114800_21\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790317114800_20\">EEI4360_2025: Overall Feedback form</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">15 hours 1 min ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification selected\" data-region=\"notification-content-item-container\" data-id=\"21383118\" role=\"listitem\" id=\"yui_3_18_1_1_1790317114800_27\">\n\n    <div tabindex=\"0\" aria-label=\"FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\" id=\"yui_3_18_1_1_1790317114800_26\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790317114800_25\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790317114800_24\">FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">2 days 23 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21364093\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Final exam scope\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">4 days 8 hours ago</div>\n        </div>\n\n    </div>\n</div>",
+      "content": "EEI4360_2025: Re: Final exam scope\n1 day ago\nEEI4360_2025: Overall Feedback form\n1 day ago\nFET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\n3 days 8 hours ago\nEEI4360_2025: Final exam scope\n4 days 17 hours ago",
+      "content_html": "<div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21409116\" role=\"listitem\" id=\"yui_3_18_1_1_1790349793029_15\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Re: Final exam scope\" id=\"yui_3_18_1_1_1790349793029_14\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790349793029_13\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790349793029_12\">EEI4360_2025: Re: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 day ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21408315\" role=\"listitem\" id=\"yui_3_18_1_1_1790349793029_23\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Overall Feedback form\" id=\"yui_3_18_1_1_1790349793029_22\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790349793029_21\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790349793029_20\">EEI4360_2025: Overall Feedback form</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 day ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification selected\" data-region=\"notification-content-item-container\" data-id=\"21383118\" role=\"listitem\" id=\"yui_3_18_1_1_1790349793029_27\">\n\n    <div tabindex=\"0\" aria-label=\"FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\" id=\"yui_3_18_1_1_1790349793029_26\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790349793029_25\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790349793029_24\">FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 8 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21364093\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Final exam scope\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">4 days 17 hours ago</div>\n        </div>\n\n    </div>\n</div>",
       "attachments": [
         {
           "name": "TAI4320%20TAI5375%20FE%20Grouping%20202526.pdf",
@@ -148,11 +148,11 @@
       "category": "Viva & Exam",
       "course_code": "EEI4360",
       "course_name": "Introduction to Artificial Intelligence",
-      "time": "4 days 8 hours ago",
+      "time": "4 days 17 hours ago",
       "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=99176",
       "is_new": false,
-      "content": "EEI4360_2025: Re: Final exam scope\n14 hours 56 mins ago\nEEI4360_2025: Overall Feedback form\n15 hours 1 min ago\nFET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\n2 days 23 hours ago\nEEI4360_2025: Final exam scope\n4 days 8 hours ago",
-      "content_html": "<div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21409116\" role=\"listitem\" id=\"yui_3_18_1_1_1790317114800_15\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Re: Final exam scope\" id=\"yui_3_18_1_1_1790317114800_14\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790317114800_13\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790317114800_12\">EEI4360_2025: Re: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">14 hours 56 mins ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21408315\" role=\"listitem\" id=\"yui_3_18_1_1_1790317114800_23\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Overall Feedback form\" id=\"yui_3_18_1_1_1790317114800_22\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790317114800_21\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790317114800_20\">EEI4360_2025: Overall Feedback form</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">15 hours 1 min ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21383118\" role=\"listitem\" id=\"yui_3_18_1_1_1790317114800_27\">\n\n    <div tabindex=\"0\" aria-label=\"FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\" id=\"yui_3_18_1_1_1790317114800_26\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790317114800_25\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790317114800_24\">FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">2 days 23 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification selected\" data-region=\"notification-content-item-container\" data-id=\"21364093\" role=\"listitem\" id=\"yui_3_18_1_1_1790317114800_31\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Final exam scope\" id=\"yui_3_18_1_1_1790317114800_30\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790317114800_29\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790317114800_28\">EEI4360_2025: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">4 days 8 hours ago</div>\n        </div>\n\n    </div>\n</div>",
+      "content": "EEI4360_2025: Re: Final exam scope\n1 day ago\nEEI4360_2025: Overall Feedback form\n1 day ago\nFET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\n3 days 8 hours ago\nEEI4360_2025: Final exam scope\n4 days 17 hours ago",
+      "content_html": "<div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21409116\" role=\"listitem\" id=\"yui_3_18_1_1_1790349793029_15\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Re: Final exam scope\" id=\"yui_3_18_1_1_1790349793029_14\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790349793029_13\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790349793029_12\">EEI4360_2025: Re: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 day ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21408315\" role=\"listitem\" id=\"yui_3_18_1_1_1790349793029_23\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Overall Feedback form\" id=\"yui_3_18_1_1_1790349793029_22\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790349793029_21\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790349793029_20\">EEI4360_2025: Overall Feedback form</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 day ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21383118\" role=\"listitem\" id=\"yui_3_18_1_1_1790349793029_27\">\n\n    <div tabindex=\"0\" aria-label=\"FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\" id=\"yui_3_18_1_1_1790349793029_26\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790349793029_25\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790349793029_24\">FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 8 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification selected\" data-region=\"notification-content-item-container\" data-id=\"21364093\" role=\"listitem\" id=\"yui_3_18_1_1_1790349793029_31\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Final exam scope\" id=\"yui_3_18_1_1_1790349793029_30\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790349793029_29\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790349793029_28\">EEI4360_2025: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">4 days 17 hours ago</div>\n        </div>\n\n    </div>\n</div>",
       "attachments": [],
       "links": [
         {
@@ -2564,22 +2564,6 @@
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
-          "topic": "Guest Access for MHZ5375",
-          "author": "J.A.D.S. Tharuka 23 Sept 2026",
-          "time": "23 Sept 2026",
-          "category": "Announcements",
-          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=99303",
-          "is_new": false,
-          "content": "Guest Access for MHZ5375",
-          "content_html": "",
-          "attachments": [],
-          "links": []
-        },
-        {
-          "id": "upd-66",
-          "course_code": "BSE",
-          "course_name": "BSE Learner Support 2024/2025",
-          "forum_name": "General Forum for Learner Support",
           "topic": "About readiness course",
           "author": "A. A. M. AFKAR 17 Mar 2026",
           "time": "17 Mar 2026",
@@ -2592,7 +2576,7 @@
           "links": []
         },
         {
-          "id": "upd-67",
+          "id": "upd-66",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2608,7 +2592,7 @@
           "links": []
         },
         {
-          "id": "upd-68",
+          "id": "upd-67",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2624,7 +2608,7 @@
           "links": []
         },
         {
-          "id": "upd-69",
+          "id": "upd-68",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2640,7 +2624,7 @@
           "links": []
         },
         {
-          "id": "upd-70",
+          "id": "upd-69",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2656,7 +2640,7 @@
           "links": []
         },
         {
-          "id": "upd-71",
+          "id": "upd-70",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2672,7 +2656,7 @@
           "links": []
         },
         {
-          "id": "upd-72",
+          "id": "upd-71",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2688,7 +2672,7 @@
           "links": []
         },
         {
-          "id": "upd-73",
+          "id": "upd-72",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2704,7 +2688,7 @@
           "links": []
         },
         {
-          "id": "upd-74",
+          "id": "upd-73",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2720,7 +2704,7 @@
           "links": []
         },
         {
-          "id": "upd-75",
+          "id": "upd-74",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2736,7 +2720,7 @@
           "links": []
         },
         {
-          "id": "upd-76",
+          "id": "upd-75",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2752,7 +2736,7 @@
           "links": []
         },
         {
-          "id": "upd-77",
+          "id": "upd-76",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2768,7 +2752,7 @@
           "links": []
         },
         {
-          "id": "upd-78",
+          "id": "upd-77",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2784,7 +2768,7 @@
           "links": []
         },
         {
-          "id": "upd-79",
+          "id": "upd-78",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2800,7 +2784,7 @@
           "links": []
         },
         {
-          "id": "upd-80",
+          "id": "upd-79",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2816,7 +2800,7 @@
           "links": []
         },
         {
-          "id": "upd-81",
+          "id": "upd-80",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2832,7 +2816,7 @@
           "links": []
         },
         {
-          "id": "upd-82",
+          "id": "upd-81",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2848,7 +2832,7 @@
           "links": []
         },
         {
-          "id": "upd-83",
+          "id": "upd-82",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2864,7 +2848,7 @@
           "links": []
         },
         {
-          "id": "upd-84",
+          "id": "upd-83",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2880,7 +2864,7 @@
           "links": []
         },
         {
-          "id": "upd-85",
+          "id": "upd-84",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2896,7 +2880,7 @@
           "links": []
         },
         {
-          "id": "upd-86",
+          "id": "upd-85",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2912,7 +2896,7 @@
           "links": []
         },
         {
-          "id": "upd-87",
+          "id": "upd-86",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2928,7 +2912,7 @@
           "links": []
         },
         {
-          "id": "upd-88",
+          "id": "upd-87",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2944,7 +2928,7 @@
           "links": []
         },
         {
-          "id": "upd-89",
+          "id": "upd-88",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2960,7 +2944,7 @@
           "links": []
         },
         {
-          "id": "upd-90",
+          "id": "upd-89",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2976,7 +2960,7 @@
           "links": []
         },
         {
-          "id": "upd-91",
+          "id": "upd-90",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2992,7 +2976,7 @@
           "links": []
         },
         {
-          "id": "upd-92",
+          "id": "upd-91",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -3008,7 +2992,7 @@
           "links": []
         },
         {
-          "id": "upd-93",
+          "id": "upd-92",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -3024,7 +3008,7 @@
           "links": []
         },
         {
-          "id": "upd-94",
+          "id": "upd-93",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -3040,7 +3024,7 @@
           "links": []
         },
         {
-          "id": "upd-95",
+          "id": "upd-94",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -3056,7 +3040,7 @@
           "links": []
         },
         {
-          "id": "upd-96",
+          "id": "upd-95",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -3072,7 +3056,7 @@
           "links": []
         },
         {
-          "id": "upd-97",
+          "id": "upd-96",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -3088,7 +3072,7 @@
           "links": []
         },
         {
-          "id": "upd-98",
+          "id": "upd-97",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -3104,7 +3088,7 @@
           "links": []
         },
         {
-          "id": "upd-99",
+          "id": "upd-98",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -3120,7 +3104,7 @@
           "links": []
         },
         {
-          "id": "upd-100",
+          "id": "upd-99",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -3136,7 +3120,7 @@
           "links": []
         },
         {
-          "id": "upd-101",
+          "id": "upd-100",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -3152,7 +3136,7 @@
           "links": []
         },
         {
-          "id": "upd-102",
+          "id": "upd-101",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -3168,7 +3152,7 @@
           "links": []
         },
         {
-          "id": "upd-103",
+          "id": "upd-102",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -3184,7 +3168,7 @@
           "links": []
         },
         {
-          "id": "upd-104",
+          "id": "upd-103",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -3200,7 +3184,7 @@
           "links": []
         },
         {
-          "id": "upd-105",
+          "id": "upd-104",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -3216,7 +3200,7 @@
           "links": []
         },
         {
-          "id": "upd-106",
+          "id": "upd-105",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -3232,7 +3216,7 @@
           "links": []
         },
         {
-          "id": "upd-107",
+          "id": "upd-106",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -3248,7 +3232,7 @@
           "links": []
         },
         {
-          "id": "upd-108",
+          "id": "upd-107",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -3264,7 +3248,7 @@
           "links": []
         },
         {
-          "id": "upd-109",
+          "id": "upd-108",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -3280,7 +3264,7 @@
           "links": []
         },
         {
-          "id": "upd-110",
+          "id": "upd-109",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -3296,7 +3280,7 @@
           "links": []
         },
         {
-          "id": "upd-111",
+          "id": "upd-110",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -3312,7 +3296,7 @@
           "links": []
         },
         {
-          "id": "upd-112",
+          "id": "upd-111",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -3328,7 +3312,7 @@
           "links": []
         },
         {
-          "id": "upd-113",
+          "id": "upd-112",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -3344,7 +3328,7 @@
           "links": []
         },
         {
-          "id": "upd-114",
+          "id": "upd-113",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -3360,7 +3344,7 @@
           "links": []
         },
         {
-          "id": "upd-115",
+          "id": "upd-114",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -3376,7 +3360,7 @@
           "links": []
         },
         {
-          "id": "upd-116",
+          "id": "upd-115",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -3392,7 +3376,7 @@
           "links": []
         },
         {
-          "id": "upd-117",
+          "id": "upd-116",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -3408,7 +3392,7 @@
           "links": []
         },
         {
-          "id": "upd-118",
+          "id": "upd-117",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -3424,7 +3408,7 @@
           "links": []
         },
         {
-          "id": "upd-119",
+          "id": "upd-118",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -3440,7 +3424,7 @@
           "links": []
         },
         {
-          "id": "upd-120",
+          "id": "upd-119",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -3456,7 +3440,7 @@
           "links": []
         },
         {
-          "id": "upd-121",
+          "id": "upd-120",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -3472,7 +3456,7 @@
           "links": []
         },
         {
-          "id": "upd-122",
+          "id": "upd-121",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -3488,7 +3472,7 @@
           "links": []
         },
         {
-          "id": "upd-123",
+          "id": "upd-122",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -3504,7 +3488,7 @@
           "links": []
         },
         {
-          "id": "upd-124",
+          "id": "upd-123",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -3520,7 +3504,7 @@
           "links": []
         },
         {
-          "id": "upd-125",
+          "id": "upd-124",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -3536,7 +3520,7 @@
           "links": []
         },
         {
-          "id": "upd-126",
+          "id": "upd-125",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -3552,7 +3536,7 @@
           "links": []
         },
         {
-          "id": "upd-127",
+          "id": "upd-126",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -3568,7 +3552,7 @@
           "links": []
         },
         {
-          "id": "upd-128",
+          "id": "upd-127",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -3584,7 +3568,7 @@
           "links": []
         },
         {
-          "id": "upd-129",
+          "id": "upd-128",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -3600,7 +3584,7 @@
           "links": []
         },
         {
-          "id": "upd-130",
+          "id": "upd-129",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -3616,7 +3600,7 @@
           "links": []
         },
         {
-          "id": "upd-131",
+          "id": "upd-130",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -3632,7 +3616,7 @@
           "links": []
         },
         {
-          "id": "upd-132",
+          "id": "upd-131",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -3648,7 +3632,7 @@
           "links": []
         },
         {
-          "id": "upd-133",
+          "id": "upd-132",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -3664,7 +3648,7 @@
           "links": []
         },
         {
-          "id": "upd-134",
+          "id": "upd-133",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -3680,7 +3664,7 @@
           "links": []
         },
         {
-          "id": "upd-135",
+          "id": "upd-134",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -3696,7 +3680,7 @@
           "links": []
         },
         {
-          "id": "upd-136",
+          "id": "upd-135",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -3707,6 +3691,22 @@
           "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=99172",
           "is_new": false,
           "content": "Asking about the new final exams registration process",
+          "content_html": "",
+          "attachments": [],
+          "links": []
+        },
+        {
+          "id": "upd-136",
+          "course_code": "BSE",
+          "course_name": "BSE Learner Support 2024/2025",
+          "forum_name": "General Forum for Learner Support",
+          "topic": "Guest Access for MHZ5375",
+          "author": "J.A.D.S. Tharuka 23 Sept 2026",
+          "time": "23 Sept 2026",
+          "category": "Announcements",
+          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=99303",
+          "is_new": false,
+          "content": "Guest Access for MHZ5375",
           "content_html": "",
           "attachments": [],
           "links": []
