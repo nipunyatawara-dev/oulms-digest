@@ -1,42 +1,92 @@
 {
   "success": true,
-  "synced_at": "2026-09-25T15:27:49.081012",
-  "github_run_id": "36153712967",
+  "synced_at": "2026-09-25T20:09:34.542863",
+  "github_run_id": "36183502324",
   "github_run_attempt": "1",
-  "duration_seconds": 289.6,
+  "duration_seconds": 284.8,
   "stats": {
-    "total_notifications": 4,
+    "total_notifications": 5,
     "total_courses": 8,
-    "total_updates": 968,
+    "total_updates": 969,
     "total_sections": 105,
     "total_resources": 594
   },
   "notifications": [
     {
       "id": "notif-1",
-      "title": "Re: Final exam scope",
-      "category": "Viva & Exam",
-      "course_code": "EEI4360",
-      "course_name": "Introduction to Artificial Intelligence",
-      "time": "1 day ago",
-      "link": "https://oulms.ou.ac.lk/course/view.php?id=3436",
-      "is_new": false,
-      "content": "EEI4360_2025: Re: Final exam scope\n1 day ago\nEEI4360_2025: Overall Feedback form\n1 day ago\nFET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\n3 days 8 hours ago\nEEI4360_2025: Final exam scope\n4 days 17 hours ago",
-      "content_html": "<div class=\"content-item-container notification selected\" data-region=\"notification-content-item-container\" data-id=\"21409116\" role=\"listitem\" id=\"yui_3_18_1_1_1790349793029_15\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Re: Final exam scope\" id=\"yui_3_18_1_1_1790349793029_14\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790349793029_13\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790349793029_12\">EEI4360_2025: Re: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 day ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21408315\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Overall Feedback form\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Overall Feedback form</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 day ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21383118\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 8 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21364093\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Final exam scope\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">4 days 17 hours ago</div>\n        </div>\n\n    </div>\n</div>",
+      "title": "2025/26 Course Feedback",
+      "category": "Announcements",
+      "course_code": "EEI4361",
+      "course_name": "User Experience Engineering",
+      "time": "3 hours 34 mins ago",
+      "link": "https://oulms.ou.ac.lk/course/view.php?id=3439",
+      "is_new": true,
+      "content": "EEI4361_2025: EEI4361 2025/26 Course Feedback\n3 hours 34 mins ago\nEEI4360_2025: Re: Final exam scope\n1 day 4 hours ago\nEEI4360_2025: Overall Feedback form\n1 day 4 hours ago\nFET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\n3 days 13 hours ago\nEEI4360_2025: Final exam scope\n4 days 22 hours ago",
+      "content_html": "<div class=\"content-item-container notification unread selected\" data-region=\"notification-content-item-container\" data-id=\"21420227\" role=\"listitem\" id=\"yui_3_18_1_1_1790366703447_15\">\n\n    <div tabindex=\"0\" aria-label=\"Unread notification: EEI4361_2025: EEI4361 2025/26 Course Feedback\" id=\"yui_3_18_1_1_1790366703447_14\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790366703447_13\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790366703447_12\">EEI4361_2025: EEI4361 2025/26 Course Feedback</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 hours 34 mins ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21409116\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Re: Final exam scope\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Re: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 day 4 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21408315\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Overall Feedback form\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Overall Feedback form</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 day 4 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21383118\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 13 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21364093\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Final exam scope\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">4 days 22 hours ago</div>\n        </div>\n\n    </div>\n</div>",
       "attachments": [],
       "links": []
     },
     {
       "id": "notif-2",
+      "title": "Re: Final exam scope",
+      "category": "Viva & Exam",
+      "course_code": "EEI4360",
+      "course_name": "Introduction to Artificial Intelligence",
+      "time": "1 day 4 hours ago",
+      "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=99176",
+      "is_new": true,
+      "content": "EEI4361_2025: EEI4361 2025/26 Course Feedback\n3 hours 34 mins ago\nEEI4360_2025: Re: Final exam scope\n1 day 4 hours ago\nEEI4360_2025: Overall Feedback form\n1 day 4 hours ago\nFET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\n3 days 13 hours ago\nEEI4360_2025: Final exam scope\n4 days 22 hours ago",
+      "content_html": "<div class=\"content-item-container notification unread\" data-region=\"notification-content-item-container\" data-id=\"21420227\" role=\"listitem\" id=\"yui_3_18_1_1_1790366703447_15\">\n\n    <div tabindex=\"0\" aria-label=\"Unread notification: EEI4361_2025: EEI4361 2025/26 Course Feedback\" id=\"yui_3_18_1_1_1790366703447_14\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790366703447_13\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790366703447_12\">EEI4361_2025: EEI4361 2025/26 Course Feedback</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 hours 34 mins ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification selected\" data-region=\"notification-content-item-container\" data-id=\"21409116\" role=\"listitem\" id=\"yui_3_18_1_1_1790366703447_23\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Re: Final exam scope\" id=\"yui_3_18_1_1_1790366703447_22\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790366703447_21\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790366703447_20\">EEI4360_2025: Re: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 day 4 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21408315\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Overall Feedback form\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Overall Feedback form</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 day 4 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21383118\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 13 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21364093\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Final exam scope\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">4 days 22 hours ago</div>\n        </div>\n\n    </div>\n</div>",
+      "attachments": [],
+      "links": [
+        {
+          "title": "EEI4360_2025",
+          "url": "https://oulms.ou.ac.lk/course/view.php?id=3436",
+          "type": "general"
+        },
+        {
+          "title": "Forums",
+          "url": "https://oulms.ou.ac.lk/mod/forum/index.php?id=3436",
+          "type": "general"
+        },
+        {
+          "title": "Announcements",
+          "url": "https://oulms.ou.ac.lk/mod/forum/view.php?f=15995",
+          "type": "general"
+        },
+        {
+          "title": "https://oulms.ou.ac.lk/user/view.php?id=14106&course=3436",
+          "url": "https://oulms.ou.ac.lk/user/view.php?id=14106&course=3436",
+          "type": "general"
+        },
+        {
+          "title": "Prof.(Ms) U.W. Ratnayake",
+          "url": "https://oulms.ou.ac.lk/user/view.php?id=14106&course=3436",
+          "type": "general"
+        },
+        {
+          "title": "Show parent",
+          "url": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=99176&parent=149144",
+          "type": "general"
+        },
+        {
+          "title": "Change your forum digest preferences",
+          "url": "https://oulms.ou.ac.lk/mod/forum/index.php?id=3436",
+          "type": "general"
+        }
+      ]
+    },
+    {
+      "id": "notif-3",
       "title": "Overall Feedback form",
       "category": "Announcements",
       "course_code": "EEI4360",
       "course_name": "Introduction to Artificial Intelligence",
-      "time": "1 day ago",
+      "time": "1 day 4 hours ago",
       "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=99343",
       "is_new": false,
-      "content": "EEI4360_2025: Re: Final exam scope\n1 day ago\nEEI4360_2025: Overall Feedback form\n1 day ago\nFET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\n3 days 8 hours ago\nEEI4360_2025: Final exam scope\n4 days 17 hours ago",
-      "content_html": "<div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21409116\" role=\"listitem\" id=\"yui_3_18_1_1_1790349793029_15\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Re: Final exam scope\" id=\"yui_3_18_1_1_1790349793029_14\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790349793029_13\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790349793029_12\">EEI4360_2025: Re: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 day ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification selected\" data-region=\"notification-content-item-container\" data-id=\"21408315\" role=\"listitem\" id=\"yui_3_18_1_1_1790349793029_23\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Overall Feedback form\" id=\"yui_3_18_1_1_1790349793029_22\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790349793029_21\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790349793029_20\">EEI4360_2025: Overall Feedback form</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 day ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21383118\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 8 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21364093\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Final exam scope\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">4 days 17 hours ago</div>\n        </div>\n\n    </div>\n</div>",
+      "content": "EEI4361_2025: EEI4361 2025/26 Course Feedback\n3 hours 34 mins ago\nEEI4360_2025: Re: Final exam scope\n1 day 4 hours ago\nEEI4360_2025: Overall Feedback form\n1 day 4 hours ago\nFET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\n3 days 13 hours ago\nEEI4360_2025: Final exam scope\n4 days 22 hours ago",
+      "content_html": "<div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21420227\" role=\"listitem\" id=\"yui_3_18_1_1_1790366703447_15\">\n\n    <div tabindex=\"0\" aria-label=\"Unread notification: EEI4361_2025: EEI4361 2025/26 Course Feedback\" id=\"yui_3_18_1_1_1790366703447_14\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790366703447_13\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790366703447_12\">EEI4361_2025: EEI4361 2025/26 Course Feedback</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 hours 34 mins ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21409116\" role=\"listitem\" id=\"yui_3_18_1_1_1790366703447_23\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Re: Final exam scope\" id=\"yui_3_18_1_1_1790366703447_22\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790366703447_21\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790366703447_20\">EEI4360_2025: Re: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 day 4 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification selected\" data-region=\"notification-content-item-container\" data-id=\"21408315\" role=\"listitem\" id=\"yui_3_18_1_1_1790366703447_27\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Overall Feedback form\" id=\"yui_3_18_1_1_1790366703447_26\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790366703447_25\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790366703447_24\">EEI4360_2025: Overall Feedback form</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 day 4 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21383118\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 13 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21364093\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Final exam scope\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">4 days 22 hours ago</div>\n        </div>\n\n    </div>\n</div>",
       "attachments": [],
       "links": [
         {
@@ -77,16 +127,16 @@
       ]
     },
     {
-      "id": "notif-3",
+      "id": "notif-4",
       "title": "Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination",
       "category": "Viva & Exam",
       "course_code": "FET2025",
       "course_name": "Course FET2025",
-      "time": "3 days 8 hours ago",
+      "time": "3 days 13 hours ago",
       "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=99228",
       "is_new": false,
-      "content": "EEI4360_2025: Re: Final exam scope\n1 day ago\nEEI4360_2025: Overall Feedback form\n1 day ago\nFET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\n3 days 8 hours ago\nEEI4360_2025: Final exam scope\n4 days 17 hours ago",
-      "content_html": "<div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21409116\" role=\"listitem\" id=\"yui_3_18_1_1_1790349793029_15\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Re: Final exam scope\" id=\"yui_3_18_1_1_1790349793029_14\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790349793029_13\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790349793029_12\">EEI4360_2025: Re: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 day ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21408315\" role=\"listitem\" id=\"yui_3_18_1_1_1790349793029_23\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Overall Feedback form\" id=\"yui_3_18_1_1_1790349793029_22\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790349793029_21\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790349793029_20\">EEI4360_2025: Overall Feedback form</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 day ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification selected\" data-region=\"notification-content-item-container\" data-id=\"21383118\" role=\"listitem\" id=\"yui_3_18_1_1_1790349793029_27\">\n\n    <div tabindex=\"0\" aria-label=\"FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\" id=\"yui_3_18_1_1_1790349793029_26\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790349793029_25\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790349793029_24\">FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 8 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21364093\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Final exam scope\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">4 days 17 hours ago</div>\n        </div>\n\n    </div>\n</div>",
+      "content": "EEI4361_2025: EEI4361 2025/26 Course Feedback\n3 hours 34 mins ago\nEEI4360_2025: Re: Final exam scope\n1 day 4 hours ago\nEEI4360_2025: Overall Feedback form\n1 day 4 hours ago\nFET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\n3 days 13 hours ago\nEEI4360_2025: Final exam scope\n4 days 22 hours ago",
+      "content_html": "<div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21420227\" role=\"listitem\" id=\"yui_3_18_1_1_1790366703447_15\">\n\n    <div tabindex=\"0\" aria-label=\"Unread notification: EEI4361_2025: EEI4361 2025/26 Course Feedback\" id=\"yui_3_18_1_1_1790366703447_14\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790366703447_13\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790366703447_12\">EEI4361_2025: EEI4361 2025/26 Course Feedback</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 hours 34 mins ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21409116\" role=\"listitem\" id=\"yui_3_18_1_1_1790366703447_23\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Re: Final exam scope\" id=\"yui_3_18_1_1_1790366703447_22\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790366703447_21\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790366703447_20\">EEI4360_2025: Re: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 day 4 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21408315\" role=\"listitem\" id=\"yui_3_18_1_1_1790366703447_27\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Overall Feedback form\" id=\"yui_3_18_1_1_1790366703447_26\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790366703447_25\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790366703447_24\">EEI4360_2025: Overall Feedback form</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 day 4 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification selected\" data-region=\"notification-content-item-container\" data-id=\"21383118\" role=\"listitem\" id=\"yui_3_18_1_1_1790366703447_31\">\n\n    <div tabindex=\"0\" aria-label=\"FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\" id=\"yui_3_18_1_1_1790366703447_30\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790366703447_29\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790366703447_28\">FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 13 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21364093\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Final exam scope\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">4 days 22 hours ago</div>\n        </div>\n\n    </div>\n</div>",
       "attachments": [
         {
           "name": "TAI4320%20TAI5375%20FE%20Grouping%20202526.pdf",
@@ -143,16 +193,16 @@
       ]
     },
     {
-      "id": "notif-4",
+      "id": "notif-5",
       "title": "Final exam scope",
       "category": "Viva & Exam",
       "course_code": "EEI4360",
       "course_name": "Introduction to Artificial Intelligence",
-      "time": "4 days 17 hours ago",
+      "time": "4 days 22 hours ago",
       "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=99176",
       "is_new": false,
-      "content": "EEI4360_2025: Re: Final exam scope\n1 day ago\nEEI4360_2025: Overall Feedback form\n1 day ago\nFET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\n3 days 8 hours ago\nEEI4360_2025: Final exam scope\n4 days 17 hours ago",
-      "content_html": "<div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21409116\" role=\"listitem\" id=\"yui_3_18_1_1_1790349793029_15\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Re: Final exam scope\" id=\"yui_3_18_1_1_1790349793029_14\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790349793029_13\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790349793029_12\">EEI4360_2025: Re: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 day ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21408315\" role=\"listitem\" id=\"yui_3_18_1_1_1790349793029_23\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Overall Feedback form\" id=\"yui_3_18_1_1_1790349793029_22\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790349793029_21\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790349793029_20\">EEI4360_2025: Overall Feedback form</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 day ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21383118\" role=\"listitem\" id=\"yui_3_18_1_1_1790349793029_27\">\n\n    <div tabindex=\"0\" aria-label=\"FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\" id=\"yui_3_18_1_1_1790349793029_26\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790349793029_25\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790349793029_24\">FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 8 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification selected\" data-region=\"notification-content-item-container\" data-id=\"21364093\" role=\"listitem\" id=\"yui_3_18_1_1_1790349793029_31\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Final exam scope\" id=\"yui_3_18_1_1_1790349793029_30\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790349793029_29\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790349793029_28\">EEI4360_2025: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">4 days 17 hours ago</div>\n        </div>\n\n    </div>\n</div>",
+      "content": "EEI4361_2025: EEI4361 2025/26 Course Feedback\n3 hours 34 mins ago\nEEI4360_2025: Re: Final exam scope\n1 day 4 hours ago\nEEI4360_2025: Overall Feedback form\n1 day 4 hours ago\nFET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\n3 days 13 hours ago\nEEI4360_2025: Final exam scope\n4 days 22 hours ago",
+      "content_html": "<div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21420227\" role=\"listitem\" id=\"yui_3_18_1_1_1790366703447_15\">\n\n    <div tabindex=\"0\" aria-label=\"Unread notification: EEI4361_2025: EEI4361 2025/26 Course Feedback\" id=\"yui_3_18_1_1_1790366703447_14\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790366703447_13\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790366703447_12\">EEI4361_2025: EEI4361 2025/26 Course Feedback</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 hours 34 mins ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21409116\" role=\"listitem\" id=\"yui_3_18_1_1_1790366703447_23\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Re: Final exam scope\" id=\"yui_3_18_1_1_1790366703447_22\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790366703447_21\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790366703447_20\">EEI4360_2025: Re: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 day 4 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21408315\" role=\"listitem\" id=\"yui_3_18_1_1_1790366703447_27\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Overall Feedback form\" id=\"yui_3_18_1_1_1790366703447_26\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790366703447_25\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790366703447_24\">EEI4360_2025: Overall Feedback form</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 day 4 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21383118\" role=\"listitem\" id=\"yui_3_18_1_1_1790366703447_31\">\n\n    <div tabindex=\"0\" aria-label=\"FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination\" id=\"yui_3_18_1_1_1790366703447_30\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790366703447_29\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790366703447_28\">FET2025_2026: Grouping Lists for TAI4320/TAI5375 and TAI5227 Final examination</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 13 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification selected\" data-region=\"notification-content-item-container\" data-id=\"21364093\" role=\"listitem\" id=\"yui_3_18_1_1_1790366703447_35\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Final exam scope\" id=\"yui_3_18_1_1_1790366703447_34\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790366703447_33\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790366703447_32\">EEI4360_2025: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">4 days 22 hours ago</div>\n        </div>\n\n    </div>\n</div>",
       "attachments": [],
       "links": [
         {
@@ -12683,7 +12733,7 @@
       "code": "EEI4361",
       "title": "EEI4361 User Experience Engineering",
       "url": "https://oulms.ou.ac.lk/course/view.php?id=3439",
-      "updates_count": 33,
+      "updates_count": 34,
       "updates": [
         {
           "id": "upd-1",
@@ -12755,6 +12805,28 @@
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Announcements  Forum",
+          "topic": "2025/26 Course Feedback",
+          "author": "Mr. B. M. G. S. T. K. Wickramasinghe 25 Sept 2026",
+          "time": "25 Sept 2026",
+          "category": "Announcements",
+          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=99398",
+          "is_new": true,
+          "content": "Dear Students,\n\nYou are kindly requested to complete the Overall Feedback Form using the link below. This form is designed to assess the delivery of course content in the last Academic Year 2025/26 ( Odd semester).\n\nYour feedback is extremely valuable and will help us enhance the quality of the course delivery, identify areas for improvement, and better support your learning experience in the activities of the upcoming \u00a0academic year.\n\nhttps://docs.google.com/forms/d/e/1FAIpQLSdfTNhwrEQjdFEZAbEWZeMTjr_KHIgo_469VFo2anfbIIDsuw/viewform\n\nConsidering this as a mandatory requirement, please submit your response by 30th September.\n\nThank you for your participation and support.",
+          "content_html": "",
+          "attachments": [],
+          "links": [
+            {
+              "title": "Open Resource",
+              "url": "https://docs.google.com/forms/d/e/1FAIpQLSdfTNhwrEQjdFEZAbEWZeMTjr_KHIgo_469VFo2anfbIIDsuw/viewform",
+              "type": "forms"
+            }
+          ]
+        },
+        {
+          "id": "upd-5",
+          "course_code": "EEI4361",
+          "course_name": "EEI4361 User Experience Engineering",
+          "forum_name": "Announcements  Forum",
           "topic": "ILS 1",
           "author": "Mr. B. M. G. S. T. K. Wickramasinghe 30 Apr 2026",
           "time": "30 Apr 2026",
@@ -12773,7 +12845,7 @@
           ]
         },
         {
-          "id": "upd-5",
+          "id": "upd-6",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Announcements  Forum",
@@ -12783,19 +12855,13 @@
           "category": "Deadlines & Quizzes",
           "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=95980",
           "is_new": false,
-          "content": "OQ Examination Date and Time:\u00a0Friday, August 14, 2026 ---- 1430-1545 h\n\nModel questions and scope will be uploaded soon.\n\nThe examination will be\u00a0online\u00a0from\u00a0any premises.\n\nThe question paper may consist of\u00a0mcq/true-false/short-answer\u00a0questions.\n\nYou can not go back and forth through the question(no free navigation, sequential navigation only).\n\nThe\u00a0quiz password\u00a0will be shared through the Zoom meeting.\n\nYou should be in the Zoom meeting with your\u00a0video clearly visible\u00a0throughout the exam time\u00a0(Those who fail to adhere to the guidelines will be disqualified from the examination without prior notice).\u00a0\n\nZoom link:\u00a0https://learn.zoom.us/meeting/register/A3fHHVdFRKmjaXMswcJg3g",
+          "content": "Online Quiz (OQ)",
           "content_html": "",
           "attachments": [],
-          "links": [
-            {
-              "title": "Open Resource",
-              "url": "https://learn.zoom.us/meeting/register/A3fHHVdFRKmjaXMswcJg3g",
-              "type": "zoom"
-            }
-          ]
+          "links": []
         },
         {
-          "id": "upd-6",
+          "id": "upd-7",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Announcements  Forum",
@@ -12811,7 +12877,7 @@
           "links": []
         },
         {
-          "id": "upd-7",
+          "id": "upd-8",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Announcements  Forum",
@@ -12827,7 +12893,7 @@
           "links": []
         },
         {
-          "id": "upd-8",
+          "id": "upd-9",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -12843,7 +12909,7 @@
           "links": []
         },
         {
-          "id": "upd-9",
+          "id": "upd-10",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -12859,7 +12925,7 @@
           "links": []
         },
         {
-          "id": "upd-10",
+          "id": "upd-11",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -12875,7 +12941,7 @@
           "links": []
         },
         {
-          "id": "upd-11",
+          "id": "upd-12",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -12891,7 +12957,7 @@
           "links": []
         },
         {
-          "id": "upd-12",
+          "id": "upd-13",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -12907,7 +12973,7 @@
           "links": []
         },
         {
-          "id": "upd-13",
+          "id": "upd-14",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -12923,7 +12989,7 @@
           "links": []
         },
         {
-          "id": "upd-14",
+          "id": "upd-15",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -12939,7 +13005,7 @@
           "links": []
         },
         {
-          "id": "upd-15",
+          "id": "upd-16",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -12955,7 +13021,7 @@
           "links": []
         },
         {
-          "id": "upd-16",
+          "id": "upd-17",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -12971,7 +13037,7 @@
           "links": []
         },
         {
-          "id": "upd-17",
+          "id": "upd-18",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -12987,7 +13053,7 @@
           "links": []
         },
         {
-          "id": "upd-18",
+          "id": "upd-19",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -13003,7 +13069,7 @@
           "links": []
         },
         {
-          "id": "upd-19",
+          "id": "upd-20",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -13019,7 +13085,7 @@
           "links": []
         },
         {
-          "id": "upd-20",
+          "id": "upd-21",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -13035,7 +13101,7 @@
           "links": []
         },
         {
-          "id": "upd-21",
+          "id": "upd-22",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -13051,7 +13117,7 @@
           "links": []
         },
         {
-          "id": "upd-22",
+          "id": "upd-23",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Help Wanted/Help Given/Suggestions/Tips  Forum",
@@ -13067,7 +13133,7 @@
           "links": []
         },
         {
-          "id": "upd-23",
+          "id": "upd-24",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Mini Project Related Queries  Forum",
@@ -13083,7 +13149,7 @@
           "links": []
         },
         {
-          "id": "upd-24",
+          "id": "upd-25",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Mini Project Related Queries  Forum",
@@ -13099,7 +13165,7 @@
           "links": []
         },
         {
-          "id": "upd-25",
+          "id": "upd-26",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Mini Project Related Queries  Forum",
@@ -13115,7 +13181,7 @@
           "links": []
         },
         {
-          "id": "upd-26",
+          "id": "upd-27",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Mini Project Related Queries  Forum",
@@ -13131,7 +13197,7 @@
           "links": []
         },
         {
-          "id": "upd-27",
+          "id": "upd-28",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Mini Project Related Queries  Forum",
@@ -13147,7 +13213,7 @@
           "links": []
         },
         {
-          "id": "upd-28",
+          "id": "upd-29",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Mini Project Related Queries  Forum",
@@ -13163,7 +13229,7 @@
           "links": []
         },
         {
-          "id": "upd-29",
+          "id": "upd-30",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Mini Project Related Queries  Forum",
@@ -13179,7 +13245,7 @@
           "links": []
         },
         {
-          "id": "upd-30",
+          "id": "upd-31",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Mini Project Related Queries  Forum",
@@ -13195,7 +13261,7 @@
           "links": []
         },
         {
-          "id": "upd-31",
+          "id": "upd-32",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Mini Project Related Queries  Forum",
@@ -13211,7 +13277,7 @@
           "links": []
         },
         {
-          "id": "upd-32",
+          "id": "upd-33",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Mini Project Related Queries  Forum",
@@ -13227,7 +13293,7 @@
           "links": []
         },
         {
-          "id": "upd-33",
+          "id": "upd-34",
           "course_code": "EEI4361",
           "course_name": "EEI4361 User Experience Engineering",
           "forum_name": "Mini Project Related Queries  Forum",
