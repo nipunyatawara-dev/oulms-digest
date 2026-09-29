@@ -6,7 +6,7 @@
   "evening_time": "22:00",
   "auto_sync_enabled": true,
   "auto_sync_on_save": true,
-  "last_sync_timestamp": "2026-09-29T07:14:30.256943",
+  "last_sync_timestamp": "2026-09-29T16:39:23.765745",
   "selected_courses": [
     "AGM4367",
     "EEI4267",
@@ -18,19 +18,9 @@
   ],
   "discovered_courses": [
     {
-      "code": "AGM4367",
-      "title": "AGM4367 Economics and Marketing for Engineering",
-      "url": "https://oulms.ou.ac.lk/course/view.php?id=3361"
-    },
-    {
       "code": "BSE",
       "title": "BSE Learner Support 2024/2025",
       "url": "https://oulms.ou.ac.lk/course/view.php?id=3430"
-    },
-    {
-      "code": "EEI3346",
-      "title": "EEI3346 Web Application Development",
-      "url": "https://oulms.ou.ac.lk/course/view.php?id=1481"
     },
     {
       "code": "EEI4267",
@@ -63,6 +53,11 @@
       "url": "https://oulms.ou.ac.lk/course/view.php?id=3573"
     },
     {
+      "code": "MHZ3356",
+      "title": "MHZ3356 Mathematics for Computing I",
+      "url": "https://oulms.ou.ac.lk/course/view.php?id=3333"
+    },
+    {
       "code": "BSE2024",
       "title": "BSE2024_2025",
       "url": "https://oulms.ou.ac.lk/course/view.php?id=1831"
@@ -71,6 +66,11 @@
       "code": "FDE3022",
       "title": "FDE3022_2024",
       "url": "https://oulms.ou.ac.lk/course/view.php?id=1821"
+    },
+    {
+      "code": "AGM4367",
+      "title": "AGM4367 Economics and Marketing for Engineering",
+      "url": "https://oulms.ou.ac.lk/course/view.php?id=3361"
     },
     {
       "code": "AGM3263",
@@ -91,6 +91,11 @@
       "code": "EEI3269",
       "title": "EEI3269_2024",
       "url": "https://oulms.ou.ac.lk/course/view.php?id=1480"
+    },
+    {
+      "code": "EEI3346",
+      "title": "EEI3346_2024",
+      "url": "https://oulms.ou.ac.lk/course/view.php?id=1481"
     },
     {
       "code": "EEI3372",
