@@ -53,10 +53,19 @@ jobs:
       - name: Network Pre-check & Connectivity Fallback
         run: |
           echo "=== Runner Public IP ==="
-          curl -s --connect-timeout 5 -m 8 https://api.ipify.org || echo "Could not determine public IP"
+          curl -s --connect-timeout 5 -m 8 https://ifconfig.me/ip || curl -s --connect-timeout 5 -m 8 https://icanhazip.com || curl -s --connect-timeout 5 -m 8 https://api.ipify.org || echo "Could not determine public IP"
           echo ""
           echo "=== Testing direct connectivity to OUSL LMS (https://oulms.ou.ac.lk) ==="
-          if curl -I -s --connect-timeout 8 -m 12 https://oulms.ou.ac.lk/login/index.php >/dev/null 2>&1; then
+          direct_ok=false
+          for attempt in 1 2; do
+            if curl -I -s --connect-timeout 8 -m 12 https://oulms.ou.ac.lk/login/index.php >/dev/null 2>&1; then
+              direct_ok=true
+              break
+            fi
+            sleep 2
+          done
+
+          if [ "$direct_ok" = true ]; then
             echo "Direct connection to OUSL LMS succeeded."
           else
             echo "::warning:: Direct connection to OUSL LMS timed out or was dropped (Azure IP range blocked by LEARN)."
@@ -75,18 +84,42 @@ jobs:
             sudo warp-cli --accept-tos registration new || true
             sudo warp-cli --accept-tos mode warp || true
             sudo warp-cli --accept-tos connect || true
-            sleep 3
+            
+            # Wait for WARP tunnel to establish (up to 12s)
+            echo "Waiting for Cloudflare WARP to connect..."
+            warp_connected=false
+            for i in $(seq 1 12); do
+              status=$(sudo warp-cli --accept-tos status 2>/dev/null || true)
+              if echo "$status" | grep -qi "Connected"; then
+                warp_connected=true
+                echo "WARP status: Connected"
+                break
+              fi
+              sleep 1
+            done
             
             echo "=== Egress IP via Cloudflare WARP ==="
-            curl -s --connect-timeout 5 -m 8 https://api.ipify.org || echo "Could not determine WARP IP"
+            curl -s --connect-timeout 5 -m 8 https://ifconfig.me/ip || curl -s --connect-timeout 5 -m 8 https://icanhazip.com || curl -s --connect-timeout 5 -m 8 https://api.ipify.org || echo "Could not determine WARP IP"
             echo ""
             echo "=== Retesting connectivity to OUSL LMS via WARP ==="
-            if curl -I -s --connect-timeout 10 -m 15 https://oulms.ou.ac.lk/login/index.php >/dev/null 2>&1; then
+            warp_ok=false
+            for attempt in 1 2 3; do
+              if curl -I -s --connect-timeout 8 -m 12 https://oulms.ou.ac.lk/login/index.php >/dev/null 2>&1; then
+                warp_ok=true
+                break
+              fi
+              sleep 2
+            done
+
+            if [ "$warp_ok" = true ]; then
               echo "Successfully connected to OUSL LMS via Cloudflare WARP!"
             else
-              echo "::warning:: WARP probe also timed out. Crawler will attempt browser connection with internal retries."
+              echo "::error:: Direct connection and Cloudflare WARP both failed to reach OUSL LMS."
+              echo "Failing fast to trigger auto-retry on a fresh runner VM..."
+              exit 1
             fi
           fi
+
 
       - name: Run Crawler
         env:
