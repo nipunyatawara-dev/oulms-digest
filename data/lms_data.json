@@ -1,9 +1,9 @@
 {
   "success": true,
-  "synced_at": "2026-09-29T16:39:23.765745",
-  "github_run_id": "36598661225",
+  "synced_at": "2026-09-30T07:04:17.380543",
+  "github_run_id": "36681109364",
   "github_run_attempt": "1",
-  "duration_seconds": 282.2,
+  "duration_seconds": 294.2,
   "stats": {
     "total_notifications": 8,
     "total_courses": 8,
@@ -18,11 +18,11 @@
       "category": "Announcements",
       "course_code": "BSE",
       "course_name": "Learner Support 2024/2025",
-      "time": "1 hour 51 mins ago",
+      "time": "16 hours 16 mins ago",
       "link": "https://oulms.ou.ac.lk/course/view.php?id=3430",
-      "is_new": true,
-      "content": "BSE2025_2026: Semester 2 starts on 3rd of October 2026\n1 hour 51 mins ago\nBSE2025_2026: Workshop on AI, Solopreneurship & One-Person Companies\n1 day 6 hours ago\nEEI4362_2025: EEI4362 - Overall Feedback Forms (2025/2026)\n1 day 12 hours ago\nAGM4367_2025: Overall Feedback Form\n3 days 5 hours ago\nYou have upcoming activities due\n3 days 8 hours ago\nEEI4361_2025: EEI4361 2025/26 Course Feedback\n4 days ago\nEEI4360_2025: Re: Final exam scope\n5 days 1 hour ago\nEEI4360_2025: Overall Feedback form\n5 days 1 hour ago",
-      "content_html": "<div class=\"content-item-container notification unread selected\" data-region=\"notification-content-item-container\" data-id=\"21488239\" role=\"listitem\" id=\"yui_3_18_1_1_1790699695464_15\">\n\n    <div tabindex=\"0\" aria-label=\"Unread notification: BSE2025_2026: Semester 2 starts on 3rd of October 2026\" id=\"yui_3_18_1_1_1790699695464_14\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790699695464_13\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790699695464_12\">BSE2025_2026: Semester 2 starts on 3rd of October 2026</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 hour 51 mins ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21461098\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"BSE2025_2026: Workshop on AI, Solopreneurship &amp; One-Person Companies\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">BSE2025_2026: Workshop on AI, Solopreneurship &amp; One-Person Companies</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 day 6 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21451796\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4362_2025: EEI4362 - Overall Feedback Forms (2025/2026)\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4362_2025: EEI4362 - Overall Feedback Forms (2025/2026)</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 day 12 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21432843\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"AGM4367_2025: Overall Feedback Form\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">AGM4367_2025: Overall Feedback Form</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 5 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21430882\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"You have upcoming activities due\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">You have upcoming activities due</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 8 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21420227\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4361_2025: EEI4361 2025/26 Course Feedback\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4361_2025: EEI4361 2025/26 Course Feedback</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">4 days ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21409116\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Re: Final exam scope\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Re: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">5 days 1 hour ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21408315\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Overall Feedback form\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Overall Feedback form</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">5 days 1 hour ago</div>\n        </div>\n\n    </div>\n</div>",
+      "is_new": false,
+      "content": "BSE2025_2026: Semester 2 starts on 3rd of October 2026\n16 hours 16 mins ago\nBSE2025_2026: Workshop on AI, Solopreneurship & One-Person Companies\n1 day 20 hours ago\nEEI4362_2025: EEI4362 - Overall Feedback Forms (2025/2026)\n2 days 2 hours ago\nAGM4367_2025: Overall Feedback Form\n3 days 20 hours ago\nYou have upcoming activities due\n3 days 22 hours ago\nEEI4361_2025: EEI4361 2025/26 Course Feedback\n4 days 14 hours ago\nEEI4360_2025: Re: Final exam scope\n5 days 15 hours ago\nEEI4360_2025: Overall Feedback form\n5 days 15 hours ago",
+      "content_html": "<div class=\"content-item-container notification selected\" data-region=\"notification-content-item-container\" data-id=\"21488239\" role=\"listitem\" id=\"yui_3_18_1_1_1790751578788_15\">\n\n    <div tabindex=\"0\" aria-label=\"BSE2025_2026: Semester 2 starts on 3rd of October 2026\" id=\"yui_3_18_1_1_1790751578788_14\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790751578788_13\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790751578788_12\">BSE2025_2026: Semester 2 starts on 3rd of October 2026</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">16 hours 16 mins ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21461098\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"BSE2025_2026: Workshop on AI, Solopreneurship &amp; One-Person Companies\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">BSE2025_2026: Workshop on AI, Solopreneurship &amp; One-Person Companies</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 day 20 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21451796\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4362_2025: EEI4362 - Overall Feedback Forms (2025/2026)\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4362_2025: EEI4362 - Overall Feedback Forms (2025/2026)</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">2 days 2 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21432843\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"AGM4367_2025: Overall Feedback Form\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">AGM4367_2025: Overall Feedback Form</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 20 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21430882\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"You have upcoming activities due\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">You have upcoming activities due</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 22 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21420227\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4361_2025: EEI4361 2025/26 Course Feedback\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4361_2025: EEI4361 2025/26 Course Feedback</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">4 days 14 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21409116\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Re: Final exam scope\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Re: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">5 days 15 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21408315\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Overall Feedback form\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Overall Feedback form</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">5 days 15 hours ago</div>\n        </div>\n\n    </div>\n</div>",
       "attachments": [],
       "links": []
     },
@@ -32,11 +32,11 @@
       "category": "Announcements",
       "course_code": "BSE",
       "course_name": "Learner Support 2024/2025",
-      "time": "1 day 6 hours ago",
+      "time": "1 day 20 hours ago",
       "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=99524",
-      "is_new": true,
-      "content": "BSE2025_2026: Semester 2 starts on 3rd of October 2026\n1 hour 51 mins ago\nBSE2025_2026: Workshop on AI, Solopreneurship & One-Person Companies\n1 day 6 hours ago\nEEI4362_2025: EEI4362 - Overall Feedback Forms (2025/2026)\n1 day 12 hours ago\nAGM4367_2025: Overall Feedback Form\n3 days 5 hours ago\nYou have upcoming activities due\n3 days 8 hours ago\nEEI4361_2025: EEI4361 2025/26 Course Feedback\n4 days ago\nEEI4360_2025: Re: Final exam scope\n5 days 1 hour ago\nEEI4360_2025: Overall Feedback form\n5 days 1 hour ago",
-      "content_html": "<div class=\"content-item-container notification unread\" data-region=\"notification-content-item-container\" data-id=\"21488239\" role=\"listitem\" id=\"yui_3_18_1_1_1790699695464_15\">\n\n    <div tabindex=\"0\" aria-label=\"Unread notification: BSE2025_2026: Semester 2 starts on 3rd of October 2026\" id=\"yui_3_18_1_1_1790699695464_14\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790699695464_13\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790699695464_12\">BSE2025_2026: Semester 2 starts on 3rd of October 2026</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 hour 51 mins ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification selected\" data-region=\"notification-content-item-container\" data-id=\"21461098\" role=\"listitem\" id=\"yui_3_18_1_1_1790699695464_23\">\n\n    <div tabindex=\"0\" aria-label=\"BSE2025_2026: Workshop on AI, Solopreneurship &amp; One-Person Companies\" id=\"yui_3_18_1_1_1790699695464_22\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790699695464_21\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790699695464_20\">BSE2025_2026: Workshop on AI, Solopreneurship &amp; One-Person Companies</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 day 6 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21451796\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4362_2025: EEI4362 - Overall Feedback Forms (2025/2026)\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4362_2025: EEI4362 - Overall Feedback Forms (2025/2026)</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 day 12 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21432843\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"AGM4367_2025: Overall Feedback Form\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">AGM4367_2025: Overall Feedback Form</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 5 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21430882\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"You have upcoming activities due\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">You have upcoming activities due</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 8 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21420227\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4361_2025: EEI4361 2025/26 Course Feedback\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4361_2025: EEI4361 2025/26 Course Feedback</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">4 days ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21409116\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Re: Final exam scope\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Re: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">5 days 1 hour ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21408315\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Overall Feedback form\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Overall Feedback form</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">5 days 1 hour ago</div>\n        </div>\n\n    </div>\n</div>",
+      "is_new": false,
+      "content": "BSE2025_2026: Semester 2 starts on 3rd of October 2026\n16 hours 16 mins ago\nBSE2025_2026: Workshop on AI, Solopreneurship & One-Person Companies\n1 day 20 hours ago\nEEI4362_2025: EEI4362 - Overall Feedback Forms (2025/2026)\n2 days 2 hours ago\nAGM4367_2025: Overall Feedback Form\n3 days 20 hours ago\nYou have upcoming activities due\n3 days 22 hours ago\nEEI4361_2025: EEI4361 2025/26 Course Feedback\n4 days 14 hours ago\nEEI4360_2025: Re: Final exam scope\n5 days 15 hours ago\nEEI4360_2025: Overall Feedback form\n5 days 15 hours ago",
+      "content_html": "<div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21488239\" role=\"listitem\" id=\"yui_3_18_1_1_1790751578788_15\">\n\n    <div tabindex=\"0\" aria-label=\"BSE2025_2026: Semester 2 starts on 3rd of October 2026\" id=\"yui_3_18_1_1_1790751578788_14\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790751578788_13\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790751578788_12\">BSE2025_2026: Semester 2 starts on 3rd of October 2026</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">16 hours 16 mins ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification selected\" data-region=\"notification-content-item-container\" data-id=\"21461098\" role=\"listitem\" id=\"yui_3_18_1_1_1790751578788_23\">\n\n    <div tabindex=\"0\" aria-label=\"BSE2025_2026: Workshop on AI, Solopreneurship &amp; One-Person Companies\" id=\"yui_3_18_1_1_1790751578788_22\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790751578788_21\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790751578788_20\">BSE2025_2026: Workshop on AI, Solopreneurship &amp; One-Person Companies</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 day 20 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21451796\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4362_2025: EEI4362 - Overall Feedback Forms (2025/2026)\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4362_2025: EEI4362 - Overall Feedback Forms (2025/2026)</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">2 days 2 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21432843\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"AGM4367_2025: Overall Feedback Form\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">AGM4367_2025: Overall Feedback Form</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 20 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21430882\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"You have upcoming activities due\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">You have upcoming activities due</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 22 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21420227\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4361_2025: EEI4361 2025/26 Course Feedback\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4361_2025: EEI4361 2025/26 Course Feedback</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">4 days 14 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21409116\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Re: Final exam scope\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Re: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">5 days 15 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21408315\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Overall Feedback form\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Overall Feedback form</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">5 days 15 hours ago</div>\n        </div>\n\n    </div>\n</div>",
       "attachments": [],
       "links": [
         {
@@ -82,11 +82,11 @@
       "category": "Announcements",
       "course_code": "EEI4362",
       "course_name": "Object Oriented Design",
-      "time": "1 day 12 hours ago",
+      "time": "2 days 2 hours ago",
       "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=99483",
       "is_new": false,
-      "content": "BSE2025_2026: Semester 2 starts on 3rd of October 2026\n1 hour 51 mins ago\nBSE2025_2026: Workshop on AI, Solopreneurship & One-Person Companies\n1 day 6 hours ago\nEEI4362_2025: EEI4362 - Overall Feedback Forms (2025/2026)\n1 day 12 hours ago\nAGM4367_2025: Overall Feedback Form\n3 days 5 hours ago\nYou have upcoming activities due\n3 days 8 hours ago\nEEI4361_2025: EEI4361 2025/26 Course Feedback\n4 days ago\nEEI4360_2025: Re: Final exam scope\n5 days 1 hour ago\nEEI4360_2025: Overall Feedback form\n5 days 1 hour ago",
-      "content_html": "<div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21488239\" role=\"listitem\" id=\"yui_3_18_1_1_1790699695464_15\">\n\n    <div tabindex=\"0\" aria-label=\"Unread notification: BSE2025_2026: Semester 2 starts on 3rd of October 2026\" id=\"yui_3_18_1_1_1790699695464_14\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790699695464_13\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790699695464_12\">BSE2025_2026: Semester 2 starts on 3rd of October 2026</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 hour 51 mins ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21461098\" role=\"listitem\" id=\"yui_3_18_1_1_1790699695464_23\">\n\n    <div tabindex=\"0\" aria-label=\"BSE2025_2026: Workshop on AI, Solopreneurship &amp; One-Person Companies\" id=\"yui_3_18_1_1_1790699695464_22\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790699695464_21\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790699695464_20\">BSE2025_2026: Workshop on AI, Solopreneurship &amp; One-Person Companies</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 day 6 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification selected\" data-region=\"notification-content-item-container\" data-id=\"21451796\" role=\"listitem\" id=\"yui_3_18_1_1_1790699695464_27\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4362_2025: EEI4362 - Overall Feedback Forms (2025/2026)\" id=\"yui_3_18_1_1_1790699695464_26\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790699695464_25\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790699695464_24\">EEI4362_2025: EEI4362 - Overall Feedback Forms (2025/2026)</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 day 12 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21432843\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"AGM4367_2025: Overall Feedback Form\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">AGM4367_2025: Overall Feedback Form</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 5 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21430882\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"You have upcoming activities due\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">You have upcoming activities due</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 8 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21420227\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4361_2025: EEI4361 2025/26 Course Feedback\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4361_2025: EEI4361 2025/26 Course Feedback</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">4 days ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21409116\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Re: Final exam scope\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Re: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">5 days 1 hour ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21408315\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Overall Feedback form\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Overall Feedback form</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">5 days 1 hour ago</div>\n        </div>\n\n    </div>\n</div>",
+      "content": "BSE2025_2026: Semester 2 starts on 3rd of October 2026\n16 hours 16 mins ago\nBSE2025_2026: Workshop on AI, Solopreneurship & One-Person Companies\n1 day 20 hours ago\nEEI4362_2025: EEI4362 - Overall Feedback Forms (2025/2026)\n2 days 2 hours ago\nAGM4367_2025: Overall Feedback Form\n3 days 20 hours ago\nYou have upcoming activities due\n3 days 22 hours ago\nEEI4361_2025: EEI4361 2025/26 Course Feedback\n4 days 14 hours ago\nEEI4360_2025: Re: Final exam scope\n5 days 15 hours ago\nEEI4360_2025: Overall Feedback form\n5 days 15 hours ago",
+      "content_html": "<div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21488239\" role=\"listitem\" id=\"yui_3_18_1_1_1790751578788_15\">\n\n    <div tabindex=\"0\" aria-label=\"BSE2025_2026: Semester 2 starts on 3rd of October 2026\" id=\"yui_3_18_1_1_1790751578788_14\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790751578788_13\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790751578788_12\">BSE2025_2026: Semester 2 starts on 3rd of October 2026</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">16 hours 16 mins ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21461098\" role=\"listitem\" id=\"yui_3_18_1_1_1790751578788_23\">\n\n    <div tabindex=\"0\" aria-label=\"BSE2025_2026: Workshop on AI, Solopreneurship &amp; One-Person Companies\" id=\"yui_3_18_1_1_1790751578788_22\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790751578788_21\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790751578788_20\">BSE2025_2026: Workshop on AI, Solopreneurship &amp; One-Person Companies</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 day 20 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification selected\" data-region=\"notification-content-item-container\" data-id=\"21451796\" role=\"listitem\" id=\"yui_3_18_1_1_1790751578788_27\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4362_2025: EEI4362 - Overall Feedback Forms (2025/2026)\" id=\"yui_3_18_1_1_1790751578788_26\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790751578788_25\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790751578788_24\">EEI4362_2025: EEI4362 - Overall Feedback Forms (2025/2026)</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">2 days 2 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21432843\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"AGM4367_2025: Overall Feedback Form\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">AGM4367_2025: Overall Feedback Form</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 20 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21430882\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"You have upcoming activities due\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">You have upcoming activities due</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 22 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21420227\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4361_2025: EEI4361 2025/26 Course Feedback\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4361_2025: EEI4361 2025/26 Course Feedback</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">4 days 14 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21409116\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Re: Final exam scope\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Re: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">5 days 15 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21408315\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Overall Feedback form\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Overall Feedback form</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">5 days 15 hours ago</div>\n        </div>\n\n    </div>\n</div>",
       "attachments": [],
       "links": [
         {
@@ -132,11 +132,11 @@
       "category": "Announcements",
       "course_code": "AGM4367",
       "course_name": "Economics and Marketing for Engineering",
-      "time": "3 days 5 hours ago",
+      "time": "3 days 20 hours ago",
       "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=99429",
       "is_new": false,
-      "content": "BSE2025_2026: Semester 2 starts on 3rd of October 2026\n1 hour 51 mins ago\nBSE2025_2026: Workshop on AI, Solopreneurship & One-Person Companies\n1 day 6 hours ago\nEEI4362_2025: EEI4362 - Overall Feedback Forms (2025/2026)\n1 day 12 hours ago\nAGM4367_2025: Overall Feedback Form\n3 days 5 hours ago\nYou have upcoming activities due\n3 days 8 hours ago\nEEI4361_2025: EEI4361 2025/26 Course Feedback\n4 days ago\nEEI4360_2025: Re: Final exam scope\n5 days 1 hour ago\nEEI4360_2025: Overall Feedback form\n5 days 1 hour ago",
-      "content_html": "<div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21488239\" role=\"listitem\" id=\"yui_3_18_1_1_1790699695464_15\">\n\n    <div tabindex=\"0\" aria-label=\"Unread notification: BSE2025_2026: Semester 2 starts on 3rd of October 2026\" id=\"yui_3_18_1_1_1790699695464_14\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790699695464_13\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790699695464_12\">BSE2025_2026: Semester 2 starts on 3rd of October 2026</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 hour 51 mins ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21461098\" role=\"listitem\" id=\"yui_3_18_1_1_1790699695464_23\">\n\n    <div tabindex=\"0\" aria-label=\"BSE2025_2026: Workshop on AI, Solopreneurship &amp; One-Person Companies\" id=\"yui_3_18_1_1_1790699695464_22\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790699695464_21\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790699695464_20\">BSE2025_2026: Workshop on AI, Solopreneurship &amp; One-Person Companies</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 day 6 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21451796\" role=\"listitem\" id=\"yui_3_18_1_1_1790699695464_27\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4362_2025: EEI4362 - Overall Feedback Forms (2025/2026)\" id=\"yui_3_18_1_1_1790699695464_26\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790699695464_25\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790699695464_24\">EEI4362_2025: EEI4362 - Overall Feedback Forms (2025/2026)</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 day 12 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification selected\" data-region=\"notification-content-item-container\" data-id=\"21432843\" role=\"listitem\" id=\"yui_3_18_1_1_1790699695464_31\">\n\n    <div tabindex=\"0\" aria-label=\"AGM4367_2025: Overall Feedback Form\" id=\"yui_3_18_1_1_1790699695464_30\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790699695464_29\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790699695464_28\">AGM4367_2025: Overall Feedback Form</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 5 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21430882\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"You have upcoming activities due\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">You have upcoming activities due</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 8 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21420227\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4361_2025: EEI4361 2025/26 Course Feedback\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4361_2025: EEI4361 2025/26 Course Feedback</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">4 days ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21409116\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Re: Final exam scope\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Re: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">5 days 1 hour ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21408315\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Overall Feedback form\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Overall Feedback form</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">5 days 1 hour ago</div>\n        </div>\n\n    </div>\n</div>",
+      "content": "BSE2025_2026: Semester 2 starts on 3rd of October 2026\n16 hours 16 mins ago\nBSE2025_2026: Workshop on AI, Solopreneurship & One-Person Companies\n1 day 20 hours ago\nEEI4362_2025: EEI4362 - Overall Feedback Forms (2025/2026)\n2 days 2 hours ago\nAGM4367_2025: Overall Feedback Form\n3 days 20 hours ago\nYou have upcoming activities due\n3 days 22 hours ago\nEEI4361_2025: EEI4361 2025/26 Course Feedback\n4 days 14 hours ago\nEEI4360_2025: Re: Final exam scope\n5 days 15 hours ago\nEEI4360_2025: Overall Feedback form\n5 days 15 hours ago",
+      "content_html": "<div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21488239\" role=\"listitem\" id=\"yui_3_18_1_1_1790751578788_15\">\n\n    <div tabindex=\"0\" aria-label=\"BSE2025_2026: Semester 2 starts on 3rd of October 2026\" id=\"yui_3_18_1_1_1790751578788_14\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790751578788_13\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790751578788_12\">BSE2025_2026: Semester 2 starts on 3rd of October 2026</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">16 hours 16 mins ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21461098\" role=\"listitem\" id=\"yui_3_18_1_1_1790751578788_23\">\n\n    <div tabindex=\"0\" aria-label=\"BSE2025_2026: Workshop on AI, Solopreneurship &amp; One-Person Companies\" id=\"yui_3_18_1_1_1790751578788_22\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790751578788_21\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790751578788_20\">BSE2025_2026: Workshop on AI, Solopreneurship &amp; One-Person Companies</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 day 20 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21451796\" role=\"listitem\" id=\"yui_3_18_1_1_1790751578788_27\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4362_2025: EEI4362 - Overall Feedback Forms (2025/2026)\" id=\"yui_3_18_1_1_1790751578788_26\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790751578788_25\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790751578788_24\">EEI4362_2025: EEI4362 - Overall Feedback Forms (2025/2026)</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">2 days 2 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification selected\" data-region=\"notification-content-item-container\" data-id=\"21432843\" role=\"listitem\" id=\"yui_3_18_1_1_1790751578788_31\">\n\n    <div tabindex=\"0\" aria-label=\"AGM4367_2025: Overall Feedback Form\" id=\"yui_3_18_1_1_1790751578788_30\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790751578788_29\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790751578788_28\">AGM4367_2025: Overall Feedback Form</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 20 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21430882\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"You have upcoming activities due\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">You have upcoming activities due</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 22 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21420227\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4361_2025: EEI4361 2025/26 Course Feedback\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4361_2025: EEI4361 2025/26 Course Feedback</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">4 days 14 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21409116\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Re: Final exam scope\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Re: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">5 days 15 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21408315\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Overall Feedback form\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Overall Feedback form</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">5 days 15 hours ago</div>\n        </div>\n\n    </div>\n</div>",
       "attachments": [],
       "links": [
         {
@@ -182,11 +182,11 @@
       "category": "Deadlines & Quizzes",
       "course_code": "PORTAL",
       "course_name": "OUSL Portal Notice",
-      "time": "3 days 8 hours ago",
+      "time": "3 days 22 hours ago",
       "link": "https://oulms.ou.ac.lk/report/insights/action.php?action=viewupcoming&predictionid=6802540&forwardurl=https%3A%2F%2Foulms.ou.ac.lk%2Fmod%2Fquiz%2Fview.php%3Fid%3D149390",
       "is_new": false,
-      "content": "BSE2025_2026: Semester 2 starts on 3rd of October 2026\n1 hour 51 mins ago\nBSE2025_2026: Workshop on AI, Solopreneurship & One-Person Companies\n1 day 6 hours ago\nEEI4362_2025: EEI4362 - Overall Feedback Forms (2025/2026)\n1 day 12 hours ago\nAGM4367_2025: Overall Feedback Form\n3 days 5 hours ago\nYou have upcoming activities due\n3 days 8 hours ago\nEEI4361_2025: EEI4361 2025/26 Course Feedback\n4 days ago\nEEI4360_2025: Re: Final exam scope\n5 days 1 hour ago\nEEI4360_2025: Overall Feedback form\n5 days 1 hour ago",
-      "content_html": "<div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21488239\" role=\"listitem\" id=\"yui_3_18_1_1_1790699695464_15\">\n\n    <div tabindex=\"0\" aria-label=\"Unread notification: BSE2025_2026: Semester 2 starts on 3rd of October 2026\" id=\"yui_3_18_1_1_1790699695464_14\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790699695464_13\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790699695464_12\">BSE2025_2026: Semester 2 starts on 3rd of October 2026</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 hour 51 mins ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21461098\" role=\"listitem\" id=\"yui_3_18_1_1_1790699695464_23\">\n\n    <div tabindex=\"0\" aria-label=\"BSE2025_2026: Workshop on AI, Solopreneurship &amp; One-Person Companies\" id=\"yui_3_18_1_1_1790699695464_22\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790699695464_21\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790699695464_20\">BSE2025_2026: Workshop on AI, Solopreneurship &amp; One-Person Companies</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 day 6 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21451796\" role=\"listitem\" id=\"yui_3_18_1_1_1790699695464_27\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4362_2025: EEI4362 - Overall Feedback Forms (2025/2026)\" id=\"yui_3_18_1_1_1790699695464_26\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790699695464_25\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790699695464_24\">EEI4362_2025: EEI4362 - Overall Feedback Forms (2025/2026)</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 day 12 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21432843\" role=\"listitem\" id=\"yui_3_18_1_1_1790699695464_31\">\n\n    <div tabindex=\"0\" aria-label=\"AGM4367_2025: Overall Feedback Form\" id=\"yui_3_18_1_1_1790699695464_30\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790699695464_29\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790699695464_28\">AGM4367_2025: Overall Feedback Form</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 5 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification selected\" data-region=\"notification-content-item-container\" data-id=\"21430882\" role=\"listitem\" id=\"yui_3_18_1_1_1790699695464_35\">\n\n    <div tabindex=\"0\" aria-label=\"You have upcoming activities due\" id=\"yui_3_18_1_1_1790699695464_34\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790699695464_33\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790699695464_32\">You have upcoming activities due</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 8 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21420227\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4361_2025: EEI4361 2025/26 Course Feedback\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4361_2025: EEI4361 2025/26 Course Feedback</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">4 days ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21409116\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Re: Final exam scope\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Re: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">5 days 1 hour ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21408315\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Overall Feedback form\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Overall Feedback form</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">5 days 1 hour ago</div>\n        </div>\n\n    </div>\n</div>",
+      "content": "BSE2025_2026: Semester 2 starts on 3rd of October 2026\n16 hours 16 mins ago\nBSE2025_2026: Workshop on AI, Solopreneurship & One-Person Companies\n1 day 20 hours ago\nEEI4362_2025: EEI4362 - Overall Feedback Forms (2025/2026)\n2 days 2 hours ago\nAGM4367_2025: Overall Feedback Form\n3 days 20 hours ago\nYou have upcoming activities due\n3 days 22 hours ago\nEEI4361_2025: EEI4361 2025/26 Course Feedback\n4 days 14 hours ago\nEEI4360_2025: Re: Final exam scope\n5 days 15 hours ago\nEEI4360_2025: Overall Feedback form\n5 days 15 hours ago",
+      "content_html": "<div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21488239\" role=\"listitem\" id=\"yui_3_18_1_1_1790751578788_15\">\n\n    <div tabindex=\"0\" aria-label=\"BSE2025_2026: Semester 2 starts on 3rd of October 2026\" id=\"yui_3_18_1_1_1790751578788_14\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790751578788_13\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790751578788_12\">BSE2025_2026: Semester 2 starts on 3rd of October 2026</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">16 hours 16 mins ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21461098\" role=\"listitem\" id=\"yui_3_18_1_1_1790751578788_23\">\n\n    <div tabindex=\"0\" aria-label=\"BSE2025_2026: Workshop on AI, Solopreneurship &amp; One-Person Companies\" id=\"yui_3_18_1_1_1790751578788_22\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790751578788_21\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790751578788_20\">BSE2025_2026: Workshop on AI, Solopreneurship &amp; One-Person Companies</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 day 20 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21451796\" role=\"listitem\" id=\"yui_3_18_1_1_1790751578788_27\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4362_2025: EEI4362 - Overall Feedback Forms (2025/2026)\" id=\"yui_3_18_1_1_1790751578788_26\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790751578788_25\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790751578788_24\">EEI4362_2025: EEI4362 - Overall Feedback Forms (2025/2026)</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">2 days 2 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21432843\" role=\"listitem\" id=\"yui_3_18_1_1_1790751578788_31\">\n\n    <div tabindex=\"0\" aria-label=\"AGM4367_2025: Overall Feedback Form\" id=\"yui_3_18_1_1_1790751578788_30\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790751578788_29\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790751578788_28\">AGM4367_2025: Overall Feedback Form</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 20 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification selected\" data-region=\"notification-content-item-container\" data-id=\"21430882\" role=\"listitem\" id=\"yui_3_18_1_1_1790751578788_35\">\n\n    <div tabindex=\"0\" aria-label=\"You have upcoming activities due\" id=\"yui_3_18_1_1_1790751578788_34\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790751578788_33\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790751578788_32\">You have upcoming activities due</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 22 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21420227\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4361_2025: EEI4361 2025/26 Course Feedback\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4361_2025: EEI4361 2025/26 Course Feedback</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">4 days 14 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21409116\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Re: Final exam scope\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Re: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">5 days 15 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21408315\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Overall Feedback form\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Overall Feedback form</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">5 days 15 hours ago</div>\n        </div>\n\n    </div>\n</div>",
       "attachments": [],
       "links": [
         {
@@ -207,11 +207,11 @@
       "category": "Announcements",
       "course_code": "EEI4361",
       "course_name": "User Experience Engineering",
-      "time": "4 days ago",
+      "time": "4 days 14 hours ago",
       "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=99398",
       "is_new": false,
-      "content": "BSE2025_2026: Semester 2 starts on 3rd of October 2026\n1 hour 51 mins ago\nBSE2025_2026: Workshop on AI, Solopreneurship & One-Person Companies\n1 day 6 hours ago\nEEI4362_2025: EEI4362 - Overall Feedback Forms (2025/2026)\n1 day 12 hours ago\nAGM4367_2025: Overall Feedback Form\n3 days 5 hours ago\nYou have upcoming activities due\n3 days 8 hours ago\nEEI4361_2025: EEI4361 2025/26 Course Feedback\n4 days ago\nEEI4360_2025: Re: Final exam scope\n5 days 1 hour ago\nEEI4360_2025: Overall Feedback form\n5 days 1 hour ago",
-      "content_html": "<div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21488239\" role=\"listitem\" id=\"yui_3_18_1_1_1790699695464_15\">\n\n    <div tabindex=\"0\" aria-label=\"Unread notification: BSE2025_2026: Semester 2 starts on 3rd of October 2026\" id=\"yui_3_18_1_1_1790699695464_14\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790699695464_13\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790699695464_12\">BSE2025_2026: Semester 2 starts on 3rd of October 2026</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 hour 51 mins ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21461098\" role=\"listitem\" id=\"yui_3_18_1_1_1790699695464_23\">\n\n    <div tabindex=\"0\" aria-label=\"BSE2025_2026: Workshop on AI, Solopreneurship &amp; One-Person Companies\" id=\"yui_3_18_1_1_1790699695464_22\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790699695464_21\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790699695464_20\">BSE2025_2026: Workshop on AI, Solopreneurship &amp; One-Person Companies</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 day 6 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21451796\" role=\"listitem\" id=\"yui_3_18_1_1_1790699695464_27\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4362_2025: EEI4362 - Overall Feedback Forms (2025/2026)\" id=\"yui_3_18_1_1_1790699695464_26\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790699695464_25\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790699695464_24\">EEI4362_2025: EEI4362 - Overall Feedback Forms (2025/2026)</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 day 12 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21432843\" role=\"listitem\" id=\"yui_3_18_1_1_1790699695464_31\">\n\n    <div tabindex=\"0\" aria-label=\"AGM4367_2025: Overall Feedback Form\" id=\"yui_3_18_1_1_1790699695464_30\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790699695464_29\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790699695464_28\">AGM4367_2025: Overall Feedback Form</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 5 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21430882\" role=\"listitem\" id=\"yui_3_18_1_1_1790699695464_35\">\n\n    <div tabindex=\"0\" aria-label=\"You have upcoming activities due\" id=\"yui_3_18_1_1_1790699695464_34\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790699695464_33\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790699695464_32\">You have upcoming activities due</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 8 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification selected\" data-region=\"notification-content-item-container\" data-id=\"21420227\" role=\"listitem\" id=\"yui_3_18_1_1_1790699695464_39\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4361_2025: EEI4361 2025/26 Course Feedback\" id=\"yui_3_18_1_1_1790699695464_38\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790699695464_37\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790699695464_36\">EEI4361_2025: EEI4361 2025/26 Course Feedback</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">4 days ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21409116\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Re: Final exam scope\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Re: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">5 days 1 hour ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21408315\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Overall Feedback form\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Overall Feedback form</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">5 days 1 hour ago</div>\n        </div>\n\n    </div>\n</div>",
+      "content": "BSE2025_2026: Semester 2 starts on 3rd of October 2026\n16 hours 16 mins ago\nBSE2025_2026: Workshop on AI, Solopreneurship & One-Person Companies\n1 day 20 hours ago\nEEI4362_2025: EEI4362 - Overall Feedback Forms (2025/2026)\n2 days 2 hours ago\nAGM4367_2025: Overall Feedback Form\n3 days 20 hours ago\nYou have upcoming activities due\n3 days 22 hours ago\nEEI4361_2025: EEI4361 2025/26 Course Feedback\n4 days 14 hours ago\nEEI4360_2025: Re: Final exam scope\n5 days 15 hours ago\nEEI4360_2025: Overall Feedback form\n5 days 15 hours ago",
+      "content_html": "<div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21488239\" role=\"listitem\" id=\"yui_3_18_1_1_1790751578788_15\">\n\n    <div tabindex=\"0\" aria-label=\"BSE2025_2026: Semester 2 starts on 3rd of October 2026\" id=\"yui_3_18_1_1_1790751578788_14\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790751578788_13\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790751578788_12\">BSE2025_2026: Semester 2 starts on 3rd of October 2026</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">16 hours 16 mins ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21461098\" role=\"listitem\" id=\"yui_3_18_1_1_1790751578788_23\">\n\n    <div tabindex=\"0\" aria-label=\"BSE2025_2026: Workshop on AI, Solopreneurship &amp; One-Person Companies\" id=\"yui_3_18_1_1_1790751578788_22\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790751578788_21\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790751578788_20\">BSE2025_2026: Workshop on AI, Solopreneurship &amp; One-Person Companies</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 day 20 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21451796\" role=\"listitem\" id=\"yui_3_18_1_1_1790751578788_27\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4362_2025: EEI4362 - Overall Feedback Forms (2025/2026)\" id=\"yui_3_18_1_1_1790751578788_26\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790751578788_25\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790751578788_24\">EEI4362_2025: EEI4362 - Overall Feedback Forms (2025/2026)</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">2 days 2 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21432843\" role=\"listitem\" id=\"yui_3_18_1_1_1790751578788_31\">\n\n    <div tabindex=\"0\" aria-label=\"AGM4367_2025: Overall Feedback Form\" id=\"yui_3_18_1_1_1790751578788_30\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790751578788_29\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790751578788_28\">AGM4367_2025: Overall Feedback Form</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 20 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21430882\" role=\"listitem\" id=\"yui_3_18_1_1_1790751578788_35\">\n\n    <div tabindex=\"0\" aria-label=\"You have upcoming activities due\" id=\"yui_3_18_1_1_1790751578788_34\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790751578788_33\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790751578788_32\">You have upcoming activities due</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 22 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification selected\" data-region=\"notification-content-item-container\" data-id=\"21420227\" role=\"listitem\" id=\"yui_3_18_1_1_1790751578788_39\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4361_2025: EEI4361 2025/26 Course Feedback\" id=\"yui_3_18_1_1_1790751578788_38\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790751578788_37\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790751578788_36\">EEI4361_2025: EEI4361 2025/26 Course Feedback</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">4 days 14 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21409116\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Re: Final exam scope\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Re: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">5 days 15 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21408315\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Overall Feedback form\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Overall Feedback form</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">5 days 15 hours ago</div>\n        </div>\n\n    </div>\n</div>",
       "attachments": [],
       "links": [
         {
@@ -257,11 +257,11 @@
       "category": "Viva & Exam",
       "course_code": "EEI4360",
       "course_name": "Introduction to Artificial Intelligence",
-      "time": "5 days 1 hour ago",
+      "time": "5 days 15 hours ago",
       "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=99176",
       "is_new": false,
-      "content": "BSE2025_2026: Semester 2 starts on 3rd of October 2026\n1 hour 51 mins ago\nBSE2025_2026: Workshop on AI, Solopreneurship & One-Person Companies\n1 day 6 hours ago\nEEI4362_2025: EEI4362 - Overall Feedback Forms (2025/2026)\n1 day 12 hours ago\nAGM4367_2025: Overall Feedback Form\n3 days 5 hours ago\nYou have upcoming activities due\n3 days 8 hours ago\nEEI4361_2025: EEI4361 2025/26 Course Feedback\n4 days ago\nEEI4360_2025: Re: Final exam scope\n5 days 1 hour ago\nEEI4360_2025: Overall Feedback form\n5 days 1 hour ago",
-      "content_html": "<div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21488239\" role=\"listitem\" id=\"yui_3_18_1_1_1790699695464_15\">\n\n    <div tabindex=\"0\" aria-label=\"Unread notification: BSE2025_2026: Semester 2 starts on 3rd of October 2026\" id=\"yui_3_18_1_1_1790699695464_14\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790699695464_13\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790699695464_12\">BSE2025_2026: Semester 2 starts on 3rd of October 2026</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 hour 51 mins ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21461098\" role=\"listitem\" id=\"yui_3_18_1_1_1790699695464_23\">\n\n    <div tabindex=\"0\" aria-label=\"BSE2025_2026: Workshop on AI, Solopreneurship &amp; One-Person Companies\" id=\"yui_3_18_1_1_1790699695464_22\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790699695464_21\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790699695464_20\">BSE2025_2026: Workshop on AI, Solopreneurship &amp; One-Person Companies</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 day 6 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21451796\" role=\"listitem\" id=\"yui_3_18_1_1_1790699695464_27\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4362_2025: EEI4362 - Overall Feedback Forms (2025/2026)\" id=\"yui_3_18_1_1_1790699695464_26\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790699695464_25\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790699695464_24\">EEI4362_2025: EEI4362 - Overall Feedback Forms (2025/2026)</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 day 12 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21432843\" role=\"listitem\" id=\"yui_3_18_1_1_1790699695464_31\">\n\n    <div tabindex=\"0\" aria-label=\"AGM4367_2025: Overall Feedback Form\" id=\"yui_3_18_1_1_1790699695464_30\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790699695464_29\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790699695464_28\">AGM4367_2025: Overall Feedback Form</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 5 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21430882\" role=\"listitem\" id=\"yui_3_18_1_1_1790699695464_35\">\n\n    <div tabindex=\"0\" aria-label=\"You have upcoming activities due\" id=\"yui_3_18_1_1_1790699695464_34\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790699695464_33\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790699695464_32\">You have upcoming activities due</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 8 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21420227\" role=\"listitem\" id=\"yui_3_18_1_1_1790699695464_39\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4361_2025: EEI4361 2025/26 Course Feedback\" id=\"yui_3_18_1_1_1790699695464_38\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790699695464_37\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790699695464_36\">EEI4361_2025: EEI4361 2025/26 Course Feedback</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">4 days ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification selected\" data-region=\"notification-content-item-container\" data-id=\"21409116\" role=\"listitem\" id=\"yui_3_18_1_1_1790699695464_43\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Re: Final exam scope\" id=\"yui_3_18_1_1_1790699695464_42\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790699695464_41\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790699695464_40\">EEI4360_2025: Re: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">5 days 1 hour ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21408315\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Overall Feedback form\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Overall Feedback form</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">5 days 1 hour ago</div>\n        </div>\n\n    </div>\n</div>",
+      "content": "BSE2025_2026: Semester 2 starts on 3rd of October 2026\n16 hours 16 mins ago\nBSE2025_2026: Workshop on AI, Solopreneurship & One-Person Companies\n1 day 20 hours ago\nEEI4362_2025: EEI4362 - Overall Feedback Forms (2025/2026)\n2 days 2 hours ago\nAGM4367_2025: Overall Feedback Form\n3 days 20 hours ago\nYou have upcoming activities due\n3 days 22 hours ago\nEEI4361_2025: EEI4361 2025/26 Course Feedback\n4 days 14 hours ago\nEEI4360_2025: Re: Final exam scope\n5 days 15 hours ago\nEEI4360_2025: Overall Feedback form\n5 days 15 hours ago",
+      "content_html": "<div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21488239\" role=\"listitem\" id=\"yui_3_18_1_1_1790751578788_15\">\n\n    <div tabindex=\"0\" aria-label=\"BSE2025_2026: Semester 2 starts on 3rd of October 2026\" id=\"yui_3_18_1_1_1790751578788_14\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790751578788_13\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790751578788_12\">BSE2025_2026: Semester 2 starts on 3rd of October 2026</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">16 hours 16 mins ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21461098\" role=\"listitem\" id=\"yui_3_18_1_1_1790751578788_23\">\n\n    <div tabindex=\"0\" aria-label=\"BSE2025_2026: Workshop on AI, Solopreneurship &amp; One-Person Companies\" id=\"yui_3_18_1_1_1790751578788_22\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790751578788_21\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790751578788_20\">BSE2025_2026: Workshop on AI, Solopreneurship &amp; One-Person Companies</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 day 20 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21451796\" role=\"listitem\" id=\"yui_3_18_1_1_1790751578788_27\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4362_2025: EEI4362 - Overall Feedback Forms (2025/2026)\" id=\"yui_3_18_1_1_1790751578788_26\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790751578788_25\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790751578788_24\">EEI4362_2025: EEI4362 - Overall Feedback Forms (2025/2026)</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">2 days 2 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21432843\" role=\"listitem\" id=\"yui_3_18_1_1_1790751578788_31\">\n\n    <div tabindex=\"0\" aria-label=\"AGM4367_2025: Overall Feedback Form\" id=\"yui_3_18_1_1_1790751578788_30\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790751578788_29\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790751578788_28\">AGM4367_2025: Overall Feedback Form</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 20 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21430882\" role=\"listitem\" id=\"yui_3_18_1_1_1790751578788_35\">\n\n    <div tabindex=\"0\" aria-label=\"You have upcoming activities due\" id=\"yui_3_18_1_1_1790751578788_34\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790751578788_33\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790751578788_32\">You have upcoming activities due</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 22 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21420227\" role=\"listitem\" id=\"yui_3_18_1_1_1790751578788_39\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4361_2025: EEI4361 2025/26 Course Feedback\" id=\"yui_3_18_1_1_1790751578788_38\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790751578788_37\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790751578788_36\">EEI4361_2025: EEI4361 2025/26 Course Feedback</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">4 days 14 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification selected\" data-region=\"notification-content-item-container\" data-id=\"21409116\" role=\"listitem\" id=\"yui_3_18_1_1_1790751578788_43\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Re: Final exam scope\" id=\"yui_3_18_1_1_1790751578788_42\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790751578788_41\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790751578788_40\">EEI4360_2025: Re: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">5 days 15 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21408315\" role=\"listitem\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Overall Feedback form\">\n\n        <div class=\"content-item-body\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\">EEI4360_2025: Overall Feedback form</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">5 days 15 hours ago</div>\n        </div>\n\n    </div>\n</div>",
       "attachments": [],
       "links": [
         {
@@ -307,11 +307,11 @@
       "category": "Announcements",
       "course_code": "EEI4360",
       "course_name": "Introduction to Artificial Intelligence",
-      "time": "5 days 1 hour ago",
+      "time": "5 days 15 hours ago",
       "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=99343",
       "is_new": false,
-      "content": "BSE2025_2026: Semester 2 starts on 3rd of October 2026\n1 hour 51 mins ago\nBSE2025_2026: Workshop on AI, Solopreneurship & One-Person Companies\n1 day 6 hours ago\nEEI4362_2025: EEI4362 - Overall Feedback Forms (2025/2026)\n1 day 12 hours ago\nAGM4367_2025: Overall Feedback Form\n3 days 5 hours ago\nYou have upcoming activities due\n3 days 8 hours ago\nEEI4361_2025: EEI4361 2025/26 Course Feedback\n4 days ago\nEEI4360_2025: Re: Final exam scope\n5 days 1 hour ago\nEEI4360_2025: Overall Feedback form\n5 days 1 hour ago",
-      "content_html": "<div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21488239\" role=\"listitem\" id=\"yui_3_18_1_1_1790699695464_15\">\n\n    <div tabindex=\"0\" aria-label=\"Unread notification: BSE2025_2026: Semester 2 starts on 3rd of October 2026\" id=\"yui_3_18_1_1_1790699695464_14\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790699695464_13\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790699695464_12\">BSE2025_2026: Semester 2 starts on 3rd of October 2026</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 hour 51 mins ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21461098\" role=\"listitem\" id=\"yui_3_18_1_1_1790699695464_23\">\n\n    <div tabindex=\"0\" aria-label=\"BSE2025_2026: Workshop on AI, Solopreneurship &amp; One-Person Companies\" id=\"yui_3_18_1_1_1790699695464_22\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790699695464_21\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790699695464_20\">BSE2025_2026: Workshop on AI, Solopreneurship &amp; One-Person Companies</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 day 6 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21451796\" role=\"listitem\" id=\"yui_3_18_1_1_1790699695464_27\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4362_2025: EEI4362 - Overall Feedback Forms (2025/2026)\" id=\"yui_3_18_1_1_1790699695464_26\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790699695464_25\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790699695464_24\">EEI4362_2025: EEI4362 - Overall Feedback Forms (2025/2026)</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 day 12 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21432843\" role=\"listitem\" id=\"yui_3_18_1_1_1790699695464_31\">\n\n    <div tabindex=\"0\" aria-label=\"AGM4367_2025: Overall Feedback Form\" id=\"yui_3_18_1_1_1790699695464_30\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790699695464_29\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790699695464_28\">AGM4367_2025: Overall Feedback Form</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 5 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21430882\" role=\"listitem\" id=\"yui_3_18_1_1_1790699695464_35\">\n\n    <div tabindex=\"0\" aria-label=\"You have upcoming activities due\" id=\"yui_3_18_1_1_1790699695464_34\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790699695464_33\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790699695464_32\">You have upcoming activities due</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 8 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21420227\" role=\"listitem\" id=\"yui_3_18_1_1_1790699695464_39\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4361_2025: EEI4361 2025/26 Course Feedback\" id=\"yui_3_18_1_1_1790699695464_38\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790699695464_37\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790699695464_36\">EEI4361_2025: EEI4361 2025/26 Course Feedback</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">4 days ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21409116\" role=\"listitem\" id=\"yui_3_18_1_1_1790699695464_43\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Re: Final exam scope\" id=\"yui_3_18_1_1_1790699695464_42\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790699695464_41\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790699695464_40\">EEI4360_2025: Re: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">5 days 1 hour ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification selected\" data-region=\"notification-content-item-container\" data-id=\"21408315\" role=\"listitem\" id=\"yui_3_18_1_1_1790699695464_47\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Overall Feedback form\" id=\"yui_3_18_1_1_1790699695464_46\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790699695464_45\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790699695464_44\">EEI4360_2025: Overall Feedback form</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">5 days 1 hour ago</div>\n        </div>\n\n    </div>\n</div>",
+      "content": "BSE2025_2026: Semester 2 starts on 3rd of October 2026\n16 hours 16 mins ago\nBSE2025_2026: Workshop on AI, Solopreneurship & One-Person Companies\n1 day 20 hours ago\nEEI4362_2025: EEI4362 - Overall Feedback Forms (2025/2026)\n2 days 2 hours ago\nAGM4367_2025: Overall Feedback Form\n3 days 20 hours ago\nYou have upcoming activities due\n3 days 22 hours ago\nEEI4361_2025: EEI4361 2025/26 Course Feedback\n4 days 14 hours ago\nEEI4360_2025: Re: Final exam scope\n5 days 15 hours ago\nEEI4360_2025: Overall Feedback form\n5 days 15 hours ago",
+      "content_html": "<div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21488239\" role=\"listitem\" id=\"yui_3_18_1_1_1790751578788_15\">\n\n    <div tabindex=\"0\" aria-label=\"BSE2025_2026: Semester 2 starts on 3rd of October 2026\" id=\"yui_3_18_1_1_1790751578788_14\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790751578788_13\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790751578788_12\">BSE2025_2026: Semester 2 starts on 3rd of October 2026</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">16 hours 16 mins ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21461098\" role=\"listitem\" id=\"yui_3_18_1_1_1790751578788_23\">\n\n    <div tabindex=\"0\" aria-label=\"BSE2025_2026: Workshop on AI, Solopreneurship &amp; One-Person Companies\" id=\"yui_3_18_1_1_1790751578788_22\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790751578788_21\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790751578788_20\">BSE2025_2026: Workshop on AI, Solopreneurship &amp; One-Person Companies</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">1 day 20 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21451796\" role=\"listitem\" id=\"yui_3_18_1_1_1790751578788_27\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4362_2025: EEI4362 - Overall Feedback Forms (2025/2026)\" id=\"yui_3_18_1_1_1790751578788_26\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790751578788_25\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790751578788_24\">EEI4362_2025: EEI4362 - Overall Feedback Forms (2025/2026)</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">2 days 2 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21432843\" role=\"listitem\" id=\"yui_3_18_1_1_1790751578788_31\">\n\n    <div tabindex=\"0\" aria-label=\"AGM4367_2025: Overall Feedback Form\" id=\"yui_3_18_1_1_1790751578788_30\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790751578788_29\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790751578788_28\">AGM4367_2025: Overall Feedback Form</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 20 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21430882\" role=\"listitem\" id=\"yui_3_18_1_1_1790751578788_35\">\n\n    <div tabindex=\"0\" aria-label=\"You have upcoming activities due\" id=\"yui_3_18_1_1_1790751578788_34\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790751578788_33\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790751578788_32\">You have upcoming activities due</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">3 days 22 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21420227\" role=\"listitem\" id=\"yui_3_18_1_1_1790751578788_39\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4361_2025: EEI4361 2025/26 Course Feedback\" id=\"yui_3_18_1_1_1790751578788_38\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790751578788_37\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790751578788_36\">EEI4361_2025: EEI4361 2025/26 Course Feedback</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">4 days 14 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification\" data-region=\"notification-content-item-container\" data-id=\"21409116\" role=\"listitem\" id=\"yui_3_18_1_1_1790751578788_43\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Re: Final exam scope\" id=\"yui_3_18_1_1_1790751578788_42\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790751578788_41\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790751578788_40\">EEI4360_2025: Re: Final exam scope</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">5 days 15 hours ago</div>\n        </div>\n\n    </div>\n</div><div class=\"content-item-container notification selected\" data-region=\"notification-content-item-container\" data-id=\"21408315\" role=\"listitem\" id=\"yui_3_18_1_1_1790751578788_47\">\n\n    <div tabindex=\"0\" aria-label=\"EEI4360_2025: Overall Feedback form\" id=\"yui_3_18_1_1_1790751578788_46\">\n\n        <div class=\"content-item-body\" id=\"yui_3_18_1_1_1790751578788_45\">\n            <div class=\"notification-image\">\n                <i class=\"icon fa-solid fa-highlighter fa-fw \" title=\"Notification image\" role=\"img\" aria-label=\"Notification image\"></i>\n            </div>\n            <div class=\"notification-message\" id=\"yui_3_18_1_1_1790751578788_44\">EEI4360_2025: Overall Feedback form</div>\n        </div>\n        <div class=\"content-item-footer\">\n            <div class=\"timestamp\">5 days 15 hours ago</div>\n        </div>\n\n    </div>\n</div>",
       "attachments": [],
       "links": [
         {
@@ -1065,7 +1065,7 @@
           "time": "29 Sept 2026",
           "category": "Announcements",
           "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=99611",
-          "is_new": true,
+          "is_new": false,
           "content": "Semester 2 starts on 3rd of October 2026",
           "content_html": "",
           "attachments": [],
@@ -1476,22 +1476,6 @@
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
-          "topic": "Inquiry Regarding the Delivery Mode of EEI3273 and EEI4365",
-          "author": "L.A.S.M Liyanaarachchi 29 Sept 2026",
-          "time": "29 Sept 2026",
-          "category": "Announcements",
-          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=99617",
-          "is_new": true,
-          "content": "Inquiry Regarding the Delivery Mode of EEI3273 and EEI4365",
-          "content_html": "",
-          "attachments": [],
-          "links": []
-        },
-        {
-          "id": "upd-70",
-          "course_code": "BSE",
-          "course_name": "BSE Learner Support 2024/2025",
-          "forum_name": "General Forum for Learner Support",
           "topic": "About readiness course",
           "author": "A. A. M. AFKAR 17 Mar 2026",
           "time": "17 Mar 2026",
@@ -1504,7 +1488,7 @@
           "links": []
         },
         {
-          "id": "upd-71",
+          "id": "upd-70",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1520,7 +1504,7 @@
           "links": []
         },
         {
-          "id": "upd-72",
+          "id": "upd-71",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1536,7 +1520,7 @@
           "links": []
         },
         {
-          "id": "upd-73",
+          "id": "upd-72",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1552,7 +1536,7 @@
           "links": []
         },
         {
-          "id": "upd-74",
+          "id": "upd-73",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1568,7 +1552,7 @@
           "links": []
         },
         {
-          "id": "upd-75",
+          "id": "upd-74",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1584,7 +1568,7 @@
           "links": []
         },
         {
-          "id": "upd-76",
+          "id": "upd-75",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1600,7 +1584,7 @@
           "links": []
         },
         {
-          "id": "upd-77",
+          "id": "upd-76",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1616,7 +1600,7 @@
           "links": []
         },
         {
-          "id": "upd-78",
+          "id": "upd-77",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1632,7 +1616,7 @@
           "links": []
         },
         {
-          "id": "upd-79",
+          "id": "upd-78",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1648,7 +1632,7 @@
           "links": []
         },
         {
-          "id": "upd-80",
+          "id": "upd-79",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1664,7 +1648,7 @@
           "links": []
         },
         {
-          "id": "upd-81",
+          "id": "upd-80",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1680,7 +1664,7 @@
           "links": []
         },
         {
-          "id": "upd-82",
+          "id": "upd-81",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1696,7 +1680,7 @@
           "links": []
         },
         {
-          "id": "upd-83",
+          "id": "upd-82",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1712,7 +1696,7 @@
           "links": []
         },
         {
-          "id": "upd-84",
+          "id": "upd-83",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1728,7 +1712,7 @@
           "links": []
         },
         {
-          "id": "upd-85",
+          "id": "upd-84",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1744,7 +1728,7 @@
           "links": []
         },
         {
-          "id": "upd-86",
+          "id": "upd-85",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1760,7 +1744,7 @@
           "links": []
         },
         {
-          "id": "upd-87",
+          "id": "upd-86",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1776,7 +1760,7 @@
           "links": []
         },
         {
-          "id": "upd-88",
+          "id": "upd-87",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1792,7 +1776,7 @@
           "links": []
         },
         {
-          "id": "upd-89",
+          "id": "upd-88",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1808,7 +1792,7 @@
           "links": []
         },
         {
-          "id": "upd-90",
+          "id": "upd-89",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1824,7 +1808,7 @@
           "links": []
         },
         {
-          "id": "upd-91",
+          "id": "upd-90",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1840,7 +1824,7 @@
           "links": []
         },
         {
-          "id": "upd-92",
+          "id": "upd-91",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1856,7 +1840,7 @@
           "links": []
         },
         {
-          "id": "upd-93",
+          "id": "upd-92",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1872,7 +1856,7 @@
           "links": []
         },
         {
-          "id": "upd-94",
+          "id": "upd-93",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1888,7 +1872,7 @@
           "links": []
         },
         {
-          "id": "upd-95",
+          "id": "upd-94",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1904,7 +1888,7 @@
           "links": []
         },
         {
-          "id": "upd-96",
+          "id": "upd-95",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1920,7 +1904,7 @@
           "links": []
         },
         {
-          "id": "upd-97",
+          "id": "upd-96",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1936,7 +1920,7 @@
           "links": []
         },
         {
-          "id": "upd-98",
+          "id": "upd-97",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1952,7 +1936,7 @@
           "links": []
         },
         {
-          "id": "upd-99",
+          "id": "upd-98",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1968,7 +1952,7 @@
           "links": []
         },
         {
-          "id": "upd-100",
+          "id": "upd-99",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -1984,7 +1968,7 @@
           "links": []
         },
         {
-          "id": "upd-101",
+          "id": "upd-100",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2000,7 +1984,7 @@
           "links": []
         },
         {
-          "id": "upd-102",
+          "id": "upd-101",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2016,7 +2000,7 @@
           "links": []
         },
         {
-          "id": "upd-103",
+          "id": "upd-102",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2032,7 +2016,7 @@
           "links": []
         },
         {
-          "id": "upd-104",
+          "id": "upd-103",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2048,7 +2032,7 @@
           "links": []
         },
         {
-          "id": "upd-105",
+          "id": "upd-104",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2064,7 +2048,7 @@
           "links": []
         },
         {
-          "id": "upd-106",
+          "id": "upd-105",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2080,7 +2064,7 @@
           "links": []
         },
         {
-          "id": "upd-107",
+          "id": "upd-106",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2096,7 +2080,7 @@
           "links": []
         },
         {
-          "id": "upd-108",
+          "id": "upd-107",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2112,7 +2096,7 @@
           "links": []
         },
         {
-          "id": "upd-109",
+          "id": "upd-108",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2128,7 +2112,7 @@
           "links": []
         },
         {
-          "id": "upd-110",
+          "id": "upd-109",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2144,7 +2128,7 @@
           "links": []
         },
         {
-          "id": "upd-111",
+          "id": "upd-110",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2160,7 +2144,7 @@
           "links": []
         },
         {
-          "id": "upd-112",
+          "id": "upd-111",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2176,7 +2160,7 @@
           "links": []
         },
         {
-          "id": "upd-113",
+          "id": "upd-112",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2192,7 +2176,7 @@
           "links": []
         },
         {
-          "id": "upd-114",
+          "id": "upd-113",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2208,7 +2192,7 @@
           "links": []
         },
         {
-          "id": "upd-115",
+          "id": "upd-114",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2224,7 +2208,7 @@
           "links": []
         },
         {
-          "id": "upd-116",
+          "id": "upd-115",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2240,7 +2224,7 @@
           "links": []
         },
         {
-          "id": "upd-117",
+          "id": "upd-116",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2256,7 +2240,7 @@
           "links": []
         },
         {
-          "id": "upd-118",
+          "id": "upd-117",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2272,7 +2256,7 @@
           "links": []
         },
         {
-          "id": "upd-119",
+          "id": "upd-118",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2288,7 +2272,7 @@
           "links": []
         },
         {
-          "id": "upd-120",
+          "id": "upd-119",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2304,7 +2288,7 @@
           "links": []
         },
         {
-          "id": "upd-121",
+          "id": "upd-120",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2320,7 +2304,7 @@
           "links": []
         },
         {
-          "id": "upd-122",
+          "id": "upd-121",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2336,7 +2320,7 @@
           "links": []
         },
         {
-          "id": "upd-123",
+          "id": "upd-122",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2352,7 +2336,7 @@
           "links": []
         },
         {
-          "id": "upd-124",
+          "id": "upd-123",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2368,7 +2352,7 @@
           "links": []
         },
         {
-          "id": "upd-125",
+          "id": "upd-124",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2384,7 +2368,7 @@
           "links": []
         },
         {
-          "id": "upd-126",
+          "id": "upd-125",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2400,7 +2384,7 @@
           "links": []
         },
         {
-          "id": "upd-127",
+          "id": "upd-126",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2416,7 +2400,7 @@
           "links": []
         },
         {
-          "id": "upd-128",
+          "id": "upd-127",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2432,7 +2416,7 @@
           "links": []
         },
         {
-          "id": "upd-129",
+          "id": "upd-128",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2448,7 +2432,7 @@
           "links": []
         },
         {
-          "id": "upd-130",
+          "id": "upd-129",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2464,7 +2448,7 @@
           "links": []
         },
         {
-          "id": "upd-131",
+          "id": "upd-130",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2480,7 +2464,7 @@
           "links": []
         },
         {
-          "id": "upd-132",
+          "id": "upd-131",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2496,7 +2480,7 @@
           "links": []
         },
         {
-          "id": "upd-133",
+          "id": "upd-132",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2512,7 +2496,7 @@
           "links": []
         },
         {
-          "id": "upd-134",
+          "id": "upd-133",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2528,7 +2512,7 @@
           "links": []
         },
         {
-          "id": "upd-135",
+          "id": "upd-134",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2544,7 +2528,7 @@
           "links": []
         },
         {
-          "id": "upd-136",
+          "id": "upd-135",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2560,7 +2544,7 @@
           "links": []
         },
         {
-          "id": "upd-137",
+          "id": "upd-136",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2576,7 +2560,7 @@
           "links": []
         },
         {
-          "id": "upd-138",
+          "id": "upd-137",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2592,7 +2576,7 @@
           "links": []
         },
         {
-          "id": "upd-139",
+          "id": "upd-138",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2608,7 +2592,7 @@
           "links": []
         },
         {
-          "id": "upd-140",
+          "id": "upd-139",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2624,7 +2608,7 @@
           "links": []
         },
         {
-          "id": "upd-141",
+          "id": "upd-140",
           "course_code": "BSE",
           "course_name": "BSE Learner Support 2024/2025",
           "forum_name": "General Forum for Learner Support",
@@ -2635,6 +2619,22 @@
           "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=99303",
           "is_new": false,
           "content": "Guest Access for MHZ5375",
+          "content_html": "",
+          "attachments": [],
+          "links": []
+        },
+        {
+          "id": "upd-141",
+          "course_code": "BSE",
+          "course_name": "BSE Learner Support 2024/2025",
+          "forum_name": "General Forum for Learner Support",
+          "topic": "Inquiry Regarding the Delivery Mode of EEI3273 and EEI4365",
+          "author": "L.A.S.M Liyanaarachchi 29 Sept 2026",
+          "time": "29 Sept 2026",
+          "category": "Announcements",
+          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=99617",
+          "is_new": false,
+          "content": "Inquiry Regarding the Delivery Mode of EEI3273 and EEI4365",
           "content_html": "",
           "attachments": [],
           "links": []
@@ -17288,22 +17288,6 @@
           "course_code": "EER4189",
           "course_name": "EER4189 Software Design in Group",
           "forum_name": "Help wanted/Help given  Forum",
-          "topic": "Milestone 4 - Project Review Presentation Time Extend",
-          "author": "M. F. M. Hadil 18 Sept 2026",
-          "time": "18 Sept 2026",
-          "category": "Announcements",
-          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=99123",
-          "is_new": false,
-          "content": "Milestone 4 - Project Review Presentation Time Extend",
-          "content_html": "",
-          "attachments": [],
-          "links": []
-        },
-        {
-          "id": "upd-28",
-          "course_code": "EER4189",
-          "course_name": "EER4189 Software Design in Group",
-          "forum_name": "Help wanted/Help given  Forum",
           "topic": "About ILS-01 Recording",
           "author": "U A R Rodrigo 10 June 2026",
           "time": "10 June 2026",
@@ -17316,7 +17300,7 @@
           "links": []
         },
         {
-          "id": "upd-29",
+          "id": "upd-28",
           "course_code": "EER4189",
           "course_name": "EER4189 Software Design in Group",
           "forum_name": "Help wanted/Help given  Forum",
@@ -17332,7 +17316,7 @@
           "links": []
         },
         {
-          "id": "upd-30",
+          "id": "upd-29",
           "course_code": "EER4189",
           "course_name": "EER4189 Software Design in Group",
           "forum_name": "Help wanted/Help given  Forum",
@@ -17348,7 +17332,7 @@
           "links": []
         },
         {
-          "id": "upd-31",
+          "id": "upd-30",
           "course_code": "EER4189",
           "course_name": "EER4189 Software Design in Group",
           "forum_name": "Help wanted/Help given  Forum",
@@ -17364,7 +17348,7 @@
           "links": []
         },
         {
-          "id": "upd-32",
+          "id": "upd-31",
           "course_code": "EER4189",
           "course_name": "EER4189 Software Design in Group",
           "forum_name": "Help wanted/Help given  Forum",
@@ -17380,7 +17364,7 @@
           "links": []
         },
         {
-          "id": "upd-33",
+          "id": "upd-32",
           "course_code": "EER4189",
           "course_name": "EER4189 Software Design in Group",
           "forum_name": "Help wanted/Help given  Forum",
@@ -17396,7 +17380,7 @@
           "links": []
         },
         {
-          "id": "upd-34",
+          "id": "upd-33",
           "course_code": "EER4189",
           "course_name": "EER4189 Software Design in Group",
           "forum_name": "Help wanted/Help given  Forum",
@@ -17412,7 +17396,7 @@
           "links": []
         },
         {
-          "id": "upd-35",
+          "id": "upd-34",
           "course_code": "EER4189",
           "course_name": "EER4189 Software Design in Group",
           "forum_name": "Help wanted/Help given  Forum",
@@ -17428,7 +17412,7 @@
           "links": []
         },
         {
-          "id": "upd-36",
+          "id": "upd-35",
           "course_code": "EER4189",
           "course_name": "EER4189 Software Design in Group",
           "forum_name": "Help wanted/Help given  Forum",
@@ -17444,7 +17428,7 @@
           "links": []
         },
         {
-          "id": "upd-37",
+          "id": "upd-36",
           "course_code": "EER4189",
           "course_name": "EER4189 Software Design in Group",
           "forum_name": "Help wanted/Help given  Forum",
@@ -17455,6 +17439,22 @@
           "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=97325",
           "is_new": false,
           "content": "Project Proposal Submission 2025/26",
+          "content_html": "",
+          "attachments": [],
+          "links": []
+        },
+        {
+          "id": "upd-37",
+          "course_code": "EER4189",
+          "course_name": "EER4189 Software Design in Group",
+          "forum_name": "Help wanted/Help given  Forum",
+          "topic": "Milestone 4 - Project Review Presentation Time Extend",
+          "author": "M. F. M. Hadil 18 Sept 2026",
+          "time": "18 Sept 2026",
+          "category": "Announcements",
+          "link": "https://oulms.ou.ac.lk/mod/forum/discuss.php?d=99123",
+          "is_new": false,
+          "content": "Milestone 4 - Project Review Presentation Time Extend",
           "content_html": "",
           "attachments": [],
           "links": []
