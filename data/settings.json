@@ -6,7 +6,7 @@
   "evening_time": "22:00",
   "auto_sync_enabled": true,
   "auto_sync_on_save": true,
-  "last_sync_timestamp": "2026-10-02T07:19:17.508955",
+  "last_sync_timestamp": "2026-10-02T16:24:24.638100",
   "selected_courses": [
     "AGM4367",
     "EEI4267",
@@ -63,6 +63,11 @@
       "url": "https://oulms.ou.ac.lk/course/view.php?id=3333"
     },
     {
+      "code": "MHZ4377",
+      "title": "MHZ4377 Applied Statistics",
+      "url": "https://oulms.ou.ac.lk/course/view.php?id=3259"
+    },
+    {
       "code": "BSE2024",
       "title": "BSE2024_2025",
       "url": "https://oulms.ou.ac.lk/course/view.php?id=1831"
@@ -76,11 +81,6 @@
       "code": "AGM3263",
       "title": "AGM3263_2024",
       "url": "https://oulms.ou.ac.lk/course/view.php?id=1466"
-    },
-    {
-      "code": "EEI3262",
-      "title": "EEI3262_2024",
-      "url": "https://oulms.ou.ac.lk/course/view.php?id=1468"
     },
     {
       "code": "EEI3266",
