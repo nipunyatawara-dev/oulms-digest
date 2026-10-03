@@ -6,7 +6,7 @@
   "evening_time": "22:00",
   "auto_sync_enabled": true,
   "auto_sync_on_save": true,
-  "last_sync_timestamp": "2026-10-03T06:49:10.871763",
+  "last_sync_timestamp": "2026-10-03T14:57:34.894119",
   "selected_courses": [
     "BSE",
     "EER4189",
@@ -20,26 +20,6 @@
       "code": "BSE",
       "title": "BSE Learner Support 2025-2026",
       "url": "https://oulms.ou.ac.lk/course/view.php?id=3430"
-    },
-    {
-      "code": "EEI4267",
-      "title": "EEI4267 Requirement Engineering",
-      "url": "https://oulms.ou.ac.lk/course/view.php?id=3435"
-    },
-    {
-      "code": "EEI4360",
-      "title": "EEI4360 Introduction to Artificial Intelligence",
-      "url": "https://oulms.ou.ac.lk/course/view.php?id=3436"
-    },
-    {
-      "code": "EEI4361",
-      "title": "EEI4361 User Experience Engineering",
-      "url": "https://oulms.ou.ac.lk/course/view.php?id=3439"
-    },
-    {
-      "code": "EEI4362",
-      "title": "EEI4362 Object Oriented Design",
-      "url": "https://oulms.ou.ac.lk/course/view.php?id=3440"
     },
     {
       "code": "EEI4365",
@@ -70,6 +50,26 @@
       "code": "BSE2024",
       "title": "BSE2024_2025",
       "url": "https://oulms.ou.ac.lk/course/view.php?id=1831"
+    },
+    {
+      "code": "EEI4362",
+      "title": "EEI4362 Object Oriented Design",
+      "url": "https://oulms.ou.ac.lk/course/view.php?id=3440"
+    },
+    {
+      "code": "EEI4361",
+      "title": "EEI4361 User Experience Engineering",
+      "url": "https://oulms.ou.ac.lk/course/view.php?id=3439"
+    },
+    {
+      "code": "EEI4360",
+      "title": "EEI4360 Introduction to Artificial Intelligence",
+      "url": "https://oulms.ou.ac.lk/course/view.php?id=3436"
+    },
+    {
+      "code": "EEI4267",
+      "title": "EEI4267 Requirement Engineering",
+      "url": "https://oulms.ou.ac.lk/course/view.php?id=3435"
     },
     {
       "code": "AGM4367",
