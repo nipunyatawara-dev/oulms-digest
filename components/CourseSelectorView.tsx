@@ -21,9 +21,7 @@ interface CourseSelectorViewProps {
 }
 
 function matchesSelection(courseCode: string, selectedCode: string) {
-  const course = courseCode.toLowerCase();
-  const selected = selectedCode.toLowerCase();
-  return course === selected || course.startsWith(selected) || selected.startsWith(course);
+  return courseCode.trim().toLowerCase() === selectedCode.trim().toLowerCase();
 }
 
 function mergeCourses(...lists: DiscoveredCourseItem[][]) {

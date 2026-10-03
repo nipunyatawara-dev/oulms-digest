@@ -477,8 +477,7 @@ class OUSLCrawler:
             courses_list = [
                 course for course in all_enrolled_courses
                 if not self.target_courses or any(
-                    target.lower() == course.get('code', '').lower()
-                    or target.lower() in course.get('title', '').lower()
+                    target.strip().lower() == course.get('code', '').strip().lower()
                     for target in self.target_courses
                 )
             ]

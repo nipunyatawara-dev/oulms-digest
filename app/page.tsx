@@ -89,11 +89,8 @@ const COURSE_SELECTION_STORAGE_KEY = 'oulms-digest:selected-courses-v2';
 
 function courseMatchesSelection(courseCode: string, selectedCodes?: string[]) {
   if (!selectedCodes) return true;
-  const course = courseCode.toLowerCase();
-  return selectedCodes.some((selectedCode) => {
-    const selected = selectedCode.toLowerCase();
-    return course === selected || course.startsWith(selected) || selected.startsWith(course);
-  });
+  const course = courseCode.trim().toLowerCase();
+  return selectedCodes.some((selectedCode) => selectedCode.trim().toLowerCase() === course);
 }
 
 export default function DashboardPage() {
