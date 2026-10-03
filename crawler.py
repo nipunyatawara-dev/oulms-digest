@@ -360,7 +360,10 @@ class OUSLCrawler:
         log_progress(10, "Launching browser for course discovery...")
         
         async with async_playwright() as p:
-            browser = await p.chromium.launch(headless=True)
+            browser = await p.chromium.launch(
+                headless=True,
+                args=["--disable-ipv6", "--no-sandbox", "--disable-setuid-sandbox"]
+            )
             context = await browser.new_context(
                 user_agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
                 ignore_https_errors=True
@@ -410,7 +413,10 @@ class OUSLCrawler:
 
         log_progress(5, "Launching headless browser session...")
         async with async_playwright() as p:
-            browser = await p.chromium.launch(headless=True)
+            browser = await p.chromium.launch(
+                headless=True,
+                args=["--disable-ipv6", "--no-sandbox", "--disable-setuid-sandbox"]
+            )
             context = await browser.new_context(
                 user_agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
                 ignore_https_errors=True

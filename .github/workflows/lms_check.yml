@@ -52,13 +52,20 @@ jobs:
 
       - name: Network Pre-check & Connectivity Fallback
         run: |
-          echo "=== Runner Public IP ==="
-          curl -s --connect-timeout 5 -m 8 https://ifconfig.me/ip || curl -s --connect-timeout 5 -m 8 https://icanhazip.com || curl -s --connect-timeout 5 -m 8 https://api.ipify.org || echo "Could not determine public IP"
+          # 1. Force IPv4 kernel-wide to eliminate IPv6 routing blackholes and DNS delays to LEARN network
+          echo "Disabling IPv6 stack to prevent IPv6 routing conflicts to OUSL..."
+          sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1 >/dev/null 2>&1 || true
+          sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1 >/dev/null 2>&1 || true
+          sudo sysctl -w net.ipv6.conf.lo.disable_ipv6=1 >/dev/null 2>&1 || true
+
+          echo "=== Runner Public IPv4 ==="
+          curl -4 -s --connect-timeout 5 -m 8 https://api.ipify.org || curl -4 -s --connect-timeout 5 -m 8 https://ifconfig.me/ip || echo "Could not determine public IP"
           echo ""
+
           echo "=== Testing direct connectivity to OUSL LMS (https://oulms.ou.ac.lk) ==="
           direct_ok=false
-          for attempt in 1 2; do
-            if curl -I -s --connect-timeout 8 -m 12 https://oulms.ou.ac.lk/login/index.php >/dev/null 2>&1; then
+          for attempt in 1 2 3; do
+            if curl -4 -I -s --connect-timeout 8 -m 12 https://oulms.ou.ac.lk/login/index.php >/dev/null 2>&1; then
               direct_ok=true
               break
             fi
@@ -85,10 +92,10 @@ jobs:
             sudo warp-cli --accept-tos mode warp || true
             sudo warp-cli --accept-tos connect || true
             
-            # Wait for WARP tunnel to establish (up to 12s)
+            # Wait for WARP tunnel to establish (up to 15s)
             echo "Waiting for Cloudflare WARP to connect..."
             warp_connected=false
-            for i in $(seq 1 12); do
+            for i in $(seq 1 15); do
               status=$(sudo warp-cli --accept-tos status 2>/dev/null || true)
               if echo "$status" | grep -qi "Connected"; then
                 warp_connected=true
@@ -97,16 +104,29 @@ jobs:
               fi
               sleep 1
             done
+
+            # Ensure IPv6 remains disabled across newly created CloudflareWARP interface
+            sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1 >/dev/null 2>&1 || true
             
             echo "=== Egress IP via Cloudflare WARP ==="
-            curl -s --connect-timeout 5 -m 8 https://ifconfig.me/ip || curl -s --connect-timeout 5 -m 8 https://icanhazip.com || curl -s --connect-timeout 5 -m 8 https://api.ipify.org || echo "Could not determine WARP IP"
+            curl -4 -s --connect-timeout 5 -m 8 https://api.ipify.org || curl -4 -s --connect-timeout 5 -m 8 https://ifconfig.me/ip || echo "Could not determine WARP IP"
             echo ""
+            
             echo "=== Retesting connectivity to OUSL LMS via WARP ==="
             warp_ok=false
             for attempt in 1 2 3; do
-              if curl -I -s --connect-timeout 8 -m 12 https://oulms.ou.ac.lk/login/index.php >/dev/null 2>&1; then
+              if curl -4 -I -s --connect-timeout 8 -m 12 https://oulms.ou.ac.lk/login/index.php >/dev/null 2>&1; then
                 warp_ok=true
                 break
+              fi
+              echo "WARP probe attempt $attempt timed out."
+              if [ $attempt -lt 3 ]; then
+                echo "Rotating WARP connection to get a fresh Cloudflare egress IP..."
+                sudo warp-cli --accept-tos disconnect || true
+                sleep 2
+                sudo warp-cli --accept-tos connect || true
+                sleep 4
+                sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1 >/dev/null 2>&1 || true
               fi
               sleep 2
             done
