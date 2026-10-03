@@ -8,6 +8,7 @@ export type CategoryFilter =
   | 'Viva & Exam'
   | 'Deadlines & Quizzes'
   | 'Courses'
+  | 'Archived Courses'
   | 'Exam Preparation';
 
 interface CategoryTabsProps {

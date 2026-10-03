@@ -38,6 +38,7 @@ import {
   Folder,
   Video,
   CheckSquare,
+  Archive,
 } from 'lucide-react';
 
 interface UnifiedAcademicItem {
@@ -84,7 +85,7 @@ const CATEGORY_META: Record<
   },
 };
 
-const COURSE_SELECTION_STORAGE_KEY = 'oulms-digest:selected-courses';
+const COURSE_SELECTION_STORAGE_KEY = 'oulms-digest:selected-courses-v2';
 
 function courseMatchesSelection(courseCode: string, selectedCodes?: string[]) {
   if (!selectedCodes) return true;
@@ -436,17 +437,23 @@ export default function DashboardPage() {
     if (c.updates) allUpdates.push(...c.updates);
   });
 
+  const archivedCourses = useMemo(
+    () => (data?.archived_courses || []),
+    [data?.archived_courses]
+  );
+
   const sidebarCounts = {
     all: allNotifications.length + allUpdates.length,
     grades: gradesCounts.total,
     viva: vivaCounts.total,
     deadlines: deadlinesCounts.total,
     courses: allCourses.length,
+    archived: archivedCourses.length,
     examPrep: allCourses.reduce((total, course) => total + countExamResources(course.sections), 0),
   };
 
   const selectedCourse = selectedCourseCode
-    ? allCourses.find((course) => course.code === selectedCourseCode) || null
+    ? [...allCourses, ...archivedCourses].find((course) => course.code === selectedCourseCode) || null
     : null;
 
   // Filtered items for Dedicated Category Views (Grades, Viva, Deadlines, Announcements)
@@ -511,6 +518,14 @@ export default function DashboardPage() {
     }
     return c.updates && c.updates.length > 0;
   });
+
+  const filteredArchivedCourses = useMemo(() => {
+    const q = searchQuery.toLowerCase().trim();
+    if (!q) return archivedCourses;
+    return archivedCourses.filter(
+      (c) => c.title.toLowerCase().includes(q) || c.code.toLowerCase().includes(q)
+    );
+  }, [archivedCourses, searchQuery]);
 
   // Determine current active category mode
   const isDedicatedCategoryView =
@@ -999,6 +1014,77 @@ export default function DashboardPage() {
                     </p>
                     <p className="text-[12px] mt-0.5">
                       Try searching with a different course code or title.
+                    </p>
+                  </div>
+                )}
+              </div>
+            ) : activeTab === 'Archived Courses' ? (
+              /* ========================================================================= */
+              /* ARCHIVED COURSES VIEW                                                     */
+              /* ========================================================================= */
+              <div className="space-y-5">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-[#f2ebe5] dark:bg-[#18181b] p-5 sm:p-6 rounded-2xl shadow-refero-sm border border-transparent dark:border-white/[0.08]">
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <Archive className="w-5 h-5 text-[#4e080c] dark:text-[#f4f4f5]" />
+                      <h1 className="text-[17px] sm:text-[18px] font-semibold text-[#4e080c] dark:text-[#f4f4f5] tracking-tight">
+                        Archived Courses
+                      </h1>
+                    </div>
+                    <p className="text-[12.5px] sm:text-[13px] text-[#71717A] dark:text-[#a1a1aa] mt-1">
+                      Completed courses, resources, and discussion forums from previous academic semesters.
+                    </p>
+                  </div>
+                  <div className="text-[12.5px] font-medium px-3 py-1 bg-white dark:bg-[#27272a] rounded-lg border border-[#4e080c]/[0.12] dark:border-white/[0.12] shadow-refero-sm text-[#4e080c] dark:text-[#f4f4f5] self-start sm:self-auto">
+                    {archivedCourses.length} Archived Courses
+                  </div>
+                </div>
+
+                {/* Search Bar */}
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 pt-1">
+                  <span className="text-[13px] font-semibold text-[#4e080c] dark:text-[#f4f4f5]">
+                    Showing {filteredArchivedCourses.length} {filteredArchivedCourses.length === 1 ? 'course' : 'courses'}
+                  </span>
+
+                  <div className="relative min-w-[240px] sm:w-72">
+                    <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-[#71717A] dark:text-[#a1a1aa]" />
+                    <input
+                      type="text"
+                      placeholder="Search archived courses..."
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      className="w-full pl-9 pr-3.5 py-1.5 text-[13px] bg-white dark:bg-[#18181b] text-[#4e080c] dark:text-[#f4f4f5] rounded-lg border border-[#4e080c]/[0.12] dark:border-white/[0.12] shadow-refero-sm focus:outline-none focus:ring-1 focus:ring-[#4e080c]/20 dark:focus:ring-white/20 transition-all placeholder:text-[#71717A] dark:placeholder:text-[#71717a]"
+                    />
+                  </div>
+                </div>
+
+                {/* Archived Courses List */}
+                {loading ? (
+                  <div className="p-16 text-center text-[#71717A] dark:text-[#a1a1aa] flex flex-col items-center justify-center gap-2 bg-[#f2ebe5] dark:bg-[#18181b] rounded-2xl border border-transparent dark:border-white/[0.08]">
+                    <RefreshCw className="w-5 h-5 animate-spin text-[#4e080c] dark:text-[#a1a1aa]" />
+                    <p className="text-[13.5px] font-medium text-[#4e080c] dark:text-[#f4f4f5]">
+                      Loading archived courses...
+                    </p>
+                  </div>
+                ) : filteredArchivedCourses.length > 0 ? (
+                  <div className="bg-[#f2ebe5] dark:bg-[#18181b] rounded-2xl divide-y divide-[#4e080c]/[0.05] dark:divide-white/[0.06] overflow-hidden shadow-refero-sm border border-transparent dark:border-white/[0.08]">
+                    {filteredArchivedCourses.map((course) => (
+                      <CourseCard
+                        key={course.id || course.code}
+                        course={course}
+                        defaultExpanded={false}
+                        onOpenDetails={(selected) => setSelectedCourseCode(selected.code)}
+                      />
+                    ))}
+                  </div>
+                ) : (
+                  <div className="p-12 text-center bg-[#f2ebe5] dark:bg-[#18181b] rounded-2xl text-[#71717A] dark:text-[#a1a1aa] border border-transparent dark:border-white/[0.08]">
+                    <Archive className="w-7 h-7 mx-auto mb-2 text-[#71717A] dark:text-[#a1a1aa]" />
+                    <p className="text-[14px] font-semibold text-[#4e080c] dark:text-[#f4f4f5]">
+                      No archived courses found
+                    </p>
+                    <p className="text-[12px] mt-0.5">
+                      Completed courses from previous semesters will appear here.
                     </p>
                   </div>
                 )}

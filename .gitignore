@@ -10,3 +10,4 @@ seen_items.json
 .DS_Store
 node_modules/
 .next/
+*.tsbuildinfo

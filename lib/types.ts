@@ -132,6 +132,7 @@ export interface LMSDataPayload {
   stats: DigestStats;
   notifications: NotificationItem[];
   courses: CourseItem[];
+  archived_courses?: CourseItem[];
   available_courses?: DiscoveredCourseItem[];
 }
 

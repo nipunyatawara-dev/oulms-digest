@@ -8,18 +8,17 @@
   "auto_sync_on_save": true,
   "last_sync_timestamp": "2026-10-03T06:49:10.871763",
   "selected_courses": [
-    "AGM4367",
-    "EEI4267",
-    "EEI4360",
-    "EEI4361",
-    "EEI4362",
+    "BSE",
     "EER4189",
-    "BSE"
+    "FET2025",
+    "EEI4365",
+    "MHZ3356",
+    "MHZ4377"
   ],
   "discovered_courses": [
     {
       "code": "BSE",
-      "title": "BSE Learner Support 2024/2025",
+      "title": "BSE Learner Support 2025-2026",
       "url": "https://oulms.ou.ac.lk/course/view.php?id=3430"
     },
     {

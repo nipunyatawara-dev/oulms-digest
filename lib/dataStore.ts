@@ -5,6 +5,7 @@ import { categorizeAcademicItem } from './categoryUtils';
 
 const DATA_DIR = path.join(process.cwd(), 'data');
 const DATA_FILE = path.join(DATA_DIR, 'lms_data.json');
+const ARCHIVE_FILE = path.join(DATA_DIR, 'archived_courses.json');
 const SETTINGS_FILE = path.join(DATA_DIR, 'settings.json');
 
 function readJsonFile<T>(filePath: string): Partial<T> {
@@ -35,6 +36,25 @@ export function getLMSData(): LMSDataPayload | null {
           })),
         }));
       }
+
+      if (!Array.isArray(parsed.archived_courses) && fs.existsSync(ARCHIVE_FILE)) {
+        try {
+          const archiveRaw = fs.readFileSync(ARCHIVE_FILE, 'utf-8');
+          parsed.archived_courses = JSON.parse(archiveRaw);
+        } catch (e) {
+          console.error('Error reading archived_courses.json:', e);
+        }
+      }
+
+      if (Array.isArray(parsed.archived_courses)) {
+        parsed.archived_courses = parsed.archived_courses.map((c) => ({
+          ...c,
+          updates: (c.updates || []).map((u) => ({
+            ...u,
+            category: categorizeAcademicItem(u.topic || ''),
+          })),
+        }));
+      }
     }
 
     return parsed;
@@ -55,22 +75,25 @@ export function getSettings(): UserSettings {
     auto_sync_on_save: true,
     last_sync_timestamp: '',
     selected_courses: [
-      'AGM4367',
-      'EEI4267',
-      'EEI4360',
-      'EEI4361',
-      'EEI4362',
-      'EER4189',
       'BSE',
+      'EER4189',
+      'FET2025',
+      'EEI4365',
+      'MHZ3356',
+      'MHZ4377',
     ],
     discovered_courses: [
-      { code: 'AGM4367', title: 'Economics and Marketing for Engineering', url: 'https://oulms.ou.ac.lk/course/view.php?id=AGM4367' },
-      { code: 'EEI4267', title: 'Requirement Engineering', url: 'https://oulms.ou.ac.lk/course/view.php?id=EEI4267' },
-      { code: 'EEI4360', title: 'Introduction to Artificial Intelligence', url: 'https://oulms.ou.ac.lk/course/view.php?id=EEI4360' },
-      { code: 'EEI4361', title: 'User Experience Engineering', url: 'https://oulms.ou.ac.lk/course/view.php?id=EEI4361' },
-      { code: 'EEI4362', title: 'Object Oriented Design', url: 'https://oulms.ou.ac.lk/course/view.php?id=EEI4362' },
-      { code: 'EER4189', title: 'Software Design in Group', url: 'https://oulms.ou.ac.lk/course/view.php?id=EER4189' },
-      { code: 'BSE', title: 'BSE Learner Support 2024/2025', url: 'https://oulms.ou.ac.lk/course/view.php?id=BSE' },
+      { code: 'BSE', title: 'BSE Learner Support 2025-2026', url: 'https://oulms.ou.ac.lk/course/view.php?id=3430' },
+      { code: 'EER4189', title: 'EER4189 Software Design in Group', url: 'https://oulms.ou.ac.lk/course/view.php?id=3478' },
+      { code: 'FET2025', title: 'FET2025 Common Forum - Faculty of Engineering Technology', url: 'https://oulms.ou.ac.lk/course/view.php?id=3573' },
+      { code: 'EEI4365', title: 'EEI4365 Data Structures and Algorithms', url: 'https://oulms.ou.ac.lk/course/view.php?id=3442' },
+      { code: 'MHZ3356', title: 'MHZ3356 Mathematics for Computing I', url: 'https://oulms.ou.ac.lk/course/view.php?id=3333' },
+      { code: 'MHZ4377', title: 'MHZ4377 Applied Statistics', url: 'https://oulms.ou.ac.lk/course/view.php?id=3259' },
+      { code: 'AGM4367', title: 'AGM4367 Economics and Marketing for Engineering', url: 'https://oulms.ou.ac.lk/course/view.php?id=3361' },
+      { code: 'EEI4267', title: 'EEI4267 Requirement Engineering', url: 'https://oulms.ou.ac.lk/course/view.php?id=3435' },
+      { code: 'EEI4360', title: 'Introduction to Artificial Intelligence', url: 'https://oulms.ou.ac.lk/course/view.php?id=3436' },
+      { code: 'EEI4361', title: 'User Experience Engineering', url: 'https://oulms.ou.ac.lk/course/view.php?id=3439' },
+      { code: 'EEI4362', title: 'Object Oriented Design', url: 'https://oulms.ou.ac.lk/course/view.php?id=3440' },
     ],
   };
 

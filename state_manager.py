@@ -41,6 +41,9 @@ class StateManager:
         for course in digest.get("courses", []):
             for item in course.get("updates", []):
                 self.mark_seen("forum_post", item.get("topic", ""), item.get("link", ""))
+        for course in digest.get("archived_courses", []):
+            for item in course.get("updates", []):
+                self.mark_seen("forum_post", item.get("topic", ""), item.get("link", ""))
 
     def save(self):
         directory = os.path.dirname(os.path.abspath(self.file_path))

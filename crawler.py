@@ -12,6 +12,7 @@ from state_manager import StateManager
 
 DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
 LMS_DATA_FILE = os.path.join(DATA_DIR, "lms_data.json")
+ARCHIVE_DATA_FILE = os.path.join(DATA_DIR, "archived_courses.json")
 SETTINGS_FILE = os.path.join(DATA_DIR, "settings.json")
 
 LOGIN_URL = "https://oulms.ou.ac.lk/login/index.php"
@@ -20,23 +21,28 @@ NOTIFICATIONS_URL = "https://oulms.ou.ac.lk/message/output/popup/notifications.p
 
 # Default fallback target course whitelist
 DEFAULT_TARGET_COURSE_CODES = [
-    "AGM4367",
-    "EEI4267",
-    "EEI4360",
-    "EEI4361",
-    "EEI4362",
+    "BSE",
     "EER4189",
-    "BSE"
+    "FET2025",
+    "EEI4365",
+    "MHZ3356",
+    "MHZ4377"
 ]
 
 COURSE_NAMES_DICT = {
+    "BSE": "BSE Learner Support 2025-2026",
+    "EER4189": "Software Design in Group",
+    "FET2025": "Common Forum - Faculty of Engineering Technology",
+    "EEI4365": "Data Structures and Algorithms",
+    "MHZ3356": "Mathematics for Computing I",
+    "MHZ4377": "Applied Statistics",
+    # Archived previous semester courses
     "AGM4367": "Economics and Marketing for Engineering",
     "EEI4267": "Requirement Engineering",
     "EEI4360": "Introduction to Artificial Intelligence",
     "EEI4361": "User Experience Engineering",
     "EEI4362": "Object Oriented Design",
-    "EER4189": "Software Design in Group",
-    "BSE": "BSE Learner Support 2024/2025",
+    "BSE2024": "BSE2024_2025",
 }
 
 def log_progress(percent: int, message: str):
@@ -58,6 +64,33 @@ def save_settings(settings: Dict):
             json.dump(settings, f, indent=2)
     except Exception as e:
         print(f"[!] Warning: Could not save settings.json: {e}")
+
+def load_archived_courses() -> List[Dict]:
+    if os.path.exists(ARCHIVE_DATA_FILE):
+        try:
+            with open(ARCHIVE_DATA_FILE, "r", encoding="utf-8") as f:
+                data = json.load(f)
+                if isinstance(data, list):
+                    return data
+        except Exception as e:
+            print(f"[!] Warning: Could not read archived_courses.json: {e}")
+    if os.path.exists(LMS_DATA_FILE):
+        try:
+            with open(LMS_DATA_FILE, "r", encoding="utf-8") as f:
+                d = json.load(f)
+                if isinstance(d.get("archived_courses"), list):
+                    return d["archived_courses"]
+        except Exception:
+            pass
+    return []
+
+def save_archived_courses(courses: List[Dict]):
+    try:
+        os.makedirs(DATA_DIR, exist_ok=True)
+        with open(ARCHIVE_DATA_FILE, "w", encoding="utf-8") as f:
+            json.dump(courses, f, indent=2)
+    except Exception as e:
+        print(f"[!] Warning: Could not save archived_courses.json: {e}")
 
 def clean_title_text(title: str, course_code: str = "", course_names: Dict[str, str] = None) -> str:
     cleaned = title.strip()
@@ -246,27 +279,35 @@ def sanitize_digest_payload(payload: Dict) -> Dict:
     total_resources = 0
     total_sections = 0
 
-    for course in courses:
-        sections = course.get("sections", [])
-        total_sections += len(sections)
-        for section in sections:
-            sanitized_resources = []
-            for res in section.get("resources", []):
-                res_copy = dict(res)
-                clean_children = []
-                for child in res_copy.get("children", [])[:50]:
-                    child_copy = dict(child)
-                    child_copy["children"] = []
-                    url = child_copy.get("url", "")
-                    if "o=" in url or "/mod/forum/" in url or "p=" in url:
-                        continue
-                    clean_children.append(child_copy)
-                res_copy["children"] = clean_children
-                sanitized_resources.append(res_copy)
-            section["resources"] = sanitized_resources
-            section["resources_count"] = count_course_resources(sanitized_resources)
-        course["resources_count"] = sum(s.get("resources_count", 0) for s in sections)
-        total_resources += course["resources_count"]
+    def sanitize_course_list(c_list: List[Dict]) -> Tuple[int, int]:
+        c_res = 0
+        c_sec = 0
+        for course in c_list:
+            sections = course.get("sections", [])
+            c_sec += len(sections)
+            for section in sections:
+                sanitized_resources = []
+                for res in section.get("resources", []):
+                    res_copy = dict(res)
+                    clean_children = []
+                    for child in res_copy.get("children", [])[:50]:
+                        child_copy = dict(child)
+                        child_copy["children"] = []
+                        url = child_copy.get("url", "")
+                        if "o=" in url or "/mod/forum/" in url or "p=" in url:
+                            continue
+                        clean_children.append(child_copy)
+                    res_copy["children"] = clean_children
+                    sanitized_resources.append(res_copy)
+                section["resources"] = sanitized_resources
+                section["resources_count"] = count_course_resources(sanitized_resources)
+            course["resources_count"] = sum(s.get("resources_count", 0) for s in sections)
+            c_res += course["resources_count"]
+        return c_res, c_sec
+
+    total_resources, total_sections = sanitize_course_list(courses)
+    if "archived_courses" in payload:
+        sanitize_course_list(payload.get("archived_courses", []))
 
     if "stats" in payload:
         payload["stats"]["total_resources"] = total_resources
@@ -489,6 +530,31 @@ class OUSLCrawler:
             end_time = datetime.datetime.now()
             duration_sec = round((end_time - start_time).total_seconds(), 1)
 
+            # Preserve and merge archived courses
+            existing_archived = load_archived_courses()
+            archived_map = {c.get("code") or c.get("id"): c for c in existing_archived}
+
+            if os.path.exists(LMS_DATA_FILE):
+                try:
+                    with open(LMS_DATA_FILE, "r", encoding="utf-8") as f:
+                        prev_data = json.load(f)
+                        prev_courses = prev_data.get("courses", [])
+                        new_codes = {c["code"].lower() for c in structured_courses}
+                        for pc in prev_courses:
+                            pc_code = pc.get("code", "")
+                            if pc_code.lower() not in new_codes:
+                                key = pc_code or pc.get("id")
+                                if key and key not in archived_map:
+                                    pc_archived = dict(pc)
+                                    if "archived_at" not in pc_archived:
+                                        pc_archived["archived_at"] = end_time.isoformat()
+                                    archived_map[key] = pc_archived
+                except Exception as e:
+                    print(f"[!] Warning: Error checking previous courses for archiving: {e}")
+
+            all_archived = list(archived_map.values())
+            save_archived_courses(all_archived)
+
             payload = {
                 "success": True,
                 "synced_at": end_time.isoformat(),
@@ -504,6 +570,7 @@ class OUSLCrawler:
                 },
                 "notifications": notifications,
                 "courses": structured_courses,
+                "archived_courses": all_archived,
                 "available_courses": all_enrolled_courses,
             }
 
