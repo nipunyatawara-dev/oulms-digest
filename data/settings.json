@@ -6,7 +6,7 @@
   "evening_time": "22:00",
   "auto_sync_enabled": true,
   "auto_sync_on_save": true,
-  "last_sync_timestamp": "2026-10-08T07:47:36.886824",
+  "last_sync_timestamp": "2026-10-08T17:33:28.649781",
   "selected_courses": [
     "BSE",
     "EER4189",
@@ -20,6 +20,11 @@
       "code": "BSE",
       "title": "BSE Learner Support 2025-2026",
       "url": "https://oulms.ou.ac.lk/course/view.php?id=3430"
+    },
+    {
+      "code": "CVM4401",
+      "title": "CVM4401/CVM4402 Accounting for Engineers",
+      "url": "https://oulms.ou.ac.lk/course/view.php?id=3363"
     },
     {
       "code": "EEI4365",
