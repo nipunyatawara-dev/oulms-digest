@@ -6,7 +6,7 @@
   "evening_time": "22:00",
   "auto_sync_enabled": true,
   "auto_sync_on_save": true,
-  "last_sync_timestamp": "2026-11-05T18:15:00.947985",
+  "last_sync_timestamp": "2026-11-06T08:14:26.281740",
   "selected_courses": [
     "BSE",
     "EER4189",
@@ -62,19 +62,9 @@
       "url": "https://oulms.ou.ac.lk/course/view.php?id=1831"
     },
     {
-      "code": "EEI4362",
-      "title": "EEI4362 Object Oriented Design",
-      "url": "https://oulms.ou.ac.lk/course/view.php?id=3440"
-    },
-    {
-      "code": "EEI4361",
-      "title": "EEI4361 User Experience Engineering",
-      "url": "https://oulms.ou.ac.lk/course/view.php?id=3439"
-    },
-    {
-      "code": "EEI4360",
-      "title": "EEI4360 Introduction to Artificial Intelligence",
-      "url": "https://oulms.ou.ac.lk/course/view.php?id=3436"
+      "code": "AGM4367",
+      "title": "AGM4367 Economics and Marketing for Engineering",
+      "url": "https://oulms.ou.ac.lk/course/view.php?id=3361"
     },
     {
       "code": "EEI4267",
@@ -82,9 +72,19 @@
       "url": "https://oulms.ou.ac.lk/course/view.php?id=3435"
     },
     {
-      "code": "AGM4367",
-      "title": "AGM4367 Economics and Marketing for Engineering",
-      "url": "https://oulms.ou.ac.lk/course/view.php?id=3361"
+      "code": "EEI4360",
+      "title": "EEI4360 Introduction to Artificial Intelligence",
+      "url": "https://oulms.ou.ac.lk/course/view.php?id=3436"
+    },
+    {
+      "code": "EEI4361",
+      "title": "EEI4361 User Experience Engineering",
+      "url": "https://oulms.ou.ac.lk/course/view.php?id=3439"
+    },
+    {
+      "code": "EEI4362",
+      "title": "EEI4362 Object Oriented Design",
+      "url": "https://oulms.ou.ac.lk/course/view.php?id=3440"
     },
     {
       "code": "AGM3263",
