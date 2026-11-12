@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test tests/githubSync.test.mjs"
   },
   "dependencies": {
     "@astryxdesign/cli": "^0.4.4",
@@ -39,5 +41,8 @@
     "@astryxdesign/core@0.4.4": true,
     "fsevents@2.3.3": true,
     "sharp@0.34.5": true
+  },
+  "engines": {
+    "node": ">=26"
   }
 }
